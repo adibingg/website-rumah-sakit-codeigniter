@@ -45,7 +45,7 @@
                               <select name="category_id" id="" class="form-control"> 
                                 <option>Pilih Kategori Berita</option>
                                 <?php foreach($kategori->result() as $row){ ?>
-                                <option value=""><?php echo $row->category_name; ?></option>
+                                <option value="<?= $row->category_id; ?>"><?php echo $row->category_name; ?></option>
                                 <?php } ?>
                               </select>
                             </div>

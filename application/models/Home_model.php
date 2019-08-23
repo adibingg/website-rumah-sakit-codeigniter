@@ -15,15 +15,20 @@ class Home_model extends CI_Model{
         $this->db->select('*');
         $this->db->from('news');
         $this->db->join('category','category.category_id=news.category_id');
+        $this->db->order_by('news.date_post','desc');
         $data = $this->db->get();
         return $data;
     }
 
-    public function getNewsId($id){
-        $this->db->where('id_news', $id);
-        $data = $this->db->get('news');
-        return $data;
-    }
+    function detailBerita($id)
+	{
+		$this->db->select('*');
+		$this->db->from('news');
+		$this->db->where('seo', $id);
+		$this->db->join('category', 'category.category_id = news.category_id');
+		$data = $this->db->get();
+		return $data;
+	}
 
     public function reciveMessage(){
         $data = array(
@@ -80,4 +85,6 @@ class Home_model extends CI_Model{
         $data = $this->db->get();
         return $data;
     }
+
+    
 }

@@ -1,22 +1,22 @@
 <?php
 
 class Berita extends CI_Controller{
-  public function __construct(){
+  function __construct(){
     parent::__construct();
-    $this->load->model('Sec_model');
     $this->load->model('Admin_model');
+    $this->load->helper('date_negara_berkembang');
   }
 
-  public function index(){
+  function index(){
     $this->load->model('Sec_model');
     $this->Sec_model->getSec();
     $data = array(
-      'title' => "Artikel",
-      'berita' => $this->Admin_model->getArticle());
+      'title' => "Pos Berita & Artikel",
+      'berita' => $this->Admin_model->TampilBerita());
     $this->load->view('admin/berita',  $data);
   }
 
-  public function create(){
+  function create(){
     $this->load->model('Sec_model');
     $this->load->model('Admin_model');
 		$data = array(
@@ -26,9 +26,9 @@ class Berita extends CI_Controller{
 		$this->load->view('admin/berita-tambah',  $data);
 	}
   
-  public function save(){
+  function save(){
     $this->load->model('Sec_model');
-    $config['upload_path']         = './uploads/';  
+    $config['upload_path']         = './uploads';  
     $config['allowed_types']        = 'gif|jpg|png';
  	  $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')){
@@ -59,7 +59,7 @@ class Berita extends CI_Controller{
     redirect('admin/berita','refresh');
   }
   
-  public function update($id){
+  function update($id){
     $this->load->model('Sec_model');
     $this->load->model('Admin_model');
     $data = array(
@@ -71,9 +71,9 @@ class Berita extends CI_Controller{
 
   }
 
-  public function save_update(){
+  function save_update(){
     $this->load->model('Sec_model');
-    $config['upload_path']         = './uploads/';  
+    $config['upload_path']         = './uploads/berita';  
     $config['allowed_types']        = 'gif|jpg|png';
  	  $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')){
@@ -118,8 +118,11 @@ class Berita extends CI_Controller{
     redirect('admin/berita');
   }
 
-  public function delete($id){
-    $this->db->where('news_id', $id)->delete('news');
+  function delete($id){
+    $this->load->model('Sec_model');
+    $this->Sec_model->getSec();
+    $this->load->model('Admin_model');
+    $this->Admin_model->HapusBerita($id);
     $this->session->set_flashdata('info', "Berhasil menghapus berita");
     redirect('admin/berita');
   }

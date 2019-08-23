@@ -74,7 +74,8 @@
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
             </div>      
-          </div>
+		  </div>
+		  
         </div>
 			</div>
 		</section>

@@ -26,4 +26,5 @@ class Pelayanan extends CI_Controller{
 			
 		}
 	}
+	
 }

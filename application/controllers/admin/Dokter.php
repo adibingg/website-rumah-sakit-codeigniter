@@ -2,7 +2,7 @@
 
 class Dokter extends CI_Controller{
 
-	public function index(){
+	 function index(){
 		$this->load->model('Sec_model');
 	 	$this->load->model('Admin_model');
 	    
@@ -11,7 +11,16 @@ class Dokter extends CI_Controller{
 		$this->load->view('admin/dokter', $config);
 	}
 
-	public function tambah(){
+	function tambah_dokter(){
+		$this->load->model('Sec_model');
+	 	$this->load->model('Admin_model');
+	    
+	    $config = array(
+		  'title' 		=> "Data Dokter");
+		$this->load->view('admin/dokter-tambah', $config);
+	}
+
+	 function tambah(){
 		$this->load->model('Sec_model');
 		$config['upload_path']    = './uploads/dokter';  
 	    $config['allowed_types']  = 'gif|jpg|png';
@@ -37,19 +46,26 @@ class Dokter extends CI_Controller{
 	    	redirect('admin/dokter','refresh');
 	}
 
-	public function edit(){
+	 function edit(){
 		$this->load->model('Sec_model');
 	}
 
-	public function hapus(){
+	 function hapus(){
 		$this->load->model('Sec_model');
 	}
 
-	public function schedule(){
+	 function jadwal(){
 		$config = array(
 			'title' => 'Jadwal Dokter'
 		);
 		$this->load->view('admin/jadwal-dokter', $config);
+	}
+
+	function tambah_jadwal(){
+		$config = array(
+			'title' => 'Jadwal Dokter'
+		);
+		$this->load->view('admin/jadwal-tambah', $config);
 	}
 
 	

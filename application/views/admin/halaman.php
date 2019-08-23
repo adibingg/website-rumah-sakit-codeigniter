@@ -11,8 +11,8 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                  <a href="<?= base_url('admin/galeri/tambah_album'); ?>" class="btn btn-success"><i class="fa fa-file-image-o"></i> Tambah Menu Navigasi</a>
-                    <a href="" class="btn btn-success"><i class="fa fa-camera-retro"></i> Tambah Halaman</a>
+                  <a href="<?= base_url('admin/halaman/tambah_album'); ?>" class="btn btn-success"><i class="fa fa-file-image-o"></i> Tambah Menu Navigasi</a>
+                    <a href="<?= base_url('admin/halaman/add_pages'); ?>" class="btn btn-success"><i class="fa fa-camera-retro"></i> Tambah Halaman</a>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>

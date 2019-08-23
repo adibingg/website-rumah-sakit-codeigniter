@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,17 +11,8 @@
     <link href="<?php echo base_url(); ?>assets-admin/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/css/vendors/nprogress/nprogress.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/css/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>assets-admin/css/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
-    <link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/css/custom.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.css" rel="stylesheet">
-    <style>
-      .btn{
-        border:0px;
-        border-radius: 50px;
-      }
-    </style>
   </head>
 
   <body class="nav-md">
@@ -37,11 +27,11 @@
             <div class="clearfix"></div>
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?php echo base_url(); ?>images/kars.png" alt="..." class="img-circle profile_img">
+                <img src="<?php echo base_url(); ?>public/images/logo.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span></span>
+                <h2><?php echo $this->session->userdata('admin_name'); ?></h2>
               </div>
             </div>
 
@@ -53,35 +43,38 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="<?= base_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> Dashboard </a></li>
+                  <li><a href="<?= base_url('admin/statistik'); ?>"><i class="fa fa-bar-chart"></i> Statistik </a></li>
                   <li><a><i class="fa fa-edit"></i> Konten <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url('admin/article-list'); ?>"> Artikel</a></li>
+                      <li><a href="<?= base_url('admin/pos'); ?>"> Pos</a></li>
                       <li><a href="<?= base_url('admin/galeri'); ?>">Galeri</a></li>
-                      <li><a href="<?= base_url('admin/banner'); ?>">Banner</a></li>
                       <li><a href="<?= base_url('admin/komentar'); ?>">Komentar</a></li>
                     </ul>
                   </li>
                   <li><a href="halaman-statis"><i class="fa fa-clone"></i> Navigasi & Halaman </a>
-                  <li><a><i class="fa fa-desktop"></i> Kelola <span class="fa fa-plus"></span></span></a>
+                  <li><a><i class="fa fa-stethoscope"></i> Kelola <span class="fa fa-plus"></span></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/dokter'); ?>">Dokter</a></li>
-                      <li><a href="<?= base_url('admin/doctor-schedule'); ?>">Jadwal Dokter</a></li>
+                      <li><a href="<?= base_url('admin/dokter/jadwal'); ?>">Jadwal Dokter</a></li>
+                      <li><a href="<?= base_url('admin/jadwal-poli'); ?>">Jadwal Poli</a></li>
                       <li><a href="<?= base_url('admin/daftar-pelayanan'); ?>">Daftar Pelayanan</a></li>
                       <li><a href="<?= base_url('admin/fasilitas-penunjang'); ?>">Fasilitas Penunjang</a></li>
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-table"></i> Profil <span class="fa fa-plus"></span></a>
+                  <li><a><i class="fa fa-hospital-o"></i> Profil <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/profil'); ?>">Profil</a></li>
+                      <li><a href="<?= base_url('admin/visi-misi'); ?>">Visi & Misi</a></li>
                       <li><a href="<?= base_url('admin/sejarah'); ?>">Sejarah</a></li>
+                      <li><a href="<?= base_url('admin/sejarah'); ?>">Struktural</a></li>
                     </ul>
                   </li>
 
                   <li><a><i class="fa fa-gears"></i> Konfigurasi <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/pengguna'); ?>">Pengguna</a></li>
-                      <li><a href="<?= base_url('admin/identitas-website'); ?>">Identitas Website</a></li>
+                      <li><a href="<?= base_url('admin/pengaturan/identitas-website'); ?>">Identitas Website</a></li>
                       <li><a href="<?= base_url('admin/pengaturan'); ?>">Pengaturan</a></li>
                     </ul>
                   </li>

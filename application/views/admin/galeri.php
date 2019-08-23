@@ -15,19 +15,10 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <a href="<?= base_url('admin/galeri/tambah_album'); ?>" class="btn btn-success"><i class="fa fa-file-image-o"></i> Tambah Album</a>
-                    <a href="<?= base_url('admin/galeri/tambah_foto'); ?>" class="btn btn-success"><i class="fa fa-camera-retro"></i> Tambah Foto</a>
+                    <a href="<?= base_url('admin/galeri/tambah_album'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Album</a>
+                    <a href="<?= base_url('admin/galeri/tambah_foto'); ?>" class="btn btn-primary"><i class="fa fa-camera-retro"></i> Tambah Foto</a>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
@@ -37,30 +28,35 @@
                   <div class="x_content">
 
                     <div class="row">
-                      <div class="col-md-3">
+                    <?php if($this->session->flashdata() == true){ ?>
+                      <div class="alert alert-primary bg-primary" role="alert">
+                        <b><?php echo $this->session->flashdata('info'); ?></b>
+                      </div>
+                      <?php }else{ } ?>
+                      <div class="col-md-4">
                         <ul class="list-group">
+                          <li class="list-group-item"><a href="<?= base_url('admin/galeri'); ?>">Semua Foto</a></li>
                         <?php foreach($album->result() as $alghazali){ ?>
-                          <li class="list-group-item"><a href="<?= base_url('admin/galeri/album/').$alghazali->link; ?>"><?= $alghazali->album_name; ?></a></li>
+                          <li class="list-group-item"><a href="<?= base_url('admin/galeri/album/').$alghazali->link; ?>"><?= $alghazali->album_name; ?></a> <a href="<?= base_url('admin/galeri/hapus_album/').$alghazali->album_id; ?>" class="btn btn-default btn-xs pull-right hapus"><i class="fa fa-remove"></i></a><a href="<?= base_url('admin/galeri/perbaharui_album/').$alghazali->album_id; ?>" class="btn btn-default btn-xs pull-right"><i class="fa fa-pencil"></i></a></li>
                         <?php } ?>
                         </ul>
                       </div>
 
-                      <div class="col-md-9">
-                      <?php for($i=0; $i<12; $i++){ ?>
-                      <div class="col-md-3">
+                      <div class="col-md-8">
+                      <?php foreach($galeri->result() as $gr){ ?>
+                      <div class="col-md-4">
                         <div class="thumbnail">
                           <div class="image view view-first">
-                            <img style="width: 100%; display: block;" src="<?php echo base_url(); ?>assets-admin/images/media.jpg" alt="image" />
+                            <img style="width: 100%; display: block;" src="<?php echo base_url('uploads/').$gr->images; ?>" alt="image" />
                             <div class="mask">
-                              <p>Your Text</p>
+                              <p><?= $gr->album_name; ?></p>
                               <div class="tools tools-bottom">
-                                <a href="#"><i class="fa fa-pencil"></i></a>
-                                <a href="#"><i class="fa fa-times"></i></a>
+                                <a class="hapus" href="<?= base_url('admin/galeri/hapus_foto/').$gr->gallery_id; ?>"><i class="fa fa-times"></i></a>
                               </div>
                             </div>
                           </div>
                           <div class="caption">
-                            <p>Snow and Ice Incoming for the South</p>
+                            <p><?= $gr->caption; ?></p>
                           </div>
                         </div>
                       </div>
@@ -74,3 +70,4 @@
         </div>
         </div>
 <?php $this->load->view('admin/master/footer'); ?>
+<?php $this->load->view('admin/swall'); ?>

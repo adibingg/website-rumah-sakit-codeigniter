@@ -12,7 +12,9 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2> <a href="<?= base_url('admin/article-create') ?>" class="btn btn-success"><i class="fa fa-pencil-square"></i> Artikel Baru</a></h2>
+                    <a href="<?= base_url('admin/buat-pos') ?>" class="btn btn-success"><i class="fa fa-pencil-square"></i> Posting Baru</a>
+                    <a href="#" class="btn btn-primary"><span for="" class="badge badge-primary">1</span> Diterbitkan</a>
+                    <a href="#" class="btn btn-danger test"><span for="" class="badge badge-primary">1</span> Draft</a>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -23,6 +25,14 @@
                   </div>
 
                   <div class="x_content">
+                  <?php if($this->session->flashdata() == true){ ?>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                      <strong> <i class="fa fa-check"></i> <?php echo $this->session->flashdata('info'); ?></strong>
+                      <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  <?php } else{} ?>
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
@@ -58,7 +68,7 @@
                             <td class=" last">
                                 <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
                                 <a href="<?= base_url('admin/berita/update/').$row->news_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-                                <a href="<?= base_url('admin/berita/delete/').$row->news_id; ?>" id="h.apus_berita" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('admin/berita/delete/').$row->news_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
                             </td>
                           </tr>
                         <?php } ?>
@@ -73,5 +83,6 @@
         </div>
         <!-- /page content -->
 <?php $this->load->view('admin/master/footer'); ?>
+<?php $this->load->view('admin/swall'); ?>
 
 

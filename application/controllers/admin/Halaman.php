@@ -30,7 +30,13 @@ class Halaman extends CI_Controller{
     }
 
     function add_pages(){
-
+        $this->load->model('Sec_model');
+		$this->Sec_model->getSec();
+		$config = array(
+            'title' => "Halaman Statis Baru",
+            'navigation' => $this->Admin_model->getNav()
+        );
+		$this->load->view('admin/halamantambah',$config);
     }
 
     function update_pages(){

@@ -14,7 +14,12 @@ class Fasilitas extends CI_Controller{
 
     public function tambah_pelayanan(){
         $this->load->model('Sec_model');
+        $this->load->model('Sec_model');
+        $config = array (
+            'title' => "Fasilitas Penunjang"
+        );
 
+        $this->load->view('admin/fasilitas-tambah', $config);
     }
 
     public function edit_pelayanan(){

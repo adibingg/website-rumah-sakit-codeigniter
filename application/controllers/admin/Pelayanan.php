@@ -10,9 +10,19 @@ class Pelayanan extends CI_Controller{
         );
 
         $this->load->view('admin/pelayanan', $config);
-   }
+    }
 
-   public function tambah(){
+    public function form_tambah(){
+        $this->load->model('Sec_model');
+        $this->load->model('Admin_model');
+        $config = array (
+            'title' => "Tambah Pelayanan"
+        );
+
+        $this->load->view('admin/pelayanan-tambah', $config);
+    }
+
+    public function tambah_pelayanan(){
        $config['upload_path']    = './uploads/dokter';  
        $config['allowed_types']  = 'gif|jpg|png';
             $this->load->library('upload', $config);
