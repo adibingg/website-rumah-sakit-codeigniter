@@ -113,7 +113,7 @@ class Admin_model extends CI_Model{
 		return $data->result();
 	}
 
-	function detailBerita($id){
+	function getBeritaId($id){
 		//Ambil data berita berdasarkan id
 		$this->db->select('*');
 		$this->db->from('news');
@@ -122,6 +122,50 @@ class Admin_model extends CI_Model{
 		$data = $this->db->get();
 		return $data;
 	}
+
+	//Dokter
+	function getDoctor(){
+		$this->db->select('*');
+        $this->db->from('doctor');
+        $this->db->join('specialist', 'doctor.specialist_id = specialist.specialist_id');
+        $query = $this->db->get();
+        return $query;
+	}
+	
+	function getSpecialist(){
+		$this->db->order_by('specialist_name', 'asc');
+		$query = $this->db->get('specialist');
+		return $query;
+	}
+
+	function saveDokter(){
+
+	}
+
+	function getJadwal(){
+		$this->db->select('*');
+		$this->db->from('doctor_schedule');
+		$this->db->join('doctor', 'doctor_schedule.doctor_id = doctor.doctor_id');
+		$query = $this->db->get();
+		return $query;
+	}
+
+	function checkJadwal($check){
+		$this->db->where('doctor_id', $check);
+		$query = $this->db->get('doctor_schedule');
+		return $query;
+	}
+
+	function saveJadwal($data){
+		$query = $this->db->insert('doctor_schedule', $data);
+		return $query;
+	}
+
+	
+
+
+
+
 
 	function getJumlahBerita(){
 		//Ambil jumlah total berita di database

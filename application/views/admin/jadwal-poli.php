@@ -43,21 +43,7 @@
                         </thead>
 
                         <tbody>
-                        <?php $i = 1; ?>
-                        <?php foreach($jadwal->result() as $row){ ?>
-                          <tr>
-                            <td><?php echo $i++; ?> </td>
-                            <td><?= $row->doctor_name; ?></td>
-                            <td><?= $row->senin; ?></td>
-                            <td><?= $row->selasa; ?></td>
-                            <td><?= $row->rabu; ?></td>
-                            <td><?= $row->kamis; ?></td>
-                            <td><?= $row->jumat; ?></td>
-                            <td><?= $row->sabtu; ?></td>
-                            <td><?= $row->minggu; ?></td>
-                            <td></td>
-                          </tr>
-                        <?php } ?>
+                       
                         </tbody>
                       </table>
                     </div>

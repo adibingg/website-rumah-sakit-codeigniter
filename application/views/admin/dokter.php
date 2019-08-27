@@ -26,12 +26,10 @@
                         <thead>
                           <tr class="headings">
                             <th>
-                              <input type="checkbox" id="check-all" class="flat">
                             </th>
-                            <th class="column-title">No. </th>
                             <th class="column-title">Nama Dokter</th>
                             <th class="column-title">Spesialis</th>
-                            <th class="column-title">Pendidikan</th>
+                            <th class="column-title">Alamat</th>
                             <th class="column-title">Status </th>
                             <th class="column-title no-link last"><span class="nobr">Action</span>
                             </th>
@@ -42,7 +40,29 @@
                         </thead>
 
                         <tbody>
-                        
+                        <?php if($dokter->num_rows() < 1){ ?>
+                        <?php echo "Belum ada dokter, silahkan tambah data dokter"; ?>
+                        <?php }else{ ?>
+                        <?php foreach($dokter->result() as $row){ ?>
+                          <tr>
+                            <td><img style="width: 70px; heigth: 70px;" class="img-responsive" src="<?php echo base_url('uploads/').$row->images; ?>" alt=""></td>
+                            <td><?php echo $row->doctor_name; ?></td>
+                            <td><span class="badge bg-primary"><?php echo $row->specialist_name; ?></span></td>
+                            <td><?php echo $row->address; ?></td>
+                            <td>
+                              <select name="setstatus" id="" class="form-control" style="text-transform: capitalize;">
+                                <option selected value="<?php echo $row->status; ?>"><?php echo $row->status; ?></option>
+                                <option value="bertugas">Bertugas</option>
+                                <option value="cuti">Cuti</option>
+                              </select>
+                            </td>
+                            <td>
+                                <a href="<?= base_url('admin/berita/update/'); ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url('admin/berita/delete/'); ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
+                            </td>
+                          </tr>
+                        <?php } ?>
+                        <?php } ?>
                         </tbody>
                       </table>
                     </div>

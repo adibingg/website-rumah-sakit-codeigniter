@@ -21,27 +21,30 @@
                   </div>
 
                     <div class="x_content">
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <?= form_open_multipart('admin/dokter/tambah'); ?>
+                    <div class="form-horizontal form-label-left">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Dokter<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="nama" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Alamat<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="alamat" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Spesialis *</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select name="" class="form-control">
+                            <select name="specialist_id" class="form-control">
                                 <option>Pilih Spesialis</option>
-
+                                <?php foreach($specialist->result() as $row){ ?>
+                                <option value="<?= $row->specialist_id; ?>"><?= $row->specialist_name; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                       </div>
@@ -50,17 +53,18 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="file">
+                          <input name="gambar" class="form-control col-md-7 col-xs-12" required="required" type="file">
                         </div>
                       </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button"><i class="fa fa-save"></i> Simpan</button>
+                          <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Simpan</button>
                         </div>
                       </div>
 
-                      </form>
+                      </div>
+                      <?= form_close(); ?>
                     </div>
                 </div>
               </div>

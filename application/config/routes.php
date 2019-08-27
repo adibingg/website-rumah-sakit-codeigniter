@@ -29,5 +29,8 @@ $route['admin/fasilitas-penunjang'] = 'admin/fasilitas';
 
 //Halaman Statis
 $route['admin/halaman-statis'] = 'admin/halaman';
+//Poli
+$route['admin/jadwal-poli'] = 'admin/poli';
+$route['admin/tambah-jadwal-poli'] = 'admin/poli/add_poli';
 
 

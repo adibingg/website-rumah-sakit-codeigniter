@@ -28,7 +28,15 @@ class Home_model extends CI_Model{
 		$this->db->join('category', 'category.category_id = news.category_id');
 		$data = $this->db->get();
 		return $data;
-	}
+    }
+
+    function getDoctor(){
+        $this->db->select('*');
+        $this->db->from('doctor');
+        $this->db->join('specialist', 'doctor.specialist_id = specialist.specialist_id');
+        $query = $this->db->get();
+        return $query;
+    }
 
     public function reciveMessage(){
         $data = array(

@@ -23,16 +23,12 @@
                     <div class="x_content">
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?php echo base_url('admin/dokter/save_jadwal'); ?>" method="post">
                     <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Dokter *</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Poli<span class="required">*</span>
+                        </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select name="doctor_id" class="form-control">
-                                <option>Pilih Dokter</option>
-                                <?php foreach($doctor->result() as $row){ ?>
-                                <option value="<?= $row->doctor_id; ?>"><?= $row->doctor_name; ?></option>
-                                <?php } ?>
-                            </select>
+                          <input type="text" name="nama_poli" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
-                      </div>  
+                    </div>  
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Senin<span class="required">*</span>
                         </label>

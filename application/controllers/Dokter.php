@@ -18,6 +18,7 @@ class Dokter extends CI_Controller{
 				'address'=> $conf->address,
 				'phone' => $conf->phone,
 				'email' => $conf->email,
+				'dokter' => $this->Home_model->getDoctor()
 			);
 			$this->load->view('home/dokter',$data);
 		}
