@@ -230,4 +230,10 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
+	function updateProfile($id, $data){
+		$this->db->where('id', $id);
+		$query = $this->db->update('profile', $data);
+		return $query;
+	}
+
 }
