@@ -58,7 +58,7 @@
                             </td>
                             <td>
                                 <a href="<?= base_url('admin/berita/update/'); ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-                                <a href="<?= base_url('admin/berita/delete/'); ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('admin/dokter/delete/').$row->doctor_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
                             </td>
                           </tr>
                         <?php } ?>
@@ -74,5 +74,6 @@
         </div>
         <!-- /page content -->
 <?php $this->load->view('admin/master/footer'); ?>
+<?php $this->load->view('admin/swall'); ?>
 
 

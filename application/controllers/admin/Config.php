@@ -7,5 +7,10 @@ class Config extends CI_Controller
         
     }
 
+    function update_config(){
+
+    }
+
+
     
 }

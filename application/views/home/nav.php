@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/flaticon.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/icomoon.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar py-4 navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">

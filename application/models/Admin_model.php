@@ -3,6 +3,11 @@
 class Admin_model extends CI_Model{
 
 	//Berita Query
+	function getKategori(){
+		$query = $this->db->get('category');
+		return $query;
+	}
+
 	function TampilBerita(){
 		//Ambil data Berita
 		$this->db->select('*');
@@ -16,11 +21,15 @@ class Admin_model extends CI_Model{
 	}
 
 	function TampilDraft(){
-
-	}
-
-	function TampilBeritaId(){
-
+		//Ambil data Draft
+		$this->db->select('*');
+		$this->db->from('news');
+		$this->db->join('category', 'category.category_id = news.category_id');
+		$this->db->join('admins', 'admins.id_admin = news.created_by');
+		$this->db->where('status = "draft"');
+		$this->db->order_by('date_post', 'desc');
+		$query = $this->db->get();
+		return $query;
 	}
 
 	function HapusBerita($id){
@@ -107,6 +116,12 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
+	//Navigasi dan Halaman Statis Query
+	function getNav(){
+		$query = $this->db->get('navigation');
+		return $query;
+	}
+
 	function getAdmins(){
 		//Ambil data Admin
 		$data = $this->db->get('admins');
@@ -125,6 +140,7 @@ class Admin_model extends CI_Model{
 
 	//Dokter
 	function getDoctor(){
+		//Tampilkan Data Dokter di halaman admin
 		$this->db->select('*');
         $this->db->from('doctor');
         $this->db->join('specialist', 'doctor.specialist_id = specialist.specialist_id');
@@ -133,16 +149,39 @@ class Admin_model extends CI_Model{
 	}
 	
 	function getSpecialist(){
+		//Tampilkan data spesialis
 		$this->db->order_by('specialist_name', 'asc');
 		$query = $this->db->get('specialist');
 		return $query;
 	}
 
 	function saveDokter(){
+		//Simpan data dokter
 
 	}
 
+	function checkJadwal($check){
+		//Cek apakah ada jadwal dokter sebelum data dokter di hapus
+		$this->db->where('doctor_id', $check);
+		$query = $this->db->get('doctor_schedule');
+		return $query;
+	}
+
+	function getDeleteDoctor($id){
+		//Hapus Data Dokter
+		$this->db->where('doctor_id', $id);
+		$selecttable = $this->db->get('doctor');
+		$row = $selecttable->row();
+		unlink("./uploads/$row->images");
+
+		//Hapus data dari database
+		$this->db->where('doctor_id', $id);
+		$query = $this->db->delete('doctor');
+		return $query;
+	}
+
 	function getJadwal(){
+		//Tampilkan Jadwal Dokter
 		$this->db->select('*');
 		$this->db->from('doctor_schedule');
 		$this->db->join('doctor', 'doctor_schedule.doctor_id = doctor.doctor_id');
@@ -150,45 +189,40 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
-	function checkJadwal($check){
-		$this->db->where('doctor_id', $check);
-		$query = $this->db->get('doctor_schedule');
-		return $query;
-	}
+
 
 	function saveJadwal($data){
 		$query = $this->db->insert('doctor_schedule', $data);
 		return $query;
 	}
 
-	
-
-
-
-
-
-	function getJumlahBerita(){
-		//Ambil jumlah total berita di database
-		return $this->db->get('news')->num_rows();
+	//Jadwal Poli
+	function getJadwalPoli(){
+		//Ambil data jadwal poli
+		$query = $this->db->get('poli_schedule');
+		return $query;
 	}
 
-	function getKategori(){
-		//Ambil data kategori
-		return $this->db->get('category');
+	function getPoliId($id){
+		$this->db->where('id_poli_schedule', $id);
+		$query = $this->db->delete('poli_schedule');
+		return $query;
 	}
 
-	function getPendidikan(){
-		return $this->db->get('pendidikan');
+	function savePoli($data){
+		//Simpan Jadwal Poli
+		$query = $this->db->insert('poli_schedule', $data);
+		return $query;
+
 	}
 
-	function getDokter(){
-		return $this->db->get('dokter');
+	function deleteJadwalPoli($id){
+		//Jadwal Poli
+		$this->db->where('id_poli_schedule');
+		$query = $this->db->get('poli_schedule');
+		return $query;
 	}
 
-	function getNav(){
-		$navigation = $this->db->get('navigation');
-		return $navigation;
-	}
-
+	//
 
 }

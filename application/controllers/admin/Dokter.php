@@ -32,7 +32,7 @@ class Dokter extends CI_Controller{
 	    $config['allowed_types']  = 'gif|jpg|png';
 	 		$this->load->library('upload', $config);
 	            if ( ! $this->upload->do_upload('gambar')){
-	                   echo 'anda gagal upload';
+	                   redirect('admin/dokter/tambah_dokter');
 	            }
 	            else{
 	            	$file 		= $this->upload->data();
@@ -54,8 +54,20 @@ class Dokter extends CI_Controller{
 		$this->load->model('Sec_model');
 	}
 
-	 function hapus(){
+	 function delete($id){
 		$this->load->model('Sec_model');
+		$this->Sec_model->getSec();
+		$this->load->model('Admin_model');
+		$result = $this->Admin_model->checkJadwal($check);
+		if($result->num_rows() < 1){
+			$this->session->set_flashdata('info', 'Mohon untuk menghapus data jadwal dokter dari data dokter yang ingin dihapus');
+			redirect('admin/dokter');
+		}else{
+			$this->Admin_model->getDeleteDoctor($id);
+			$this->session->set_flashdata('info', 'Berhasil menghapus data dokter');
+			redirect('admin/dokter');
+		}
+		
 	}
 
 	 function jadwal(){

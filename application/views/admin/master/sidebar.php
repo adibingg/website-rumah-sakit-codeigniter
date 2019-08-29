@@ -52,7 +52,8 @@
                     </ul>
                   </li>
                   <li><a href="halaman-statis"><i class="fa fa-clone"></i> Navigasi & Halaman </a>
-                  <li><a><i class="fa fa-stethoscope"></i> Kelola <span class="fa fa-plus"></span></span></a>
+                  <li>
+                    <a><i class="fa fa-stethoscope"></i> Kelola <span class="fa fa-plus"></span></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/dokter'); ?>">Dokter</a></li>
                       <li><a href="<?= base_url('admin/dokter/jadwal'); ?>">Jadwal Dokter</a></li>
@@ -62,12 +63,13 @@
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-hospital-o"></i> Profil <span class="fa fa-plus"></span></a>
+                  <li>
+                    <a><i class="fa fa-hospital-o"></i> Profil <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/profil'); ?>">Profil</a></li>
                       <li><a href="<?= base_url('admin/visi-misi'); ?>">Visi & Misi</a></li>
                       <li><a href="<?= base_url('admin/sejarah'); ?>">Sejarah</a></li>
-                      <li><a href="<?= base_url('admin/sejarah'); ?>">Struktural</a></li>
+                      <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktural</a></li>
                     </ul>
                   </li>
 

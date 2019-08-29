@@ -7,9 +7,10 @@ $route['baca-berita/(:any)'] = 'berita/read/$1';
 $route['kontak-kami'] = 'kontak';
 $route['jadwal-peraktik-rsu-kartini'] = 'dokter/jadwal';
 $route['galeri-foto-rsu-kartini']='';
-$route['info-karir'] = 'career';
+$route['info-karir'] = 'karir';
 $route['404_override'] = 'wkwk';
 $route['translate_uri_dashes'] = FALSE;
+
 
 //Routes Admin
 //Artikel
@@ -29,8 +30,16 @@ $route['admin/fasilitas-penunjang'] = 'admin/fasilitas';
 
 //Halaman Statis
 $route['admin/halaman-statis'] = 'admin/halaman';
+
 //Poli
 $route['admin/jadwal-poli'] = 'admin/poli';
-$route['admin/tambah-jadwal-poli'] = 'admin/poli/add_poli';
+$route['admin/poli/tambah-jadwal-poli'] = 'admin/poli/add_poli';
 
+//Visi Misi
+$route['admin/visi-misi'] = 'admin/profil/visi_misi';
 
+//Sejarah
+$route['admin/sejarah'] = 'admin/profil/sejarah';
+
+//Struktru Organisasi
+$route['admin/struktur-organisasi'] = 'admin/profil/struktural';
