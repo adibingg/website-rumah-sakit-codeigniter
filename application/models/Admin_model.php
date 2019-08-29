@@ -235,5 +235,18 @@ class Admin_model extends CI_Model{
 		$query = $this->db->update('profile', $data);
 		return $query;
 	}
+	function UpdateVisiMisi($id, $data){
+		$this->db->where('id', $id);
+		$query = $this->db->update('profile', $data);
+		return $query;
+	}
+
+	function UpdateSejarah($id, $data){
+		$this->db->where('id', $id);
+		$query = $this->db->update('profile', $data);
+		return $query;
+	}
+
+	
 
 }

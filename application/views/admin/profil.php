@@ -133,7 +133,6 @@
                           <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Simpan Perubahan</button>
                         </div>
                       </div>
-
                       </form>
                     <?php } ?>
                     </div>

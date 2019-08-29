@@ -14,8 +14,9 @@ class Profil extends CI_Controller{
 		$this->load->model('Sec_model');
 		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
+		$this->Sec_model->getSec();
 	    $config 		= array(
-		  'title' 	=> "Profil",
+		  'title' 	=> "Profil Rumah Sakit",
 		  'profile' => $this->Admin_model->getProfile()
 	  	);
 	    $this->load->view('admin/profil',  $config);
@@ -24,6 +25,7 @@ class Profil extends CI_Controller{
 	function update_profile(){
 		$this->load->model('Sec_model');
 		$this->load->model('Admin_model');
+		$this->Sec_model->getSec();
 		$id = $this->input->post('id');
 		$data = array (
 			'name' => $this->input->post('name'),
@@ -50,48 +52,62 @@ class Profil extends CI_Controller{
 	function visi_misi(){
 		$this->load->model('Sec_model');
 		$this->load->model('Admin_model');
+		$this->Sec_model->getSec();
 	    $config 		= array(
-	      'title' 	=> "Profil"
+		  'title' 	=> "Visi & Misi Rumah Sakit",
+		  'profile' => $this->Admin_model->getProfile()
 	  	);
-	    $this->load->view('admin/profil',  $config);
+	    $this->load->view('admin/visi-misi',  $config);
 	}
 
-	function visi_misi_update(){
-
+	function update_visi_misi(){
+		$this->load->model('Sec_model');
+		$this->load->model('Admin_model');
+		$this->Sec_model->getSec();
+		$id = $this->input->post('id');
+		$data = array (
+			'visi' => $this->input->post('visi'),
+			'misi' => $this->input->post('misi'),
+			'sejarah' => $this->input->post('sejarah')
+		);
+		$this->Admin_model->UpdateVisiMisi($id, $data);
+		$this->session->set_flashdata('info', 'Visi & Misi berhasil diperbaharui');
+		redirect('admin/profil/visi_misi');
 	}
 
 	function sejarah(){
 		$this->load->model('Sec_model');
 		$this->load->model('Admin_model');
+		$this->Sec_model->getSec();
 	    $config 		= array(
-	      'title' 	=> "Profil"
+		  'title' 	=> "Sejarah Rumah Sakit",
+		  'profile' => $this->Admin_model->getProfile()
 	  	);
-	    $this->load->view('admin/profil',  $config);
-	}
-
-	function add_sejarah(){
-
+	    $this->load->view('admin/sejarah',  $config);
 	}
 
 	function update_sejarah(){
-
-	}
-
-	function save_update(){
-
-	}
-
-	function hapus_sejarah(){
-
+		$this->load->model('Sec_model');
+		$this->load->model('Admin_model');
+		$this->Sec_model->getSec();
+		$id = $this->input->post('id');
+		$data = array (
+			'sejarah' => $this->input->post('sejarah')
+		);
+		$this->Admin_model->UpdateSejarah($id, $data);
+		$this->session->set_flashdata('info', 'Sejarah berhasil diperbaharui');
+		redirect('admin/profil/sejarah');
 	}
 
 	function struktural(){
 		$this->load->model('Sec_model');
 		$this->load->model('Admin_model');
+		$this->Sec_model->getSec();
 	    $config 		= array(
-	      'title' 	=> "Profil"
+		  'title' 	=> "Struktur Organisasi",
+		  'profile' => $this->Admin_model->getProfile()
 	  	);
-	    $this->load->view('admin/profil',  $config);
+	    $this->load->view('admin/struktur-organisasi',  $config);
 	}
 
 	function update_struktural(){

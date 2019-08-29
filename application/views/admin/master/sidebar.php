@@ -72,7 +72,7 @@
                       <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktural</a></li>
                     </ul>
                   </li>
-
+                  <li><a href="<?= base_url('admin/pengguna'); ?>"><i class="fa fa-briefcase"></i> Info Karir</a></li>
                   <li><a><i class="fa fa-gears"></i> Konfigurasi <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/pengguna'); ?>">Pengguna</a></li>
@@ -83,12 +83,7 @@
                   
                 </ul>
               </div>
-             
-
             </div>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
               <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
@@ -103,11 +98,9 @@
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
-            <!-- /menu footer buttons -->
           </div>
         </div>
 
-        <!-- top navigation -->
         <div class="top_nav">
           <div class="nav_menu">
             <nav>
@@ -118,7 +111,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="images/img.jpg" alt="">Administrator
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

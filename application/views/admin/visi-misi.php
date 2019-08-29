@@ -30,15 +30,19 @@
                       <?php }else{ } ?>
                     <div class="row">
                     
-                      <form action="<?php echo base_url('admin/profil/update_sejarah'); ?>" method="post">
+                      <form action="<?php echo base_url('admin/profil/update_visi_misi'); ?>" method="post">
                       <?php foreach($profile->result() as $row){ ?>
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                              <input type="hidden" name="id" value="<?php echo $row->id; ?>">
                             <div class="form-group">
-                                <label for="">Sejarah</label>
+                              <label for="">Visi Rumah Sakit</label>
+                              <input type="hidden" name="id" value="<?php echo $row->id; ?>">
+                              <input type="text" name="visi" id="" class="form-control" value="<?php echo $row->visi; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Misi Rumah Sakit</label>
                                 <?php $this->load->view('admin/editor'); ?>
-                                <textarea name="sejarah" id="" cols="30" rows="10" class="form-control"><?php echo $row->sejarah; ?></textarea>
+                                <textarea name="misi" id="" cols="30" rows="10" class="form-control"><?php echo $row->misi; ?></textarea>
                             </div>
                           
                             <div class="form-group">
