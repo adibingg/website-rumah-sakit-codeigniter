@@ -223,6 +223,11 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
-	//
+	//Profile
+	function getProfile(){
+		$this->db->limit(1);
+		$query = $this->db->get('profile');
+		return $query;
+	}
 
 }
