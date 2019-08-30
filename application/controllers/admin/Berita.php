@@ -19,6 +19,7 @@ class Berita extends CI_Controller{
   function create(){
     $this->load->model('Sec_model');
     $this->load->model('Admin_model');
+    $this->Sec_model->getSec();
 		$data = array(
 			'title' => "Tambah Berita",
       'kategori' => $this->Admin_model->getKategori(), 
@@ -28,6 +29,7 @@ class Berita extends CI_Controller{
   
   function save(){
     $this->load->model('Sec_model');
+    $this->Sec_model->getSec();
     $config['upload_path']         = './uploads';  
     $config['allowed_types']        = 'gif|jpg|png';
  	  $this->load->library('upload', $config);
@@ -62,6 +64,7 @@ class Berita extends CI_Controller{
   function update($id){
     $this->load->model('Sec_model');
     $this->load->model('Admin_model');
+    $this->Sec_model->getSec();
     $data = array(
       'title' => "Perbaharui Berita",
       'kategori' => $this->Admin_model->getKategori(), 
@@ -73,7 +76,9 @@ class Berita extends CI_Controller{
 
   function save_update(){
     $this->load->model('Sec_model');
-    $config['upload_path']         = './uploads/berita';  
+    $this->load->model('Admin_model');
+    $this->Sec_model->getSec();
+    $config['upload_path']         = './uploads';  
     $config['allowed_types']        = 'gif|jpg|png';
  	  $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')){

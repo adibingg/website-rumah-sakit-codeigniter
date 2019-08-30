@@ -225,25 +225,51 @@ class Admin_model extends CI_Model{
 
 	//Profile
 	function getProfile(){
+		//Ambil data Profil
 		$this->db->limit(1);
 		$query = $this->db->get('profile');
 		return $query;
 	}
 
 	function updateProfile($id, $data){
+		//Simpan pembaharuan data profile
 		$this->db->where('id', $id);
 		$query = $this->db->update('profile', $data);
 		return $query;
 	}
 	function UpdateVisiMisi($id, $data){
+		//simpan pembaharuan visi misi
 		$this->db->where('id', $id);
 		$query = $this->db->update('profile', $data);
 		return $query;
 	}
 
 	function UpdateSejarah($id, $data){
+		//simpan pembaharuan sejarah rumah sakit
 		$this->db->where('id', $id);
 		$query = $this->db->update('profile', $data);
+		return $query;
+	}
+	//Informasi Karir
+	function getCareerCategory(){
+		//Tampilkan Kategori Kari
+		$query = $this->db->get('career_category');
+		return $query;
+	}
+
+	function getCareer(){
+		//Tampilkan Informasi Karir
+		$query = $this->db->get('career');
+		return $query;
+	}
+
+	function filterCareer(){
+
+	}
+
+	function SimpanKategoriKarir($data){
+		//Simpan kategori karir
+		$query = $this->db->insert('career_category', $data);
 		return $query;
 	}
 

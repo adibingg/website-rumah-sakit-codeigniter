@@ -111,6 +111,24 @@ class Profil extends CI_Controller{
 	}
 
 	function update_struktural(){
-		
+		$config['upload_path']         = './uploads';  
+		$config['allowed_types']        = 'gif|jpg|png';
+		   $this->load->library('upload', $config);
+				if (!$this->upload->do_upload('gambar')){
+				  echo "Gagal memperbaharui struktur organisasi";
+				}else{
+	
+					$file = $this->upload->data();
+				  	$gambar = $file['file_name'];
+				  
+				  	$data = array(
+						'struktur' => $gambar
+				  	);
+	
+					$this->db->where('id', $this->input->post('id'))->update('profile', $data);
+				}
+		$this->session->set_flashdata('info','Berita berhasil di perbaharui');
+		redirect('admin/struktur-organisasi');
+	  
 	}
 }

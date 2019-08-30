@@ -94,5 +94,10 @@ class Home_model extends CI_Model{
         return $data;
     }
 
+    function getProfile(){
+        $query = $this->db->get('profile');
+        return $query;
+    }
+
     
 }

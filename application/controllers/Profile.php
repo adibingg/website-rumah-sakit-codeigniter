@@ -24,6 +24,7 @@ class Profile extends CI_Controller{
 				'fasilitas' => $this->Home_model->getFacilities(),
 				'latest_activities' => $this->Home_model->getLatestActivities(),
 				'latest_news' => $this->Home_model->getLatestNews(),
+				'profile' => $this->Home_model->getProfile()
 			);
 			$this->load->view('home/profile',$data);
 		}

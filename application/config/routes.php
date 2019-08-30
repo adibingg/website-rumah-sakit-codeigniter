@@ -43,3 +43,6 @@ $route['admin/sejarah'] = 'admin/profil/sejarah';
 
 //Struktru Organisasi
 $route['admin/struktur-organisasi'] = 'admin/profil/struktural';
+
+//Loker
+$route['admin/info-karir'] = 'admin/karir';

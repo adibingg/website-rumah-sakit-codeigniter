@@ -27,7 +27,20 @@
                       </div>
                       <?php }else{ } ?>
                     <?php foreach($profile->result() as $row){ ?>
-                   
+                        <?php echo form_open_multipart('admin/profil/update_struktural'); ?>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="hidden" name="id" value="<?php echo $row->id; ?>">
+                                <input type="file" class="form-control" name="gambar" placeholder="Pilih Gambar">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Perbaharui</button>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <img src="<?php echo base_url('/uploads/').$row->struktur; ?>" alt="" class="img-responsive">
+                        </div>
+                        <?php echo form_close(); ?>
                     <?php } ?>
                     </div>
                 </div>

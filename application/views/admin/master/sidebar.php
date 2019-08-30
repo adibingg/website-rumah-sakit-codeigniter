@@ -72,7 +72,7 @@
                       <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktural</a></li>
                     </ul>
                   </li>
-                  <li><a href="<?= base_url('admin/pengguna'); ?>"><i class="fa fa-briefcase"></i> Info Karir</a></li>
+                  <li><a href="<?= base_url('admin/info-karir'); ?>"><i class="fa fa-briefcase"></i> Info Karir</a></li>
                   <li><a><i class="fa fa-gears"></i> Konfigurasi <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/pengguna'); ?>">Pengguna</a></li>
