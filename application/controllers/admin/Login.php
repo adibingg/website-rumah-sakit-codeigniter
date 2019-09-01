@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit("No dirrect script allowed!");
 
 class Login extends CI_Controller
 {
+    
     function index()
     {
         if($this->session->userdata('id_admin')){
@@ -20,6 +21,7 @@ class Login extends CI_Controller
     }
 
     function auth(){
+        $this->load->library('form_validation');
         $this->form_validation->set_rules('username', 'username', 'required');
         $this->form_validation->set_rules('password', 'password', 'required');
         if($this->form_validation->run()== FALSE){

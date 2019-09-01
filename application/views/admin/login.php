@@ -30,6 +30,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
+            <?php echo validation_errors(); ?>
             <form action="<?php echo base_url('admin/login/auth'); ?>" method="post">
               <h1>Login Administrator</h1>
               <?php if(!$this->session->flashdata('info')): ?>

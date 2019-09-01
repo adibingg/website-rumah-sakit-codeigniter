@@ -250,6 +250,7 @@ class Admin_model extends CI_Model{
 		$query = $this->db->update('profile', $data);
 		return $query;
 	}
+
 	//Informasi Karir
 	function getCareerCategory(){
 		//Tampilkan Kategori Kari
@@ -257,9 +258,46 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
+	function getCareerCategoryId($id){
+		$this->db->where('id_career_category', $id);
+		$query = $this->db->get('career_category');
+		return $query;
+	}
+
+	function updateCategoryCareer($id, $data){
+		$this->db->where('id_career_category', $id);
+		$query = $this->db->update('career_category', $data);
+		return $query;
+	}
+
+	function checkCategoryCareer($id){
+		$this->db->where('id_career_category', $id);
+		$query = $this->db->get('career');
+		return $query;
+	}
+
+	function deleteCareerCategory($id){
+		$this->db->where('id_career_category', $id);
+		$query = $this->db->delete('career_category');
+		return $query;
+	}
+
 	function getCareer(){
 		//Tampilkan Informasi Karir
-		$query = $this->db->get('career');
+		$this->db->select('*');
+		$this->db->from('career');
+		$this->db->join('career_category', 'career.id_career_category = career_category.id_career_category');
+		$query = $this->db->get();
+		return $query;
+	}
+
+	function getCareerId($id){
+		//Ambil row karir
+		$this->db->select('*');
+		$this->db->from('career');
+		$this->db->where('career_id', $id);
+		$this->db->join('career_category', 'career.id_career_category = career_category.id_career_category');
+		$query = $this->db->get();
 		return $query;
 	}
 
@@ -272,6 +310,28 @@ class Admin_model extends CI_Model{
 		$query = $this->db->insert('career_category', $data);
 		return $query;
 	}
+
+	function saveCareer($data){
+		//Simpan data lowongan kerja
+		$query = $this->db->insert('career', $data);
+		return $query;
+	}
+
+	function updateCareer($id, $data){
+		$this->db->where('career_id', $id);
+		$query = $this->db->update('career', $data);
+		return $query;
+	}
+
+	function deleteCareer($id){
+		//Hapus informasi karir
+		$this->db->where('career_id', $id);
+		$query = $this->db->delete('career');
+		return $query;
+	}
+
+	//Pengguna
+	
 
 	
 

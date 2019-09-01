@@ -31,18 +31,20 @@
                         <li role="presentation" class=""><a href="#tab_content33" role="tab" id="profile-tabb3" data-toggle="tab" aria-controls="profile" aria-expanded="false">Persyaratan</a>
                         </li>
                       </ul>
-                      <form action="<?php echo base_url('admin/karir/simpan_info_karir'); ?>" method="post">
+                      <form action="<?php echo base_url('admin/karir/update_karir'); ?>" method="post">
+                      <?php foreach($career->result() as $car){ ?>
                       <div id="myTabContent2" class="tab-content">
                         <div role="tabpanel" class="tab-pane fade active in" id="tab_content11" aria-labelledby="home-tab">
                           <div class="col-md-12">
                             <div class="form-group">
                               <label for="">Posisi</label>
-                              <input type="text" name="position" id="" class="form-control" required>
+                              <input type="hidden" name="id" value="<?= $car->career_id; ?>">
+                              <input type="text" name="position" id="" class="form-control" value="<?= $car->position; ?>">
                             </div>
                             <div class="form-group">
                               <label for="">Kategori Karir</label>
                               <select name="career_category" id="" class="form-control" required>
-                                <option value="">Pilih Kategori Karir</option>
+                                <option value="<?php echo $car->career_id; ?>"><?php echo $car->career_category_name; ?></option>
                                 <?php foreach($career_category->result() as $row){ ?>
                                 <option value="<?php echo $row->id_career_category; ?>"><?php echo $row->career_category_name; ?></option>
                                 <?php } ?>
@@ -50,7 +52,7 @@
                             </div>
                             <div class="form-group">
                               <label for="">Masa Berlaku</label>
-                              <input  type="text" name="valid_until" id="" class="form-control" required>
+                              <input  type="text" name="valid_until" id="" class="form-control" value="<?= $car->valid_until; ?>">
                             </div>
                           </div>
                         </div>
@@ -59,7 +61,7 @@
                             <div class="form-group">
                               <label for="">Kualifikasi</label>
                               <?php $this->load->view('admin/editor'); ?>
-                              <textarea  name="qualification" id="" cols="30" rows="10" class="form-control"></textarea>
+                              <textarea  name="qualification" id="" cols="30" rows="10" class="form-control"><?= $car->qualification; ?></textarea>
                             </div>
                           </div>
                         </div>
@@ -67,7 +69,7 @@
                           <div class="col-md-12">
                             <div class="form-group">
                               <label for="">Persyaratan</label>
-                              <textarea name="requirements" id="" cols="30" rows="10" class="form-control"></textarea>
+                              <textarea name="requirements" id="" cols="30" rows="10" class="form-control"><?= $car->requirements ?></textarea>
                             </div>
                           </div>
                         </div>
@@ -78,6 +80,7 @@
                           </div>
                         </div>
                       </div>
+                                <?php } ?>
                       </form>
                   </div>
                 </div>

@@ -36,16 +36,16 @@
                           <li class="list-group-item"><a href="<?= base_url('admin/galeri'); ?>">Semua Informasi Karir</a></li>
                         <?php foreach($career_category->result() as $row){ ?>
                           <li class="list-group-item">
-                            <a href="<?php echo base_url(); ?>"><?php echo $row->career_category_name; ?></a>
-                            <a href="<?= base_url() ?>" class ="btn btn-default btn-xs pull-right hapus"><i class="fa fa-remove"></i></a>
-                            <a href="<?= base_url() ?>" class ="btn btn-default btn-xs pull-right hapus"><i class="fa fa-pencil"></i></a>
+                            <a href="<?php echo base_url('admin/update_kategori/'); ?>"><?php echo $row->career_category_name; ?></a>
+                            <a href="<?= base_url('admin/karir/hapus_kategori_karir/').$row->id_career_category; ?>" class ="btn btn-default btn-xs pull-right hapus"><i class="fa fa-remove"></i></a>
+                            <a href="<?php echo base_url('admin/karir/update_kategori/').$row->id_career_category; ?>" class ="btn btn-default btn-xs pull-right"><i class="fa fa-pencil"></i></a>
                           </li>
                         <?php } ?>
                         </ul>
                       </div>
 
                       <div class="col-md-9">
-                      <?php foreach($career->result() as $row){ ?>
+                     
                         <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
@@ -62,32 +62,35 @@
                         </thead>
 
                         <tbody>
+                          <?php $no = 1; ?>
                           <?php foreach($career->result() as $row){ ?>
                           <tr class="even pointer">
-                            <td class=" ">1</td>
-                            <td class=" ">Perawat</td>
-                            <td class=" ">Medis</td>
+                            <td class=" "><?php echo $no++; ?></td>
+                            <td class=" "><?php echo $row->position; ?></td>
+                            <td class=" "><?php echo $row->career_category_name; ?></td>
                             <td class=" ">
-                            <label for="" class="label label-success"> 12 Januari 2019</td></label>
+                            <label for="" class="label label-success"> <?php echo $row->valid_until; ?></td></label>
                             <td class=" last">
-                              <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-eye"></i></button>
-                              <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                              <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm<?php echo $row->career_id; ?>"><i class="fa fa-eye"></i></button>
+                              <a href="<?php echo base_url('admin/karir/hapus_karir/').$row->career_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
+                              <div class="modal fade bs-example-modal-sm<?php echo $row->career_id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog modal-sm">
                                   <div class="modal-content">
-
                                     <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
                                       </button>
-                                      <h4 class="modal-title" id="myModalLabel2">Modal title</h4>
+                                      <h4 class="modal-title" id="myModalLabel2"><?php echo $row->position; ?></h4>
                                     </div>
                                     <div class="modal-body">
-                                      <h4>Text in a modal</h4>
-                                      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                                      <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                      <h4 class="text-center">KUALIFIKASI</h4>
+                                      <p><?php echo $row->qualification; ?></p>
+                                      <h4 class="text-center">PERSYARATAN</h4>
+                                      <p><?php echo $row->requirements; ?></p>
+                                      <label class="badge badge-primary text-center">BERLAKU : <?php echo $row->valid_until; ?></label>
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                                      <a class="btn btn-success" href="<?php echo base_url('admin/karir/update_info_karir/').$row->career_id; ?>">Perbaharui</a>
                                     </div>
 
                                   </div>
@@ -98,8 +101,6 @@
                           <?php } ?>
                         </tbody>
                       </table>
-
-                      <?php } ?>
                     </div>
                   </div>
                 </div>
