@@ -2,8 +2,14 @@
 
 class Fasilitas extends CI_Controller{
 
-    public function index(){
+    function __construct(){
+        parent::__construct();
         $this->load->model('Sec_model');
+        $this->load->model('Admin_model');
+    }
+
+    function index(){
+        $this->Sec_model->getSec();
         $config = array (
             'title' => "Fasilitas Penunjang"
         );
@@ -12,9 +18,8 @@ class Fasilitas extends CI_Controller{
 
     }
 
-    public function tambah_pelayanan(){
-        $this->load->model('Sec_model');
-        $this->load->model('Sec_model');
+    function tambah_pelayanan(){
+        $this->Sec_model->getSec();
         $config = array (
             'title' => "Fasilitas Penunjang"
         );
@@ -22,14 +27,14 @@ class Fasilitas extends CI_Controller{
         $this->load->view('admin/fasilitas-tambah', $config);
     }
 
-    public function edit_pelayanan(){
-        $this->load->model('Sec_model');
+    function edit_pelayanan(){
+        $this->Sec_model->getSec();
 
     }
 
 
-    public function hapus_pelayanan(){
-        $this->load->model('Sec_model');
+    function hapus_pelayanan(){
+        $this->Sec_model->getSec();
         
     }
 }

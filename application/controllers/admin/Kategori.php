@@ -1,16 +1,25 @@
 <?php
 
+defined('BASEPATH') OR exit("No dirrect script access allowed!");
+
 class Kategori extends CI_Controller{
-	public function index(){
+	
+	function __construct(){
+		parent::__construct();
 		$this->load->model('Sec_model');
+		$this->load->model('Admin_model');
+	}
+	
+	function index(){
+		$this->Sec_model->getSec();
 		$data = array(
 			'title' => "Tambah Berita", );
 		$this->load->view('admin/sidebar',  $data);
 		$this->load->view('admin/add-kategori', $data);
 	}
 
-	public function tambah(){
-		$this->load->model('Sec_model');
+	function tambah(){
+		$this->Sec_model->getSec();
 		$string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('nama_kategori')); 
                 $trim=trim($string);
                 $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
@@ -22,18 +31,18 @@ class Kategori extends CI_Controller{
         redirect('admin/kategori','refresh');
 	}
 
-	public function edit(){
-		$this->load->model('Sec_model');
+	function edit(){
+		$this->Sec_model->getSec();
 
 	}
 
-	public function update(){
-		$this->load->model('Sec_model');
+	function update(){
+		$this->Sec_model->getSec();
 
 	}
 
-	public function hapus(){
-		$this->load->model('Sec_model');
+	function hapus(){
+		$this->Sec_model->getSec();
 
 	}
 }

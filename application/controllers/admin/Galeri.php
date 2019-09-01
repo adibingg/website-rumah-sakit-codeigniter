@@ -1,11 +1,14 @@
 <?php 
 
 class Galeri extends CI_Controller{
-
-	public function index(){
+	function __construct(){
+		parent::__construct();
 		$this->load->model('Sec_model');
-		$this->Sec_model->getSec();
 		$this->load->model('Admin_model');
+	}
+
+	function index(){
+		$this->Sec_model->getSec();
 	    $data 		= array(
 	      'title' 	=> "Galeri Foto",
 	      'galeri' 	=> $this->Admin_model->getFoto(),
@@ -15,8 +18,7 @@ class Galeri extends CI_Controller{
 	}
 
 	function tambah_foto(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
+		$this->Sec_model->getSec();
 	    $data 		= array(
 		  'title' 	=> "Tambah Album",
 		  'album'	=> $this->Admin_model->getAlbum()
@@ -24,8 +26,8 @@ class Galeri extends CI_Controller{
 	    $this->load->view('admin/tambah-foto',  $data);
 	}
 
-	public function upload(){
-		$this->load->model('Sec_model');
+	function upload(){
+		$this->Sec_model->getSec();
 		$config['upload_path']    = './uploads/';  
 	    $config['allowed_types']  = 'gif|jpg|png';
 	 		$this->load->library('upload', $config);
@@ -49,16 +51,14 @@ class Galeri extends CI_Controller{
 	}
 
 	function hapus_foto($id){
-		$this->load->model('Sec_model');
 		$this->Sec_model->getSec();
-		$this->load->model('Admin_model');
 		$this->Admin_model->getFotoId($id);
 		$this->session->set_flashdata('info', '<i class="fa fa-check"></i> Foto berhasil dihapus');
 		redirect('admin/galeri');
 	}
 
 	function tambah_album(){
-		$this->load->model('Sec_model');
+		$this->Sec_model->getSec();
 	    $data 		= array(
 	      'title' 	=> "Tambah Album",
 	    );
@@ -66,9 +66,7 @@ class Galeri extends CI_Controller{
 	}
 
 	function simpan_album(){
-		$this->load->model('Sec_model');
 		$this->Sec_model->getSec();
-		$this->load->model('Admin_model');
 		$string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('album_name')); 
 		$trim=trim($string);
 		$pre_slug=strtolower(str_replace(" ", "-", $trim)); 
@@ -81,9 +79,7 @@ class Galeri extends CI_Controller{
 	}
 
 	function perbaharui_album($id){
-		$this->load->model('Sec_model');
 		$this->Sec_model->getSec();
-		$this->load->model('Admin_model');
 	    $data 		= array(
 		  'title' 	=> "Perbaharui Album",
 		  'albumfoto' => $this->Admin_model->AlbumId($id)
@@ -92,9 +88,7 @@ class Galeri extends CI_Controller{
 	}
 
 	function simpan_pembaharuan_album(){
-		$this->load->model('Sec_model');
 		$this->Sec_model->getSec();
-		$this->load->model('Admin_model');
 		$id = $this->input->post('album_id');
 		$string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('album_name')); 
 		$trim=trim($string);
@@ -108,8 +102,6 @@ class Galeri extends CI_Controller{
 	}
 
 	function hapus_album($id){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
 		$check_album = $this->Admin_model->checkAlbum($id);
 		if($check_album->num_rows() > 0){

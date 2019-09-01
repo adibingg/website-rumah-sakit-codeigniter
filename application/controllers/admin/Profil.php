@@ -11,9 +11,6 @@ class Profil extends CI_Controller{
 	}
 
 	function index(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
-		$this->Sec_model->getSec();
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Profil Rumah Sakit",
@@ -23,8 +20,6 @@ class Profil extends CI_Controller{
 	}
 
 	function update_profile(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
 		$id = $this->input->post('id');
 		$data = array (
@@ -50,8 +45,6 @@ class Profil extends CI_Controller{
 	}
 
 	function visi_misi(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Visi & Misi Rumah Sakit",
@@ -61,8 +54,6 @@ class Profil extends CI_Controller{
 	}
 
 	function update_visi_misi(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
 		$id = $this->input->post('id');
 		$data = array (
@@ -76,8 +67,6 @@ class Profil extends CI_Controller{
 	}
 
 	function sejarah(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Sejarah Rumah Sakit",
@@ -87,8 +76,6 @@ class Profil extends CI_Controller{
 	}
 
 	function update_sejarah(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
 		$id = $this->input->post('id');
 		$data = array (
@@ -100,8 +87,6 @@ class Profil extends CI_Controller{
 	}
 
 	function struktural(){
-		$this->load->model('Sec_model');
-		$this->load->model('Admin_model');
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Struktur Organisasi",
@@ -111,6 +96,7 @@ class Profil extends CI_Controller{
 	}
 
 	function update_struktural(){
+		$this->Sec_model->getSec();
 		$config['upload_path']         = './uploads';  
 		$config['allowed_types']        = 'gif|jpg|png';
 		   $this->load->library('upload', $config);

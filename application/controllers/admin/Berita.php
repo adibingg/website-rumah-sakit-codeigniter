@@ -3,12 +3,12 @@
 class Berita extends CI_Controller{
   function __construct(){
     parent::__construct();
+    $this->load->model('Sec_model');
     $this->load->model('Admin_model');
     $this->load->helper('date_negara_berkembang');
   }
 
   function index(){
-    $this->load->model('Sec_model');
     $this->Sec_model->getSec();
     $data = array(
       'title' => "Pos Berita & Artikel",
@@ -17,8 +17,6 @@ class Berita extends CI_Controller{
   }
 
   function create(){
-    $this->load->model('Sec_model');
-    $this->load->model('Admin_model');
     $this->Sec_model->getSec();
 		$data = array(
 			'title' => "Tambah Berita",
@@ -28,7 +26,6 @@ class Berita extends CI_Controller{
 	}
   
   function save(){
-    $this->load->model('Sec_model');
     $this->Sec_model->getSec();
     $config['upload_path']         = './uploads';  
     $config['allowed_types']        = 'gif|jpg|png';
@@ -62,8 +59,6 @@ class Berita extends CI_Controller{
   }
   
   function update($id){
-    $this->load->model('Sec_model');
-    $this->load->model('Admin_model');
     $this->Sec_model->getSec();
     $data = array(
       'title' => "Perbaharui Berita",
@@ -75,8 +70,6 @@ class Berita extends CI_Controller{
   }
 
   function save_update(){
-    $this->load->model('Sec_model');
-    $this->load->model('Admin_model');
     $this->Sec_model->getSec();
     $config['upload_path']         = './uploads';  
     $config['allowed_types']        = 'gif|jpg|png';
@@ -124,9 +117,7 @@ class Berita extends CI_Controller{
   }
 
   function delete($id){
-    $this->load->model('Sec_model');
     $this->Sec_model->getSec();
-    $this->load->model('Admin_model');
     $this->Admin_model->HapusBerita($id);
     $this->session->set_flashdata('info', "Berhasil menghapus berita");
     redirect('admin/berita');

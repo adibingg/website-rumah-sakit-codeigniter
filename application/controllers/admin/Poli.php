@@ -3,9 +3,12 @@
 defined('BASEPATH') OR exit("No script dirrect access allowed");
 
 class Poli extends CI_Controller{
-    function index(){
-        $this->load->model('Admin_model');
+    function __construct(){
+        parent::__construct();
         $this->load->model('Sec_model');
+        $this->load->model('Admin_model');
+    }
+    function index(){
         $this->Sec_model->getSec();
         $config = array (
             'title' => "Jadwal Poli",
@@ -24,8 +27,6 @@ class Poli extends CI_Controller{
     }
 
     function save_jadwal_poli(){
-        $this->load->model('Admin_model');
-        $this->load->model('Sec_model');
         $this->Sec_model->getSec();
         $data = array(
             'poli_name' => $this->input->post('nama_poli'),
@@ -43,8 +44,6 @@ class Poli extends CI_Controller{
     }
 
     function delete($id){
-        $this->load->model('Admin_model');
-        $this->load->model('Sec_model');
         $this->Sec_model->getSec();
         $this->Admin_model->getPoliId($id);
         $this->session->set_flashdata('info', 'Jadwal poli berhasil dihapus');

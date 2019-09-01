@@ -46,3 +46,4 @@ $route['admin/struktur-organisasi'] = 'admin/profil/struktural';
 
 //Loker
 $route['admin/info-karir'] = 'admin/karir';
+$route['admin/tambah-info-karir'] = 'admin/karir/tambah_informasi_karir';

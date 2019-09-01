@@ -2,7 +2,7 @@
 
 class Pelayanan extends CI_Controller{
 
-    public function index(){
+    function index(){
         $this->load->model('Sec_model');
         $this->load->model('Admin_model');
         $config = array (
@@ -12,7 +12,7 @@ class Pelayanan extends CI_Controller{
         $this->load->view('admin/pelayanan', $config);
     }
 
-    public function form_tambah(){
+    function form_tambah(){
         $this->load->model('Sec_model');
         $this->load->model('Admin_model');
         $config = array (
@@ -22,7 +22,7 @@ class Pelayanan extends CI_Controller{
         $this->load->view('admin/pelayanan-tambah', $config);
     }
 
-    public function tambah_pelayanan(){
+    function tambah_pelayanan(){
        $config['upload_path']    = './uploads/dokter';  
        $config['allowed_types']  = 'gif|jpg|png';
             $this->load->library('upload', $config);
@@ -45,13 +45,13 @@ class Pelayanan extends CI_Controller{
                }
            $this->session->set_flashdata('info','Berhasil ditambahkan');
            redirect('admin/dokter','refresh');
+    }
+
+    function edit(){
+
    }
 
-   public function edit(){
-
-   }
-
-   public function hapus(){
+    function hapus(){
 
    }
 }

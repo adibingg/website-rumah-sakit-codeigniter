@@ -8,7 +8,6 @@ class Halaman extends CI_Controller{
     }
 
     public function index(){
-		$this->load->model('Sec_model');
 		$this->Sec_model->getSec();
 		$config = array(
             'title' => "Halaman Administrator",
@@ -18,19 +17,18 @@ class Halaman extends CI_Controller{
 	}
 
     function add_nav(){
-
+		$this->Sec_model->getSec();
     }
 
     function update_nav(){
-
+		$this->Sec_model->getSec();
     }
 
     function delete_nav(){
-
+		$this->Sec_model->getSec();
     }
 
     function add_pages(){
-        $this->load->model('Sec_model');
 		$this->Sec_model->getSec();
 		$config = array(
             'title' => "Halaman Statis Baru",
@@ -40,10 +38,10 @@ class Halaman extends CI_Controller{
     }
 
     function update_pages(){
-
+		$this->Sec_model->getSec();
     }
 
     function delete_pages(){
-
+		$this->Sec_model->getSec();
     }
 }

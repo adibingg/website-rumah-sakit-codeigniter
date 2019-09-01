@@ -11,7 +11,8 @@ class Statistik extends CI_Controller{
     }
 
     function index(){
-        
+        $this->Sec_model->getSec();
+        $data = array ();
     }
 
 }

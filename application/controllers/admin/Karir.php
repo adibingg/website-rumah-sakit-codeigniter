@@ -1,11 +1,16 @@
 <?php
 
+defined('BASEPATH') OR exit("No dirrect script access allowed!");
+
 class Karir extends CI_Controller{
 
-    function index(){
+    function __construct(){
+        parent::__construct();
         $this->load->model('Sec_model');
-        $this->Sec_model->getSec();
         $this->load->model('Admin_model');
+    }
+    function index(){
+        $this->Sec_model->getSec();
         $config = array (
             'title' => "Info Karir",
             'career_category' => $this->Admin_model->getCareerCategory(),
@@ -17,9 +22,7 @@ class Karir extends CI_Controller{
     }
 
     function tambah_informasi_karir(){
-        $this->load->model('Sec_model');
         $this->Sec_model->getSec();
-        $this->load->model('Admin_model');
         $config = array (
             'title' => "Info Karir",
             'career_category' => $this->Admin_model->getCareerCategory(),
@@ -30,19 +33,17 @@ class Karir extends CI_Controller{
     }
 
     function edit_karir(){
-        $this->load->model('Sec_model');
+		$this->Sec_model->getSec();
 
     }
 
     function delete(){
-        $this->load->model('Sec_model');
+		$this->Sec_model->getSec();
         
     }
 
     function tambah_kategori_karir(){
-        $this->load->model('Sec_model');
         $this->Sec_model->getSec();
-        $this->load->model('Admin_model');
         $config = array (
             'title' => "Info Karir",
             'career_category' => $this->Admin_model->getCareerCategory(),
@@ -53,9 +54,7 @@ class Karir extends CI_Controller{
     }
 
     function save_kategori(){
-        $this->load->model('Sec_model');
         $this->Sec_model->getSec();
-        $this->load->model('Admin_model');
         $string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('nama_kategoi_karir')); 
         $trim=trim($string);
         $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
