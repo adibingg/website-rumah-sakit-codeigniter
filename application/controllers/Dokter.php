@@ -36,9 +36,7 @@ class Dokter extends CI_Controller{
 				'phone' => $conf->phone,
 				'email' => $conf->email
 			);
-			$this->load->view('home/header',$data);
-			$this->load->view('home/jadwal-peraktik',$data);
-			$this->load->view('home/footer',$data);
+			$this->load->view('home/jadwal-dokter',$data);
 			
 		}
 	}

@@ -189,8 +189,6 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
-
-
 	function saveJadwal($data){
 		$query = $this->db->insert('doctor_schedule', $data);
 		return $query;
@@ -331,7 +329,14 @@ class Admin_model extends CI_Model{
 	}
 
 	//Pengguna
-	
+	function getPengguna(){
+		$query = $this->db->get('admins');
+		return $query;
+	}
+
+	function addPengguna($data){
+		$query = $this->db->insert('admins', $data);
+	}
 
 	
 

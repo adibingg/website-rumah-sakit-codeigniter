@@ -23,7 +23,7 @@
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
     			<div class="col-lg-2 pr-4 align-items-center">
-		    		<a class="navbar-brand" href="index.html">RS. <span>Kartini</span></a>
+		    		<a class="navbar-brand" href="<?php echo base_url('/'); ?>"><img class="img-responsive" style="width: 80px; heigth: 80px;" src="<?php echo base_url('public/images/logo.png'); ?>" alt=""></a>
 	    		</div>
 	    		<div class="col-lg-10 d-none d-md-block">
 		    		<div class="row d-flex">
@@ -54,9 +54,18 @@
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item"><a href="<?php echo base_url(); ?>" class="nav-link pl-0">Home</a></li>
 	        	<li class="nav-item"><a href="<?php echo base_url('profile'); ?>" class="nav-link">Profil</a></li>
-	        	<li class="nav-item"><a href="<?php echo base_url('dokter'); ?>" class="nav-link">Dokter</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Dokter
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="<?= base_url('dokter'); ?>">DOKTER</a>
+					<a class="dropdown-item" href="<?= base_url('jadwal-dokter'); ?>">JADWAL DOKTER</a>
+					<a class="dropdown-item" href="<?= base_url('jadwal-dokter'); ?>">JADWAL POLI</a>
+					</div>
+				</li>
 	        	<li class="nav-item"><a href="<?php echo base_url('berita'); ?>" class="nav-link">Berita</a></li>
-				<li class="nav-item"><a href="<?php echo base_url('berita'); ?>" class="nav-link">Galeri</a></li>
+				<li class="nav-item"><a href="<?php echo base_url('geleri'); ?>" class="nav-link">Galeri</a></li>
 				<?php foreach($navigation->result() as $nav){ ?>
 					<li class="nav-item"><a href="<?php echo base_url('berita'); ?>" class="nav-link"><?php echo $nav->title; ?></a></li>
 				<?php  } ?>

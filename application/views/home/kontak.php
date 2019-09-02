@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread">Contact Us</h1>
+            <h1 class="mb-2 bread">Kontak Kami</h1>
             <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
@@ -35,7 +35,8 @@
             </form>
 					</div>
 					<div class="col-md-6 d-flex align-items-stretch">
-						<div id="map"></div>
+						<div id="map" style="margin-top: 50px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4063894.864416184!2d105.57224514453281!3d-5.905054348458056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e473592f8e6b607%3A0xfceb58b9af2bb24a!2sRSU%20Kartini%20Kalirejo!5e0!3m2!1sid!2sid!4v1567391613412!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
 					</div>
 				</div>
 			</div>
