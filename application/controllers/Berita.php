@@ -33,7 +33,7 @@ class Berita extends CI_Controller{
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' => $this->Home_model->getNavbar(),
-				'title' => $conf->company_name,
+				'title' => "Berita",
 				'meta_desc' => $conf->company_name,
 				'address'=> $conf->address,
 				'phone' => $conf->phone,

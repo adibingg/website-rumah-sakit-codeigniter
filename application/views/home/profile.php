@@ -11,7 +11,7 @@
       </div>
     </section>
 	<?php foreach($profile->result() as $row){ ?>
-	<section class="ftco-section ftco-no-pt ftc-no-pb" style="background-color: #ddd;">
+	<section class="ftco-section ftco-no-pt ftc-no-pb" style="background-color: #ddd; padding: 10px;">
 		<div class="container">
 			<div class="row no-gutters" style="margin-top: 10px;">
 				<div class="col-md-5">
@@ -25,7 +25,7 @@
 	</section>
 		
 
-    <section class="ftco-section" style="margin-top: -95px;">
+    <section class="ftco-section" style="margin-top: -65px;">
     	<div class="container">
     		<div class="ftco-departments">
 				<div class="row">
@@ -39,7 +39,7 @@
 					</div>
 	          	</div>
 	          	<div class="col-md-12 tab-wrap">
-	            <div class="tab-content bg-light p-4 p-md-5 ftco-animate" id="v-pills-tabContent">
+	            <div class="tab-content bg-purple p-4 p-md-5 ftco-animate" id="v-pills-tabContent">
 	              	<div class="tab-pane py-2 fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
 	              	<div class="row departments">
 	              			<div class="col-md-12 text-center" style="font-family: 'Satisfy', cursive; text-transform: capitalize; font-size: 23pt;">

@@ -6,6 +6,7 @@ $route['berita'] = 'berita';
 $route['baca-berita/(:any)'] = 'berita/read/$1';
 $route['kontak-kami'] = 'kontak';
 $route['jadwal-dokter'] = 'dokter/jadwal';
+$route['jadwal-poli'] = 'dokter/jadwal_poli';
 $route['galeri-foto-rsu-kartini']='';
 $route['info-karir'] = 'karir';
 $route['404_override'] = 'wkwk';

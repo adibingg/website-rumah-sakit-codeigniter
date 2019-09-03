@@ -99,5 +99,19 @@ class Home_model extends CI_Model{
         return $query;
     }
 
+    function getJadwalDokter(){
+        $this->db->select('*');
+        $this->db->from('doctor_schedule');
+        $this->db->join('doctor', 'doctor.doctor_id=doctor_schedule.doctor_id');
+        $this->db->join('specialist', 'specialist.specialist_id=doctor.specialist_id');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    function getJadwalPoli(){
+        $query = $this->db->get('poli_schedule');
+        return $query;
+    }
+
     
 }

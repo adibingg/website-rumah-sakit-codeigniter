@@ -1,32 +1,26 @@
 <?php $this->load->view('home/nav'); ?>
     <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_1.jpg'); ?>');" data-stellar-background-ratio="0.5">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-5 text ftco-animate" style="background-color: #fff; border-top: 4px solid blue; padding: 30px;">
-            <h1 class="mb-4" style="font-size: 25pt;">SELAMAT DATANG</h1>
-			<p style="margin-top: -20px;">Di website resmi Rumah Sakit Umum Kartini Kalirejo</p>
-            <h3 class="subheading" style="font-family: 'Satisfy', cursive; text-transform: capitalize;">Rumah Sakit Unggulan Dengan Pelayanan Prima Kebanggaan Masyarakat</h3>
-			<p><a href="<?php echo base_url('profile'); ?>" class="btn btn-primary btn-xs">Lihat profil kami</a></p>
-          </div>
-        </div>
-        </div>
-      </div>
+      	<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_1.jpg'); ?>');" data-stellar-background-ratio="0.5">
+      		<div class="overlay"></div>
+        		<div class="container">
+          			<div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+						<div class="col-md-5 text ftco-animate" style="background-color: #fff; border-top: 4px solid blue; padding: 30px;">
+							<h1 class="mb-4" style="font-size: 25pt;">SELAMAT DATANG</h1>
+							<p style="margin-top: -20px;">Di website resmi Rumah Sakit Umum Kartini Kalirejo</p>
+							<h3 class="subheading" style="font-family: 'Satisfy', cursive; text-transform: capitalize;">Rumah Sakit Unggulan Dengan Pelayanan Prima Kebanggaan Masyarakat</h3>
+							<p><a href="<?php echo base_url('profile'); ?>" class="btn btn-primary btn-xs">Lihat profil kami</a></p>
+						</div>
+        			</div>
+        		</div>
+      		</div>
 
-      <div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_2.jpg'); ?>');">
-      	<div class="overlay"></div>
-        <div class="container">
-			<div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-          	<div class="col-md-5 text ftco-animate" style="background-color: #fff; border-top: 4px solid blue; padding: 30px;">
-            	<h1 class="mb-4" style="font-size: 25pt;">RUMAH SAKIT KARTINI</h1>
-				<p style="margin-top: -20px;">BERSIH</p>
-				<h3 class="subheading" style="font-family: 'Satisfy', cursive; text-transform: capitalize;">Berkarya Dalam Kasih</h3>
-				<p><a href="#" class="btn btn-primary btn-xs">Lihat profil kami</a></p>
-          	</div>
-        </div>
-        </div>
-      </div>
+		<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_2.jpg'); ?>');">
+			<div class="overlay"></div>
+				<div class="container">
+					
+				</div>
+			</div>
+		</div>
     </section>
 
     <section class="ftco-services ftco-no-pb">
@@ -72,18 +66,14 @@
 				</div>
 				</div>      
 			</div>
-		  
-        </div>
-			</div>
-		</section>
+        	</div>
+		</div>
+	</section>
 		
-		<section class="ftco-section ftco-no-pt ftc-no-pb">
-			<div class="container">
-				<div class="row no-gutters">
-					<div class="col-md-5 p-md-5 img img-2 mt-5 mt-md-0" style="background-image: url(<?php echo base_url('public/images/direktur.png'); ?>);">
-					
-					</div>
-				
+	<section class="ftco-section ftco-no-pt ftc-no-pb">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-md-5 p-md-5 img img-2 mt-5 mt-md-0" style="background-image: url(<?php echo base_url('public/images/direktur.png'); ?>);"></div>
 					<div class="col-md-7 wrap-about py-4 py-md-5 ftco-animate">
 					<div class="heading-section mb-5">
 						<div class="pl-md-5 ml-md-5">
@@ -95,10 +85,11 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 		
-		<section class="ftco-intro" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
+	<section class="ftco-intro" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -106,61 +97,59 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ftco-section ftco-no-pt ftc-no-pb">
-			<div class="container">
+	<section class="ftco-section ftco-no-pt ftc-no-pb">
+		<div class="container">
 			<h3 class="text-center" style="text-transform: uppercase;">Fasilitas</h3>
-				<div class="row no-gutters">
-	          		
-								<div class="col-lg-4">
-									<div class="services-2 d-flex">
-										<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-first-aid-kit"></span></div>
-										<div class="text">
-											<h3>Primary Care</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="services-2 d-flex">
-										<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-dropper"></span></div>
-										<div class="text">
-											<h3>Lab Test</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="services-2 d-flex">
-										<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-experiment-results"></span></div>
-										<div class="text">
-											<h3>Symptom Check</h3>
-											<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-										</div>
-									</div>
-								</div>
-								
-
+			<div class="row no-gutters">
+	          	<div class="col-lg-4">
+					<div class="services-2 d-flex">
+						<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-first-aid-kit"></span></div>
+							<div class="text">
+								<h3>Primary Care</h3>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
 							</div>
 						</div>
 					</div>
-				</div>
+			
+				<div class="col-lg-4">
+					<div class="services-2 d-flex">
+						<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-dropper"></span></div>
+							<div class="text">
+								<h3>Lab Test</h3>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+							</div>
+						</div>
+					</div>
+				
+				<div class="col-lg-4">
+					<div class="services-2 d-flex">
+						<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-experiment-results"></span></div>
+							<div class="text">
+								<h3>Symptom Check</h3>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+							</div>
+						</div>
+					</div>
+						
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="ftco-section bg-light">
-			<div class="container">
-				<div class="row justify-content-center mb-5 pb-2">
-          <div class="col-md-8 text-center heading-section ftco-animate">
-          	<span class="subheading">Berita Terbaru</span>
-          </div>
-        </div>
-		<div class="row">
-          <?php foreach($recent_news->result() as $blog){ ?>
-		  <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-2">
+          		<div class="col-md-8 text-center heading-section ftco-animate">
+          			<span class="subheading">Berita Terbaru</span>
+          		</div>
+        	</div>
+			<div class="row">
+          	<?php foreach($recent_news->result() as $blog){ ?>
+		  		<div class="col-md-4 ftco-animate">
+            	<div class="blog-entry">
+              		<a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
 					<div class="meta-date text-center p-2">
                   	<span class="day">
 				  	<?php
@@ -182,29 +171,24 @@
 					?>
 
 				  	</span>
-                </div>
-              </a>
-              <div class="text bg-white p-4">
-                <h3 class="heading"><a href="#"><?= $blog->title; ?></a></h3>
-				<p style="text-align: justify;">	
-					<?php 
-						$berita = $blog->content; 
-						echo strip_tags(substr($berita,0,100)); 
-					?>
-				</p>
-                <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="<?php echo base_url('berita/detail/').$blog->news_id; ?>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-              </div>
-            </div>
-          </div>
-		  <?php } ?>
-        </div>
-	</div>
-</section>
+                	</div>
+              		</a>
+							<div class="text bg-white p-4">
+								<h3 class="heading"><a href="#"><?= $blog->title; ?></a></h3>
+								<p style="text-align: justify;"><?php $berita = $blog->content; echo strip_tags(substr($berita,0,100)); ?></p>
+							<div class="d-flex align-items-center mt-4">
+							<p class="mb-0"><a href="<?php echo base_url('berita/detail/').$blog->news_id; ?>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+							<p class="ml-auto mb-0">
+								<a href="#" class="mr-2">Admin</a>
+								<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+							</p>
+                			</div>
+              			</div>
+            		</div>
+          		</div>
+		  		<?php } ?>
+        	</div>
+		</div>
+	</section>
 
 <?php $this->load->view('home/footer'); ?>
