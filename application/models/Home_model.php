@@ -113,5 +113,19 @@ class Home_model extends CI_Model{
         return $query;
     }
 
+    function getCategoryCareer(){
+        $this->db->order_by('id_career_category','asc');
+        $query = $this->db->get('career_category');
+        return $query;
+    }
+
+    function getCareer(){
+        $this->db->select('*');
+        $this->db->from('career');
+        $this->db->join('career_category', 'career.id_career_category=career_category.id_career_category');
+        $query = $this->db->get();
+        return $query;
+    }
+
     
 }

@@ -14,7 +14,7 @@ class Profile extends CI_Controller{
 			$data = array(
 				
 				'navigation' => $this->Home_model->getNavbar(),
-				'title' => $conf->company_name,
+				'title' => "Profile " .$conf->company_name,
 				'meta_desc' => $conf->company_name,
 				'address'=> $conf->address,
 				'phone' => $conf->phone,

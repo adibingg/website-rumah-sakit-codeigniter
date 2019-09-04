@@ -13,11 +13,13 @@ class Karir extends CI_Controller{
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' => $this->Home_model->getNavbar(),
-				'title' => $conf->company_name,
+				'title' => "Lowongan Kerja " .$conf->company_name,
 				'meta_desc' => $conf->company_name,
 				'address'=> $conf->address,
 				'phone' => $conf->phone,
 				'email' => $conf->email,
+				'category' => $this->Home_model->getCategoryCareer(),
+				'career' => $this->Home_model->getCareer()
 			);
 
 			$this->load->view('home/karir',$data);

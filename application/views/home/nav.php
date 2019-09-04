@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/magnific-popup.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/aos.css">
+	<link href="<?php echo base_url(); ?>assets-admin/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/ionicons.min.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/jquery.timepicker.css">
@@ -17,6 +18,9 @@
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/icomoon.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+	<style>
+		
+	</style>
   </head>
   <body>
     <nav class="navbar py-4 navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
@@ -28,15 +32,15 @@
 	    		<div class="col-lg-10 d-none d-md-block">
 		    		<div class="row d-flex pull-right">
 			    		<div class="col-md-5 pr-4 d-flex topper align-items-center">
-			    			<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
+			    			<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center" style="border-left: 3px solid blue;"><span class="icon-map"></span></div>
 						    <span style="font-size: 9pt;" class="text"><?php echo $address; ?></span>
 					    </div>
 					    <div class="col-md-4 pr-4 d-flex topper align-items-center">
-					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center" style="border-left: 3px solid blue;"><span class="icon-paper-plane"></span></div>
 						    <span style="font-size: 9pt;" class="text"><?php echo $email; ?></span>
 					    </div>
 					    <div class="col-md-3 pr-3 d-flex topper align-items-center">
-					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center" style="border-left: 3px solid blue;"><span class="icon-phone2"></span></div>
 						    <span style="font-size: 9pt;" class="text"><?php echo $phone; ?></span>
 					    </div>
 				    </div>
@@ -44,14 +48,14 @@
 		    </div>
 		  </div>
     </nav>
-	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container d-flex align-items-center">
+	  <nav style="background-color: blue; color: " class="navbar navbar-expand-lg navbar-light bg-blue ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center" style="background-color: blue;">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-	      <p class="button-custom order-lg-last mb-0"><a href="<?php echo base_url('kontak'); ?>" class="btn btn-secondary py-2 px-3"><span class="icon-paper-plane"></span> Registrasi Online</a></p>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav mr-auto">
+	      <p class="button-custom order-lg-last mb-0"><a href="http://pendaftaran.rskartinikalirejo.co.id" class="btn btn-secondary py-2 px-3"><i class="fa fa-user-md"></i> Registrasi Online</a></p>
+	      <div class="collapse navbar-collapse" id="ftco-nav" style="background-color: blue;">
+	        <ul class="navbar-nav mr-auto" style="background-color: blue;">
 	        	<li class="nav-item"><a href="<?php echo base_url(); ?>" class="nav-link pl-0">Home</a></li>
 	        	<li class="nav-item"><a href="<?php echo base_url('profile'); ?>" class="nav-link">Profil</a></li>
 				<li class="nav-item dropdown">
@@ -65,12 +69,12 @@
 					</div>
 				</li>
 	        	<li class="nav-item"><a href="<?php echo base_url('berita'); ?>" class="nav-link">Berita</a></li>
-				<li class="nav-item"><a href="<?php echo base_url('geleri'); ?>" class="nav-link">Galeri</a></li>
+				<li class="nav-item"><a href="<?php echo base_url('galeri'); ?>" class="nav-link">Galeri</a></li>
 				<?php foreach($navigation->result() as $nav){ ?>
 					<li class="nav-item"><a href="<?php echo base_url('berita'); ?>" class="nav-link"><?php echo $nav->title; ?></a></li>
 				<?php  } ?>
                 <li class="nav-item"><a href="<?php echo base_url('info-karir'); ?>" class="nav-link">Info Karir</a></li>
-				<li class="nav-item"><a href="<?php echo base_url('info-karir'); ?>" class="nav-link">Kontak Kami</a></li>
+				<li class="nav-item"><a href="<?php echo base_url('kontak'); ?>" class="nav-link">Kontak Kami</a></li>
 	        </ul>
 	      </div>
 	    </div>

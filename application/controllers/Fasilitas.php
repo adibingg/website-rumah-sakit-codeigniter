@@ -11,7 +11,7 @@ class Fasilitas extends CI_Controller{
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' => $this->Home_model->getNavbar(),
-				'title' => $conf->company_name,
+				'title' => "Fasilitas " .$conf->company_name,
 				'address'=> $conf->address,
 				'telepon' => $conf->phone,
 				'email' => $conf->email,
