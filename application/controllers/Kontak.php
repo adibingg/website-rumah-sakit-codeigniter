@@ -21,9 +21,10 @@ class Kontak extends CI_Controller{
     
     function sendMessage(){
 		$this->load->model('Home_model');
+		$input = array (
+			''
+		);
 		$data = $this->Home_model->reciveMessage();
 		echo json_encode($data);
-		
-
     }
 }

@@ -18,16 +18,16 @@
 					<div class="col-md-6 p-4 p-md-5 order-md-last bg-light">
 						<form action="#">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nama Lengkap">
+                <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="E-Mail / No Hp.">
+                <input type="text" name="kontak" class="form-control" placeholder="E-Mail / No Hp.">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subjek">
+                <input type="text" name="subjek" class="form-control" placeholder="Subjek">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Pesan"></textarea>
+                <textarea name="pesan" id="" cols="30" rows="7" class="form-control" placeholder="Pesan"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Kirim Pesan" class="btn btn-primary py-3 px-5">
