@@ -122,6 +122,25 @@
   <script src="<?php echo base_url('public/'); ?>js/scrollax.min.js"></script>
   <script src="<?php echo base_url('public/'); ?>js/google-map.js"></script>
   <script src="<?php echo base_url('public/'); ?>js/main.js"></script>
-    
+  <script>
+    $(document).ready(function(){
+      $('#send').on('click', function(){
+        event.preventDefault();
+        var nama = $('#nama').val();
+        var kontak = $('#kontak').val();
+        var subjek = $('#subjek').val();
+        var pesan = $('#pesan').val();
+        $.ajax({
+          type : 'POST',
+          url : '<?php echo base_url(); ?>kontak/send_pesan',
+          dataType : 'JSON',
+          data : {nama:nama, kontak:kontak, subjek:subjek, pesan:pesan},
+          success : function(data){
+            console.log(data);
+          }
+        })
+      })
+    })
+  </script>
   </body>
 </html>

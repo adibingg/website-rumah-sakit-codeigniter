@@ -38,14 +38,8 @@ class Home_model extends CI_Model{
         return $query;
     }
 
-    public function reciveMessage(){
-        $data = array(
-			'name' 				=> $this->input->post('nama_pengirim','true'),
-			'contact' 			=> $this->input->post('kontak','true'),
-			'subject' 			=> $this->input->post('subjek','true'),
-			'messages_content' 	=> $this->input->post('messages','true'),
-        );
-        $result = $this->db->insert('messages', $data);
+    function reciveMessage($input){
+        $result = $this->db->insert('inbox', $input);
     	return $result;
     }
 

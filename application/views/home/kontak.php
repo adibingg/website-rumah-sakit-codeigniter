@@ -16,23 +16,23 @@
 			<div class="container">
 				<div class="row d-flex align-items-stretch no-gutters">
 					<div class="col-md-6 p-4 p-md-5 order-md-last bg-light">
-						<form action="#">
+					
               <div class="form-group">
-                <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">
+                <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap">
               </div>
               <div class="form-group">
-                <input type="text" name="kontak" class="form-control" placeholder="E-Mail / No Hp.">
+                <input type="text" id="kontak" class="form-control" placeholder="E-Mail / No Hp.">
               </div>
               <div class="form-group">
-                <input type="text" name="subjek" class="form-control" placeholder="Subjek">
+                <input type="text" id="subjek" class="form-control" placeholder="Subjek">
               </div>
               <div class="form-group">
-                <textarea name="pesan" id="" cols="30" rows="7" class="form-control" placeholder="Pesan"></textarea>
+                <textarea id="pesan" id="" cols="30" rows="7" class="form-control" placeholder="Pesan"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Kirim Pesan" class="btn btn-primary py-3 px-5">
+                <button id="send" class="btn btn-primary py-3 px-5">Kirim</button>
               </div>
-            </form>
+           
 					</div>
 					<div class="col-md-6 d-flex align-items-stretch">
 						<div id="map" style="margin-top: 50px;">
