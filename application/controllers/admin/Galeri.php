@@ -12,7 +12,9 @@ class Galeri extends CI_Controller{
 	    $data 		= array(
 	      'title' 	=> "Galeri Foto",
 	      'galeri' 	=> $this->Admin_model->getFoto(),
-		  'album'	=> $this->Admin_model->getAlbum()
+		  'album'	=> $this->Admin_model->getAlbum(),
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 		);
 	    $this->load->view('admin/galeri',  $data);
 	}
@@ -21,7 +23,9 @@ class Galeri extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $data 		= array(
 		  'title' 	=> "Tambah Album",
-		  'album'	=> $this->Admin_model->getAlbum()
+		  'album'	=> $this->Admin_model->getAlbum(),
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 	    );
 	    $this->load->view('admin/tambah-foto',  $data);
 	}
@@ -60,7 +64,9 @@ class Galeri extends CI_Controller{
 	function tambah_album(){
 		$this->Sec_model->getSec();
 	    $data 		= array(
-	      'title' 	=> "Tambah Album",
+		  'title' 	=> "Tambah Album",
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 	    );
 	    $this->load->view('admin/album-tambah',  $data);
 	}
@@ -82,7 +88,9 @@ class Galeri extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $data 		= array(
 		  'title' 	=> "Perbaharui Album",
-		  'albumfoto' => $this->Admin_model->AlbumId($id)
+		  'albumfoto' => $this->Admin_model->AlbumId($id),
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 	    );
 	    $this->load->view('admin/album-edit', $data);
 	}

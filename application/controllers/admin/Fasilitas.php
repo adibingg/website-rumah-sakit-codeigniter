@@ -11,7 +11,9 @@ class Fasilitas extends CI_Controller{
     function index(){
         $this->Sec_model->getSec();
         $config = array (
-            'title' => "Fasilitas Penunjang"
+            'title' => "Fasilitas Penunjang",
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/fasilitas', $config);
@@ -21,7 +23,9 @@ class Fasilitas extends CI_Controller{
     function tambah_pelayanan(){
         $this->Sec_model->getSec();
         $config = array (
-            'title' => "Fasilitas Penunjang"
+            'title' => "Fasilitas Penunjang",
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/fasilitas-tambah', $config);

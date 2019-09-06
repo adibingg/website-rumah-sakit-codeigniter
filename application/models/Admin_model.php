@@ -338,6 +338,11 @@ class Admin_model extends CI_Model{
 		$query = $this->db->insert('admins', $data);
 	}
 
+	function showNewMessages(){
+		$query = $this->db->get('inbox');
+		return $query;
+	}
+
 	
 
 }

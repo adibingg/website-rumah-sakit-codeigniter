@@ -14,7 +14,9 @@ class Profil extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Profil Rumah Sakit",
-		  'profile' => $this->Admin_model->getProfile()
+		  'profile' => $this->Admin_model->getProfile(),
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/profil',  $config);
 	}
@@ -48,7 +50,9 @@ class Profil extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Visi & Misi Rumah Sakit",
-		  'profile' => $this->Admin_model->getProfile()
+		  'profile' => $this->Admin_model->getProfile(),
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/visi-misi',  $config);
 	}
@@ -70,7 +74,9 @@ class Profil extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Sejarah Rumah Sakit",
-		  'profile' => $this->Admin_model->getProfile()
+		  'profile' => $this->Admin_model->getProfile(),
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/sejarah',  $config);
 	}
@@ -90,7 +96,9 @@ class Profil extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $config 		= array(
 		  'title' 	=> "Struktur Organisasi",
-		  'profile' => $this->Admin_model->getProfile()
+		  'profile' => $this->Admin_model->getProfile(),
+		  'messages_new' => $this->Admin_model->showNewMessages(),
+		  'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/struktur-organisasi',  $config);
 	}

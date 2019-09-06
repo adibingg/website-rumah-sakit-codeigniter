@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title><?= $title; ?></title>
+	<link rel="shortcut icon" href="<?php echo base_url('public/images/logo.png'); ?>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/open-iconic-bootstrap.min.css">
@@ -53,7 +54,7 @@
 	  <nav style="background-color: blue; color: " class="navbar navbar-expand-lg navbar-light bg-blue ftco-navbar-light" id="ftco-navbar">
 	    <div class="container d-flex align-items-center">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        	<span class="oi oi-menu"></span> Menu
+	        	<span class="oi oi-menu"></span> NAVIGASI
 	      	</button>
 	      	<p class="button-custom order-lg-last mb-0"><a href="http://pendaftaran.rskartinikalirejo.co.id" class="btn btn-secondary py-2 px-3"><i class="fa fa-user-md"></i> Registrasi Online</a></p>
 	      	<div class="collapse navbar-collapse" id="ftco-nav">

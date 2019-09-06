@@ -13,8 +13,9 @@ class Pengguna extends CI_Controller{
         $this->Sec_model->getSec();
         $config = array(
             'title' => "Pengaturan Pengguna",
-            'pengguna' => $this->Admin_model->getPengguna()
-
+            'pengguna' => $this->Admin_model->getPengguna(),
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/pengguna', $config);
@@ -23,7 +24,9 @@ class Pengguna extends CI_Controller{
     function tambah_pengguna(){
         $this->Sec_model->getSec();
         $config = array(
-            'title' => "Pengaturan Pengguna"
+            'title' => "Pengaturan Pengguna",
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/pengguna-tambah', $config);
@@ -35,7 +38,7 @@ class Pengguna extends CI_Controller{
             'admin_name' => $this->input->post('name'),
             'email' => $this->input->post('email'),
             'username' => $this->input->post('username'),
-            'password' => md5($this->input->post('password'))
+            'password' => md5($this->input->post('password')),
         );
         $this->Admin_model->addPengguna($data);
         $this->session->set_flashdata('info', 'Berhasil menambahkan pengguna');

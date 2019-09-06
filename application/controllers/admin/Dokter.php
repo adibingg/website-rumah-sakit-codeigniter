@@ -12,7 +12,9 @@ class Dokter extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $config = array(
 		  	'title' 		=> "Data Dokter",
-			'dokter'		=> $this->Admin_model->getDoctor()
+			'dokter'		=> $this->Admin_model->getDoctor(),
+			'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/dokter', $config);
 	}
@@ -21,7 +23,9 @@ class Dokter extends CI_Controller{
 		$this->Sec_model->getSec(); 
 	    $config = array(
 		  	'title' 		=> "Data Dokter",
-			'specialist'	=> $this->Admin_model->getSpecialist()
+			'specialist'	=> $this->Admin_model->getSpecialist(),
+			'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/dokter-tambah', $config);
 	}
@@ -72,7 +76,9 @@ class Dokter extends CI_Controller{
 		$this->load->model('Admin_model');
 		$config = array(
 			'title' => 'Jadwal Dokter',
-			'jadwal' => $this->Admin_model->getJadwal()
+			'jadwal' => $this->Admin_model->getJadwal(),
+			'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/jadwal-dokter', $config);
 	}
@@ -81,7 +87,9 @@ class Dokter extends CI_Controller{
 		$this->Sec_model->getSec();
 		$config = array(
 			'title' => 'Jadwal Dokter',
-			'doctor' => $this->Admin_model->getDoctor()
+			'doctor' => $this->Admin_model->getDoctor(),
+			'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/jadwal-tambah', $config);
 	}

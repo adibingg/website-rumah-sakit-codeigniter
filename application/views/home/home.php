@@ -97,7 +97,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h2  style="font-family: 'Satisfy', cursive; text-transform: capitalize;">Rumah Sakit Unggulan Dengan Pelayanan Prima Kebanggaan Masyarakat</h2>
+						<h2  style="font-family: 'Satisfy', cursive; text-transform: capitalize; text-align:center;">Rumah Sakit Unggulan Dengan Pelayanan Prima Kebanggaan Masyarakat</h2>
 					</div>
 				</div>
 			</div>

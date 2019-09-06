@@ -12,7 +12,10 @@ class Berita extends CI_Controller{
     $this->Sec_model->getSec();
     $data = array(
       'title' => "Pos Berita & Artikel",
-      'berita' => $this->Admin_model->TampilBerita());
+      'berita' => $this->Admin_model->TampilBerita(),
+      'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
+    );
     $this->load->view('admin/berita',  $data);
   }
 
@@ -20,7 +23,9 @@ class Berita extends CI_Controller{
     $this->Sec_model->getSec();
 		$data = array(
 			'title' => "Tambah Berita",
-      'kategori' => $this->Admin_model->getKategori(), 
+      'kategori' => $this->Admin_model->getKategori(),
+      'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows() 
     );
 		$this->load->view('admin/berita-tambah',  $data);
 	}
@@ -63,7 +68,9 @@ class Berita extends CI_Controller{
     $data = array(
       'title' => "Perbaharui Berita",
       'kategori' => $this->Admin_model->getKategori(), 
-      'berita' => $this->Admin_model->getBeritaId($id), 
+      'berita' => $this->Admin_model->getBeritaId($id),
+      'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows() 
     );
     $this->load->view('admin/beritaedit',  $data);
 

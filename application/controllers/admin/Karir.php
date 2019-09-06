@@ -14,7 +14,9 @@ class Karir extends CI_Controller{
         $config = array (
             'title' => "Info Karir",
             'career_category' => $this->Admin_model->getCareerCategory(),
-            'career' => $this->Admin_model->getCareer()
+            'career' => $this->Admin_model->getCareer(),
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/info-karir', $config);
@@ -26,7 +28,9 @@ class Karir extends CI_Controller{
         $config = array (
             'title' => "Info Karir",
             'career_category' => $this->Admin_model->getCareerCategory(),
-            'career' => $this->Admin_model->getCareer()
+            'career' => $this->Admin_model->getCareer(),
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/info-karir-tambah', $config);
@@ -54,7 +58,9 @@ class Karir extends CI_Controller{
         $config = array(
             'title' => "Perbaharui informasi lowongan kerja",
             'career' => $this->Admin_model->getCareerId($id),
-            'career_category' => $this->Admin_model->getCareerCategory()
+            'career_category' => $this->Admin_model->getCareerCategory(),
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
         $this->load->view('admin/info-karir-update', $config);
 
@@ -90,7 +96,9 @@ class Karir extends CI_Controller{
         $config = array (
             'title' => "Info Karir",
             'career_category' => $this->Admin_model->getCareerCategory(),
-            'career' => $this->Admin_model->getCareer()
+            'career' => $this->Admin_model->getCareer(),
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/tambah-kategori-karir', $config);
@@ -116,7 +124,9 @@ class Karir extends CI_Controller{
         $this->Sec_model->getSec();
         $config = array (
             'title' => "Info Karir",
-            'career_category' => $this->Admin_model->getCareerCategoryId($id)
+            'career_category' => $this->Admin_model->getCareerCategoryId($id),
+            'messages_new' => $this->Admin_model->showNewMessages(),
+			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/kategori-karir-update', $config);
