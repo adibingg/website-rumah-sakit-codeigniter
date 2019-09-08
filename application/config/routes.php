@@ -31,7 +31,7 @@ $route['admin/fasilitas-penunjang'] = 'admin/fasilitas';
 
 //Halaman Statis
 $route['admin/halaman-statis'] = 'admin/halaman';
-
+$route['admin/tambah-navigasi'] = 'admin/halaman/add_nav';
 //Poli
 $route['admin/jadwal-poli'] = 'admin/poli';
 $route['admin/poli/tambah-jadwal-poli'] = 'admin/poli/add_poli';
@@ -48,3 +48,4 @@ $route['admin/struktur-organisasi'] = 'admin/profil/struktural';
 //Loker
 $route['admin/info-karir'] = 'admin/karir';
 $route['admin/tambah-info-karir'] = 'admin/karir/tambah_informasi_karir';
+

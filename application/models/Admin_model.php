@@ -122,6 +122,37 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
+	function getNavId($id){
+		$this->db->where('id_navigation', $id);
+		$query = $this->db->get('navigation');
+		return $query;
+	}
+
+	function saveNav($data){
+		$query = $this->db->insert('navigation', $data);
+		return $query;
+	}
+
+	function saveUpdate($id, $data){
+		$this->db->where('id_navigation', $id);
+		$query = $this->db->update('navigation', $data);
+		return $query;
+	}
+
+	function deleteNav($id){
+		$this->db->where('id_navigation', $id);
+		$query = $this->db->delete('navigation');
+		return $query;
+	}
+
+	function getStaticPages(){
+		$menu = $this->db->get('navigation');
+		return $menu;
+
+		
+	}
+
+	//Admin
 	function getAdmins(){
 		//Ambil data Admin
 		$data = $this->db->get('admins');

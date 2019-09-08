@@ -13,6 +13,11 @@
     <link href="<?php echo base_url(); ?>assets-admin/css/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/css/custom.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <style>
+      .to_do li a{
+        text-transform: uppercase;
+      }
+    </style>
   </head>
 
   <body class="nav-md">

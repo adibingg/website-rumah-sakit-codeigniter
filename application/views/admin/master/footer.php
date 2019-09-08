@@ -30,5 +30,15 @@
     <script src="<?php echo base_url(); ?>assets-admin/js/custom.min.js"></script>
     <!-- Sweet Alert -->
     <script src="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.js"></script>
+    <script>
+      $(document).ready(function(){
+            $('#nav-item').on('click',function(){
+                var nav = $(this).attr('data');
+                console.log(nav);
+                return true;
+            });
+      });
+    </script>
   </body>
+  
 </html>
