@@ -24,9 +24,4 @@ class Pages extends CI_Controller{
 		}
     }
 
-    function not_found(){
-
-    }
-
-
 }

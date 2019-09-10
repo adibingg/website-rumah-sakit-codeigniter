@@ -15,7 +15,7 @@
         		</div>
       		</div>
 
-		<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_2.jpg'); ?>');">
+		<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_3.jpg'); ?>');">
 			<div class="overlay"></div>
 				<div class="container">
 					

@@ -67,21 +67,51 @@ class Halaman extends CI_Controller{
     }
 
     function delete_nav($id){
-          $this->Sec_model->getSec();
-          $this->Admin_model->deleteNav($id);
-          $this->session->set_flashdata('info', 'Berhasil menghapus menu navigasi');
-          redirect('admin/halaman-statis');
+        $this->Sec_model->getSec();
+        $this->Admin_model->deleteNav($id);
+        $this->session->set_flashdata('info', 'Berhasil menghapus menu navigasi');
+        redirect('admin/halaman-statis');
     }
 
-    function add_pages(){
-		  $this->Sec_model->getSec();
-		  $config = array(
+    function add_pages($id){
+		$this->Sec_model->getSec();
+		$config = array(
             'title' => "Halaman Statis Baru",
-            'navigation' => $this->Admin_model->getNav(),
+            'navigation' => $this->Admin_model->getNavId($id),
             'messages_new' => $this->Admin_model->showNewMessages(),
             'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()      
         );
-		  $this->load->view('admin/halamantambah',$config);
+		$this->load->view('admin/halamantambah',$config);
+    }
+
+    function save_pages(){
+        $this->Sec_model->getSec();
+        $config['upload_path']         = './uploads';  
+        $config['allowed_types']        = 'gif|jpg|png';
+           $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('gambar')){
+                    $this->session->set_flashdata('info', 'Maaf, Foto anda gagal di unggah, kemungkinan file terlalu besar. Silahkan Coba Kembali');
+                    redirect('admin/berita/create');
+                }
+                else{
+                  $file = $this->upload->data();
+                  $gambar = $file['file_name'];
+                  $string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
+                  $trim=trim($string);
+                  $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
+                  $slug=$pre_slug;
+    
+                  $data = array(
+                    'id_navigation' => $this->input->post('id'),
+                    'url'           => $slug,
+                    'title_pages'   => $this->input->post('judul'),
+                    'content'       => $this->input->post('isi'),
+                    'thumbnail'    => $gambar,
+                  );
+                  $this->db->insert('static_pages',$data);
+                }
+        $this->session->set_flashdata('info','Berhasil menambahkan halaman statis');
+        redirect('admin/halaman-statis','refresh');
     }
 
     function update_pages(){
@@ -94,12 +124,4 @@ class Halaman extends CI_Controller{
     
     }
 
-    function test(){
-        $row = $this->Admin_model->getStaticPages();
-    }
-
-    function nav(){
-        $sh  =$this->Admin_model->getNav();
-        echo json_encode($sh);
-    }
 }

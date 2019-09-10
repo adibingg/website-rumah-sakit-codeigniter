@@ -24,8 +24,13 @@
 
                   <div class="x_content">
                     <div class="row">
-                      <?php echo form_open_multipart('admin/berita/save');?>
-                        <div class="col-md-9">
+                      <?php echo form_open_multipart('admin/halaman/save_pages');?>
+                        <div class="col-md-12">
+                          <?php foreach($navigation->result() as $row){ ?>
+                            <div class="form-group">
+                              <input type="hidden" name="id" value="<?php echo $row->id_navigation; ?>">
+                            </div>
+                          <?php } ?>
                             <div class="form-group">
                               <label for="">Judul Halaman</label>
                               <input type="text" name="judul" id="" class="form-control" placeholder="Judul Berita">
@@ -36,23 +41,16 @@
                             </div>
                             <div class="form-group">
                                 <?php $this->load->view('admin/editor'); ?>
-                                <textarea name="isi" id="" cols="30" rows="20" class="form-control"></textarea>
+                                <textarea name="isi" cols="20" rows="20" class="form-control"></textarea>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <label for="">Pilih Menu Navigasi</label>
-                              <select name="category_id" id="" class="form-control"> 
-                                <option>Pilih Kategori Berita</option>
-                               
-                              </select>
-                            </div>
+                      
+                       
                            
                             <div class="form-group">
                                 <button class="btn btn-success">Simpan Halaman</button>
                                 <button class="btn btn-danger">Reset</button>
                             </div>
-                        </div>
+                            </div>
                       <?php echo form_close(); ?>
                     </div>
                   </div>

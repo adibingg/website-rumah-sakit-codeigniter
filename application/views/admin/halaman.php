@@ -55,7 +55,7 @@
                               <a href="" class="btn btn-success btn-xs pull-right"><i class="fa fa-pencil"></i></a>
                             </li>
                             <?php } ?>
-                            <a href="<?php echo base_url('admin/static-pages/').$nav->id_navigation; ?>" class="btn btn-link btn-xs">Tambah Halaman</a>
+                            <a href="<?php echo base_url('admin/halaman/add_pages/').$nav->id_navigation; ?>" class="btn btn-link btn-xs">Tambah Halaman</a>
                           </ul>
                         </div>
                       </li>

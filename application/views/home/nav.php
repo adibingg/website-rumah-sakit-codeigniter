@@ -25,6 +25,7 @@
 		.dropdown-item: text-transform:uppercase;
 	</style>
 	<style>
+	
 						.nav-item a:hover{color: #fff;}
 						.dropdown-menu a:hover{color: #fff;}
 						.dropdown-item{ padding-top: 10px; padding-bottom: 10px; padding-left: 20px; border-bottom: 1px solid #ddd;}
@@ -91,7 +92,7 @@
 							$this->db->where('id_navigation', $navigation);
 							$statis = $this->db->get('static_pages'); ?>
 							<?php foreach($statis->result() as $row){ ?> 
-							<a style="text-transform: uppercase;" class="dropdown-item hvr-bounce-to-right" href="<?= base_url('halaman/statis/').$row->url; ?>"><?php echo $row->title_pages; ?></a>
+							<a style="text-transform: uppercase;" class="dropdown-item hvr-bounce-to-right" href="<?= base_url('pages/statis/').$row->url; ?>"><?php echo $row->title_pages; ?></a>
 							<?php } ?>
 						</div>
 						</li>					

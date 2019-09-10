@@ -121,5 +121,15 @@ class Home_model extends CI_Model{
         return $query;
     }
 
+    function getPagesRow($id){
+        $this->db->select('*');
+        $this->db->where('url', $id);
+        $this->db->from('static_pages');
+        $this->db->join('navigation', 'static_pages.id_navigation=navigation.id_navigation');
+        $this->db->limit('1');
+        $query = $this->db->get();
+        return $query;
+    }
+
     
 }
