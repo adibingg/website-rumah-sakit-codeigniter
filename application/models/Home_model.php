@@ -11,6 +11,15 @@ class Home_model extends CI_Model{
         return $this->db->get('config');
     }
 
+    function getLatestNews(){
+        $this->db->select('*');
+        $this->db->from('news');
+        $this->db->join('category', 'news.category_id=category.category_id');
+        $this->db->limit('4');
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function getberita(){
         $this->db->select('*');
         $this->db->from('news');
@@ -79,16 +88,6 @@ class Home_model extends CI_Model{
         $this->db->join('album', 'album.album_id=gallery.album_id');
         $this->db->order_by('date', 'ASC');
         $this->db->limit('5');
-        $data = $this->db->get();
-        return $data;
-    }
-
-    public function getLatestNews(){
-        $this->db->select('*');
-        $this->db->from('news');
-        $this->db->join('category','category.category_id=news.category_id');
-        $this->db->order_by('date_post','ASC');
-        $this->db->limit('6');
         $data = $this->db->get();
         return $data;
     }

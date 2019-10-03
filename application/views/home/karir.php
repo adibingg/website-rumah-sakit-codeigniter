@@ -37,7 +37,10 @@
             <p style="font-size: 1pt;"><?php echo $row->qualification; ?></p>
             <h5 class="card-title">Persyaratan</h5>
             <p><?php echo $row->requirements; ?></p>
-            <a href="mailto:rumahsakitkartini@yahoo.com"" class="btn btn-primary text-center">Lamar Sekarang</a>
+            
+          </div>
+          <div class="card-footer text-center">
+          <a href="mailto:rumahsakitkartini@yahoo.com" class="btn btn-info">Lamar Sekarang</a>
           </div>
         </div>
       </div>

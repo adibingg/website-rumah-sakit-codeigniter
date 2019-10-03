@@ -274,6 +274,9 @@
     .card .body .col-md-12,
     .card .body .col-lg-12 {
       margin-bottom: 20px; }
+    h1{
+      font-size: 18pt;
+    }
 	</style>
 	
   </head>
@@ -311,13 +314,13 @@
 	      		<p class="button-custom order-lg-last mb-0"><a href="<?php echo base_url('kontak'); ?>" class="btn btn-secondary py-2 px-3"><i class="fa fa-send"></i> Kontak Kami</a></p>
 	      		<div class="collapse navbar-collapse" id="ftco-nav" style="background-color: #16739c;">
 	        		<ul class="navbar-nav mr-auto">
-	        			<li class="nav-item "><a style="text-transform: capitalize;" href="<?php echo base_url(); ?>" class="nav-link">Beranda</a></li>
+	        			<li class="nav-item "><a style="text-transform: capitalize; background-color: #003847;" href="<?php echo base_url(); ?>" class="nav-link"><i class="fa fa-home"></i></a></li>
 						<li class="nav-item dropdown "><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="border-radius: 0px; padding:0px;">
-							<a class="dropdown-item" href="<?= base_url('dokter'); ?>">Profil</a>
-							<a class="dropdown-item" href="<?= base_url('jadwal-poli'); ?>">Struktur Organisasi</a>
-							<a class="dropdown-item" href="<?= base_url('jadwal-poli'); ?>">Sejarah</a>
-							<a class="dropdown-item" href="<?= base_url('jadwal-poli'); ?>">Fasilitas</a>
+							<a class="dropdown-item" href="<?= base_url('profile'); ?>">Profil</a>
+							<a class="dropdown-item" href="<?= base_url('profile/struktur-organisasi'); ?>">Struktur Organisasi</a>
+							<a class="dropdown-item" href="<?= base_url('profile/sejarah'); ?>">Sejarah</a>
+							<a class="dropdown-item" href="<?= base_url('profile/fasilitas-pelayanan'); ?>">Fasilitas Pelayanan</a>
 							</div>
 						</li>
 										
@@ -344,7 +347,7 @@
 						</li>	
 										
 						<?php  } ?>
-						<li class="nav-item"><a href="<?php echo base_url('info-karir'); ?>" class="nav-link">Informasi Karir</a></li>
+						<li class="nav-item"><a href="<?php echo base_url('info-karir'); ?>" class="nav-link">Karir</a></li>
 					</ul>
 	      		</div>
 	    	</div>
