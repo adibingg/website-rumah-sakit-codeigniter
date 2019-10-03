@@ -63,8 +63,6 @@
                       <li><a href="<?= base_url('admin/dokter'); ?>">Dokter</a></li>
                       <li><a href="<?= base_url('admin/dokter/jadwal'); ?>">Jadwal Dokter</a></li>
                       <li><a href="<?= base_url('admin/jadwal-poli'); ?>">Jadwal Poli</a></li>
-                      <li><a href="<?= base_url('admin/daftar-pelayanan'); ?>">Daftar Pelayanan</a></li>
-                      <li><a href="<?= base_url('admin/fasilitas-penunjang'); ?>">Fasilitas Penunjang</a></li>
                     </ul>
                   </li>
 
@@ -85,6 +83,8 @@
                       <li><a href="<?= base_url('admin/pengaturan'); ?>">Pengaturan</a></li>
                     </ul>
                   </li>
+                  <li><a href="<?= base_url('admin/about'); ?>"><i class="fa fa-info-circle"></i> Tentang Website</a></li>
+
                   
                 </ul>
               </div>

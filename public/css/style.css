@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
+  --#3ea0ab: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -372,7 +372,7 @@ mark,
 
 .initialism {
   font-size: 90%;
-  text-transform: uppercase; }
+  text-transform: capitalize; }
 
 .blockquote {
   margin-bottom: 1rem;
@@ -2545,7 +2545,6 @@ input[type="button"].btn-block {
   float: left;
   min-width: 10rem;
   padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
   font-size: 1rem;
   color: #212529;
   text-align: left;
@@ -2691,30 +2690,15 @@ input[type="button"].btn-block {
   width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
+  padding-top: 10px;
+  padding-bottom : 10px;
   font-weight: 400;
   color: #212529;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
   border: 0; }
-  .dropdown-item:first-child {
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px); }
-  .dropdown-item:last-child {
-    border-bottom-right-radius: calc(0.25rem - 1px);
-    border-bottom-left-radius: calc(0.25rem - 1px); }
-  .dropdown-item:hover, .dropdown-item:focus {
-    color: #16181b;
-    text-decoration: none;
-    background-color: #f8f9fa; }
-  .dropdown-item.active, .dropdown-item:active {
-    color: #fff;
-    text-decoration: none;
-    background-color: #007bff; }
-  .dropdown-item.disabled, .dropdown-item:disabled {
-    color: #6c757d;
-    pointer-events: none;
-    background-color: transparent; }
+  
 
 .dropdown-menu.show {
   display: block; }
@@ -3380,7 +3364,7 @@ input[type="button"].btn-block {
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
   .nav-link.disabled {
-    color: #fff;
+    color: #6c757d;
     pointer-events: none;
     cursor: default; }
 
@@ -7814,8 +7798,8 @@ button.bg-dark:focus {
 .text-lowercase {
   text-transform: lowercase !important; }
 
-.text-uppercase {
-  text-transform: uppercase !important; }
+.text-capitalize {
+  text-transform: capitalize !important; }
 
 .text-capitalize {
   text-transform: capitalize !important; }
@@ -8027,12 +8011,12 @@ h1, h2, h3, h4, h5,
     width: calc(100% - 60px); }
 
 .ftco-navbar-light {
-  background: transparent !important;
+  background: #16739c;
   z-index: 3;
   padding: 0; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #000000 !important;
+      background: #16739c;
       position: relative;
       top: 0;
       padding: 10px 15px; } }
@@ -8047,17 +8031,19 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light .navbar-nav {
       padding-bottom: 10px; } }
   .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
-    font-size: 12px;
+    font-size: 13px;
+    margin-bottom: 2px;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 20px;
     padding-right: 20px;
     font-weight: 400;
-    color: #000000;
-    text-transform: uppercase;
+    color: #fff;
+    text-transform: capitalize;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-      color: #fff; }
+      color: #fff;
+    }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
         padding-left: 0;
@@ -8069,15 +8055,20 @@ h1, h2, h3, h4, h5,
           color: #fff; } }
   .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
     border: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
     background: #fff;
     -webkit-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
     box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41); }
     .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item {
-      font-size: 12px; }
+      font-size: 14px; 
+      background: #16739c;
+      color: white;
+    }
       .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item:hover, .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item:focus {
-        background: transparent;
-        color: #fff; }
+        background: #057499;
+      }
   .ftco-navbar-light .navbar-nav > .nav-item.ftco-seperator {
     position: relative;
     margin-left: 20px;
@@ -8117,7 +8108,7 @@ h1, h2, h3, h4, h5,
     color: rgba(255, 255, 255, 0.5) !important;
     cursor: pointer;
     padding-right: 0;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 16px;
     letter-spacing: .1em; }
     .ftco-navbar-light .navbar-toggler:focus {
@@ -8159,7 +8150,7 @@ h1, h2, h3, h4, h5,
       border-color: rgba(0, 0, 0, 0.5) !important;
       cursor: pointer;
       padding-right: 0;
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-size: 16px;
       letter-spacing: .1em; }
     .ftco-navbar-light.scrolled .nav-link {
@@ -8216,7 +8207,7 @@ h1, h2, h3, h4, h5,
         font-weight: 900;
         color: #fff; }
       .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs {
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-size: 13px;
         letter-spacing: 1px; }
         .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span {
@@ -8336,7 +8327,7 @@ h1, h2, h3, h4, h5,
         .owl-carousel.home-slider .slider-item .slider-text .subheading {
           font-size: 18px;
           font-weight: 400;
-          text-transform: uppercase;
+          text-transform: capitalize;
           color: rgba(0, 0, 0, 0.8); }
         .owl-carousel.home-slider .slider-item .slider-text p {
           font-size: 18px;
@@ -8350,7 +8341,7 @@ h1, h2, h3, h4, h5,
             .owl-carousel.home-slider .slider-item .slider-text p strong a {
               color: #fff; }
         .owl-carousel.home-slider .slider-item .slider-text .breadcrumbs {
-          text-transform: uppercase;
+          text-transform: capitalize;
           font-size: 13px;
           letter-spacing: 1px; }
           .owl-carousel.home-slider .slider-item .slider-text .breadcrumbs span {
@@ -8565,7 +8556,7 @@ h1, h2, h3, h4, h5,
     .services-2 .text h3 {
       font-size: 18px;
       font-weight: 500;
-      text-transform: uppercase; }
+      text-transform: capitalize; }
 
 .ftco-intro {
   padding: 4em 0;
@@ -8720,7 +8711,7 @@ h1, h2, h3, h4, h5,
       -ms-transition: all 0.3s ease;
       transition: all 0.3s ease; }
     .staff .text .position {
-      text-transform: uppercase;
+      text-transform: capitalize;
       color: #b3b3b3;
       display: block;
       letter-spacing: 1px; }
@@ -9135,7 +9126,7 @@ textarea.form-control {
   font-size: 16px;
   display: block;
   margin-bottom: 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 2px;
   color: #000000;
   position: relative; }
@@ -9158,7 +9149,7 @@ textarea.form-control {
   color: rgba(255, 255, 255, 0.9); }
 
 .heading-section .category {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 2px; }
@@ -9341,7 +9332,7 @@ textarea.form-control {
       top: 0;
       right: -20px;
       height: 100%;
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-weight: 500;
       letter-spacing: 4px;
       font-size: 16px;
@@ -9373,7 +9364,7 @@ textarea.form-control {
     color: #2f89fc; }
   .ftco-counter .ftco-label {
     font-size: 12px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: .1em; }
 
 .appointment-form .form-group {
@@ -9484,7 +9475,7 @@ textarea.form-control {
 /* Blog*/
 .post-info {
   font-size: 12px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: bold;
   color: #fff;
   letter-spacing: .1em; }
@@ -9496,7 +9487,7 @@ textarea.form-control {
       opacity: .5; }
 
 .tagcloud a {
-  text-transform: uppercase;
+  text-transform: capitalize;
   display: inline-block;
   padding: 4px 10px;
   margin-bottom: 7px;
@@ -9539,7 +9530,7 @@ textarea.form-control {
         font-size: 18px;
         font-weight: 500; }
       .comment-list li .comment-body .meta {
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-size: 13px;
         letter-spacing: .1em;
         color: #ccc; }
@@ -9547,7 +9538,7 @@ textarea.form-control {
         padding: 5px 10px;
         background: #e6e6e6;
         color: #000000;
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-size: 11px;
         letter-spacing: .1em;
         font-weight: 400;

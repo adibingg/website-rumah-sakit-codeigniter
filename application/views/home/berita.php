@@ -1,6 +1,6 @@
 <?php $this->load->view('home/nav'); ?>
   <!-- SECTION HEAD -->
-  <section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo base_url('public/'); ?>images/news.png');" data-stellar-background-ratio="0.7">
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo base_url('public/'); ?>images/bg_1.jpg');" data-stellar-background-ratio="0.7">
     <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -66,7 +66,6 @@
 		  <?php } ?>
       </div>
 
-      <!-- SECTION PAGINATION -->
       <div class="row no-gutters my-5">
         <div class="col text-center">
           <div class="block-27">

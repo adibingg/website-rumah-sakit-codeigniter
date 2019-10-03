@@ -1,5 +1,5 @@
 <?php $this->load->view('home/nav'); ?>
-    <section class="hero-wrap hero-wrap-2" style="background-image: url(<?php echo base_url(); ?>public/images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo base_url('public/'); ?>images/bg_1.jpg');" data-stellar-background-ratio="0.7">
       <div class="overlay"></div>
       <div class="container"><?php foreach($pages_row->result() as $row){ ?>
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -20,8 +20,8 @@
             <p>
               <img src="<?php echo base_url('uploads/').$row->thumbnail; ?>" alt="" class="img-fluid">
             </p>
-            <p style="text-align: justify;">Quisquam esse aliquam fuga distinctio, quidem delectus veritatis reiciendis. Nihil explicabo quod, est eos ipsum. Unde aut non tenetur tempore, nisi culpa voluptate maiores officiis quis vel ab consectetur suscipit veritatis nulla quos quia aspernatur perferendis, libero sint. Error, velit, porro. Deserunt minus, quibusdam iste enim veniam, modi rem maiores.</p>
-          <?php } ?>
+            <p style="text-align: justify;"><?php echo $row->content; ?></p>
+         
           </div>
 
           <div class="col-lg-4 sidebar ftco-animate">
@@ -34,16 +34,21 @@
               </form>
             </div>
             <div class="sidebar-box ftco-animate">
-            	<h3>Category</h3>
+            	<h3 style="text-transform: uppercase;"><?php echo $row->title; ?></h3>
               <ul class="categories">
-                <li><a href="#">Neurology <span>(6)</span></a></li>
-                <li><a href="#">Cardiology <span>(8)</span></a></li>
-                <li><a href="#">Surgery <span>(2)</span></a></li>
-                <li><a href="#">Dental <span>(2)</span></a></li>
-                <li><a href="#">Ophthalmology <span>(2)</span></a></li>
+              <?php
+              $navigation = $row->id_navigation;  
+              $this->db->where('id_navigation', $navigation);
+              $statis = $this->db->get('static_pages'); ?>
+              <?php foreach($statis->result() as $a){ ?> 
+              <li>
+                <img src="" alt="">
+                <a href="#" class=""><?php echo $a->title_pages; ?></a>
+              </li>
+              <?php } ?>
               </ul>
             </div>
-
+ <?php } ?>
             <div class="sidebar-box ftco-animate">
             	<h3>Archives</h3>
               <ul class="categories">
@@ -52,6 +57,14 @@
                 <li><a href="#">September 2018 <span>(6)</span></a></li>
                 <li><a href="#">August 2018 <span>(8)</span></a></li>
               </ul>
+          
+
+            <div class="sidebar-box ftco-animate">
+              <div class="sidebar-title" style="padding-left: 20px; padding-right: 20px; text-align: center;">
+                <h3 style="border-bottom: 2px solid blue;">ARTIKEL YANG SAMA</h3>
+              </div>
+              <div class="card" style="background-color: #fafafa; border: 0px; padding: 20px;">
+              
             </div>
 
 

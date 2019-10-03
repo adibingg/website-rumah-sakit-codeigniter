@@ -1,181 +1,230 @@
 <?php $this->load->view('home/nav'); ?>
     <section class="home-slider owl-carousel">
-      	<div class="slider-item ftco-animate" style="background-image:url('<?php echo base_url('public/images/bg_1.jpg'); ?>');" data-stellar-background-ratio="0.5">
-      		<img src="" alt="">
+      	<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/skuy.jpg'); ?>');" data-stellar-background-ratio="0.9">
 			<div class="overlay"></div>
         		<div class="container">
           			<div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-						<div class="col-md-5 text ftco-animate" style="background-color: #fff; border-top: 4px solid blue; padding: 30px;">
-							<h1 class="mb-4" style="font-size: 25pt;">SELAMAT DATANG</h1>
-							<p style="margin-top: -20px;">Di website resmi Rumah Sakit Umum Kartini Kalirejo</p>
-							<h3 class="subheading" style="font-family: 'Satisfy', cursive; text-transform: capitalize;">Rumah Sakit Unggulan Dengan Pelayanan Prima Kebanggaan Masyarakat</h3>
-							<p><a href="<?php echo base_url('profile'); ?>" class="btn btn-primary btn-xs">Lihat Profil Kami</a></p>
-						</div>
+						
         			</div>
         		</div>
       		</div>
-
-		<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_3.jpg'); ?>');">
-			<div class="overlay"></div>
-				<div class="container">
-					
-				</div>
-			</div>
-		</div>
     </section>
 
-    <section class="ftco-services ftco-no-pb">
-		<div class="container">
-			<div class="row no-gutters text-center">
-			<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
-				<div class="media block-6 d-block text-center">
-				<div class="icon d-flex justify-content-center align-items-center">
-						<span class="flaticon-doctor"></span>
+    <section class="ftco-section ftco-no-pt ftc-no-pb">
+		<div class="col-md-12" style="padding: 0px;">
+			<div class="card" style="border: 0px;">
+				<div class="card-body text-center" style="background-color: #8ac4ff;">
 				</div>
-				<div class="media-body p-2 mt-3">
-					<h3 class="heading">Dokter Spesialis</h3>
-				</div>
-				</div>    
 			</div>
-			<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
-				<div class="media block-6 d-block text-center">
-				<div class="icon d-flex justify-content-center align-items-center">
-						<span class="flaticon-ambulance"></span>
-				</div>
-				<div class="media-body p-2 mt-3">
-					<h3 class="heading">Pelayanan Gawat Darurat</h3>
-				</div>
-				</div>    
-			</div>
-			<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
-				<div class="media block-6 d-block text-center">
-				<div class="icon d-flex justify-content-center align-items-center">
-						<span class="flaticon-stethoscope"></span>
-				</div>
-				<div class="media-body p-2 mt-3">
-					<h3 class="heading">Rawat Jalan & Rawat Inap</h3>
-				</div>
-				</div>      
-			</div>
-			<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
-				<div class="media block-6 d-block text-center">
-				<div class="icon d-flex justify-content-center align-items-center">
-						<span class="flaticon-24-hours"></span>
-				</div>
-				<div class="media-body p-2 mt-3">
-					<h3 class="heading">24 Jam Pelayanan </h3>
-				</div>
-				</div>      
-			</div>
-        	</div>
 		</div>
 	</section>
 		
 	<section class="ftco-section ftco-no-pt ftc-no-pb">
 		<div class="container">
-			<div class="row no-gutters">
-				<div class="col-md-5 p-md-5">
-					<img class="img-responsive" style="width : 100%;" src="<?php echo base_url('public/images/direktur.png'); ?>" alt="Direktur Rumah Sakit <?php echo $title; ?>" >
-				</div>
-					<div class="col-md-7 wrap-about py-4 py-md-5 ftco-animate">
-					<div class="heading-section mb-5">
-						<div class="pl-md-5 ml-md-5">
-							<h2 style="font-size: 25px; font-family: 'Satisfy';">Sambutan Direktur Rumah Sakit Umum Kartini</h2>
-						</div>
-					</div>
-					<div class="pl-md-5 ml-md-5 mb-5">
-						<p style="text-align:justify;">On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
-						<p style="color: black; text-decoration: underline;">dr. Hernowo Anggoro Wasono, M.Kes</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-		
-	<section class="ftco-intro" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h2  style="font-family: 'Satisfy', cursive; text-transform: capitalize; text-align:center;">Rumah Sakit Unggulan Dengan Pelayanan Prima Kebanggaan Masyarakat</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			<div class="row">
+				<div class="col-md-8">
+					<h1 style="border-bottom : 1px solid #ddd;">Profil</h1>
+					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
+					<div class="row">
 
-	<section class="ftco-section ftco-no-pt ftc-no-pb">
-		<div class="container">
-			<h3 class="text-center" style="text-transform: uppercase;">Fasilitas</h3>
-			<div class="row no-gutters">
-	          	<div class="col-lg-4">
-					<div class="services-2 d-flex">
-						<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-first-aid-kit"></span></div>
-							<div class="text">
-								<h3>Primary Care</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-							</div>
+						<div class="col-md-3 col-xs-6">
+							<a href="">
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title text-center">Profil Rumah Sakit</h5>
+										<img style="width: 100%;" src="<?php echo base_url('public/images/hospital.png'); ?>" alt="" srcset="">
+									</div>
+									<div class="card-footer text-center">
+										<div class="btn btn-info btn-sm">Lihat Detail</div>
+									</div>
+								</div>
+							</a>
 						</div>
-					</div>
-			
-				<div class="col-lg-4">
-					<div class="services-2 d-flex">
-						<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-dropper"></span></div>
-							<div class="text">
-								<h3>Lab Test</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-							</div>
+
+						<div class="col-md-3 col-xs-6">
+							<a href="">
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title text-center">Struktur Organisasi</h5>
+										<img style="width: 100%;" src="<?php echo base_url('public/images/diagram.png'); ?>" alt="" srcset="">
+									</div>
+									<div class="card-footer text-center">
+										<div class="btn btn-info btn-sm">Lihat Detail</div>
+									</div>
+								</div>
+							</a>
 						</div>
-					</div>
-				
-				<div class="col-lg-4">
-					<div class="services-2 d-flex">
-						<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-experiment-results"></span></div>
-							<div class="text">
-								<h3>Symptom Check</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-							</div>
+
+						<div class="col-md-3 col-xs-6">
+							<a href="">
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title text-center">Sejarah </h5>
+										<img style="width: 100%;" src="<?php echo base_url('public/images/patient.png'); ?>" alt="" srcset="">
+									</div>
+									<div class="card-footer text-center">
+										<div class="btn btn-info btn-sm">Lihat Detail</div>
+									</div>
+								</div>
+							</a>
 						</div>
-					</div>
 						
+						<div class="col-md-3 col-xs-6">
+							<a href="">
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title text-center">Pelayanan</h5>
+										<img style="width: 100%;" src="<?php echo base_url('public/images/medical-kit.png'); ?>" alt="" srcset="">
+									</div>
+									<div class="card-footer text-center">
+										<div class="btn btn-info btn-sm">Lihat Detail</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<img class="pull-right" src="<?php echo base_url('public/images/dokter.jpg'); ?>" alt="" srcset="">
+				</div>
+				<div class="col-md-3">
+					<h1 style="border-bottom : 1px solid #ddd;">Informasi</h1>
+					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>					
+				</div>
+				<div class="col-md-5" style="padding: 0px;">
+					<h1 style="border-bottom : 1px solid #ddd;">Pelayanan Unggulan</h1>
+					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
+					
+				</div>
+				<style>
+				
+					.card-header{
+						padding: 1px;
+						background-color:#8ac4ff;
+						font-size: 13pt;
+						border: 0px;
+						border-radius: 0px;
+					}
+
+					.btn-default{
+						color: white;
+					}
+					.btn-default:hover{
+						color: white;
+					}
+
+				</style>
+				<div class="col-md-4">
+					<h1 style="border-bottom : 1px solid #ddd;">Poliklinik</h1>
+					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
+					<div class="accordion" id="accordionExample">
+						<div class="cards">
+							<div class="card-header" id="headingOne">
+							<h2 class="mb-0">
+								<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Collapsible Group Item #1
+								</button>
+							</h2>
+							</div>
+							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div class="card-body">
+							</div>
+							</div>
+						</div>
+						<div class="cards">
+							<div class="card-header" id="headingTwo">
+							<h2 class="mb-0">
+								<button class="btn btn-default collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Collapsible Group Item #2
+								</button>
+							</h2>
+							</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div class="card-body">
+							</div>
+							</div>
+						</div>
+						<div class="cards">
+							<div class="card-header" id="headingThree">
+							<h2 class="mb-0">
+								<button class="btn btn-default collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Collapsible Group Item #3
+								</button>
+							</h2>
+							</div>
+							<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+							<div class="card-body">
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+		</div>
 		</div>
 	</section>
 
+	<!-- SECTION BERITA -->
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<div class="row justify-content-center mb-5 pb-2">
-          		<div class="col-md-8 text-center heading-section ftco-animate">
-          			<span class="subheading">Berita Terbaru</span>
-          		</div>
-        	</div>
+		<h1 style="border-bottom : 1px solid #ddd;">Berita Terbaru</h1>
+			<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
 			<div class="row">
-          	<?php foreach($recent_news->result() as $blog){ ?>
-		  		<div class="col-md-4 ftco-animate">
-					<div class="blog-entry">
-						<a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
-							<div class="meta-date text-center p-2">
-								<span class="day"><?php $date = $blog->date_post; echo strip_tags(substr($date,8,2)); ?></span>
-								<span class="mos"><?php $month = $blog->date_post; $this_month = strip_tags(substr($month,6,7)); echo bulan($this_month); ?></span>
-								<span class="yr"><?php $year = $blog->date_post; echo strip_tags(substr($year, 0,4)); ?></span>
-							</div>
-						</a>
-						<div class="text bg-white p-4">
-							<h3 class="heading"><a href="#"><?= $blog->title; ?></a></h3>
-							<p style="text-align: justify;"><?php $berita = $blog->content; echo strip_tags(substr($berita,0,100)); ?></p>
-							<div class="d-flex align-items-center mt-4">
-								<p class="mb-0"><a href="<?php echo base_url('berita/detail/').$blog->news_id; ?>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-								<p class="ml-auto mb-0">
-									<a href="#" class="mr-2">Admin</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-                			</div>
-              			</div>
-            		</div>
-          		</div>
-		  		<?php } ?>
-        	</div>
-		</div>
-	</section>
+			
+        <?php foreach($recent_news->result() as $blog){ ?>
+		    <div class="col-md-3 ftco-animate">
+          <div class="blog-entry">
+            <a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
+              <div class="meta-date text-center p-2"  style="background-color:#8ac4ff;">  
+                <span class="day">
+                <?php
+					$date = $blog->date_post;
+					echo strip_tags(substr($date,8,2));
+					?>
+                </span>
+                
+                <span class="mos">
+                <?php 
+                  	$month = $blog->date_post; 
+                	$this_month = strip_tags(substr($month,6,7)); 
+                  	echo bulan($this_month); 
+                ?>
+                </span>
+                
+                <span class="yr">
+                <?php
+					$year = $blog->date_post;
+					echo strip_tags(substr($year, 0,4));
+                ?>
+                </span>
+              </div>
+            </a>
+            <div class="text bg-white p-4">
+              <h3 class="heading"><a href="#"><?php 
+							$berita = $blog->content; 
+							echo strip_tags(substr($title,0,10)); 
+					    ?></a></h3>
+				      <p style="text-align: justify;">	
+					    <?php 
+							$berita = $blog->content; 
+							echo strip_tags(substr($berita,0,100)); 
+					    ?>
+				      </p>
+                <div class="d-flex align-items-center mt-4">
+	                <p class="mb-0"><a href="<?php echo base_url('baca-berita/').$blog->seo; ?>" class="btn btn-info btn-sm">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+	                <p class="ml-auto mb-0">
+	                	<a href="#" class="mr-2">Admin</a>
+	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+	                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <?php } ?>
+      </div>
 
+		</div>
+  </section>
 <?php $this->load->view('home/footer'); ?>

@@ -1,18 +1,16 @@
 <?php $this->load->view('admin/master/sidebar'); ?>
 <!-- page content -->
-<script src="<?php echo base_url().'tinymce/'?>js/tinymce/tinymce.dev.js"></script>
 <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
-              <div class="title_left">
-              </div>
+             
             </div>
 
             <div class="clearfix"></div>
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    Tambah Informasi Lowongan Kerja
+                    <h2> Profil Rumah Sakit</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -22,62 +20,44 @@
                     <div class="clearfix"></div>
                   </div>
 
-                  <div class="x_content">
-                  <ul id="myTab1" class="nav nav-tabs bar_tabs left" role="tablist">
-                        <li role="presentation" class="active"><a href="#tab_content11" id="home-tabb" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Posisi</a>
-                        </li>
-                        <li role="presentation" class=""><a href="#tab_content22" role="tab" id="profile-tabb" data-toggle="tab" aria-controls="profile" aria-expanded="false">Kualifikasi</a>
-                        </li>
-                        <li role="presentation" class=""><a href="#tab_content33" role="tab" id="profile-tabb3" data-toggle="tab" aria-controls="profile" aria-expanded="false">Persyaratan</a>
-                        </li>
-                      </ul>
-                      <form action="<?php echo base_url(); ?>" method="post">
-                      <div id="myTabContent2" class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade active in" id="tab_content11" aria-labelledby="home-tab">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <input type="text" name="" id="" class="form-control">
-                            </div>
-                            <div class="form-group">
-                              <select name="" id="" class="form-control">
-                                <option value=""></option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                              <input type="text" name="" id="" class="form-control">
-                            </div>
-                          </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tab_content22" aria-labelledby="profile-tab">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <?php $this->load->view('admin/editor'); ?>
-                              <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-                            </div>
-                          </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tab_content33" aria-labelledby="profile-tab">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                            <button type="reset" class="btn btn-danger">Simpan</button>
-                          </div>
-                        </div>
+                    <div class="x_content">
+                    <?php if($this->session->flashdata() == true){ ?>
+                      <div class="alert alert-primary bg-primary" role="alert">
+                        <b><?php echo $this->session->flashdata('info'); ?></b>
                       </div>
+                      <?php }else{ } ?>
+                      <form id="demo-form2" action="<?= base_url('admin/profil/update_profile'); ?>" method="post" data-parsley-validate class="form-horizontal form-label-left">
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Switch</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <div class="">
+                            <label>
+                              <input type="checkbox" class="js-switch" checked /> Checked
+                            </label>
+                          </div>
+                          <div class="">
+                            <label>
+                              <input type="checkbox" class="js-switch" /> Unchecked
+                            </label>
+                          </div>
+                          <div class="">
+                            <label>
+                              <input type="checkbox" class="js-switch" disabled="disabled" /> Disabled
+                            </label>
+                          </div>
+                          <div class="">
+                            <label>
+                              <input type="checkbox" class="js-switch" disabled="disabled" checked="checked" /> Disabled Checked
+                            </label>
+                          </div>
+                        </div>
                       </form>
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <!-- /page content -->
 <?php $this->load->view('admin/master/footer'); ?>
 

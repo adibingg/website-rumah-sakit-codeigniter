@@ -74,14 +74,14 @@ class Halaman extends CI_Controller{
     }
 
     function add_pages($id){
-		$this->Sec_model->getSec();
-		$config = array(
-            'title' => "Halaman Statis Baru",
-            'navigation' => $this->Admin_model->getNavId($id),
-            'messages_new' => $this->Admin_model->showNewMessages(),
-            'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()      
-        );
-		$this->load->view('admin/halamantambah',$config);
+      $this->Sec_model->getSec();
+      $config = array(
+              'title' => "Halaman Statis Baru",
+              'navigation' => $this->Admin_model->getNavId($id),
+              'messages_new' => $this->Admin_model->showNewMessages(),
+              'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()      
+          );
+      $this->load->view('admin/halamantambah',$config);
     }
 
     function save_pages(){
@@ -114,14 +114,26 @@ class Halaman extends CI_Controller{
         redirect('admin/halaman-statis','refresh');
     }
 
+    function edit_page(){
+      $this->Sec_model->getSec();
+      $config = array(
+              'title' => "Halaman Statis Baru",
+              'messages_new' => $this->Admin_model->showNewMessages(),
+              'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()      
+          );
+      $this->load->view('admin/halamanedit',$config);
+    }
+
     function update_pages(){
 		  $this->Sec_model->getSec();
     
     }
 
-    function delete_pages(){
-		  $this->Sec_model->getSec();
-    
+    function delete_page($id){
+      $this->Sec_model->getSec();
+      $this->Admin_model->deletePages($id);
+      $this->session->set_flashdata('info', 'Halaman berhasil dihapus');
+      redirect('admin/halaman-statis');
     }
 
 }

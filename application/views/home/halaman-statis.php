@@ -10,14 +10,7 @@
             <img class="img-responsive" width="780" height="380"  src="<?= base_url('uploads/').$row->images; ?>" alt="<?= $row->title; ?>">
             <p style="text-align:justify;"><?= $row->content; ?></p>
             
-            <div class="tag-widget post-tag-container mb-5 mt-5">
-              <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">Life</a>
-                <a href="#" class="tag-cloud-link">Sport</a>
-                <a href="#" class="tag-cloud-link">Tech</a>
-                <a href="#" class="tag-cloud-link">Travel</a>
-              </div>
-            </div>
+            
           <?php } ?>
             <div class="about-author d-flex p-4 bg-light">
               <div class="bio mr-5">

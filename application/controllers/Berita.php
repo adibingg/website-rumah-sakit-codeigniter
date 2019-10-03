@@ -38,6 +38,7 @@ class Berita extends CI_Controller{
 				'address'=> $conf->address,
 				'phone' => $conf->phone,
 				'email' => $conf->email,
+				'category' => $this->Home_model->getCategory(),
 				'news_rows' => $this->Home_model->detailBerita($id),
 			);
 			$this->load->view('home/beritadetail', $data);

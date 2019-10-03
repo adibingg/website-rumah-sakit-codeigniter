@@ -30,6 +30,11 @@ class Home_model extends CI_Model{
 		return $data;
     }
 
+    function getCategory(){
+        $query = $this->db->get('category');
+        return $query;
+    }
+
     function getDoctor(){
         $this->db->select('*');
         $this->db->from('doctor');

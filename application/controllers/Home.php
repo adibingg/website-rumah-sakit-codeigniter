@@ -19,7 +19,6 @@ class Home extends CI_Controller{
 				'address'=> $conf->address,
 				'phone' => $conf->phone,
 				'email' => $conf->email,
-				'produk' => $this->Home_model->getProduk(),
 				'fasilitas' => $this->Home_model->getFacilities(),
 				'latest_activities' => $this->Home_model->getLatestActivities(),
 				'recent_news' => $this->Home_model->getLatestNews(),

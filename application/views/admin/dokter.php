@@ -21,6 +21,14 @@
                   </div>
 
                   <div class="x_content">
+                  <?php if($this->session->flashdata() == true){ ?>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                      <strong> <i class="fa fa-check"></i> <?php echo $this->session->flashdata('info'); ?></strong>
+                      <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  <?php } else{} ?>
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>

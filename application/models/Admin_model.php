@@ -148,8 +148,25 @@ class Admin_model extends CI_Model{
 	function getStaticPages(){
 		$menu = $this->db->get('navigation');
 		return $menu;
+	}
 
-		
+	function getStaticPagesId($id){
+		$this->db->where('id_static_pages', $id);
+		$query = $this->db->get('static_pages');
+		return $query;
+	}
+
+	function deletePages($id){
+		//Hapus Halaman Statis
+		//Hapus Foto
+		$this->db->where('id_static_pages', $id);
+		$showrow = $this->db->get('static_pages');
+		$result = $showrow->row();
+		unlink("./uploads/$result->thumbnail");
+		//Hapus data dari database
+		$this->db->where('id_static_pages', $id);
+		$query = $this->db->delete('static_pages');
+		return $query;
 	}
 
 	//Admin

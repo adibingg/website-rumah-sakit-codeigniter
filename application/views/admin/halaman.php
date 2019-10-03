@@ -9,7 +9,7 @@
               <div class="col-md-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                  <a href="<?= base_url('admin/tambah-navigasi'); ?>" class="btn btn-primary"> Tambah Menu Navigasi</a>
+                  <a href="<?= base_url('admin/tambah-navigasi'); ?>" class="btn btn-primary"><i class="fa fa-list"></i> Tambah Menu Navigasi</a>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -48,14 +48,16 @@
                               $this->db->where('id_navigation', $navigasi);
                               $statis = $this->db->get('static_pages');
                             ?>
+
                             <?php foreach($statis->result() as $row){ ?>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" style="text-transform: uppercase;">
                               <i class="fa fa-arrow-right"></i> <?php echo $row->title_pages; ?>
-                              <a href="<?php echo base_url('admin/halaman/delete_nav').$row->id_navigation; ?>" class="btn btn-danger btn-xs pull-right"><i class="fa fa-trash"></i></a>
-                              <a href="" class="btn btn-success btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                              <a href="<?php echo base_url('admin/halaman/delete_page/').$row->id_static_pages; ?>" class="btn btn-danger btn-xs pull-right hapus"><i class="fa fa-trash"></i></a>
+                              <a href="<?php echo base_url('admin/halaman/edit_page/').$row->id_static_pages; ?>" class="btn btn-success btn-xs pull-right"><i class="fa fa-pencil"></i></a>
                             </li>
                             <?php } ?>
-                            <a href="<?php echo base_url('admin/halaman/add_pages/').$nav->id_navigation; ?>" class="btn btn-link btn-xs">Tambah Halaman</a>
+                            
+                            <a href="<?php echo base_url('admin/halaman/add_pages/').$nav->id_navigation; ?>" class="btn btn-link btn-xs"><i class="fa fa-plus"></i> Tambah Halaman</a>
                           </ul>
                         </div>
                       </li>
