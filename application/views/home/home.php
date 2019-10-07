@@ -23,10 +23,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<h1 style="border-bottom : 1px solid #ddd;">Profil</h1>
+					<h1 style="border-bottom : 1px solid #ddd;">Sambutan</h1>
 					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
 					<div class="row">
-
+						<div class="col-md-12" style="border: 3px dashed #ddd;">
+							<h3 style="font-family: 'Amaranth', sans-serif;">Selamat Datang Di Website <?php echo $title; ?></h3>
+							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+							<p class="pull-right" style="border-bottom: 1px solid #ddf; font-family: 'Amaranth', sans-serif;">dr. Hernowo Anggoro Wasono, M.Kes</p>
+						</div>
+						<div class="col-md-12">
+							<h1 style="border-bottom : 1px solid #ddd;">Tentang Kami</h1>
+							<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
+							<p></p>
+						</div>
 						<div class="col-md-3 col-xs-6">
 							<a href="">
 								<div class="card">
@@ -89,9 +98,22 @@
 				<div class="col-md-4">
 					<img class="pull-right" src="<?php echo base_url('public/images/dokter.jpg'); ?>" alt="" srcset="">
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<h1 style="border-bottom : 1px solid #ddd;">Informasi</h1>
 					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>					
+					
+					<div class="row">
+					
+					<?php for($i=0; $i<5; $i++){ ?>
+						
+						<div class="col-md-4"><img style="width: 100%;" src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt=""></div>
+						<div class="col-md-8"><p>Hak dan Kewajiban Pasien</p></div>
+				
+					<?php } ?>
+					</div>
+			
+						
+					
 				</div>
 				<div class="col-md-5" style="padding: 0px;">
 					<h1 style="border-bottom : 1px solid #ddd;">Pelayanan Unggulan</h1>
@@ -116,7 +138,7 @@
 					}
 
 				</style>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<h1 style="border-bottom : 1px solid #ddd;">Poliklinik</h1>
 					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
 					<div class="accordion" id="accordionExample">
@@ -129,7 +151,8 @@
 							</h2>
 							</div>
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-							<div class="card-body">
+							<div class="card-body" style="border: 1px dashed aqua;">
+								Lihat Detail
 							</div>
 							</div>
 						</div>

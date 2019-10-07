@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/icomoon.css">
     <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/style.css">
 	<link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/hover-min.css">
-	<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
 	<style>
 		.no-radius{
 			border-radius: 0px;
