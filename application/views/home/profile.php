@@ -11,72 +11,8 @@
       </div>
     </section>
 	<?php foreach($profile->result() as $row){ ?>
-	<section class="ftco-section ftco-no-pt ftc-no-pb" style="background-color: #ddd; padding: 10px;">
+	<section class="ftco-section ftco-no-pt ftc-no-pb">
 		<div class="container">
-			<div class="row no-gutters" style="margin-top: 10px;">
-				<div class="col-md-5">
-					<img style="margin-top: 19px;" width="500" height="380" class="img-responsive" src="<?php echo base_url('public/images/image_5.jpg'); ?>" alt="">
-				</div>
-				<div class="col-md-7">
-					<p style="font-size: 5pt;"><?php echo $row->sejarah; ?></p>
-				</div>
-			</div>
-		</div>
-	</section>
-		
-
-    <section class="ftco-section" style="margin-top: -65px;">
-    	<div class="container">
-    		<div class="ftco-departments">
-				<div class="row">
-					<div class="col-md-12 nav-link-wrap">
-						<div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-						<a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Visi</a>
-						<a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Misi</a>
-						<a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Direksi</a>
-						<a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Strukturtural</a>
-						<a class="nav-link ftco-animate" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">Profil</a>
-					</div>
-	          	</div>
-	          	<div class="col-md-12 tab-wrap">
-	            <div class="tab-content bg-purple p-4 p-md-5 ftco-animate" id="v-pills-tabContent">
-	              	<div class="tab-pane py-2 fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
-	              	<div class="row departments">
-	              			<div class="col-md-12 text-center" style="font-family: 'Satisfy', cursive; text-transform: capitalize; font-size: 23pt;">
-								<?php echo $row->visi; ?>
-	              			</div>
-	              		</div>
-	              	</div>
-
-	              	<div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
-	              		<div class="row departments">
-					  		<div class="col-md-12">
-								<?php echo $row->misi; ?>
-							</div>
-	              		</div>
-	              	</div>
-
-	              	<div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
-	              		<div class="row departments">
-					  		<div class="col-md-12">
-							
-							</div>
-	              		</div>
-	              	</div>
-
-	              <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
-	              	<div class="row departments">
-	              		<div class="col-md-12">
-	              			<h3 style="font-size: 16pt; text-transform: uppercase; text-align: center;">Struktur Organisasi <?php echo $row->name; ?></h3>
-							<img src="<?php echo base_url('uploads/').$row->struktur; ?>" alt="" class="img-responsive" style="width: 100%;">
-	              		</div>
-	              	</div>
-	              </div>
-
-	              <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
-	              	<div class="row departments">
-					  <div class="col-md-12">
-	              			<h3 style="font-size: 16pt; text-transform: uppercase; text-align: center;">Profil <?php echo $row->name; ?></h3>
 							<table class="table table-bordered">
 								<style>
 									tr{
@@ -145,16 +81,13 @@
 								</tr>
 								
 							</table>
-	              		</div>
+	              		
 										
 				<?php } ?>
-	              	</div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-        </div>
-    	</div>
-    </section>
+		</div>
+	</section>
+		
+
+>
 		
 <?php $this->load->view('home/footer'); ?>

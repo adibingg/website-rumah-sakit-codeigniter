@@ -98,27 +98,31 @@
 				<div class="col-md-4">
 					<img class="pull-right" src="<?php echo base_url('public/images/dokter.jpg'); ?>" alt="" srcset="">
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<h1 style="border-bottom : 1px solid #ddd;">Informasi</h1>
 					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>					
-					
 					<div class="row">
-					
-					<?php for($i=0; $i<5; $i++){ ?>
-						
-						<div class="col-md-4"><img style="width: 100%;" src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt=""></div>
-						<div class="col-md-8"><p>Hak dan Kewajiban Pasien</p></div>
-				
-					<?php } ?>
+						<img style="width: 100%;" src="<?php echo base_url('public/images/bpjs.png'); ?>" alt="" srcset="">
 					</div>
 			
 						
 					
 				</div>
-				<div class="col-md-5" style="padding: 0px;">
-					<h1 style="border-bottom : 1px solid #ddd;">Pelayanan Unggulan</h1>
+				<div class="col-md-6" style="padding: 0px;">
+					<h1 style="border-bottom : 1px solid #ddd;">Visi dan Misi</h1>
 					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
-					
+					<div class="visi">
+						<h5>”Rumah sakit unggulan dengan pelayanan prima kebanggaan masyarakat”</h5>
+					</div>
+					<div class="misi">
+					<?php 
+					$no =0; 
+					for($i=0; $i<4; $i++){ ?>
+						<div class="alert alert-info bg-info" role="alert" style="border: 0px; border-radius: 0px; color: white;">
+							This is a info alert—check it out!
+						</div>
+					<?php } ?>
+					</div>
 				</div>
 				<style>
 				
