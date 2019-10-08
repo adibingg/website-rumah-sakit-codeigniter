@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="row">
         <?php foreach($recent_news->result() as $blog){ ?>
-		    <div class="col-md-4 ftco-animate">
+		    <div class="col-md-3 ftco-animate">
           <div class="blog-entry">
             <a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
               <div class="meta-date text-center p-2">  
@@ -54,7 +54,7 @@
 					    ?>
 				      </p>
                 <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="<?php echo base_url('baca-berita/').$blog->seo; ?>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+	                <p class="mb-0"><a href="<?php echo base_url('baca-berita/').$blog->seo; ?>" class="btn btn-info btn-sm">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <p class="ml-auto mb-0">
 	                	<a href="#" class="mr-2">Admin</a>
 	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>

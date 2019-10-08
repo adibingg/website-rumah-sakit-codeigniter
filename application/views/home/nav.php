@@ -26,7 +26,7 @@
 		}
 
 		.btn{
-			border-radius: 50px;
+			border-radius: 0px;
 		}
     .card-title{
       font-size: 10pt;
@@ -38,6 +38,21 @@
     .card-body > img{
       padding: 20px;
     }
+
+    .card-header{
+						padding: 1px;
+						background-color:#8ac4ff;
+						font-size: 13pt;
+						border: 0px;
+						border-radius: 0px;
+					}
+
+					.btn-default{
+						color: white;
+					}
+					.btn-default:hover{
+						color: white;
+					}
 
 
 
