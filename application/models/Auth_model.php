@@ -2,13 +2,9 @@
 
 defined('BASEPATH') OR exit("No dirrect script allowed!");
 
+class Auth_model extends CI_Model {
 
-class Auth_model extends CI_Model
-{
-
-    public function getLogin()
-    {
-        
+    public function getLogin(){
         $user = $this->input->post('username');
         $pass = md5($this->input->post('password'));
 
@@ -26,15 +22,30 @@ class Auth_model extends CI_Model
                 );
 
                 $this->session->set_userdata($session_administrator);
+                $data = array(
+                    'username' => $user,
+                    'password' => $pass,
+                    'status' => "success"
+                );
+                
+                $this->db->insert('login_tracker', $data);
                 redirect('admin/dashboard');
             }
         }
         else
         {
             $this->session->set_flashdata('info', 'Username atau Password salah!');
+            $data = array(
+                    'username' => $user,
+                    'password' => $pass,
+                    'status' => "failed"
+            );
+                
+            $this->db->insert('login_tracker', $data);
             redirect('admin/login');
         }
-    }
+        
 
+    }
     
 }

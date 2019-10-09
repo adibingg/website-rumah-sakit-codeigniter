@@ -51,9 +51,10 @@
                   <li><a href="<?= base_url('admin/statistik'); ?>"><i class="fa fa-bar-chart"></i> Statistik </a></li>
                   <li><a><i class="fa fa-edit"></i> Konten <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url('admin/pos'); ?>"> Pos</a></li>
-                      <li><a href="<?= base_url('admin/galeri'); ?>">Galeri</a></li>
-                      <li><a href="<?= base_url('admin/komentar'); ?>">Komentar</a></li>
+                      <li><a href="<?= base_url('admin/pos'); ?>"> Posting</a></li>
+                      <li><a href="<?= base_url('admin/pos'); ?>"> Kegiatan & Promosi</a></li>
+                      <li><a href="<?= base_url('admin/galeri'); ?>"> Galeri</a></li>
+                      <li><a href="<?= base_url('admin/komentar'); ?>"> Komentar</a></li>
                     </ul>
                   </li>
                   <li><a href="halaman-statis"><i class="fa fa-clone"></i> Navigasi & Halaman </a>
@@ -70,6 +71,8 @@
                     <a><i class="fa fa-hospital-o"></i> Profil <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/profil'); ?>">Profil</a></li>
+                      <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Fasilitas</a></li>
+                      <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Pelayanan</a></li>
                       <li><a href="<?= base_url('admin/visi-misi'); ?>">Visi & Misi</a></li>
                       <li><a href="<?= base_url('admin/sejarah'); ?>">Sejarah</a></li>
                       <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktural</a></li>
@@ -84,8 +87,6 @@
                     </ul>
                   </li>
                   <li><a href="<?= base_url('admin/about'); ?>"><i class="fa fa-info-circle"></i> Tentang Website</a></li>
-
-                  
                 </ul>
               </div>
             </div>

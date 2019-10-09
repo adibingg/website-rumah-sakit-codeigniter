@@ -26,7 +26,6 @@ class Berita extends CI_Controller{
 	}
 
 	public function read($id){
-
 		$this->load->model('Home_model');
 		$config = $this->Home_model->getConfig();
 		$this->load->helper('Date_negara_berkembang');
