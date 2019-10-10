@@ -23,11 +23,11 @@ $route['admin/doctor-list'] = 'admin/dokter';
 $route['admin/doctor-schedule'] = 'admin/dokter/schedule';
 
 //Pelayanan
-$route['admin/daftar-pelayanan'] = 'admin/pelayanan';
-$route['admin/daftar-pelayanan/tambah'] = 'admin/pelayanan/form_tambah';
+$route['admin/services'] = 'admin/pelayanan';
+$route['admin/services/add'] = 'admin/pelayanan/form_tambah';
 
 //Fasilitas Penunjang
-$route['admin/fasilitas-penunjang'] = 'admin/fasilitas';
+$route['admin/add-facilities'] = 'admin/fasilitas/add_facilities';
 
 //Halaman Statis
 $route['admin/halaman-statis'] = 'admin/halaman';

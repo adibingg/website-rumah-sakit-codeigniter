@@ -13,7 +13,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    Tambah Foto
+                    Tambah Fasilitas
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -21,7 +21,7 @@
                     <div class="col-md-4">
                     <form action="<?php echo base_url('admin/galeri/simpan_album'); ?>" method="post">
                         <div class="form-group">
-                            <label for="">Nama Pelayanan</label>
+                            <label for="">Nama Fasilitas</label>
                             <input type="text" name="gambar" id="" class="form-control" placeholder="Nama Album" required>
                         </div>
                         <div class="form-group">
@@ -29,7 +29,7 @@
                             <input type="file" name="gambar" id="" class="form-control" placeholder="Nama Album" required>
                         </div>
                         <div class="form-group">
-                            <label for="">Keterangan</label>
+                            <label for="">Deskripsi</label>
                             <textarea name="" id="" cols="30" class="form-control" rows="10" placeholder="Tambahkan Keterangan"></textarea>
                         </div>
                         <div class="form-group">

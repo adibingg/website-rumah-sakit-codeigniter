@@ -1,1 +1,0 @@
-<?php $this->load->view('admin/master/sidebar'); ?>

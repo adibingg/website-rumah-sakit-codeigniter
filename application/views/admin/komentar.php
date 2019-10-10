@@ -50,11 +50,8 @@
                           <td></td>
                           <td></td>
                         </tr>
-</tbody>
-</table>
-
-                      
-                     
+                      </tbody>
+                      </table>
                       </div>
                     </div>
                   </div>

@@ -11,10 +11,10 @@ class Berita extends CI_Controller{
   function index(){
     $this->Sec_model->getSec();
     $data = array(
-      'title' => "Pos Berita & Artikel",
-      'berita' => $this->Admin_model->TampilBerita(),
-      'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
+      'title'                 => "Pos Berita & Artikel",
+      'berita'                => $this->Admin_model->TampilBerita(),
+      'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
     );
     $this->load->view('admin/berita',  $data);
   }
@@ -22,41 +22,39 @@ class Berita extends CI_Controller{
   function create(){
     $this->Sec_model->getSec();
 		$data = array(
-			'title' => "Tambah Berita",
-      'kategori' => $this->Admin_model->getKategori(),
-      'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows() 
+			'title'                 => "Tambah Berita",
+      'kategori'              => $this->Admin_model->getKategori(),
+      'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows() 
     );
 		$this->load->view('admin/berita-tambah',  $data);
 	}
   
   function save(){
     $this->Sec_model->getSec();
-    $config['upload_path']         = './uploads';  
-    $config['allowed_types']        = 'gif|jpg|png';
+    $config['upload_path']    = './uploads';  
+    $config['allowed_types']  = 'gif|jpg|png';
  	  $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')){
                   $this->session->set_flashdata('info', 'Maaf, Foto anda gagal di unggah, kemungkinan file terlalu besar. Silahkan Coba Kembali');
                   redirect('admin/berita/create');
-            }
-            else{
-            	$file = $this->upload->data();
-            	$gambar = $file['file_name'];
-              $string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
-              $trim=trim($string);
-              $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
-              $slug=$pre_slug;
+            }else{
+            	$file     = $this->upload->data();
+            	$gambar   = $file['file_name'];
+              $string   = preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
+              $trim     = trim($string);
+              $pre_slug = strtolower(str_replace(" ", "-", $trim)); 
+              $slug     = $pre_slug;
 
               $data = array(
-                'title' => $this->input->post('judul'),
-                'content' => $this->input->post('isi'),
+                'title'       => $this->input->post('judul'),
+                'content'     => $this->input->post('isi'),
                 'category_id' => $this->input->post('category_id'),
-                'status' => "published",
-                'images' => $gambar,
-                'seo' => $slug,
-                'created_by' => $this->session->userdata('id_admin'),
+                'status'      => "published",
+                'images'      => $gambar,
+                'seo'         => $slug,
+                'created_by'  => $this->session->userdata('id_admin'),
               );
-
 			        $this->db->insert('news',$data);
             }
     $this->session->set_flashdata('info','Berita berhasil di publikasikan');
@@ -66,59 +64,59 @@ class Berita extends CI_Controller{
   function update($id){
     $this->Sec_model->getSec();
     $data = array(
-      'title' => "Perbaharui Berita",
-      'kategori' => $this->Admin_model->getKategori(), 
-      'berita' => $this->Admin_model->getBeritaId($id),
-      'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows() 
+      'title'                 => "Perbaharui Berita",
+      'kategori'              => $this->Admin_model->getKategori(), 
+      'berita'                => $this->Admin_model->getBeritaId($id),
+      'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows() 
     );
     $this->load->view('admin/beritaedit',  $data);
-
   }
 
   function save_update(){
     $this->Sec_model->getSec();
-    $config['upload_path']         = './uploads';  
-    $config['allowed_types']        = 'gif|jpg|png';
+    $config['upload_path']    = './uploads';  
+    $config['allowed_types']  = 'gif|jpg|png';
  	  $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')){
-              $file = $this->upload->data();
-              $gambar = $file['file_name'];
-              $string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
-              $trim=trim($string);
-              $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
-              $slug=$pre_slug;
+              $file       = $this->upload->data();
+              $gambar     = $file['file_name'];
+              $string     = preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
+              $trim       = trim($string);
+              $pre_slug   = strtolower(str_replace(" ", "-", $trim)); 
+              $slug       = $pre_slug;
               $data = array(
-                'title' => $this->input->post('judul'),
-                'content' => $this->input->post('isi'),
+                'title'       => $this->input->post('judul'),
+                'content'     => $this->input->post('isi'),
                 'category_id' => $this->input->post('category_id'),
-                'status' => "published",
-                'seo' => $slug,
-                'created_by' => $this->session->userdata('id_admin'),
+                'status'      => "published",
+                'seo'         => $slug,
+                'created_by'  => $this->session->userdata('id_admin'),
               );
               $this->db->where('news_id', $this->input->post('news_id'))->update('news', $data);
+
             }else{
 
-            	$file = $this->upload->data();
-              $gambar = $file['file_name'];
-              
-              $string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
-              $trim=trim($string);
-              $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
-              $slug=$pre_slug;
+            	$file     = $this->upload->data();
+              $gambar   = $file['file_name'];
+              $string   = preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
+              $trim     = trim($string);
+              $pre_slug = strtolower(str_replace(" ", "-", $trim)); 
+              $slug     = $pre_slug;
 
               $data = array(
-                'title' => $this->input->post('judul'),
-                'content' => $this->input->post('isi'),
+                'title'       => $this->input->post('judul'),
+                'content'     => $this->input->post('isi'),
                 'category_id' => $this->input->post('category_id'),
-                'status' => "published",
-                'images' => $gambar,
-                'seo' => $slug,
-                'created_by' => $this->session->userdata('id_admin'),
+                'status'      => "published",
+                'images'      => $gambar,
+                'seo'         => $slug,
+                'created_by'  => $this->session->userdata('id_admin'),
               );
 
 			        $this->db->where('news_id', $this->input->post('news_id'))->update('news', $data);
             }
+            
     $this->session->set_flashdata('info','Berita berhasil di perbaharui');
     redirect('admin/berita');
   }

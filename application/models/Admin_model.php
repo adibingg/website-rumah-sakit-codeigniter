@@ -242,6 +242,12 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
+	function deleteJadwalDokter($id){
+		$this->db->where('doctor_schedule_id', $id);
+		$query = $this->db->delete('doctor_schedule');
+		return $query;
+	}
+
 	//Jadwal Poli
 	function getJadwalPoli(){
 		//Ambil data jadwal poli

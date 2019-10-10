@@ -55,7 +55,7 @@
                             <td><?= $row->jumat; ?></td>
                             <td><?= $row->sabtu; ?></td>
                             <td><?= $row->minggu; ?></td>
-                            <td></td>
+                            <td><a class="btn btn-danger btn-sm hapus" href="<?php echo base_url('admin/dokter/hapus_jadwal/').$row->doctor_schedule_id; ?>">Hapus</a></td>
                           </tr>
                         <?php } ?>
                         </tbody>
@@ -69,5 +69,6 @@
         </div>
         <!-- /page content -->
 <?php $this->load->view('admin/master/footer'); ?>
+<?php $this->load->view('admin/swall'); ?>
 
 

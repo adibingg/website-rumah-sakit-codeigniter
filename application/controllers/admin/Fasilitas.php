@@ -11,34 +11,30 @@ class Fasilitas extends CI_Controller{
     function index(){
         $this->Sec_model->getSec();
         $config = array (
-            'title' => "Fasilitas Penunjang",
-            'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
+            'title'                 => "Fasilitas Penunjang",
+            'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
         );
-
         $this->load->view('admin/fasilitas', $config);
 
     }
 
-    function tambah_pelayanan(){
+    function add_facilities(){
         $this->Sec_model->getSec();
         $config = array (
-            'title' => "Fasilitas Penunjang",
-            'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
+            'title'                 => "Fasilitas Penunjang",
+            'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
         );
-
         $this->load->view('admin/fasilitas-tambah', $config);
     }
 
     function edit_pelayanan(){
         $this->Sec_model->getSec();
-
     }
 
 
     function hapus_pelayanan(){
-        $this->Sec_model->getSec();
-        
+        $this->Sec_model->getSec();   
     }
 }

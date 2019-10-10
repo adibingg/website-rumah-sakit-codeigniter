@@ -40,7 +40,7 @@ class Pelayanan extends CI_Controller{
                                        'pendidikan_id' => $this->input->post('spesialis'),
                                        'nama' 			=> $this->input->post('nama'),
                                        'alamat' 		=> $this->input->post('alamat'),
-                                       'agama' 		=> $this->input->post('agama'),
+                                       'agama' 		    => $this->input->post('agama'),
                                        'jk' 			=> $this->input->post('jk'),
                                        'images' 		=> $gambar
                                    );

@@ -39,10 +39,7 @@
                 <h2><?php echo $this->session->userdata('admin_name'); ?></h2>
               </div>
             </div>
-
             <br />
-
-            <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>General</h3>
@@ -52,7 +49,7 @@
                   <li><a><i class="fa fa-edit"></i> Konten <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/pos'); ?>"> Posting</a></li>
-                      <li><a href="<?= base_url('admin/pos'); ?>"> Kegiatan & Promosi</a></li>
+                      <li><a href="<?= base_url('admin/event-promotion'); ?>"> Kegiatan & Promosi</a></li>
                       <li><a href="<?= base_url('admin/galeri'); ?>"> Galeri</a></li>
                       <li><a href="<?= base_url('admin/komentar'); ?>"> Komentar</a></li>
                     </ul>
@@ -66,22 +63,27 @@
                       <li><a href="<?= base_url('admin/jadwal-poli'); ?>">Jadwal Poli</a></li>
                     </ul>
                   </li>
-
                   <li>
                     <a><i class="fa fa-hospital-o"></i> Profil <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/profil'); ?>">Profil</a></li>
-                      <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Fasilitas</a></li>
-                      <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Pelayanan</a></li>
+                      <li><a href="<?= base_url('admin/fasilitas'); ?>">Fasilitas</a></li>
+                      <li><a href="<?= base_url('admin/services'); ?>">Pelayanan</a></li>
                       <li><a href="<?= base_url('admin/visi-misi'); ?>">Visi & Misi</a></li>
                       <li><a href="<?= base_url('admin/sejarah'); ?>">Sejarah</a></li>
                       <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktural</a></li>
                     </ul>
                   </li>
                   <li><a href="<?= base_url('admin/info-karir'); ?>"><i class="fa fa-briefcase"></i> Info Karir</a></li>
-                  <li><a><i class="fa fa-gears"></i> Konfigurasi <span class="fa fa-plus"></span></a>
+                  <li><a><i class="fa fa-refresh"></i> Log <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url('admin/pengguna'); ?>">Pengguna</a></li>
+                      <li><a href="<?= base_url('admin/tracker-login'); ?>">Tracker Login</a></li>
+                      <li><a href="<?= base_url('admin/log'); ?>">Log Aktivitas</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-gears"></i> Pengaturan <span class="fa fa-plus"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?= base_url('admin/display'); ?>">Tampilan</a></li>
                       <li><a href="<?= base_url('admin/pengaturan/identitas-website'); ?>">Identitas Website</a></li>
                       <li><a href="<?= base_url('admin/pengaturan'); ?>">Pengaturan</a></li>
                     </ul>
