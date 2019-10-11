@@ -1,5 +1,7 @@
 <?php 
+
 defined('BASEPATH') OR exit("No script dirrect access allowed!");
+
 class Halaman extends CI_Controller{
     function __construct(){
       parent::__construct();
@@ -10,34 +12,34 @@ class Halaman extends CI_Controller{
     function index(){
 		  $this->Sec_model->getSec();
 		  $config = array(
-          'title'                 => "Halaman Administrator",
-          'navigation'            => $this->Admin_model->getNav(),
-          'messages_new'          => $this->Admin_model->showNewMessages(),
-          'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()      
-        );
+        'title'                 => "Halaman Administrator",
+        'navigation'            => $this->Admin_model->getNav(),
+        'messages_new'          => $this->Admin_model->showNewMessages(),
+        'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()      
+      );
 		  $this->load->view('admin/halaman',$config);
 	  }
 
     function add_nav(){
 		  $this->Sec_model->getSec();
-        $config = array(
-          'title'                 => "Halaman Administrator",
-          'navigation'            => $this->Admin_model->getNav(),
-          'messages_new'          => $this->Admin_model->showNewMessages(),
-          'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()      
-        );
+      $config = array(
+        'title'                 => "Halaman Administrator",
+        'navigation'            => $this->Admin_model->getNav(),
+        'messages_new'          => $this->Admin_model->showNewMessages(),
+        'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()      
+      );
 		  $this->load->view('admin/navigasi-tambah',$config);
     }
 
     function save_nav(){
-        $this->Sec_model->getSec();
-        $data = array(
-            'title'   => $this->input->post('navigasi'),
-            'active'  => $this->input->post('active'),
-        );
-        $this->Admin_model->saveNav($data);
-        $this->session->set_flashdata('info', 'Berhasil menambahkan menu navigasi');
-        redirect('admin/halaman-statis');
+      $this->Sec_model->getSec();
+      $data = array(
+        'title'   => $this->input->post('navigasi'),
+        'active'  => $this->input->post('active'),
+      );
+      $this->Admin_model->saveNav($data);
+      $this->session->set_flashdata('info', 'Berhasil menambahkan menu navigasi');
+      redirect('admin/halaman-statis');
     }
 
     function update_nav($id){
@@ -56,8 +58,8 @@ class Halaman extends CI_Controller{
       $this->Sec_model->getSec();
       $id   = $this->input->post('id');
       $data = array(
-          'title'   => $this->input->post('navigasi'),
-          'active'  => $this->input->post('active'),
+        'title'   => $this->input->post('navigasi'),
+        'active'  => $this->input->post('active'),
       );
       $this->Admin_model->saveUpdate($id, $data);
       $this->session->set_flashdata('info', 'Berhasil memperbaharui menu navigasi');
@@ -65,10 +67,10 @@ class Halaman extends CI_Controller{
     }
 
     function delete_nav($id){
-        $this->Sec_model->getSec();
-        $this->Admin_model->deleteNav($id);
-        $this->session->set_flashdata('info', 'Berhasil menghapus menu navigasi');
-        redirect('admin/halaman-statis');
+      $this->Sec_model->getSec();
+      $this->Admin_model->deleteNav($id);
+      $this->session->set_flashdata('info', 'Berhasil menghapus menu navigasi');
+      redirect('admin/halaman-statis');
     }
 
     function add_pages($id){
@@ -83,48 +85,47 @@ class Halaman extends CI_Controller{
     }
 
     function save_pages(){
-        $this->Sec_model->getSec();
-        $config['upload_path']         = './uploads';  
-        $config['allowed_types']        = 'gif|jpg|png';
-           $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('gambar')){
-                    $this->session->set_flashdata('info', 'Maaf, Foto anda gagal di unggah, kemungkinan file terlalu besar. Silahkan Coba Kembali');
-                    redirect('admin/berita/create');
-                }
-                else{
-                  $file = $this->upload->data();
-                  $gambar = $file['file_name'];
-                  $string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
-                  $trim=trim($string);
-                  $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
-                  $slug=$pre_slug;
+      $this->Sec_model->getSec();
+      $config['upload_path']         = './uploads';  
+      $config['allowed_types']        = 'gif|jpg|png';
+      $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('gambar')){
+          $this->session->set_flashdata('info', 'Maaf, Foto anda gagal di unggah, kemungkinan file terlalu besar. Silahkan Coba Kembali');
+          redirect('admin/berita/create');
+        }
+        else{
+          $file = $this->upload->data();
+          $gambar = $file['file_name'];
+          $string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('judul')); 
+          $trim=trim($string);
+          $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
+          $slug=$pre_slug;
     
-                  $data = array(
-                    'id_navigation' => $this->input->post('id'),
-                    'url'           => $slug,
-                    'title_pages'   => $this->input->post('judul'),
-                    'content'       => $this->input->post('isi'),
-                    'thumbnail'    => $gambar,
-                  );
-                  $this->db->insert('static_pages',$data);
-                }
+          $data = array(
+            'id_navigation' => $this->input->post('id'),
+            'url'           => $slug,
+            'title_pages'   => $this->input->post('judul'),
+            'content'       => $this->input->post('isi'),
+            'thumbnail'    => $gambar,
+          );
+          $this->db->insert('static_pages',$data);
+        }
         $this->session->set_flashdata('info','Berhasil menambahkan halaman statis');
-        redirect('admin/halaman-statis','refresh');
+      redirect('admin/halaman-statis','refresh');
     }
 
     function edit_page(){
       $this->Sec_model->getSec();
       $config = array(
-              'title' => "Halaman Statis Baru",
-              'messages_new' => $this->Admin_model->showNewMessages(),
-              'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()      
-          );
+        'title' => "Halaman Statis Baru",
+        'messages_new' => $this->Admin_model->showNewMessages(),
+        'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()      
+    	);
       $this->load->view('admin/halamanedit',$config);
     }
 
     function update_pages(){
 		  $this->Sec_model->getSec();
-    
     }
 
     function delete_page($id){
@@ -133,5 +134,4 @@ class Halaman extends CI_Controller{
       $this->session->set_flashdata('info', 'Halaman berhasil dihapus');
       redirect('admin/halaman-statis');
     }
-
 }

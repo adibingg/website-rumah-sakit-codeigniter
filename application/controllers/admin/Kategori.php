@@ -13,17 +13,18 @@ class Kategori extends CI_Controller{
 	function index(){
 		$this->Sec_model->getSec();
 		$data = array(
-			'title' => "Tambah Berita", );
+			'title' => "Tambah Berita", 
+		);
 		$this->load->view('admin/sidebar',  $data);
 		$this->load->view('admin/add-kategori', $data);
 	}
 
 	function tambah(){
 		$this->Sec_model->getSec();
-		$string=preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('nama_kategori')); 
-                $trim=trim($string);
-                $pre_slug=strtolower(str_replace(" ", "-", $trim)); 
-                $slug=$pre_slug;
+		$string		= preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('nama_kategori')); 
+        $trim		= trim($string);
+        $pre_slug	= strtolower(str_replace(" ", "-", $trim)); 
+        $slug		= $pre_slug;
         $data = array(
         	'category_name' =>$this->input->post('nama_kategori'),
         	'category_link' => $slug);
@@ -33,16 +34,13 @@ class Kategori extends CI_Controller{
 
 	function edit(){
 		$this->Sec_model->getSec();
-
 	}
 
 	function update(){
 		$this->Sec_model->getSec();
-
 	}
 
 	function hapus(){
 		$this->Sec_model->getSec();
-
 	}
 }

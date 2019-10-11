@@ -11,10 +11,10 @@ class Poli extends CI_Controller{
     function index(){
         $this->Sec_model->getSec();
         $config = array (
-            'title' => "Jadwal Poli",
-            'poli_schedule' => $this->Admin_model->getJadwalPoli(),
-            'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
+            'title'                 => "Jadwal Poli",
+            'poli_schedule'         => $this->Admin_model->getJadwalPoli(),
+            'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/jadwal-poli', $config);
@@ -22,9 +22,9 @@ class Poli extends CI_Controller{
 
     function add_poli(){
         $config = array (
-            'title' => "Jadwal Poli",
-            'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
+            'title'                 => "Jadwal Poli",
+            'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/jadwal-poli-tambah', $config);

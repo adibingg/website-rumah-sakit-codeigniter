@@ -12,9 +12,9 @@ class Komentar extends CI_Controller{
     function index(){
 		$this->Sec_model->getSec();
         $config = array(
-            'title' => "Tinjau Komentar",
-            'messages_new' => $this->Admin_model->showNewMessages(),
-			'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows()
+            'title'                 => "Tinjau Komentar",
+            'messages_new'          => $this->Admin_model->showNewMessages(),
+			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
         );
         $this->load->view('admin/komentar', $config);
     }
