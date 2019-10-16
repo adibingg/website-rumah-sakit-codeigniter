@@ -12,17 +12,17 @@ class Profile extends CI_Controller{
 		$config = $this->Home_model->getConfig();
 		foreach($config->result() as $conf){
 			$data = array(
-				'navigation' => $this->Home_model->getNavbar(),
-				'title' => "Profile " .$conf->company_name,
-				'meta_desc' => $conf->company_name,
-				'address'=> $conf->address,
-				'phone' => $conf->phone,
-				'email' => $conf->email,
-				'berita' => $this->Home_model->getberita(),
-				'fasilitas' => $this->Home_model->getFacilities(),
+				'navigation' 		=> $this->Home_model->getNavbar(),
+				'title' 			=> "Profile " .$conf->company_name,
+				'meta_desc' 		=> $conf->company_name,
+				'address'			=> $conf->address,
+				'phone' 			=> $conf->phone,
+				'email' 			=> $conf->email,
+				'berita' 			=> $this->Home_model->getberita(),
+				'fasilitas' 		=> $this->Home_model->getFacilities(),
 				'latest_activities' => $this->Home_model->getLatestActivities(),
-				'latest_news' => $this->Home_model->getLatestNews(),
-				'profile' => $this->Home_model->getProfile()
+				'latest_news' 		=> $this->Home_model->getLatestNews(),
+				'profile' 			=> $this->Home_model->getProfile()
 			);
 			$this->load->view('home/profile',$data);
 		}

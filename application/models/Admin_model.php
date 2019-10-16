@@ -8,6 +8,18 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
+	//Show category with result
+	function getCategory(){
+		$query = $this->db->get('category');
+		return $query->result();
+	}
+
+	//Save category 
+	function saveCategory($post){
+		$query =$this->db->insert('category', $post);
+		return $query;
+	}
+
 	function TampilBerita(){
 		//Ambil data Berita
 		$this->db->select('*');
@@ -307,7 +319,7 @@ class Admin_model extends CI_Model{
 	function getCareerCategory(){
 		//Tampilkan Kategori Kari
 		$query = $this->db->get('career_category');
-		return $query;
+		return $query->result;
 	}
 
 	function getCareerCategoryId($id){

@@ -39,7 +39,6 @@ class Profil extends CI_Controller{
 			'jumlah_tt' 		=> $this->input->post('jumlah_tt'),
 			'jumlah_sdm' 		=> $this->input->post('jumlah_sdm'),
 			'akreditasi_kars' 	=> $this->input->post('akreditasi_kars')
-
 		);
 		$this->Admin_model->UpdateProfile($id, $data);
 		$this->session->set_flashdata('info', 'Profil berhasil diperbaharui');

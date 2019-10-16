@@ -42,13 +42,64 @@
                         <div class="col-md-3">
                             <div class="form-group">
                               <label for="">Kategori Berita</label>
-                              <select name="category_id" id="" class="form-control"> 
-                                <option>Pilih Kategori Berita</option>
-                                <?php foreach($kategori->result() as $row){ ?>
-                                <option value="<?= $row->category_id; ?>"><?php echo $row->category_name; ?></option>
-                                <?php } ?>
+                              <select name="category_id" id="show-category" class="form-control"> 
+                               
                               </select>
                             </div>
+                              <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm1">Tambah Kategori</button>
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm2"><i class="fa fa-gear"></i></button>
+
+                              </div>
+                              <div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                                      </button>
+                                      <h4 class="modal-title" id="myModalLabel2">Tambah Kategori</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="form-group">
+                                        <input type="text" name="category_name" id="" class="form-control" placeholder="Nama Kategori">
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-success">Simpan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                                      </button>
+                                      <h4 class="modal-title" id="myModalLabel2">Kategori</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      
+                                      <ul class="list-group" id="show-cat">
+                                        <li class="list-group-item">
+                                          Item 1
+                                          <a href="" class="btn btn-danger btn-xs pull-right"><i class="fa fa-remove"></i></a>
+                                          <a href="" class="btn btn-success btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                          <span class="badge">10</span>
+                                          Item 2
+                                        </li>
+                                        <li class="list-group-item">
+                                          <span class="badge">15</span>
+                                          Item 3
+                                        </li>
+                                      </ul>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             <div class="form-group">
                                 <label for="">Pilih Tag</label><br>
                                 <?php foreach($kategori->result() as $kat){ ?>
@@ -56,8 +107,7 @@
                                 <?php } ?>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success">Publishkan</button>
-                                <button class="btn btn-danger">Reset</button>
+                                <button class="btn btn-success"><i class="fa fa-arrow-up"></i> Publishkan</button>
                             </div>
                         </div>
                       <?php echo form_close(); ?>

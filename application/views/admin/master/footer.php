@@ -37,6 +37,65 @@
                 console.log(nav);
                 return true;
             });
+
+            $('#save-cat'.).on('click', function(){
+              var nama_kategori = $('#nama-kategori').val();
+
+              $.ajax({
+                url : '<?php echo base_url('admin/berita/save_category'); ?>',
+                type : 'POST',
+                dataType : 'json',
+                data : {nama_kategori:nama_kategori},
+                success:function(data){
+                  console.log('success saving data to database');
+                }
+              });
+            });
+
+            load_category();
+
+            load_modal_category();
+
+            function load_category(){
+              $.ajax({
+                url: '<?php echo base_url('admin/berita/show_category'); ?>',
+                type : 'GET',
+                dataType: 'JSON',
+                success:function(data){
+                  var html = '';
+                  var i;
+                  for(i=0; i<data.length; i++){
+                    html += '<option value="'+data[i].category_id+'">' + data[i].category_name + '</option>'
+                  }
+                  $('#show-category').html(html);
+                },
+                error:function(data){
+                  console.log('error showing data');
+                }
+              });
+            }
+
+            function load_modal_category(){
+              $.ajax({
+                url: '<?php echo base_url('admin/berita/show_category'); ?>',
+                type : 'GET',
+                dataType: 'JSON',
+                success:function(data){
+                  var html = '';
+                  var i;
+                  for(i=0; i<data.length; i++){
+                    html += '<li class="list-group-item">' +data[i].category_name+
+                                '<a href="<?php echo base_url('admin/berita/category_delete/')?>'+data[i].category_id+'" class="btn btn-danger btn-xs pull-right">'+'<i class="fa fa-remove">'+'</i></a>' +
+                                '<a href="<?php echo base_url('admin/berita/category_delete/')?>'+data[i].category_id+'" class="btn btn-success btn-xs pull-right">'+'<i class="fa fa-pencil">'+'</i></a>' +
+                            '</li>' 
+                  }
+                  $('#show-cat').html(html);
+                },
+                error:function(data){
+                  console.log('error showing data');
+                }
+              });
+            }
       });
     </script>
   </body>

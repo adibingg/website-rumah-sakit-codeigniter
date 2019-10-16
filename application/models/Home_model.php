@@ -39,6 +39,14 @@ class Home_model extends CI_Model{
 		return $data;
     }
 
+    function getRooms(){
+        $this->db->limit('5');
+        $this->db->order_by('room_name', 'ASC');
+        $this->db->order_by('class', 'ASC');
+        $query = $this->db->get('room');
+        return $query;
+    }
+
     function getCategory(){
         $query = $this->db->get('category');
         return $query;

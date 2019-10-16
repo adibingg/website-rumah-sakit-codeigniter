@@ -127,4 +127,24 @@ class Berita extends CI_Controller{
     $this->session->set_flashdata('info', "Berhasil menghapus berita");
     redirect('admin/berita');
   }
+
+  function show_category(){
+    $data = $this->Admin_model->getCategory();
+    echo json_encode($data);
+  }
+
+  function category_delete($id){
+    $this->db->where('category_id', $id)->delete('category');
+    $this->session->set_flashdata('info', 'Kategori berhasil dihapus');
+    redirect('admin/berita/buat-post');
+  }
+
+  function save_category(){
+    $post = array(
+      'category_name' => $this->input->post('nama_kategori');
+    );
+
+    $data = $this->Admin_model->saveCategory($post);
+    echo json_encode($data);
+  }
 }

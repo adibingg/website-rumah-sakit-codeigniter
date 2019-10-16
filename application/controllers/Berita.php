@@ -13,13 +13,13 @@ class Berita extends CI_Controller{
 		$this->load->helper('Date_negara_berkembang');
 		foreach($config->result() as $conf){
 			$data = array(
-				'navigation' => $this->Home_model->getNavbar(),
-				'title' => $conf->company_name,
-				'meta_desc' => $conf->company_name,
-				'address'=> $conf->address,
-				'phone' => $conf->phone,
-				'email' => $conf->email,
-				'recent_news' => $this->Home_model->getberita(),
+				'navigation' 	=> $this->Home_model->getNavbar(),
+				'title' 		=> $conf->company_name,
+				'meta_desc' 	=> $conf->company_name,
+				'address'		=> $conf->address,
+				'phone' 		=> $conf->phone,
+				'email' 		=> $conf->email,
+				'recent_news' 	=> $this->Home_model->getberita(),
 			);
 			$this->load->view('home/berita',$data);
 		}
@@ -31,14 +31,14 @@ class Berita extends CI_Controller{
 		$this->load->helper('Date_negara_berkembang');
 		foreach($config->result() as $conf){
 			$data = array(
-				'navigation' => $this->Home_model->getNavbar(),
-				'title' => "Berita",
-				'meta_desc' => $conf->company_name,
-				'address'=> $conf->address,
-				'phone' => $conf->phone,
-				'email' => $conf->email,
-				'category' => $this->Home_model->getCategory(),
-				'news_rows' => $this->Home_model->detailBerita($id),
+				'navigation' 	=> $this->Home_model->getNavbar(),
+				'title' 		=> "Berita",
+				'meta_desc' 	=> $conf->company_name,
+				'address'		=> $conf->address,
+				'phone' 		=> $conf->phone,
+				'email' 		=> $conf->email,
+				'category' 		=> $this->Home_model->getCategory(),
+				'news_rows' 	=> $this->Home_model->detailBerita($id),
 			);
 			$this->load->view('home/beritadetail', $data);
 		}

@@ -9,14 +9,14 @@ class Galeri extends CI_Controller{
 		$config = $this->Home_model->getConfig();
 		foreach($config->result() as $conf){
 			$data = array(
-				'navigation' => $this->Home_model->getNavbar(),
-				'title' => "Galeri " .$conf->company_name,
-				'meta_desc' => $conf->company_name,
-				'address'=> $conf->address,
-				'phone' => $conf->phone,
-				'email' => $conf->email,
-				'album' => $this->Home_model->getAlbum(),
-				'galeri' => $this->Home_model->getGaleri(),
+				'navigation' 	=> $this->Home_model->getNavbar(),
+				'title' 		=> "Galeri " .$conf->company_name,
+				'meta_desc' 	=> $conf->company_name,
+				'address'		=> $conf->address,
+				'phone' 		=> $conf->phone,
+				'email' 		=> $conf->email,
+				'album' 		=> $this->Home_model->getAlbum(),
+				'galeri' 		=> $this->Home_model->getGaleri(),
 			);
 			$this->load->view('home/galeri',$data);
 		}

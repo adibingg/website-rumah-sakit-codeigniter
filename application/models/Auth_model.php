@@ -7,12 +7,9 @@ class Auth_model extends CI_Model {
 	public function getLogin(){
 		$user = $this->input->post('username');
 		$pass = md5($this->input->post('password'));
-
 		$this->db->where('username', $user);
 		$this->db->where('password', $pass);
-
 		$data = $this->db->get('admins');
-
 		if($data->num_rows()>0){
 			foreach($data->result() as $session)
 			{
@@ -20,34 +17,24 @@ class Auth_model extends CI_Model {
 					'id_admin' => $session->id_admin,
 					'admin_name' => $session->admin_name,
 				);
-
 				$this->session->set_userdata($session_administrator);
 				$data = array(
 					'username' => $user,
 					'password' => $pass,
-					'status' => "success"
+					'status' => "logedin"
 				);
-				
 				$this->db->insert('login_tracker', $data);
 				redirect('admin/dashboard');
 			}
-		}
-		else
-		{
+		}else{
 			$this->session->set_flashdata('info', 'Username atau Password salah!');
 			$data = array(
 					'username' => $user,
 					'password' => $pass,
 					'status' => "failed"
 			);
-				
 			$this->db->insert('login_tracker', $data);
 			redirect('admin/login');
 		}
-		
-
 	}
-	
-
-	
 }

@@ -21,6 +21,9 @@
 	<link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/hover-min.css">
   <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
 	<style>
+    .rndd{
+      border-radius: 20px;
+    }
 		.no-radius{
 			border-radius: 0px;
 		}
@@ -334,7 +337,8 @@
 							<a class="dropdown-item" href="<?= base_url('profile'); ?>">Profil</a>
 							<a class="dropdown-item" href="<?= base_url('profile/struktur-organisasi'); ?>">Struktur Organisasi</a>
 							<a class="dropdown-item" href="<?= base_url('profile/sejarah'); ?>">Sejarah</a>
-							<a class="dropdown-item" href="<?= base_url('profile/fasilitas-pelayanan'); ?>">Fasilitas Pelayanan</a>
+							<a class="dropdown-item" href="<?= base_url('profile/fasilitas-pelayanan'); ?>">Fasilitas & Pelayanan</a>
+              <a class="dropdown-item" href="<?= base_url('profile/fasilitas-pelayanan'); ?>">Sumber Daya Manusia</a>
 							</div>
 						</li>
 										

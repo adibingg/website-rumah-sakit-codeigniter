@@ -18,159 +18,149 @@
 			</div>
 		</div>
 	</section>
-		
 	<section class="ftco-section ftco-no-pt ftc-no-pb">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 ftco-animate">
-					<h1 style="border-bottom : 1px solid #ddd;">Sambutan</h1>
-					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
-					<div class="row">
-						<div class="col-md-12" style="border: 3px dashed #ddd;">
-							<h3 style="font-family: 'Amaranth', sans-serif;">Selamat Datang Di Website <?php echo $title; ?></h3>
-							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-							<p class="pull-right" style="border-bottom: 1px solid #ddf; font-family: 'Amaranth', sans-serif;">dr. Hernowo Anggoro Wasono, M.Kes</p>
-						</div>
-						<div class="col-md-12">
-							<h1 style="border-bottom : 1px solid #ddd;">Tentang Kami</h1>
-							<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
-							<p></p>
-						</div>
-						<div class="col-md-3 col-xs-6 ftco-animate">
-							<a href="">
-								<div class="card">
-									<div class="card-body">
-										<h5 class="card-title text-center">Profil Rumah Sakit</h5>
-										<img style="width: 100%;" src="<?php echo base_url('public/images/hospital.png'); ?>" alt="" srcset="">
-									</div>
-									<div class="card-footer text-center">
-										<div class="btn btn-info btn-sm">Lihat Detail</div>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="col-md-3 col-xs-6 ftco-animate">
-							<a href="">
-								<div class="card">
-									<div class="card-body">
-										<h5 class="card-title text-center">Struktur Organisasi</h5>
-										<img style="width: 100%;" src="<?php echo base_url('public/images/diagram.png'); ?>" alt="" srcset="">
-									</div>
-									<div class="card-footer text-center">
-										<div class="btn btn-info btn-sm">Lihat Detail</div>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="col-md-3 col-xs-6 ftco-animate">
-							<a href="">
-								<div class="card">
-									<div class="card-body">
-										<h5 class="card-title text-center">Sejarah </h5>
-										<img style="width: 100%;" src="<?php echo base_url('public/images/patient.png'); ?>" alt="" srcset="">
-									</div>
-									<div class="card-footer text-center">
-										<div class="btn btn-info btn-sm">Lihat Detail</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						
-						<div class="col-md-3 col-xs-6 ftco-animate">
-							<a href="">
-								<div class="card">
-									<div class="card-body">
-										<h5 class="card-title text-center">Pelayanan</h5>
-										<img style="width: 100%;" src="<?php echo base_url('public/images/medical-kit.png'); ?>" alt="" srcset="">
-									</div>
-									<div class="card-footer text-center">
-										<div class="btn btn-info btn-sm">Lihat Detail</div>
-									</div>
-								</div>
-							</a>
-						</div>
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-md-5 p-md-5 img img-2 mt-5 mt-md-0" style="background-image: url(images/about.jpg);">
 					</div>
-				</div>
-
-				<div class="col-md-4 ftco-animate">
-					<img class="pull-right" src="<?php echo base_url('public/images/dokter.jpg'); ?>" alt="" srcset="">
-				</div>
-
-				<div class="col-md-9 ftco-animate">
-					<h1 style="border-bottom : 1px solid #ddd;">Kegiatan & Promosi</h1>
-					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>					
-						<div class="row">
-						<?php $no=1; for($i=0; $i<6; $i++){ ?>
-							<div class="col-md-4 col-xs-6 ftco-animate bg-info" style="border: 1px solid white;">
-								<div class="row" style="padding-top: 30px; padding-bottom: 30px;">
-									<div class="col-md-3">
-										<h4><?php echo $no++; ?></h4>
-									</div>
-									<div class="col-md-9" style="text-transform: uppercase; color: white;">
-										Judul Promosi dan Kegiatan
+					<div class="col-md-7 wrap-about py-4 py-md-5 ftco-animate">
+	          <div class="heading-section mb-5">
+	          	<div class="pl-md-5 ml-md-5">
+		          	<span class="subheading">Sekilas Tentang Kami</span>
+		            <h2 class="mb-4" style="font-size: 28px;">Rumah Sakit Umum Kartini Lampung Tengah</h2>
+	            </div>
+	          </div>
+	          <div class="pl-md-5 ml-md-5 mb-5">
+			  		<div class="visi bg-info"  style="background-color: #ddd; padding: 30px;" >
+					  	<p class="text-white" style="font-size: 15pt;">Sambutan</p>
+					  	<p class="bg-info text-white">On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+						<p style="font-size: 10pt; border-bottom: 1px solid white;" class="pull-right text-white">dr. Hernowo Anggoro Wasono, M.Kes</p>
+					</div>
+							<p style="background-color: #ddd; padding: 30px;">
+								<?= $visi; ?>
+							</p>
+							<div class="row mt-5 pt-2">
+								<div class="col-lg-6">
+									<div class="services-2 d-flex">
+										<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-first-aid-kit"></span></div>
+										<div class="text">
+											<h3>Profil</h3>
+											<a href="" class="btn btn-info btn-sm rndd" style="border-radius: 30px;">Selengkapnya</a>
+										</div>
 									</div>
 								</div>
-							</div>
-						<?php } ?>
-						<a href="" class="btn btn-info btn-sm pull-right">Lihat Semua <i class="fa fa-chevron-right"></i></a>
-					</div>
-				</div>
-
-				<div class="col-md-3 ftco-animate">
-					<h1 style="border-bottom : 1px solid #ddd;">Poliklinik</h1>
-					<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
-					<div class="accordion" id="accordionExample">
-						<div class="cards">
-							<div class="card-header" id="headingOne">
-							<h2 class="mb-0">
-								<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								Collapsible Group Item #1
-								</button>
-							</h2>
-							</div>
-							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-							<div class="card-body" style="border: 1px dashed aqua;">
-								Lihat Detail
-							</div>
-							</div>
-						</div>
-						<div class="cards">
-							<div class="card-header" id="headingTwo">
-							<h2 class="mb-0">
-								<button class="btn btn-default collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								Collapsible Group Item #2
-								</button>
-							</h2>
-							</div>
-							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-							<div class="card-body">
-							</div>
-							</div>
-						</div>
-						<div class="cards">
-							<div class="card-header" id="headingThree">
-							<h2 class="mb-0">
-								<button class="btn btn-default collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								Collapsible Group Item #3
-								</button>
-							</h2>
-							</div>
-							<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-							<div class="card-body">
-							</div>
+								<div class="col-lg-6">
+									<div class="services-2 d-flex">
+										<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-dropper"></span></div>
+										<div class="text">
+											<h3>Sejarah</h3>
+											<a href="" class="btn btn-info btn-sm rndd" style="border-radius: 30px;">Selengkapnya</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="services-2 d-flex">
+										<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-experiment-results"></span></div>
+										<div class="text">
+											<h3>Fasilitas & Pelayanan</h3>
+											<a href="" class="btn btn-info btn-sm rndd" style="border-radius: 30px;">Selengkapnya</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="services-2 d-flex">
+										<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="flaticon-heart-rate"></span></div>
+										<div class="text">
+											<h3>Struktur Organisasi</h3>
+											<a href="" class="btn btn-info btn-sm rndd" style="border-radius: 30px;">Selengkapnya</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		</div>
-	</section>
+		</section>	
+
+		<section class="ftco-section ftco-no-pt ftc-no-pb ftco-animate">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-4" style="padding: 2px;">
+							<div class="box">
+								<div class="bg-info text-white" style="padding: 10px;">
+									<div class="panel panel-danger">
+										<div class="panel-heading text-center">
+												<i class="fa fa-plus"></i> Tarif Pelayanan
+										  </div>
+										  <hr>
+										  <div class="panel-body">
+										  <?php for($i=0; $i<10; $i++){ ?>
+												<p style="font-size: 10pt; margin-top: -5px;"><i class="fa fa-arrow-right"></i> One Two</p>
+										  <?php } ?>
+										  </div>
+										  <div class="panel-footer text-center">
+										  <a href="" class="btn btn-danger btn-sm" style="border-radius: 20px;"><i class="fa fa-plus"></i> Selengkapnya</a>
+										  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4" style="padding: 2px;">
+							<div class="box">
+								<div class="bg-success text-white" style="padding: 10px;">
+									<div class="panel panel-danger">
+										  <div class="panel-heading text-center">
+												<i class="fa fa-plus"></i> Tarif Kamar Inap
+										  </div>
+										  <hr>
+										  <div class="panel-body">
+										  <table class="table table-border" style="font-size: 10pt;">
+										  <?php foreach($room->result() as $row){ ?>
+											<tr>
+												<td><?php echo $row->room_name; ?></td>
+												<td><?php echo $row->class; ?></td>
+												<td><?php echo $row->price; ?></td>
+											</tr>
+										  <?php } ?>
+										  </table>
+										  
+										  </div>
+										  <div class="panel-footer text-center">
+										  <a href="" class="btn btn-info btn-sm" style="border-radius: 20px;"><i class="fa fa-plus"></i> Selengkapnya</a>
+										  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4" style="padding: 2px;">
+							<div class="box">
+								<div class="bg-primary text-white" style="padding: 10px;">
+									<div class="panel panel-danger">
+									<div class="panel-heading text-center">
+												<i class="fa fa-plus"></i> Poliklinik
+										  </div>
+										  <hr>
+										  <div class="panel-body">
+										  <?php for($i=0; $i<10; $i++){ ?>
+												<p style="font-size: 10pt; margin-top: -5px;"><i class="fa fa-arrow-right"></i> One Two</p>
+										  <?php } ?>
+										  </div>
+										  <div class="panel-footer text-center">
+										  <a href="" class="btn btn-success btn-sm" style="border-radius: 20px;"><i class="fa fa-plus"></i> Selengkapnya</a>
+										  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 	<!-- SECTION BERITA -->
-	<section class="ftco-section bg-light">
+	<section class="ftco-section bg-light" style="padding-top : 0px;">
 		<div class="container">
 		<h1 style="border-bottom : 1px solid #ddd;">Berita Terbaru</h1>
 			<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>

@@ -10,13 +10,13 @@ class Dokter extends CI_Controller{
 		$config = $this->Home_model->getConfig();
 		foreach($config->result() as $conf){
 			$data = array(
-				'navigation' => $this->Home_model->getNavbar(),
-				'title' => "Dokter " .$conf->company_name,
-				'meta_desc' => $conf->company_name,
-				'address'=> $conf->address,
-				'phone' => $conf->phone,
-				'email' => $conf->email,
-				'dokter' => $this->Home_model->getDoctor()
+				'navigation' 	=> $this->Home_model->getNavbar(),
+				'title' 		=> "Dokter " .$conf->company_name,
+				'meta_desc' 	=> $conf->company_name,
+				'address'		=> $conf->address,
+				'phone' 		=> $conf->phone,
+				'email' 		=> $conf->email,
+				'dokter' 		=> $this->Home_model->getDoctor()
 			);
 			$this->load->view('home/dokter',$data);
 		}
@@ -27,13 +27,13 @@ class Dokter extends CI_Controller{
 		$config = $this->Home_model->getConfig();
 		foreach($config->result() as $conf){
 			$data = array(
-				'navigation' => $this->Home_model->getNavbar(),
-				'title' => "Jadwal Dokter " .$conf->company_name,
-				'meta_desc' => $conf->company_name,
-				'address'=> $conf->address,
-				'phone' => $conf->phone,
-				'email' => $conf->email,
-				'jadwal_dokter' => $this->Home_model->getJadwalDokter()
+				'navigation' 		=> $this->Home_model->getNavbar(),
+				'title' 			=> "Jadwal Dokter " .$conf->company_name,
+				'meta_desc' 		=> $conf->company_name,
+				'address'			=> $conf->address,
+				'phone' 			=> $conf->phone,
+				'email' 			=> $conf->email,
+				'jadwal_dokter' 	=> $this->Home_model->getJadwalDokter()
 			);
 			$this->load->view('home/jadwal-dokter',$data);
 			
@@ -45,13 +45,13 @@ class Dokter extends CI_Controller{
 		$config = $this->Home_model->getConfig();
 		foreach($config->result() as $conf){
 			$data = array(
-				'navigation' => $this->Home_model->getNavbar(),
-				'title' => "Jadwal Poli " .$conf->company_name,
-				'meta_desc' => $conf->company_name,
-				'address'=> $conf->address,
-				'phone' => $conf->phone,
-				'email' => $conf->email,
-				'jadwal_poli' => $this->Home_model->getJadwalPoli()
+				'navigation' 		=> $this->Home_model->getNavbar(),
+				'title' 			=> "Jadwal Poli " .$conf->company_name,
+				'meta_desc' 		=> $conf->company_name,
+				'address'			=> $conf->address,
+				'phone' 			=> $conf->phone,
+				'email' 			=> $conf->email,
+				'jadwal_poli' 		=> $this->Home_model->getJadwalPoli()
 			);
 			$this->load->view('home/jadwal-poli',$data);
 			
