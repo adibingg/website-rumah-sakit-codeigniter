@@ -1,58 +1,53 @@
 <?php
 
-//HEHE
+//HEHE LAWAK
 
-if(!defined('BASEPATH')) EXIT("No script dirrect access allowed!");
+if(!defined('BASEPATH')) EXIT("No script dirrect access allowed bambang!");
 
-if(! function_exists('tanggal_indo')){
-    function date_indo($tgl){
-        $ubah = gmdate($tgl, time()+60*60*8);
-        $pecah = explode('-', $ubah);
-        $tanggal = $pecah[2];
-        $tahun = pecah[0];
-        return $tanggal.' '.$bulan.' '.$tahun;
-    }
-}
+function konversi_bulan($tgl){
+    $tanggal = substr($tgl,8,2);
+    $bulan = getBulan(substr($tgl,5,2));
+    $tahun = substr($tgl,0,4);
+    return $tanggal.' '.$bulan.' '.$tahun;		 
+}	
 
-if(! function_exists('bulan')){
-    function bulan($bln){
+function getBulan($bln){
         switch ($bln){
-            case 1:
+            case 01: 
                 return "Januari";
                 break;
-            case 2: 
+            case 02:
                 return "Februari";
                 break;
-            case 3:  
+            case 03:
                 return "Maret";
                 break;
-            case 4:  
+            case 04:
                 return "April";
                 break;
-            case 5: 
+            case 05:
                 return "Mei";
                 break;
-            case 6: 
+            case 06:
                 return "Juni";
                 break;
-            case 7:  
+            case 07:
                 return "Juli";
                 break;
-            case 8:  
+            case 08:
                 return "Agustus";
                 break;
-            case 9: 
+            case 09:
                 return "September";
                 break;
-            case 10: 
+            case 10:
                 return "Oktober";
                 break;
-            case 11:  
+            case 11:
                 return "November";
                 break;
-            case 12:   
+            case 12:
                 return "Desember";
                 break;
         }
-    }
-}
+    } 

@@ -178,11 +178,11 @@
 					?>
                 </span>
                 
-                <span class="mos">
+                <span class="mos" style="font-size: 15pt; font-weight: 100; background-color: green;">
                 <?php 
                   	$month = $blog->date_post; 
-                	$this_month = strip_tags(substr($month,6,7)); 
-                  	echo bulan($this_month); 
+                	$this_month = strip_tags(substr($month,5,2)); 
+					echo konversi_bulan($this_month); 
                 ?>
                 </span>
                 

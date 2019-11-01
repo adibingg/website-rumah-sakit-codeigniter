@@ -12,14 +12,13 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <a href="<?= base_url('admin/buat-pos') ?>" class="btn btn-success"><i class="fa fa-pencil-square"></i> Posting Baru</a>
-                    <a href="#" class="btn btn-primary"><span for="" class="badge badge-primary">1</span> Diterbitkan</a>
-                    <a href="#" class="btn btn-danger test"><span for="" class="badge badge-primary">1</span> Draft</a>
+                    <a href="<?= base_url('admin/buat-pos') ?>" class="btn btn-success"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Tulis Baru"></i></a>
+                    <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Aktif"><i class="fa fa-globe"></i></a>
+                    <a class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Draft"><i class="fa fa-archive"></i></a>
+                    <a class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Sampah"><i class="fa fa-trash"></i></a>
                     <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>

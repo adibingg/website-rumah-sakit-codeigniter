@@ -1,15 +1,5 @@
 <?php $this->load->view('home/nav'); ?>
-  <section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo base_url('public/'); ?>images/bg_1.jpg');" data-stellar-background-ratio="0.7">
-      <div class="overlay"></div>
-      <div class="container"><?php foreach($pages_row->result() as $row){ ?>
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread" style="text-transform: uppercase;"><?php echo $row->title; ?></h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="#"><?php echo $row->title; ?> <i class="ion-ios-arrow-forward"></i></a></span> <span><?php echo $row->title_pages; ?> <i class="ion-ios-arrow-forward"></i></span></p>
-          </div>
-        </div>
-      </div>
-    </section>
+<?php $this->load->view('home/bread'); ?>
 
 		<section class="ftco-section" style="margin-top: -100px;">
 			<div class="container">

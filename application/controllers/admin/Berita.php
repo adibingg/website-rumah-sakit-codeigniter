@@ -111,7 +111,7 @@ class Berita extends CI_Controller{
                 'status'      => "published",
                 'images'      => $gambar,
                 'seo'         => $slug,
-                'created_by'  => $this->session->userdata('id_admin'),
+                'created_by'  => $this->session->userdata('id_admin')
               );
 
 			        $this->db->where('news_id', $this->input->post('news_id'))->update('news', $data);
@@ -136,15 +136,33 @@ class Berita extends CI_Controller{
   function category_delete($id){
     $this->db->where('category_id', $id)->delete('category');
     $this->session->set_flashdata('info', 'Kategori berhasil dihapus');
-    redirect('admin/berita/buat-post');
+    redirect('admin/buat-pos');
   }
 
   function save_category(){
     $post = array(
-      'category_name' => $this->input->post('nama_kategori');
+      'category_name' => $this->input->post('nama_kategori')
     );
 
     $data = $this->Admin_model->saveCategory($post);
+    echo json_encode($data);
+  }
+
+  function create_tags(){
+    $string   = preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('tag')); 
+    $trim     = trim($string);
+    $pre_slug = strtolower(str_replace(" ", "-", $trim)); 
+    $slug     = $pre_slug;
+    $post = array(
+      'tag' => $this->input->post('tag'),
+      'tag_url' => $slug
+    );
+    $data = $this->Admin_model->saveTag($post);
+    echo json_decode($data);
+  }
+
+  function tag_show(){
+    $data = $this->Admin_model->getTag();
     echo json_encode($data);
   }
 }

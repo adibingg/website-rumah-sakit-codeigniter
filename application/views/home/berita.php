@@ -1,26 +1,15 @@
 <?php $this->load->view('home/nav'); ?>
   <!-- SECTION HEAD -->
-  <section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo base_url('public/'); ?>images/bg_1.jpg');" data-stellar-background-ratio="0.7">
-    <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread">Berita Rumah Sakit Umum Kartini</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Berita <i class="ion-ios-arrow-forward"></i></span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php $this->load->view('home/bread'); ?>
 	
   <!-- SECTION BERITA -->
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
         <?php foreach($recent_news->result() as $blog){ ?>
-		    <div class="col-md-3 ftco-animate">
-          <div class="blog-entry">
-            <a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
+		    <div class="col-md-3 ftco-animate ">
+          <div class="card blog-entry p-3">
+            <div class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
               <div class="meta-date text-center p-2">  
                 <span class="day">
                 <?php
@@ -32,8 +21,8 @@
                 <span class="mos">
                 <?php 
                   $month = $blog->date_post; 
-                $this_month = strip_tags(substr($month,6,7)); 
-                  echo bulan($this_month); 
+                $this_month = strip_tags(substr($month,5,2)); 
+                  echo getBulan($this_month); 
                 ?>
                 </span>
                 
@@ -44,8 +33,8 @@
                 ?>
                 </span>
               </div>
-            </a>
-            <div class="text bg-white p-4">
+            </div>
+            <div class="text bg-white p-2">
               <h3 class="heading"><a href="#"><?= $blog->title; ?></a></h3>
 				      <p style="text-align: justify;">	
 					    <?php 

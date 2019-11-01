@@ -1,38 +1,32 @@
 <?php $this->load->view('home/nav') ?>
+<?php $this->load->view('home/bread'); ?>
+	
   		<section class="ftco-section" style="margin-top: -100px;">
 			<div class="container">
 				<div class="row">
           <div class="col-lg-8 ftco-animate">
             <div class="col-md-12">
               <div class="row">
-              <div class="col-md-2">
-                <a style="font-size: 9pt; width: 100px; text-align: left;" href="" class="btn btn-primary btn-xs no-radius"><i class="fa fa-facebook"></i> Facebook</a>
-                <a style="font-size: 9pt; width: 100px; text-align: left;" href="" class="btn btn-info btn-xs no-radius"><i class="fa fa-twitter"></i> Twitter</a>
-                <a style="font-size: 9pt; width: 100px; text-align: left;" href="" class="btn btn-success btn-xs no-radius"><i class="fa fa-whatsapp"></i> Whatsapp</a>
-              </div>
-              <div class="col-md-10">
+              <div class="col-md-12 card" style="padding-left: 100px; padding-bottom: 100px; padding-right: 100px; padding-top: 20px;">
                 <?php foreach($news_rows->result() as $row){ ?>
-                <h2 class="mb-3" style="font-size: 19pt; font-family: 'Fjalla One', sans-serif;"><?php echo $row->title; ?></h2>
+                <h2 class="mb-3" style="font-size: 19pt; font-family: 'Fjalla One', sans-serif; text-transform: capitalize;"><?php echo $row->title; ?></h2>
                 <div class="meta" style="color: #ddd;">
                     <a style="color: #000; font-size: 11pt;" href="#"><span class="icon-calendar"></span> <span class="day"><?php $date = $row->date_post; echo strip_tags(substr($date,8,2)); ?></span>
-								<span class="mos"><?php $month = $row->date_post; $this_month = strip_tags(substr($month,6,7)); echo bulan($this_month); ?></span>
+								<span class="mos"><?php $month = $row->date_post; $this_month = strip_tags(substr($month,6,7)); echo getBulan($this_month); ?></span>
 								<span class="yr"><?php $year = $row->date_post; echo strip_tags(substr($year, 0,4)); ?></span></a>
                     <a style="color: #000; font-size: 11pt;" href="#"><span class="icon-person"></span> Dave Lewis</a>
                     <a style="color: #000; font-size: 11pt;" href="#"><span class="icon-chat"></span> 19</a>
                   </div>
-                <img class="img-responsive" width="625" height="340"  src="<?= base_url('uploads/').$row->images; ?>" alt="<?= $row->title; ?>">
+                <img class="img-responsive" style="width: 100%;" src="<?= base_url('uploads/').$row->images; ?>" alt="<?= $row->title; ?>">
+                <p><i class="fa fa-share"></i>
+                  <a href="" class="btn btn-success"><i class="fa fa-whatsapp"></i></a><a href="" class="btn btn-primary"><i class="fa fa-facebook-square"></i></a><a href="" class="btn btn-info"><i class="fa fa-twitter"></i></a>
+                </p>
                 <p style="text-align:justify;"><?= $row->content; ?></p>
                 
-                <div class="tag-widget post-tag-container mb-5 mt-5">
-                  <div class="tagcloud">
-                    <a href="#" class="tag-cloud-link">Life</a>
-                    <a href="#" class="tag-cloud-link">Sport</a>
-                    <a href="#" class="tag-cloud-link">Tech</a>
-                    <a href="#" class="tag-cloud-link">Travel</a>
-                  </div>
-                </div>
             </div>
-          </div></div></div>
+          </div>
+          </div>
+          </div>
           
           <div class="col-lg-4 sidebar ftco-animate">
             <div class="sidebar-box">
@@ -44,19 +38,23 @@
               </form>
             </div>
             <div class="sidebar-box ftco-animate" style="margin-top: -60px;">
-              <div class="card" style="background-color: #fafafa; padding: 10px; border: 0px;">
-              <ul class="list-group">
-              <li class="list-group-item active">Kategori</li>
-              <?php foreach($category->result() as $cat){ ?>
-                <li class="list-group-item"><a href=""><?php echo $cat->category_name; ?></a></li>
-              <?php } ?>
-              </ul>
+              <div style="background-color: #fafafa; padding: 0px; border: 0px;">
+                
+                <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action active">
+                    Cras justo odio
+                  </a>
+                  <?php foreach($category->result() as $cat){ ?>
+                  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                  <?php } ?>
+                </div>
               </div>
             </div>
 
             <div class="sidebar-box ftco-animate">
-              <div class="sidebar-title" style="padding-left: 20px; padding-right: 20px; text-align: center;">
-                <h3 style="border-bottom: 2px solid blue;">ARTIKEL YANG SAMA</h3>
+              <div class="sidebar-title">
+                <h3>Informasi Yang Sama</h3>
+                <div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
               </div>
               <div class="card" style="background-color: #fafafa; border: 0px; padding: 20px;">
               <?php

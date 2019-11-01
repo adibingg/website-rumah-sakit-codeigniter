@@ -20,6 +20,18 @@ class Admin_model extends CI_Model{
 		return $query;
 	}
 
+	//Save Tag
+	function saveTag($post){
+		$query = $this->db->insert('tags', $post);
+		return $query;
+	}
+
+	//Get Tag
+	function getTag(){
+		$query = $this->db->get('tags');
+		return $query->result();
+	}
+
 	function TampilBerita(){
 		//Ambil data Berita
 		$this->db->select('*');
@@ -319,7 +331,7 @@ class Admin_model extends CI_Model{
 	function getCareerCategory(){
 		//Tampilkan Kategori Kari
 		$query = $this->db->get('career_category');
-		return $query->result;
+		return $query;
 	}
 
 	function getCareerCategoryId($id){

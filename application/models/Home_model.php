@@ -40,7 +40,7 @@ class Home_model extends CI_Model{
     }
 
     function getRooms(){
-        $this->db->limit('5');
+        $this->db->limit('7');
         $this->db->order_by('room_name', 'ASC');
         $this->db->order_by('class', 'ASC');
         $query = $this->db->get('room');
@@ -70,7 +70,6 @@ class Home_model extends CI_Model{
         $this->db->from('gallery');
         $this->db->join('album', 'album.album_id=gallery.album_id');
         $hasil = $this->db->get();
-
         return $hasil;
 
     }
