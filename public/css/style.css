@@ -8063,14 +8063,15 @@ h1, h2, h3, h4, h5,
     -moz-box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41);
     box-shadow: 0px 10px 34px -20px rgba(0, 0, 0, 0.41); }
     .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item {
-      font-size: 11px; 
-      background: #16739c;
+      font-size: 12px; 
+      background: #007bff;
       color: white;
       text-transform: uppercase;
+      margin-top: -2px;
     }
       .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item:hover, .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu .dropdown-item:focus {
-        background: #002338;
-        
+        background: #42bff5;
+ 
       }
   .ftco-navbar-light .navbar-nav > .nav-item.ftco-seperator {
     position: relative;
@@ -8317,10 +8318,11 @@ h1, h2, h3, h4, h5,
         .owl-carousel.home-slider .slider-item .slider-text .text {
           position: relative; }
         .owl-carousel.home-slider .slider-item .slider-text h1 {
-          font-size: 60px;
+          font-size: 40px;
           color: #2f89fc;
           line-height: 1.2;
-          font-weight: 900; }
+          font-weight: 900; 
+          margin-top: 500px; background-color: black; padding: 10px; opacity: 0.5; color: white; border-bottom: 15px solid #42bff5;}
           .owl-carousel.home-slider .slider-item .slider-text h1 span {
             display: block;
             color: #000000; }

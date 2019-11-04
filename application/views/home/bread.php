@@ -3,7 +3,7 @@
         <div class="container">
           <div class="row no-gutters slider-text">
             <div class="col-md-9 ftco-animate" style="margin-top: 18px;">
-              <h1 class="bread">INFORMASI KARIR</h1>
+              <h1 class="bread" style="text-transform: uppercase;"><?php echo $title; ?></h1>
               <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Karir <i class="ion-ios-arrow-forward"></i></span></p>
             </div>
           </div>

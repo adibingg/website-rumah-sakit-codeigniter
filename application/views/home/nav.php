@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel|Fjalla+One|ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    
   </head>
   <body>
     <nav class="navbar top" style="height: 23pt; font-size: 10pt; padding: 0px; margin:0px;">
