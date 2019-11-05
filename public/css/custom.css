@@ -6,10 +6,11 @@
   }
   .logo{
     text-align: center;
+    width: 50px;
   }
   .company-name{
     text-align:center;
-    font-size: 15pt;
+    font-size: 11pt;
   }
 }
     .rndd{

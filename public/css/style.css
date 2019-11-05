@@ -8841,10 +8841,13 @@ h1, h2, h3, h4, h5,
   border-top: 0;
   border-radius: 2px; }
   .blog-entry .text .heading {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: justify;
+    color : #218838;
     margin-bottom: 16px; }
     .blog-entry .text .heading a {
-      color: #000000; }
+      color: #218838; }
       .blog-entry .text .heading a:hover, .blog-entry .text .heading a:focus, .blog-entry .text .heading a:active {
         color: #2f89fc; }
   .blog-entry .text .meta-chat {

@@ -7,7 +7,7 @@
           <div class="col-lg-8 ftco-animate">
             <div class="col-md-12">
               <div class="row">
-              <div class="col-md-12 card" style="padding-left: 100px; padding-bottom: 100px; padding-right: 100px; padding-top: 20px;">
+              <div class="col-md-12 card" style="padding-left: 5%; padding-bottom: 100px; padding-right: 5%; padding-top: 20px;">
                 <?php foreach($news_rows->result() as $row){ ?>
                 <h2 class="mb-3" style="font-size: 19pt; font-family: 'Fjalla One', sans-serif; text-transform: capitalize;"><?php echo $row->title; ?></h2>
                 <div class="meta" style="color: #ddd;">
@@ -39,13 +39,10 @@
             </div>
             <div class="sidebar-box ftco-animate" style="margin-top: -60px;">
               <div style="background-color: #fafafa; padding: 0px; border: 0px;">
-                
                 <div class="list-group">
-                  <a href="#" class="list-group-item list-group-item-action active">
-                    Cras justo odio
-                  </a>
+                  <p style="padding: 10px;">Kategori Informasi</p>
                   <?php foreach($category->result() as $cat){ ?>
-                  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                  <a href="#" class="item" style="padding: 10px; color: #161e2b; border-bottom: 1px solid #ddd; text-transform: capitalize;">Dapibus ac facilisis in</a>
                   <?php } ?>
                 </div>
               </div>

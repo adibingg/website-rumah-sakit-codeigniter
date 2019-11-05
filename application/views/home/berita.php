@@ -7,9 +7,9 @@
 		<div class="container">
 			<div class="row">
         <?php foreach($recent_news->result() as $blog){ ?>
-		    <div class="col-md-3 ftco-animate ">
+		    <div class="col-md-3 col-sm-6 col-xs-6 ftco-animate ">
           <div class="card blog-entry p-3">
-            <div class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
+            <div class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>'); height: 200px;">
               <div class="meta-date text-center p-2">  
                 <span class="day">
                 <?php
@@ -35,18 +35,24 @@
               </div>
             </div>
             <div class="text bg-white p-2">
-              <h3 class="heading"><a href="#"><?= $blog->title; ?></a></h3>
-				      <p style="text-align: justify;">	
+              <h3 class="heading">
+                <a href="<?php echo base_url('baca-berita/').$blog->seo; ?>">
+                <?php  $berita_title = $blog->title; 
+                echo strip_tags(substr($berita_title,0,42))."..."; 
+                ?>
+                </a>
+              </h3>
+				      <p style="text-align: justify; padding: 0px; margin-top: -12px; margin-bottom: -12px;">	
 					    <?php 
                 $berita = $blog->content; 
-                echo strip_tags(substr($berita,0,100)); 
+                echo strip_tags(substr($berita,0,90)); 
 					    ?>
 				      </p>
                 <div class="d-flex align-items-center mt-4">
 	                <p class="mb-0"><a href="<?php echo base_url('baca-berita/').$blog->seo; ?>" class="btn btn-info btn-sm">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+	                	<a href="#" class="mr-2 meta-chat"><i class="fa fa-pencil"></i> Admin</a>
+	                	<a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a>
 	                </p>
                 </div>
               </div>
