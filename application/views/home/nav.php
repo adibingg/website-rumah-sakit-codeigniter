@@ -21,7 +21,12 @@
     <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel|Fjalla+One|ZCOOL+XiaoWei&display=swap" rel="stylesheet">
-    
+    <style type="text/css">
+      
+      .box .panel{
+        min-height: 500px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar top" style="height: 23pt; font-size: 10pt; padding: 0px; margin:0px;">
@@ -42,12 +47,12 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-md-2 col-xs-2 logo">
-		    		<a class="navbar-brand" href="<?php echo base_url('/'); ?>"><img class="img-responsive" style="width: 80px; heigth: 80px; margin-top: 9px;" src="<?php echo base_url('public/images/logo.png'); ?>" alt=""></a>
+		    		<a class="navbar-brand" href="<?php echo base_url('/'); ?>"><img class="img-responsive" style="width: 80px; heigth: 80px; margin-top: 3px;" src="<?php echo base_url('public/images/logo.png'); ?>" alt=""></a>
           </div>
           <div class="col-md-10 col-xs-8 company-name">
             <div class="title"  style="margin-left: 15px;">
-              <h1 style="font-family: 'Staatliches', cursive; font-size: 25pt;">RUMAH SAKIT UMUM KARTINI</h1>
-              <p style="margin-top: -7%; font-family: 'Staatliches', cursive; font-size: 20pt;">Berkarya Dalam Kasih</p>
+              <h1 style="font-family: 'Staatliches', cursive; font-size: 20pt;">RUMAH SAKIT UMUM KARTINI</h1>
+              <p style="margin-top: -7%; font-family: 'Staatliches', cursive; font-size: 18pt;">Berkarya Dalam Kasih</p>
               <p style="margin-top: -8%; font-size: 10pt;">Jl. Kartini No. 104 Kalirejo - Lampung Tengah</p>
             </div>
 			    </div>

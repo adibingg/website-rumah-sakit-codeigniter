@@ -18,9 +18,13 @@ $route['translate_uri_dashes'] = FALSE;
 $route['admin/pos'] = 'admin/berita';
 $route['admin/buat-pos'] = 'admin/berita/create';
 
+//Login Tracker
+$route['admin/login-tracker'] = 'admin/tracker';
+
 //Dokter
 $route['admin/doctor-list'] = 'admin/dokter';
 $route['admin/doctor-schedule'] = 'admin/dokter/schedule';
+$route['admin/doctor-update/(:any)'] = 'admin/dokter/edit/$1';
 
 //Pelayanan
 $route['admin/services'] = 'admin/pelayanan';

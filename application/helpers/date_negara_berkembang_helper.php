@@ -13,31 +13,31 @@ function konversi_bulan($tgl){
 
 function getBulan($bln){
         switch ($bln){
-            case 01: 
+            case 1: 
                 return "Januari";
                 break;
-            case 02:
+            case 2:
                 return "Februari";
                 break;
-            case 03:
+            case 3:
                 return "Maret";
                 break;
-            case 04:
+            case 4:
                 return "April";
                 break;
-            case 05:
+            case 5:
                 return "Mei";
                 break;
-            case 06:
+            case 6:
                 return "Juni";
                 break;
-            case 07:
+            case 7:
                 return "Juli";
                 break;
-            case 08:
+            case 8:
                 return "Agustus";
                 break;
-            case 09:
+            case 9:
                 return "September";
                 break;
             case 10:

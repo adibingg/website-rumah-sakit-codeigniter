@@ -55,7 +55,10 @@
                             <td><?= $row->jumat; ?></td>
                             <td><?= $row->sabtu; ?></td>
                             <td><?= $row->minggu; ?></td>
-                            <td><a class="btn btn-danger btn-sm hapus" href="<?php echo base_url('admin/dokter/hapus_jadwal/').$row->doctor_schedule_id; ?>">Hapus</a></td>
+                            <td>
+                              <a href="<?= base_url('admin/doctor-update/'); ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url('admin/dokter/hapus_jadwal/'.$row->doctor_schedule_id); ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
+                            </td>
                           </tr>
                         <?php } ?>
                         </tbody>

@@ -36,6 +36,7 @@
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
+                            <th>#</th>
                             <th class="column-title">Judul </th>
                             <th class="column-title">Tanggal</th>
                             <th class="column-title">Kategori</th>
@@ -50,8 +51,10 @@
                         </thead>
 
                         <tbody>
+                        <?php $no=1; ?>
                         <?php foreach($berita->result() as $row){ ?>
                           <tr class="even pointer">
+                            <td><?= $no++ ?></td>
                             <td class=" "><?= $row->title; ?></td>
                             <td class=" "><?= $row->date_post; ?> </td>
                             <td class=" "><?= $row->category_name; ?> </td>
@@ -64,7 +67,7 @@
                             <?php } ?>
                             
                            
-                            <td class=" last">
+                            <td class="last" width="120">
                                 <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
                                 <a href="<?= base_url('admin/berita/update/').$row->news_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
                                 <a href="<?= base_url('admin/berita/delete/').$row->news_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>

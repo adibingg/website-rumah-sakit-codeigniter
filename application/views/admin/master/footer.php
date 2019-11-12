@@ -13,6 +13,10 @@
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/nprogress/nprogress.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/js/custom.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets-admin/css/vendors/moment/min/moment.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
+<script src="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script>
       $(document).ready(function(){
             function bacaGambar(input) {
@@ -110,7 +114,13 @@
               });
             });
 
-      });
+            $('#myDatepicker1').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker2').datetimepicker({
+                format: 'HH:mm A'
+            });
+          });
     </script>
   </body>
   

@@ -21,14 +21,9 @@
                   </div>
 
                   <div class="x_content">
-                  <?php if($this->session->flashdata() == true){ ?>
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                      <strong> <i class="fa fa-check"></i> <?php echo $this->session->flashdata('info'); ?></strong>
-                      <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                  <?php } else{} ?>
+                  <?php if($this->session->flashdata() == true){ 
+                    echo $this->session->flashdata('info');
+                  } else{} ?>
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
@@ -53,7 +48,13 @@
                         <?php }else{ ?>
                         <?php foreach($dokter->result() as $row){ ?>
                           <tr>
-                            <td><img style="width: 70px; heigth: 70px;" class="img-responsive" src="<?php echo base_url('uploads/').$row->images; ?>" alt=""></td>
+                            <td>
+                              <?php if($row->images==''){ ?>
+                              <img style="width: 70px; heigth: 70px;" class="img-responsive" src="<?php echo base_url('public/images/doctor.png'); ?>" alt="">
+                              <?php } else { ?> 
+                              <img style="width: 70px; heigth: 70px;" class="img-responsive" src="<?php echo base_url('uploads/').$row->images; ?>" alt="">
+                              <?php } ?>
+                            </td>
                             <td><?php echo $row->doctor_name; ?></td>
                             <td><span class="badge bg-primary"><?php echo $row->specialist_name; ?></span></td>
                             <td><?php echo $row->address; ?></td>
@@ -65,7 +66,7 @@
                               </select>
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/berita/update/'); ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url('admin/doctor-update/').$row->doctor_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
                                 <a href="<?= base_url('admin/dokter/delete/').$row->doctor_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
                             </td>
                           </tr>

@@ -40,9 +40,9 @@
             <div class="sidebar-box ftco-animate" style="margin-top: -60px;">
               <div style="background-color: #fafafa; padding: 0px; border: 0px;">
                 <div class="list-group">
-                  <p style="padding: 10px;">Kategori Informasi</p>
+                  <h4 style="padding: 10px; margin-bottom: -10px;">Kategori Informasi</h4>
                   <?php foreach($category->result() as $cat){ ?>
-                  <a href="#" class="item" style="padding: 10px; color: #161e2b; border-bottom: 1px solid #ddd; text-transform: capitalize;">Dapibus ac facilisis in</a>
+                  <a href="#" class="item" style="padding: 10px; color: #161e2b; border-bottom: 1px solid #ddd; text-transform: capitalize;"><?= $cat->category_name; ?></a>
                   <?php } ?>
                 </div>
               </div>

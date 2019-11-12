@@ -1,7 +1,6 @@
 <?php
 
 class Admin_model extends CI_Model{
-
 	//Berita Query
 	function getKategori(){
 		$query = $this->db->get('category');
@@ -219,6 +218,13 @@ class Admin_model extends CI_Model{
         $query = $this->db->get();
         return $query;
 	}
+
+	function getDoctorDetail($id){
+		$this->db->where('doctor_id', $id);
+		$this->db->join('specialist', 'doctor.specialist_id = specialist.specialist_id');
+		$query = $this->db->get('doctor');
+		return $query;
+	}
 	
 	function getSpecialist(){
 		//Tampilkan data spesialis
@@ -232,9 +238,9 @@ class Admin_model extends CI_Model{
 
 	}
 
-	function checkJadwal($check){
+	function checkJadwal($id){
 		//Cek apakah ada jadwal dokter sebelum data dokter di hapus
-		$this->db->where('doctor_id', $check);
+		$this->db->where('doctor_id', $id);
 		$query = $this->db->get('doctor_schedule');
 		return $query;
 	}

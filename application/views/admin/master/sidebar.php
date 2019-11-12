@@ -12,6 +12,9 @@
     <link href="<?php echo base_url(); ?>assets-admin/css/vendors/nprogress/nprogress.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/css/custom.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+<link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
     <style>
       .to_do li a{
         text-transform: uppercase;
@@ -60,7 +63,6 @@
                   <li><a><i class="fa fa-edit"></i> Konten <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('admin/pos'); ?>"> Posting</a></li>
-                      <li><a href="<?= base_url('admin/event-promotion'); ?>"> Kegiatan & Promosi</a></li>
                       <li><a href="<?= base_url('admin/galeri'); ?>"> Galeri</a></li>
                       <li><a href="<?= base_url('admin/komentar'); ?>"> Komentar</a></li>
                     </ul>
@@ -88,7 +90,7 @@
                   <li><a href="<?= base_url('admin/info-karir'); ?>"><i class="fa fa-briefcase"></i> Info Karir</a></li>
                   <li><a><i class="fa fa-refresh"></i> Log <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url('admin/tracker-login'); ?>">Tracker Login</a></li>
+                      <li><a href="<?= base_url('admin/login-tracker'); ?>">Tracker Login</a></li>
                       <li><a href="<?= base_url('admin/log'); ?>">Log Aktivitas</a></li>
                     </ul>
                   </li>
@@ -104,10 +106,10 @@
               </div>
             </div>
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+              <a data-toggle="tooltip" data-placement="top" title="Settings"><span class=" glyphicon-cog" aria-hidden="true"></span></a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen"><span class="glyphicon glyphicon-" aria-hidden="true"></span></a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock"><span class="glyphicon glyphicon-eye-" aria-hidden="true"></span></a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html"><span class="glyphicon glyphicon-signout" aria-hidden="true"></span></a>
             </div>
           </div>
         </div>

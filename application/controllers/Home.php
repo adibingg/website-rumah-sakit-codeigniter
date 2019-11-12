@@ -9,7 +9,7 @@ class Home extends CI_Controller{
 
 	function index(){
 		$this->load->model('Home_model');
-		$this->load->helper('Date_negara_berkembang');
+		$this->load->helper('date_negara_berkembang');
 		$config = $this->Home_model->getConfig();
 		foreach($config->result() as $conf){
 			$data = array(

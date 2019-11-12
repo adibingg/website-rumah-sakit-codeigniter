@@ -24,9 +24,6 @@
 
   <body class="login">
     <div>
-      <a class="hiddenanchor" id="signup"></a>
-      <a class="hiddenanchor" id="signin"></a>
-
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
@@ -38,7 +35,7 @@
               <h1><?php echo $this->session->flashdata('info'); ?></h1>
               <?php endif; ?>
               <div>
-                <input name="username" type="text" class="form-control" placeholder="Username" required="" />
+                <input name="username" type="text" class="form-control has-error" placeholder="Username" required=""/>
               </div>
               <div>
                 <input name="password" type="password" class="form-control" placeholder="Password" required="" />

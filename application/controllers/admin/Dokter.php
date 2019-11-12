@@ -36,7 +36,12 @@ class Dokter extends CI_Controller{
 	    $config['allowed_types']  = 'gif|jpg|png';
 	 	$this->load->library('upload', $config);
 	        if ( ! $this->upload->do_upload('gambar')){
-	            redirect('admin/dokter/tambah_dokter');
+	            $data = array(
+					'specialist_id' => $this->input->post('specialist_id'),
+					'doctor_name' 	=> $this->input->post('nama'),
+					'address' 		=> $this->input->post('alamat')
+				);
+				$this->db->insert('doctor',$data);
 			}else{
 	            $file 		= $this->upload->data();
 				$gambar 	= $file['file_name'];
@@ -49,23 +54,88 @@ class Dokter extends CI_Controller{
 				);
 				$this->db->insert('doctor',$data);
 	        }
-		$this->session->set_flashdata('info','Berhasil ditambahkan');
+		$this->session->set_flashdata('info',
+			'<div class="alert alert-success alert-dismissible" role="alert">
+                <strong> <i class="fa fa-info-circle"></i> Berhasil menambahkan data dokter</strong>
+                <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                	<span aria-hidden="true">&times;</span>
+                </button>
+            </div>'
+        );
+
 		redirect('admin/dokter','refresh');
 	}
 
-	function edit(){
+	function edit($id){
+		$this->Sec_model->getSec(); 
+	    $config = array(
+		  	'title' 				=> "Perbaharui Data Dokter",
+			'specialist'			=> $this->Admin_model->getSpecialist(),
+			'messages_new' 			=> $this->Admin_model->showNewMessages(),
+			'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows(),
+			'doctor_detail'			=> $this->Admin_model->getDoctorDetail($id)
+		);
+		$this->load->view('admin/dokter-update', $config);
+	}
+
+	function update(){
 		$this->Sec_model->getSec();
+		$config['upload_path']    = './uploads';  
+	    $config['allowed_types']  = 'gif|jpg|png';
+	 	$this->load->library('upload', $config);
+	        if ( ! $this->upload->do_upload('gambar')){
+	            $data = array(
+					'specialist_id' => $this->input->post('specialist_id'),
+					'doctor_name' 	=> $this->input->post('nama'),
+					'address' 		=> $this->input->post('alamat')
+				);
+				$this->db->where('doctor_id', $this->input->post('id'))->update('doctor',$data);
+			}else{
+	            $file 		= $this->upload->data();
+				$gambar 	= $file['file_name'];
+	            $data = array(
+					'specialist_id' => $this->input->post('specialist_id'),
+					'doctor_name' 	=> $this->input->post('nama'),
+					'address' 		=> $this->input->post('alamat'),
+					'images' 		=> $gambar
+				);
+				$this->db->where('doctor_id', $this->input->post('id'))->update('doctor',$data);
+	        }
+			$this->session->set_flashdata('info',
+			'<div class="alert alert-success alert-dismissible" role="alert">
+                <strong> <i class="fa fa-check"></i>Berhasil memperbaharui data dokter</strong>
+                <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                	<span aria-hidden="true">&times;</span>
+                </button>
+            </div>'
+        );
+
+		redirect('admin/dokter','refresh');
 	}
 
 	function delete($id){
 		$this->Sec_model->getSec();
-		$result = $this->Admin_model->checkJadwal($check);
-		if($result->num_rows() < 1){
-			$this->session->set_flashdata('info', 'Mohon untuk menghapus data jadwal dokter dari data dokter yang ingin dihapus');
+		$result = $this->Admin_model->checkJadwal($id);
+		if($result->num_rows() == 1){
+			$this->session->set_flashdata('info',
+			'<div class="alert alert-danger alert-dismissible" role="alert">
+                <strong> <i class="fa fa-exclamation-triangle "></i> Gagal menghapus, kemungkinan data dokter masih tersimpan di jadwal dokter silahkan hapus terlebih dahulu</strong>
+                <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                	<span aria-hidden="true">&times;</span>
+                </button>
+            </div>'
+        );
 			redirect('admin/dokter');
 		}else{
 			$this->Admin_model->getDeleteDoctor($id);
-			$this->session->set_flashdata('info', 'Berhasil menghapus data dokter');
+			$this->session->set_flashdata('info',
+			'<div class="alert alert-success alert-dismissible" role="alert">
+                <strong> <i class="fa fa-trash"></i> Berhasil menghapus data dokter</strong>
+                <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                	<span aria-hidden="true">&times;</span>
+                </button>
+            </div>'
+        );
 			redirect('admin/dokter');
 		}
 	}
@@ -110,12 +180,10 @@ class Dokter extends CI_Controller{
 
 			$this->Admin_model->saveJadwal($data);
 			$this->session->set_flashdata('info', 'Jadwal berhasil di tambahkan');
-			redirect('admin/dokter/jadwal_dokter');
-		
+			redirect('admin/dokter/jadwal');
 		}else{
-
 			$this->session->set_flashdata('info', "Jadwal dokter sudah ada");
-			redirect('admin/dokter/tambah_jadwal');
+			redirect('admin/dokter/jadwal');
 		}
 	}
 

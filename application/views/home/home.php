@@ -168,56 +168,56 @@
 	</section>
 
 	<!-- SECTION BERITA -->
-	<section class="ftco-section bg-light" style="padding-top : 0px;">
+	<section class="ftco-section bg-light">
 		<div class="container">
-		<h1 style="border-bottom : 1px solid #ddd;">Berita Terbaru</h1>
-			<div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
 			<div class="row">
-			
         <?php foreach($recent_news->result() as $blog){ ?>
-		    <div class="col-md-3 ftco-animate">
-          <div class="blog-entry">
-            <a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>');">
-              <div class="meta-date text-center p-2"  style="background-color:#8ac4ff;">  
+		    <div class="col-md-3 col-sm-6 col-xs-6 ftco-animate ">
+          <div class="card blog-entry p-3">
+            <div class="block-20" style="background-image: url('<?= base_url('uploads/').$blog->images; ?>'); height: 200px;">
+              <div class="meta-date text-center p-2" style="min-width: 81px;">  
                 <span class="day">
                 <?php
-					$date = $blog->date_post;
-					echo strip_tags(substr($date,8,2));
-					?>
+                $date = $blog->date_post;
+                echo strip_tags(substr($date,8,2));
+                ?>
                 </span>
                 
-                <span class="mos" style="font-size: 15pt; font-weight: 100; background-color: green;">
+                <span class="mos">
                 <?php 
-                  	$month = $blog->date_post; 
-                	$this_month = strip_tags(substr($month,5,2)); 
-					echo konversi_bulan($this_month); 
+                  $month = $blog->date_post; 
+                $this_month = strip_tags(substr($month,5,2)); 
+                  echo getBulan($this_month); 
                 ?>
                 </span>
                 
                 <span class="yr">
                 <?php
-					$year = $blog->date_post;
-					echo strip_tags(substr($year, 0,4));
+                $year = $blog->date_post;
+                echo strip_tags(substr($year, 0,4));
                 ?>
                 </span>
               </div>
-            </a>
-            <div class="text bg-white p-4">
-              <h3 class="heading"><a href="#"><?php 
-							$berita = $blog->content; 
-							echo strip_tags(substr($title,0,10)); 
-					    ?></a></h3>
-				      <p style="text-align: justify;">	
+            </div>
+            <div class="text bg-white p-2">
+              <h3 class="heading">
+                <a href="<?php echo base_url('baca-berita/').$blog->seo; ?>">
+                <?php  $berita_title = $blog->title; 
+                echo strip_tags(substr($berita_title,0,42))."..."; 
+                ?>
+                </a>
+              </h3>
+				      <p style="text-align: justify; padding: 0px; margin-top: -12px; margin-bottom: -12px;">	
 					    <?php 
-							$berita = $blog->content; 
-							echo strip_tags(substr($berita,0,100)); 
+                $berita = $blog->content; 
+                echo strip_tags(substr($berita,0,88)); 
 					    ?>
 				      </p>
                 <div class="d-flex align-items-center mt-4">
 	                <p class="mb-0"><a href="<?php echo base_url('baca-berita/').$blog->seo; ?>" class="btn btn-info btn-sm">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+	                	<a href="#" class="mr-2 meta-chat"><i class="fa fa-pencil"></i> Admin</a>
+	                	<a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a>
 	                </p>
                 </div>
               </div>
@@ -226,6 +226,8 @@
 		  <?php } ?>
       </div>
 
+      
 		</div>
   </section>
+
 <?php $this->load->view('home/footer'); ?>
