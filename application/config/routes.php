@@ -16,7 +16,11 @@ $route['translate_uri_dashes'] = FALSE;
 //Routes Admin
 //Artikel
 $route['admin/news'] = 'admin/news';
-$route['admin/post'] = 'admin/news/create';
+$route['admin/news/create'] = 'admin/news/create';
+$route['admin/news/publish'] = 'admin/news/store';
+$route['admin/news/edit/(:any)'] = 'admin/news/edit/$1';
+$route['admin/news/update'] = 'admin/news/update';
+$route['admin/news/delete/(:any)'] = 'admin/news/destroy/$1';
 
 //Login Tracker
 $route['admin/login-tracker'] = 'admin/tracker';

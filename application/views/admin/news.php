@@ -12,7 +12,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <a href="<?= base_url('admin/buat-pos') ?>" class="btn btn-success"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Tulis Baru"></i></a>
+                    <a href="<?= base_url('admin/news/create') ?>" class="btn btn-success"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="Tulis Baru"></i></a>
                     <a class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Aktif"><i class="fa fa-globe"></i></a>
                     <a class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Draft"><i class="fa fa-archive"></i></a>
                     <a class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Sampah"><i class="fa fa-trash"></i></a>

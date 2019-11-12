@@ -17,7 +17,7 @@ class News extends CI_Controller{
       'messages_new'          => $this->Inbox_model->showNewMessages(),
 			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
     );
-    $this->load->view('admin/berita',  $data);
+    $this->load->view('admin/news',  $data);
   }
 
   function create(){
@@ -28,7 +28,7 @@ class News extends CI_Controller{
       'messages_new'          => $this->Inbox_model->showNewMessages(),
 			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 
     );
-		$this->load->view('admin/berita-tambah',  $data);
+		$this->load->view('admin/news-add',  $data);
 	}
   
   function store(){
