@@ -6,11 +6,15 @@
 defined('BASEPATH') OR exit("No dirrect script access alowed!");
 
 class Berita extends CI_Controller{
+	
+	function __construct(){
+		parrent::__construct();
+		$this->load->model('Home_model');
+		$this->load->helper('Date_negara_berkembang');
+	}
 
 	function index(){
-		$this->load->model('Home_model');
 		$config = $this->Home_model->getConfig();
-		$this->load->helper('Date_negara_berkembang');
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' 	=> $this->Home_model->getNavbar(),
@@ -26,7 +30,6 @@ class Berita extends CI_Controller{
 	}
 
 	public function read($id){
-		$this->load->model('Home_model');
 		$this->load->model('Admin_model');
 		$config = $this->Home_model->getConfig();
 		$this->load->helper('Date_negara_berkembang');
