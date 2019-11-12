@@ -23,9 +23,13 @@ class News_model extends CI_Model{
         return $query;
     }
 
-    function getTag(){
-        $query = $this->db->get('tags');
-        return $query->result();
+    function getNewsId($id){
+        $this->db->select('*');
+		$this->db->from('news');
+		$this->db->where('news_id', $id);
+		$this->db->join('category', 'category.category_id = news.category_id');
+		$data = $this->db->get();
+		return $data;
     }
 
     function TampilBerita(){
@@ -50,7 +54,7 @@ class News_model extends CI_Model{
         return $query;
     }
 
-    function HapusBerita($id){
+    function deleteNews($id){
         $this->db->where('news_id', $id);
         $showrow = $this->db->get('news');
         $result = $showrow->row();

@@ -133,15 +133,6 @@ class Admin_model extends CI_Model{
 		return $data->result();
 	}
 
-	function getBeritaId($id){
-		//Ambil data berita berdasarkan id
-		$this->db->select('*');
-		$this->db->from('news');
-		$this->db->where('news_id', $id);
-		$this->db->join('category', 'category.category_id = news.category_id');
-		$data = $this->db->get();
-		return $data;
-	}
 
 	//Dokter
 	function getDoctor(){

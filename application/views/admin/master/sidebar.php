@@ -14,7 +14,7 @@
     <link href="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-<link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
     <style>
       .to_do li a{
         text-transform: uppercase;
@@ -30,6 +30,10 @@
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
+      }
+      .btn{
+        border: 0px;
+        border-radius: 0px;
       }
     </style>
   </head>
@@ -62,7 +66,7 @@
                   <li><a href="<?= base_url('admin/statistik'); ?>"><i class="fa fa-bar-chart"></i> Statistik </a></li>
                   <li><a><i class="fa fa-edit"></i> Konten <span class="fa fa-plus"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url('admin/pos'); ?>"> Posting</a></li>
+                      <li><a href="<?= base_url('admin/news'); ?>"> Berita</a></li>
                       <li><a href="<?= base_url('admin/galeri'); ?>"> Galeri</a></li>
                       <li><a href="<?= base_url('admin/komentar'); ?>"> Komentar</a></li>
                     </ul>

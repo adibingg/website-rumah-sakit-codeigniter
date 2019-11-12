@@ -26,7 +26,7 @@
                   <div class="x_content">
                   <?php if($this->session->flashdata() == true){ ?>
                     <div class="alert alert-success alert-dismissible" role="alert">
-                      <strong> <i class="fa fa-check"></i> <?php echo $this->session->flashdata('info'); ?></strong>
+                      <strong> <i class="fa fa-info"></i> <?php echo $this->session->flashdata('info'); ?></strong>
                       <button style="color: red;" type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -69,8 +69,8 @@
                            
                             <td class="last" width="120">
                                 <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
-                                <a href="<?= base_url('admin/berita/update/').$row->news_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-                                <a href="<?= base_url('admin/berita/delete/').$row->news_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('admin/news/edit/').$row->news_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url('admin/news/delete/').$row->news_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
                             </td>
                           </tr>
                         <?php } ?>

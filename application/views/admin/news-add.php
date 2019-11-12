@@ -6,7 +6,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
             <div class="x_title">
-              <h2> Tulis Artikel</h2>
+              <h2><i class="fa fa-pencil"></i> Tulis Berita</h2>
               <ul class="nav navbar-right panel_toolbox">
                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                 <li><a class="close-link"><i class="fa fa-close"></i></a></li>
@@ -15,8 +15,8 @@
           </div>
           <div class="x_content">
             <div class="row">
-            <?php echo form_open_multipart('admin/berita/save');?>
-              <div class="col-md-9">
+            <?php echo form_open_multipart('admin/news/publish');?>
+              <div class="card shadow p-3 mb-5 bg-white rounded col-md-9">
                 <div class="form-group">
                   <label for="">Judul Berita</label>
                   <input type="text" name="judul" id="" class="form-control" placeholder="Judul Berita">
@@ -27,11 +27,11 @@
                   <textarea name="isi" id="" cols="30" rows="20" class="form-control"></textarea>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-12 col-xs-12">
+              <div class="card col-md-3 col-sm-12 col-xs-12 shadow p-3 mb-5 bg-white rounded">
                 <div class="form-group">
                   <label for="">Thumbnail</label>
                   <input type="file" name="gambar" id="source_gambar" class="form-control">
-                  <img src="#" id="tampil-gambar" class="img-responsive" alt="Preview Gambar" />
+                  <img src="<?php echo base_url('public/images/img-preview.png'); ?>" id="tampil-gambar" class="img-responsive" alt="Preview Gambar" />
                 </div>
                 <div class="form-group">
                   <label for="">Kategori Berita</label>
@@ -73,8 +73,10 @@
                     </div>
                   </div>
                 </div>
+                <hr>
                 <div class="form-group">
-                  <button class="btn btn-success"><i class="fa fa-arrow-up"></i> Publishkan</button>
+                  <button class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</button>
+                  <button class="btn btn-success"><i class="fa fa-upload"></i> Publish</button>
                 </div>
               </div>
               <?php echo form_close(); ?>

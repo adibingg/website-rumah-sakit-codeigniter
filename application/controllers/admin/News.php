@@ -38,7 +38,7 @@ class News extends CI_Controller{
  	  $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')){
                   $this->session->set_flashdata('info', 'Maaf, Foto anda gagal di unggah, kemungkinan file terlalu besar. Silahkan Coba Kembali');
-                  redirect('admin/berita/create');
+                  redirect('admin/news/create');
             }else{
             	$file     = $this->upload->data();
             	$gambar   = $file['file_name'];
@@ -59,7 +59,7 @@ class News extends CI_Controller{
 			        $this->db->insert('news',$data);
             }
     $this->session->set_flashdata('info','Berita berhasil di publikasikan');
-    redirect('admin/berita','refresh');
+    redirect('admin/news','refresh');
   }
   
   function edit($id){
@@ -67,11 +67,11 @@ class News extends CI_Controller{
     $data = array(
       'title'                 => "Perbaharui Berita",
       'kategori'              => $this->News_model->getKategori(), 
-      'berita'                => $this->News_model->getBeritaId($id),
+      'berita'                => $this->News_model->getNewsId($id),
       'messages_new'          => $this->Inbox_model->showNewMessages(),
 			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 
     );
-    $this->load->view('admin/beritaedit',  $data);
+    $this->load->view('admin/news-edit',  $data);
   }
 
   function update(){
@@ -119,14 +119,14 @@ class News extends CI_Controller{
             }
             
     $this->session->set_flashdata('info','Berita berhasil di perbaharui');
-    redirect('admin/berita');
+    redirect('admin/news');
   }
 
-  function delete($id){
+  function destroy($id){
     $this->Sec_model->getSec();
-    $this->News_model->HapusBerita($id);
+    $this->News_model->deleteNews($id);
     $this->session->set_flashdata('info', "Berhasil menghapus berita");
-    redirect('admin/berita');
+    redirect('admin/news');
   }
 
   function show_category(){

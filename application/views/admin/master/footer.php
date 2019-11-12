@@ -43,7 +43,7 @@
             $('#save-cat').on('click', function(){
               var nama_kategori = $('#category-name').val();
               $.ajax({
-                url : '<?php echo base_url('admin/berita/save_category'); ?>',
+                url : '<?php echo base_url('admin/news/save_category'); ?>',
                 type : 'POST',
                 dataType : 'json',
                 data : {nama_kategori:nama_kategori},
@@ -61,7 +61,7 @@
 
             function load_category(){
               $.ajax({
-                url: '<?php echo base_url('admin/berita/show_category'); ?>',
+                url: '<?php echo base_url('admin/news/show_category'); ?>',
                 type : 'GET',
                 dataType: 'JSON',
                 success:function(data){
@@ -80,7 +80,7 @@
 
             function load_modal_category(){
               $.ajax({
-                url: '<?php echo base_url('admin/berita/show_category'); ?>',
+                url: '<?php echo base_url('admin/news/show_category'); ?>',
                 type : 'GET',
                 dataType: 'JSON',
                 success:function(data){
@@ -104,7 +104,7 @@
             $('#save-tag').on('click', function(){
               var tag = $('#tag').val();
               $.ajax({
-                url: '<?php echo base_url('admin/berita/create_tags'); ?>',
+                url: '<?php echo base_url('admin/news/create_tags'); ?>',
                 type:'POST',
                 dataType: 'JSON',
                 data:{tag:tag},
