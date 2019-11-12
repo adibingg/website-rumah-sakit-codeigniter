@@ -1,10 +1,11 @@
 <?php
 
-class Berita extends CI_Controller{
+class News extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->load->model('Sec_model');
-    $this->load->model('Admin_model');
+    $this->load->model('News_model');
+    $this->load->model('Inbox_model');
     $this->load->helper('date_negara_berkembang');
   }
 
@@ -12,9 +13,9 @@ class Berita extends CI_Controller{
     $this->Sec_model->getSec();
     $data = array(
       'title'                 => "Pos Berita & Artikel",
-      'berita'                => $this->Admin_model->TampilBerita(),
-      'messages_new'          => $this->Admin_model->showNewMessages(),
-			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
+      'berita'                => $this->News_model->TampilBerita(),
+      'messages_new'          => $this->Inbox_model->showNewMessages(),
+			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
     );
     $this->load->view('admin/berita',  $data);
   }
@@ -23,14 +24,14 @@ class Berita extends CI_Controller{
     $this->Sec_model->getSec();
 		$data = array(
 			'title'                 => "Tambah Berita",
-      'kategori'              => $this->Admin_model->getKategori(),
-      'messages_new'          => $this->Admin_model->showNewMessages(),
-			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows() 
+      'kategori'              => $this->News_model->getKategori(),
+      'messages_new'          => $this->Inbox_model->showNewMessages(),
+			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 
     );
 		$this->load->view('admin/berita-tambah',  $data);
 	}
   
-  function save(){
+  function store(){
     $this->Sec_model->getSec();
     $config['upload_path']    = './uploads';  
     $config['allowed_types']  = 'gif|jpg|png';
@@ -61,19 +62,19 @@ class Berita extends CI_Controller{
     redirect('admin/berita','refresh');
   }
   
-  function update($id){
+  function edit($id){
     $this->Sec_model->getSec();
     $data = array(
       'title'                 => "Perbaharui Berita",
-      'kategori'              => $this->Admin_model->getKategori(), 
-      'berita'                => $this->Admin_model->getBeritaId($id),
-      'messages_new'          => $this->Admin_model->showNewMessages(),
-			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows() 
+      'kategori'              => $this->News_model->getKategori(), 
+      'berita'                => $this->News_model->getBeritaId($id),
+      'messages_new'          => $this->Inbox_model->showNewMessages(),
+			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 
     );
     $this->load->view('admin/beritaedit',  $data);
   }
 
-  function save_update(){
+  function update(){
     $this->Sec_model->getSec();
     $config['upload_path']    = './uploads';  
     $config['allowed_types']  = 'gif|jpg|png';
@@ -123,13 +124,13 @@ class Berita extends CI_Controller{
 
   function delete($id){
     $this->Sec_model->getSec();
-    $this->Admin_model->HapusBerita($id);
+    $this->News_model->HapusBerita($id);
     $this->session->set_flashdata('info', "Berhasil menghapus berita");
     redirect('admin/berita');
   }
 
   function show_category(){
-    $data = $this->Admin_model->getCategory();
+    $data = $this->News_model->getCategory();
     echo json_encode($data);
   }
 
@@ -144,7 +145,7 @@ class Berita extends CI_Controller{
       'category_name' => $this->input->post('nama_kategori')
     );
 
-    $data = $this->Admin_model->saveCategory($post);
+    $data = $this->News_model->saveCategory($post);
     echo json_encode($data);
   }
 
@@ -157,12 +158,12 @@ class Berita extends CI_Controller{
       'tag' => $this->input->post('tag'),
       'tag_url' => $slug
     );
-    $data = $this->Admin_model->saveTag($post);
+    $data = $this->News_model->saveTag($post);
     echo json_decode($data);
   }
 
   function tag_show(){
-    $data = $this->Admin_model->getTag();
+    $data = $this->News_model->getTag();
     echo json_encode($data);
   }
 }

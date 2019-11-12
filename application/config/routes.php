@@ -15,8 +15,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 //Routes Admin
 //Artikel
-$route['admin/pos'] = 'admin/berita';
-$route['admin/buat-pos'] = 'admin/berita/create';
+$route['admin/news'] = 'admin/news';
+$route['admin/post'] = 'admin/news/create';
 
 //Login Tracker
 $route['admin/login-tracker'] = 'admin/tracker';

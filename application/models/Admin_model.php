@@ -1,73 +1,7 @@
 <?php
 
 class Admin_model extends CI_Model{
-	//Berita Query
-	function getKategori(){
-		$query = $this->db->get('category');
-		return $query;
-	}
-
-	//Show category with result
-	function getCategory(){
-		$query = $this->db->get('category');
-		return $query->result();
-	}
-
-	//Save category 
-	function saveCategory($post){
-		$query =$this->db->insert('category', $post);
-		return $query;
-	}
-
-	//Save Tag
-	function saveTag($post){
-		$query = $this->db->insert('tags', $post);
-		return $query;
-	}
-
-	//Get Tag
-	function getTag(){
-		$query = $this->db->get('tags');
-		return $query->result();
-	}
-
-	function TampilBerita(){
-		//Ambil data Berita
-		$this->db->select('*');
-		$this->db->from('news');
-		$this->db->join('category', 'category.category_id = news.category_id');
-		$this->db->join('admins', 'admins.id_admin = news.created_by');
-		$this->db->where('status = "published"');
-		$this->db->order_by('date_post', 'desc');
-		$query = $this->db->get();
-		return $query;
-	}
-
-	function TampilDraft(){
-		//Ambil data Draft
-		$this->db->select('*');
-		$this->db->from('news');
-		$this->db->join('category', 'category.category_id = news.category_id');
-		$this->db->join('admins', 'admins.id_admin = news.created_by');
-		$this->db->where('status = "draft"');
-		$this->db->order_by('date_post', 'desc');
-		$query = $this->db->get();
-		return $query;
-	}
-
-	function HapusBerita($id){
-		//Hapus Gambar
-		$this->db->where('news_id', $id);
-		$showrow = $this->db->get('news');
-		$result = $showrow->row();
-		unlink("./uploads/$result->images");
-
-		//Hapus Data Artikel dari Database
-		$this->db->where('news_id', $id);
-		$query = $this->db->delete('news');
-		return $query;
-	}
-
+	
 	//Album dan Galeri Query
 	function getAlbum(){
 		//Ambil data Album
@@ -422,10 +356,7 @@ class Admin_model extends CI_Model{
 		$query = $this->db->insert('admins', $data);
 	}
 
-	function showNewMessages(){
-		$query = $this->db->get('inbox');
-		return $query;
-	}
+	
 
 	
 
