@@ -120,6 +120,42 @@
             $('#myDatepicker2').datetimepicker({
                 format: 'HH:mm A'
             });
+            $('#myDatepicker3').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker4').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker5').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker6').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker7').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker8').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker9').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker10').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker11').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker12').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker13').datetimepicker({
+                format: 'HH:mm A'
+            });
+            $('#myDatepicker14').datetimepicker({
+                format: 'HH:mm A'
+            });
           });
     </script>
   </body>

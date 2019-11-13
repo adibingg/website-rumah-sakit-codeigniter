@@ -27,10 +27,14 @@
     <div class="x_content">
       <div class="container">
         <div class="row">
+        <form action="<?php echo base_url('admin/dokter/save_jadwal'); ?>" method="POST" ?>
           <div class="col-sm-3">
             Dokter
-            <select class="form-control">
+            <select required class="form-control" name="doctor_id">
               <option>Pilih Dokter</option>
+              <?php foreach($doctor->result() as $row){ ?>
+              <option value="<?php echo $row->doctor_id; ?>"><?php echo $row->doctor_name; ?></option>
+              <?php } ?>
             </select>
           </div>
           
@@ -38,7 +42,7 @@
             Senin
             <div class="form-group">
               <div class='input-group date' id='myDatepicker1'>
-                <input type='text' class="form-control" placeholder="Jam Mulai" />
+                <input name="senin_mulai" type='text' class="form-control" placeholder="Jam Mulai" />
                 <span class="input-group-addon">
                   <span class="glyphicon glyphicon-time"></span>
                 </span>
@@ -46,7 +50,7 @@
             </div>
             <div class="form-group">
               <div class='input-group date' id='myDatepicker2'>
-                <input type='text' class="form-control" placeholder="Jam Selesai" />
+                <input name="senin_selesai" type='text' class="form-control" placeholder="Jam Selesai" />
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-time"></span>
                   </span>
@@ -56,35 +60,16 @@
                 <div class='col-sm-3'>
                     Selasa
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker1'>
-                            <input type='text' class="form-control" placeholder="Jam Mulai" />
+                        <div class='input-group date' id='myDatepicker3'>
+                            <input name="selasa_mulai" type='text' class="form-control" placeholder="Jam Mulai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker2'>
-                            <input type='text' class="form-control" placeholder="Jam Selesai" />
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-time"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class='col-sm-3'>
-                    Rabu
-                    <div class="form-group">
-                        <div class='input-group date' id='myDatepicker1'>
-                            <input type='text' class="form-control" placeholder="Jam Mulai" />
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-time"></span>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class='input-group date' id='myDatepicker2'>
-                            <input type='text' class="form-control" placeholder="Jam Selesai" />
+                        <div class='input-group date' id='myDatepicker4'>
+                            <input name="selasa_selesai" type='text' class="form-control" placeholder="Jam Selesai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
@@ -94,17 +79,16 @@
                 <div class='col-sm-3'>
                     Rabu
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker1'>
-                            <input type='text' class="form-control" placeholder="Jam Mulai" />
+                        <div class='input-group date' id='myDatepicker5'>
+                            <input name="rabu_mulai" type='text' class="form-control" placeholder="Jam Mulai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
-                               
                             </span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker2'>
-                            <input type='text' class="form-control" placeholder="Jam Selesai" />
+                        <div class='input-group date' id='myDatepicker6'>
+                            <input name="rabu_selesai" type='text' class="form-control" placeholder="Jam Selesai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
@@ -114,16 +98,17 @@
                 <div class='col-sm-3'>
                     Kamis
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker1'>
-                            <input type='text' class="form-control" placeholder="Jam Mulai" />
+                        <div class='input-group date' id='myDatepicker7'>
+                            <input name="kamis_mulai" type='text' class="form-control" placeholder="Jam Mulai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
+                               
                             </span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker2'>
-                            <input type='text' class="form-control" placeholder="Jam Selesai" />
+                        <div class='input-group date' id='myDatepicker8'>
+                            <input name="kamis_selesai" type='text' class="form-control" placeholder="Jam Selesai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
@@ -133,16 +118,16 @@
                 <div class='col-sm-3'>
                     Jum'at
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker1'>
-                            <input type='text' class="form-control" placeholder="Jam Mulai" />
+                        <div class='input-group date' id='myDatepicker9'>
+                            <input name="jumat_mulai" type='text' class="form-control" placeholder="Jam Mulai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker2'>
-                            <input type='text' class="form-control" placeholder="Jam Selesai" />
+                        <div class='input-group date' id='myDatepicker10'>
+                            <input name="jumat_selesai" type='text' class="form-control" placeholder="Jam Selesai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
@@ -150,24 +135,49 @@
                     </div>
                 </div>
                 <div class='col-sm-3'>
-                    Minggu
+                    Sabtu
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker1'>
-                            <input type='text' class="form-control" placeholder="Jam Mulai" />
+                        <div class='input-group date' id='myDatepicker11'>
+                            <input name="sabtu_mulai" type='text' class="form-control" placeholder="Jam Mulai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class='input-group date' id='myDatepicker2'>
-                            <input type='text' class="form-control" placeholder="Jam Selesai" />
+                        <div class='input-group date' id='myDatepicker13'>
+                            <input name="sabtu_selesai" type='text' class="form-control" placeholder="Jam Selesai" />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-time"></span>
                             </span>
                         </div>
                     </div>
                 </div>
+                <div class='col-sm-3 minggu'>
+                    Minggu
+                    <div class="form-group">
+                        <div class='input-group date' id='myDatepicker14'>
+                            <input name="minggu_selesai" type='text' class="form-control" placeholder="Jam Mulai" />
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class='input-group date' id='myDatepicker12'>
+                            <input name="minggu_selesai" type='text' class="form-control" placeholder="Jam Selesai" />
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-grup">
+                    <button class="btn btn-primary" type="submit">Simpan</button>
+                  </div>
+                </div>
+                </form>
             </div>
         </div>
       </div>
