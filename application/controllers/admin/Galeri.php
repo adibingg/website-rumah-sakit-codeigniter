@@ -4,7 +4,11 @@ class Galeri extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Sec_model');
+<<<<<<< HEAD
 		$this->load->model('Admin_model');
+=======
+		$this->load->model('Galeri_model');
+>>>>>>> 94f3f167d22ede59dba3da2012cbdc94630ff047
 		$this->load->model('Inbox_model');
 	}
 
@@ -12,8 +16,13 @@ class Galeri extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $data = array(
 	      'title' 					=> "Galeri Foto",
+<<<<<<< HEAD
 	      'galeri' 					=> $this->Admin_model->getFoto(),
 		  'album'					=> $this->Admin_model->getAlbum(),
+=======
+	      'galeri' 					=> $this->Galeri_model->getFoto(),
+		  'album'					=> $this->Galeri_model->getAlbum(),
+>>>>>>> 94f3f167d22ede59dba3da2012cbdc94630ff047
 		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
 		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 		);
@@ -24,7 +33,11 @@ class Galeri extends CI_Controller{
 		$this->Sec_model->getSec();
 	    $data = array(
 		  'title' 					=> "Tambah Album",
+<<<<<<< HEAD
 		  'album'					=> $this->Admin_model->getAlbum(),
+=======
+		  'album'					=> $this->Galeri_model->getAlbum(),
+>>>>>>> 94f3f167d22ede59dba3da2012cbdc94630ff047
 		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
 		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 	    );
@@ -55,7 +68,7 @@ class Galeri extends CI_Controller{
 
 	function hapus_foto($id){
 		$this->Sec_model->getSec();
-		$this->Admin_model->getFotoId($id);
+		$this->Galeri_model->getFotoId($id);
 		$this->session->set_flashdata('info', '<i class="fa fa-check"></i> Foto berhasil dihapus');
 		redirect('admin/galeri');
 	}
@@ -80,14 +93,18 @@ class Galeri extends CI_Controller{
 			'album_name' => $this->input->post('album_name'),
 			'link'		 => $slug
 		);
-		$this->Admin_model->SimpanAlbum($data);
+		$this->Galeri_model->SimpanAlbum($data);
 	}
 
 	function perbaharui_album($id){
 		$this->Sec_model->getSec();
 	    $data = array(
 		  'title' 					=> "Perbaharui Album",
+<<<<<<< HEAD
 		  'albumfoto' 				=> $this->Admin_model->AlbumId($id),
+=======
+		  'albumfoto' 				=> $this->Galeri_model->AlbumId($id),
+>>>>>>> 94f3f167d22ede59dba3da2012cbdc94630ff047
 		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
 		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 	    );
@@ -105,18 +122,18 @@ class Galeri extends CI_Controller{
 			'album_name' => $this->input->post('album_name'),
 			'link'		 => $slug
 		);
-		$this->Admin_model->PerbaharuiAlbum($id, $data);
+		$this->Galeri_model->PerbaharuiAlbum($id, $data);
 	}
 
 	function hapus_album($id){
 		$this->Sec_model->getSec();
-		$check_album = $this->Admin_model->checkAlbum($id);
+		$check_album = $this->Galeri_model->checkAlbum($id);
 		if($check_album->num_rows() > 0){
 			$this->session->set_flashdata('info', '<i class="fa fa-remove"></i> Gagal menghapus album, kosongkan album terlebih dahulu');
 			redirect('admin/galeri');
 		}else{
 			$this->session->set_flashdata('info', '<i class="fa fa-check"></i> Album berhasil dihapus');
-			$this->Admin_model->HapusAlbum($id);
+			$this->Galeri_model->HapusAlbum($id);
 		}
 	}
 }

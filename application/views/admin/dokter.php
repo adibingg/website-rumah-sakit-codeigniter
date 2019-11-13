@@ -25,6 +25,12 @@
                     echo $this->session->flashdata('info');
                   } else{} ?>
                     <div class="table-responsive">
+                    <?php if($dokter->num_rows() < 1){ ?>
+                    <div class="col-md-12 text-center">
+                      <img style="width: 10%;" src="<?php echo base_url('public/images/no-data.png'); ?>" />
+                      <h2>Data Belum Tersedia</h2>
+                      </div>
+                      <?php }else{ ?>
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
@@ -43,9 +49,9 @@
                         </thead>
 
                         <tbody>
-                        <?php if($dokter->num_rows() < 1){ ?>
-                        <?php echo "Belum ada dokter, silahkan tambah data dokter"; ?>
-                        <?php }else{ ?>
+                        
+                        
+                        
                         <?php foreach($dokter->result() as $row){ ?>
                           <tr>
                             <td>

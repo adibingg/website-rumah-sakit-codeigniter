@@ -6,6 +6,7 @@ class Dokter extends CI_Controller{
 		parent::__construct();
 		$this->load->model('Sec_model');
 		$this->load->model('Admin_model');
+		$this->load->model('Inbox_model');
 	}
 	
 	function index(){
@@ -13,8 +14,8 @@ class Dokter extends CI_Controller{
 	    $config = array(
 		  	'title' 				=> "Data Dokter",
 			'dokter'				=> $this->Admin_model->getDoctor(),
-			'messages_new' 			=> $this->Admin_model->showNewMessages(),
-			'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows()
+			'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+			'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/dokter', $config);
 	}
@@ -24,8 +25,8 @@ class Dokter extends CI_Controller{
 	    $config = array(
 		  	'title' 				=> "Data Dokter",
 			'specialist'			=> $this->Admin_model->getSpecialist(),
-			'messages_new' 			=> $this->Admin_model->showNewMessages(),
-			'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows()
+			'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+			'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/dokter-tambah', $config);
 	}
@@ -71,8 +72,8 @@ class Dokter extends CI_Controller{
 	    $config = array(
 		  	'title' 				=> "Perbaharui Data Dokter",
 			'specialist'			=> $this->Admin_model->getSpecialist(),
-			'messages_new' 			=> $this->Admin_model->showNewMessages(),
-			'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows(),
+			'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+			'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows(),
 			'doctor_detail'			=> $this->Admin_model->getDoctorDetail($id)
 		);
 		$this->load->view('admin/dokter-update', $config);
@@ -145,8 +146,8 @@ class Dokter extends CI_Controller{
 		$config = array(
 			'title' 				=> 'Jadwal Dokter',
 			'jadwal' 				=> $this->Admin_model->getJadwal(),
-			'messages_new' 			=> $this->Admin_model->showNewMessages(),
-			'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows()
+			'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+			'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/jadwal-dokter', $config);
 	}
@@ -156,8 +157,8 @@ class Dokter extends CI_Controller{
 		$config = array(
 			'title' 				=> 'Jadwal Dokter',
 			'doctor' 				=> $this->Admin_model->getDoctor(),
-			'messages_new' 			=> $this->Admin_model->showNewMessages(),
-			'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows()
+			'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+			'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/jadwal-tambah', $config);
 	}
@@ -169,15 +170,14 @@ class Dokter extends CI_Controller{
 		if($result->num_rows() < 1){
 			$data = array(
 				'doctor_id' => $this->input->post('doctor_id'),
-				'senin'		=> $this->input->post('senin'),
-				'selasa'	=> $this->input->post('selasa'),
-				'rabu'		=> $this->input->post('rabu'),
-				'kamis'		=> $this->input->post('kamis'),
-				'jumat'		=> $this->input->post('jumat'),
-				'sabtu'		=> $this->input->post('sabtu'),
-				'minggu'	=> $this->input->post('minggu'),
+				'senin'		=> $this->input->post('senin_mulai')." - ".$this->input->post('senin_selesai'),
+				'selasa'	=> $this->input->post('selasa_mulai')." - ".$this->input->post('selasa_selesai'),
+				'rabu'		=> $this->input->post('rabu_mulai')." - ".$this->input->post('rabu_selesai'),
+				'kamis'		=> $this->input->post('kamis_mulai')." - ".$this->input->post('kamis_selesai'),
+				'jumat'		=> $this->input->post('jumat_mulai')." - ".$this->input->post('jumat_selesai'),
+				'sabtu'		=> $this->input->post('sabtu_mulai')." - ".$this->input->post('sabtu_selesai'),
+				'minggu'	=> $this->input->post('minggu_mulai')." - ".$this->input->post('minggu_selesai'),
 			);
-
 			$this->Admin_model->saveJadwal($data);
 			$this->session->set_flashdata('info', 'Jadwal berhasil di tambahkan');
 			redirect('admin/dokter/jadwal');

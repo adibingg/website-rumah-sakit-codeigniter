@@ -2,77 +2,7 @@
 
 class Admin_model extends CI_Model{
 	
-	//Album dan Galeri Query
-	function getAlbum(){
-		//Ambil data Album
-		$query = $this->db->get('album');
-		return $query;
-	}
-
-	function SimpanAlbum($data){
-		//Simpan data Album
-		$this->db->insert('album', $data);
-		$this->session->set_flashdata('info', 'Album berhasil di tambahkan');
-		redirect('admin/galeri','refresh');
-	}
-
-	function AlbumId($id){
-		//Ambil data baris album dengan id
-		$this->db->where('album_id', $id);
-		$query = $this->db->get('album');
-		return $query;
-	}
-
-	function PerbaharuiAlbum($id, $data){
-		//Perbaharui album
-		$query = $this->db->where('album_id', $id)->update('album', $data);
-		$this->session->set_flashdata('info', 'Album berhasil diperbaharui');
-		redirect('admin/galeri', 'refresh');
-	}
-
-	function checkAlbum($id){
-		//Sebelum menghapus foto, check apakah album berisi foto atau kosong
-		$this->db->where('album_id', $id);
-		$query = $this->db->get('gallery');
-		return $query;
-	}
-
-	function HapusAlbum($id){
-		//Hapus data album
-		$this->db->where('album_id', $id)->delete('album');
-		redirect('admin/galeri', 'refresh');
-	}
-
-	function getFoto(){
-		//Ambil data foto
-		$this->db->select('*');
-		$this->db->from('gallery');
-		$this->db->join('album', 'album.album_id = gallery.album_id');
-		$query = $this->db->get();
-		return $query;
-	}
-
-	function getFotoByAlbum($id){
-		//Filter foto berdasarkan album
-		$this->db->where('album_id', $id);
-		$query = $this->db->get('gallery');
-		return $query;
-		
-	}
-
-	function getFotoId($id){
-		//Hapus foto dari direktori
-		$this->db->where('gallery_id', $id);
-		$selecttable = $this->db->get('gallery');
-		$row = $selecttable->row();
-		unlink("./uploads/$row->images");
-
-		//Hapus data dari database
-		$this->db->where('gallery_id', $id);
-		$query = $this->db->delete('gallery');
-		return $query;
-	}
-
+	
 	//Navigasi dan Halaman Statis Query
 	function getNav(){
 		$query = $this->db->get('navigation');
