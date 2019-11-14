@@ -54,7 +54,16 @@ class Galeri extends CI_Controller{
 	}
 
 	function edit($id){
-
+		$this->Sec_model->getSec();
+		$this->Sec_model->getSec();
+	    $data = array(
+		  'title' 					=> "Tambah Album",
+		  'album'					=> $this->Gallery_model->getAlbum(),
+		  'photo'					=> $this->Gallery_model->getGalleryId($id),
+		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
+	    );
+	    $this->load->view('admin/galeri-edit',  $data);
 	}
 
 	function update($id){

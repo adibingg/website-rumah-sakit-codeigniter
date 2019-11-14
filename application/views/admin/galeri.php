@@ -51,7 +51,8 @@
                             <div class="mask">
                               <p><?= $gr->album_name; ?></p>
                               <div class="tools tools-bottom">
-                                <a class="hapus" href="<?= base_url('admin/gallery/delete/').$gr->gallery_id; ?>"><i class="fa fa-times"></i></a>
+                                <a class="btn btn-primary btn-xs" href="<?= base_url('admin/gallery/edit/').$gr->gallery_id; ?>"><i class="fa fa-pencil"></i></a>
+                                <a class="btn btn-danger btn-xs hapus" href="<?= base_url('admin/gallery/delete/').$gr->gallery_id; ?>"><i class="fa fa-trash"></i></a>
                               </div>
                             </div>
                           </div>

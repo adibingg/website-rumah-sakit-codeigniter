@@ -22,10 +22,11 @@
                     <div class="row">
                     <div class="col-md-4">
                     <?php echo form_open_multipart('admin/galeri/upload'); ?>
+                    <?php foreach($gallery->result() as $row){ ?>
                         <div class="form-group">
                             <label for="">Pilih Album</label>
                             <select name="id_album" class="form-control">
-                                <option value="">Pilih Album</option>
+                                <option value="<?php echo $row->album_id; ?>"><?php echo $row->album_name; ?></option>
                                 <?php foreach($album->result() as $alghazali){ ?>
                                 <option value="<?php echo $alghazali->album_id; ?>"><?php echo $alghazali->album_name; ?></option>
                                 <?php } ?>
@@ -43,6 +44,7 @@
                             <button class="btn btn-success"><i class="fa fa-save"></i> Unggah Foto</button>
                         </div>  
                     </div>
+                    <?php } ?>
                     <?php echo form_close(); ?>
                     </div>
                 </div>
