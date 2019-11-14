@@ -25,20 +25,20 @@ $route['admin/news/delete/(:any)'] = 'admin/news/destroy/$1';
 //Comment
 
 //Galery
-$route['admin/galery'] = '';
-$route['admin/galery/add'] = '';
-$route['admin/galery/store'] = '';
-$route['admin/galery/edit'] = '';
-$route['admin/galery/update'] = '';
-$route['admin/galery/delete'] = '';
+$route['admin/gallery'] = 'admin/galeri';
+$route['admin/gallery/add'] = '';
+$route['admin/gallery/store'] = '';
+$route['admin/gallery/edit'] = '';
+$route['admin/gallery/update'] = '';
+$route['admin/gallery/delete'] = '';
 
 //Album
-$route['admin/album'] = '';
-$route['admin/album/add'] = '';
-$route['admin/album/store'] = '';
-$route['admin/album/edit'] = '';
-$route['admin/album/update'] = '';
-$route['admin/album/delete'] = '';
+// $route['admin/album'] = '';
+$route['admin/album/add'] = 'admin/album/add';
+$route['admin/album/store'] = 'admin/album/store';
+$route['admin/album/edit/(:any)'] = 'admin/album/edit/$1';
+$route['admin/album/update'] = 'admin/album/update';
+$route['admin/album/delete/(:any)'] = 'admin/album/destroy/$1';
 
 //Doctor
 $route['admin/doctor'] = 'admin/dokter';

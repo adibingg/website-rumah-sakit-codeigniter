@@ -21,7 +21,7 @@
                   <div class="x_content">
                     <div class="row">
                     <div class="col-md-4">
-                    <form action="<?php echo base_url('admin/galeri/simpan_album'); ?>" method="post">
+                    <form action="<?php echo base_url('admin/album/store'); ?>" method="post">
                     <div class="form-group">
                         <label for="">Nama Album</label>
                             <input type="text" name="album_name" id="" class="form-control" placeholder="Nama Album" required>

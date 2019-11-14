@@ -15,8 +15,8 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <a href="<?= base_url('admin/galeri/tambah_album'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Album</a>
-                    <a href="<?= base_url('admin/galeri/tambah_foto'); ?>" class="btn btn-primary"><i class="fa fa-camera-retro"></i> Tambah Foto</a>
+                    <a href="<?= base_url('admin/album/add'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Album</a>
+                    <a href="<?= base_url('admin/gallery/add'); ?>" class="btn btn-primary"><i class="fa fa-camera-retro"></i> Tambah Foto</a>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -37,7 +37,7 @@
                         <ul class="list-group">
                           <li class="list-group-item"><a href="<?= base_url('admin/galeri'); ?>">Semua Foto</a></li>
                         <?php foreach($album->result() as $alghazali){ ?>
-                          <li class="list-group-item"><a href="<?= base_url('admin/galeri/album/').$alghazali->link; ?>"><?= $alghazali->album_name; ?></a> <a href="<?= base_url('admin/galeri/hapus_album/').$alghazali->album_id; ?>" class="btn btn-default btn-xs pull-right hapus"><i class="fa fa-remove"></i></a><a href="<?= base_url('admin/galeri/perbaharui_album/').$alghazali->album_id; ?>" class="btn btn-default btn-xs pull-right"><i class="fa fa-pencil"></i></a></li>
+                          <li class="list-group-item"><a href="<?= base_url('admin/galeri/album/').$alghazali->link; ?>"><?= $alghazali->album_name; ?></a> <a href="<?= base_url('admin/album/delete/').$alghazali->album_id; ?>" class="btn btn-default btn-xs pull-right hapus"><i class="fa fa-remove"></i></a><a href="<?= base_url('admin/album/edit/').$alghazali->album_id; ?>" class="btn btn-default btn-xs pull-right"><i class="fa fa-pencil"></i></a></li>
                         <?php } ?>
                         </ul>
                       </div>
