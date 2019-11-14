@@ -51,7 +51,7 @@
                             <div class="mask">
                               <p><?= $gr->album_name; ?></p>
                               <div class="tools tools-bottom">
-                                <a class="hapus" href="<?= base_url('admin/galeri/hapus_foto/').$gr->gallery_id; ?>"><i class="fa fa-times"></i></a>
+                                <a class="hapus" href="<?= base_url('admin/gallery/delete/').$gr->gallery_id; ?>"><i class="fa fa-times"></i></a>
                               </div>
                             </div>
                           </div>

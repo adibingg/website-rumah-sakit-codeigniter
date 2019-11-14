@@ -44,6 +44,11 @@ class Gallery_model extends CI_Model{
         return $query;
     }
 
+    function getPhotoId($id){
+        $this->db->where('gallery_id',$id);
+        $this->db->delete('gallery');
+    }
+
     function getPhotoAlbumById($id){
         $this->db->select('*');
         $this->db->from('gallery');

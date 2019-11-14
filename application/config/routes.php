@@ -26,11 +26,11 @@ $route['admin/news/delete/(:any)'] = 'admin/news/destroy/$1';
 
 //Galery
 $route['admin/gallery'] = 'admin/galeri';
-$route['admin/gallery/add'] = '';
-$route['admin/gallery/store'] = '';
-$route['admin/gallery/edit'] = '';
-$route['admin/gallery/update'] = '';
-$route['admin/gallery/delete'] = '';
+$route['admin/gallery/add'] = 'admin/galeri/add';
+$route['admin/gallery/store'] = 'admin/galeri/store';
+$route['admin/gallery/edit/(:any)'] = 'admin/galeri/edit/$1';
+$route['admin/gallery/update'] = 'admin/galei/update';
+$route['admin/gallery/delete/(:any)'] = 'admin/galeri/destroy/$1';
 
 //Album
 // $route['admin/album'] = '';

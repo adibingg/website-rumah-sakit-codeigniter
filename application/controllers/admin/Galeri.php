@@ -28,7 +28,7 @@ class Galeri extends CI_Controller{
 		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
 		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 	    );
-	    $this->load->view('admin/tambah-foto',  $data);
+	    $this->load->view('admin/galeri-tambah',  $data);
 	}
 
 	function store(){
@@ -50,15 +50,22 @@ class Galeri extends CI_Controller{
 				    $this->db->insert('gallery',$data);
 				}
 	    $this->session->set_flashdata('info','Berhasil ditambahkan');
-	    redirect('admin/galeri','refresh');
+	    redirect('admin/gallery','refresh');
+	}
+
+	function edit($id){
+
+	}
+
+	function update($id){
+
 	}
 
 	function destroy($id){
 		$this->Sec_model->getSec();
-		$this->Gallery_model->getFotoId($id);
-		$this->session->set_flashdata('info', '<i class="fa fa-check"></i> Foto berhasil dihapus');
+		$this->Gallery_model->getPhotoId($id);
+		$this->session->set_flashdata('info', '<i class="fa fa-trash"></i> Foto berhasil dihapus');
 		redirect('admin/galeri');
 	}
-
 	
 }
