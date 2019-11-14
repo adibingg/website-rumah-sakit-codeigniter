@@ -26,7 +26,7 @@
                             <p style="font-size: 1pt; margin-top: -13pt;"><?php echo $row->requirements; ?></p>
                           </div>
                           <div class="card-footer text-center">
-                            <a href="mailto:rumahsakitkartini@yahoo.com" class="btn btn-primary">Lamar Sekarang</a>
+                            <a href="mailto:rumahsakitkartini@yahoo.com" class="btn btn-primary">Apply</a>
                           </div>
                         </div>
                       </div>
