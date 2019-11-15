@@ -42,27 +42,27 @@ $route['admin/album/delete/(:any)'] = 'admin/album/destroy/$1';
 
 //Doctor
 $route['admin/doctor'] = 'admin/dokter';
-$route['admin/doctor/create'] = 'admin/dokter/create';
+$route['admin/doctor/add'] = 'admin/dokter/create';
 $route['admin/doctor/store'] = 'admin/dokter/store';
 $route['admin/doctor/edit/(:any)'] = 'admin/dokter/edit/$1';
-$route['admin/doctor/update/'] = '';
-$route['admin/doctor/delete'] = ''; 
+$route['admin/doctor/update/'] = 'admin/dokter/update';
+$route['admin/doctor/delete/(:any)'] = 'admin/dokter/destroy/$1'; 
 
 //Doctor Schedule
-$route['admin/doctor/schedule'] = '';
-$route['admin/doctor/schedule/add'] = '';
-$route['admin/doctor/schedule/store'] = '';
-$route['admin/doctor/schedule/edit'] = '';
-$route['admin/doctor/schedule/update'] = '';
-$route['admin/doctor/schedule/delete'] = '';
+$route['admin/doctor/schedule'] = 'admin/dokter/jadwal';
+$route['admin/doctor/schedule/add'] = 'admin/dokter/jadwal_create';
+$route['admin/doctor/schedule/store'] = 'admin/dokter/jadwal_store';
+$route['admin/doctor/schedule/edit/(:any)'] = 'admin/dokter/jadwal_edit/$1';
+$route['admin/doctor/schedule/update'] = 'admin/dokter/jadwal_update';
+$route['admin/doctor/schedule/delete/(:any)'] = 'admin/dokter/jadwal_destroy/$1';
 
 //Polyclinic
-$route['admin/polyclinic/'] = '';
-$route['admin/polyclinic/add'] = '';
-$route['admin/polyclinic/store'] = '';
-$route['admin/polyclinic/edit'] = '';
-$route['admin/polyclinic/update'] = '';
-$route['admin/polyclinic/delete'] = '';
+$route['admin/polyclinic/'] = 'admin/poli';
+$route['admin/polyclinic/add'] = 'admin/poli/create';
+$route['admin/polyclinic/store'] = 'admin/poli/store';
+$route['admin/polyclinic/edit/(:any)'] = 'admin/poli/edit/$1';
+$route['admin/polyclinic/update'] = 'admin/poli/update';
+$route['admin/polyclinic/delete/(:any)'] = 'admin/poli/destroy/$1';
 
 //Polyclinic Schedule
 $route['admin/polyclinic-schedule/'] = '';

@@ -10,7 +10,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2> <a href="<?= base_url('admin/dokter/tambah_dokter') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Dokter</a></h2>
+                    <h2> <a href="<?= base_url('admin/doctor/add') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Dokter</a></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -72,7 +72,7 @@
                               </select>
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/doctor-update/').$row->doctor_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url('admin/doctor/edit/').$row->doctor_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
                                 <a href="<?= base_url('admin/dokter/delete/').$row->doctor_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
                             </td>
                           </tr>

@@ -21,49 +21,52 @@
                   </div>
 
                     <div class="x_content">
-                    <?= form_open_multipart('admin/dokter/tambah'); ?>
+                    <?= form_open_multipart('admin/doctor/store'); ?>
                     <div class="form-horizontal form-label-left">
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Dokter<span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nama" required="required" class="form-control col-md-7 col-xs-12">
+                   
+                    <div class='col-sm-4'>
+                        Nama Dokter
+                        <div class="form-group">
+                            <input name="selasa_mulai" type='text' class="form-control" placeholder="Nama Dokter" />
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Alamat<span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="alamat" required="required" class="form-control col-md-7 col-xs-12">
+                    </div>
+                    <div class='col-sm-4'>
+                        Alamat
+                        <div class="form-group">
+                            <input name="selasa_mulai" type='text' class="form-control" placeholder="Alamat" />
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Spesialis *</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select name="specialist_id" class="form-control">
+                    </div>
+                    <div class='col-sm-4'>
+                        Spesialis
+                        <div class="form-group">
+                        <select name="specialist_id" class="form-control">
                                 <option>Pilih Spesialis</option>
                                 <?php foreach($specialist->result() as $row){ ?>
                                 <option value="<?= $row->specialist_id; ?>"><?= $row->specialist_name; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
-                      </div>
+                    </div>
+                    <div class='col-sm-8'>
+                        Biografi Singkat
+                        <div class="form-group">
+                            <textarea name="" class="form-control" rows="9"></textarea>
+                        </div>
+                    </div>
+                    <div class='col-sm-4'>
+                        Foto
+                        <div class="form-group text-center">
+                            <input type="file" class="form-control" name="gambar" id="source_gambar" />
+                            <img src="<?php echo base_url('public/images/doctor.png'); ?>" id="tampil-gambar" style="width: 150px; height: 150px;"/>
+                        </div>
+                    </div>
+                    <div class='col-sm-12'>
+                        <div class="form-group">
+                          <button class="btn btn-warning">Kembali</button>
+                          <button class="btn btn-primary">Simpan</button>
+                        </div>
+                    </div>
                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto<span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input name="gambar" class="form-control col-md-7 col-xs-12" type="file">
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Simpan</button>
-                        </div>
-                      </div>
-
-                      </div>
                       <?= form_close(); ?>
                     </div>
                 </div>

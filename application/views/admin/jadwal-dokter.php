@@ -10,7 +10,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2> <a href="<?= base_url('admin/dokter/tambah_jadwal') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Jadwal Dokter</a></h2>
+                    <h2> <a href="<?= base_url('admin/doctor/schedule/add') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Jadwal Dokter</a></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>

@@ -20,7 +20,7 @@ class Dokter extends CI_Controller{
 		$this->load->view('admin/dokter', $config);
 	}
 
-	function tambah_dokter(){
+	function create(){
 		$this->Sec_model->getSec(); 
 	    $config = array(
 		  	'title' 				=> "Data Dokter",
@@ -31,7 +31,7 @@ class Dokter extends CI_Controller{
 		$this->load->view('admin/dokter-tambah', $config);
 	}
 
-	 function tambah(){
+	 function store(){
 		$this->Sec_model->getSec();
 		$config['upload_path']    = './uploads';  
 	    $config['allowed_types']  = 'gif|jpg|png';
@@ -152,7 +152,7 @@ class Dokter extends CI_Controller{
 		$this->load->view('admin/jadwal-dokter', $config);
 	}
 
-	function tambah_jadwal(){
+	function jadwal_create(){
 		$this->Sec_model->getSec();
 		$config = array(
 			'title' 				=> 'Jadwal Dokter',
@@ -163,7 +163,7 @@ class Dokter extends CI_Controller{
 		$this->load->view('admin/jadwal-tambah', $config);
 	}
 
-	function save_jadwal(){
+	function jadwal_store(){
 		$this->Sec_model->getSec();
 		$check  = $this->input->post('doctor_id');
 		$result = $this->Admin_model->checkJadwal($check);
@@ -187,7 +187,15 @@ class Dokter extends CI_Controller{
 		}
 	}
 
-	function hapus_jadwal($id){
+	function jadwal_edit(){
+
+	}
+
+	function jadwal_update(){
+
+	}
+
+	function jadwal_destroy($id){
 		$this->Sec_model->getSec();
 		$this->Admin_model->deleteJadwalDokter($id);
 		$this->session->set_flashdata('info', 'Berhasil menghapus jadwal dokter');

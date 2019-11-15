@@ -75,9 +75,9 @@
                   <li>
                     <a><i class="fa fa-stethoscope"></i> Kelola <span class="fa fa-plus"></span></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url('admin/dokter'); ?>">Dokter</a></li>
-                      <li><a href="<?= base_url('admin/dokter/jadwal'); ?>">Jadwal Dokter</a></li>
-                      <li><a href="<?= base_url('admin/jadwal-poli'); ?>">Jadwal Poli</a></li>
+                      <li><a href="<?= base_url('admin/doctor'); ?>">Dokter</a></li>
+                      <li><a href="<?= base_url('admin/doctor/schedule'); ?>">Jadwal Dokter</a></li>
+                      <li><a href="<?= base_url('admin/polyclinic'); ?>">Jadwal Poli</a></li>
                     </ul>
                   </li>
                   <li>
