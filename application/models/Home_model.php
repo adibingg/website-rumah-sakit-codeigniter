@@ -15,16 +15,17 @@ class Home_model extends CI_Model{
         $this->db->select('*');
         $this->db->from('news');
         $this->db->join('category', 'news.category_id=category.category_id');
-        $this->db->limit('4');
+        $this->db->limit('8');
         $query = $this->db->get();
         return $query;
     }
 
-    public function getberita(){
+    public function getberita($id){
         $this->db->select('*');
         $this->db->from('news');
         $this->db->join('category','category.category_id=news.category_id');
         $this->db->order_by('news.date_post','desc');
+        $this->db->where('category.category_link', $id);
         $data = $this->db->get();
         return $data;
     }
@@ -65,6 +66,11 @@ class Home_model extends CI_Model{
     	return $result;
     }
 
+    function getAllServices(){
+        $query = $this->db->get('services');
+        return $query;
+    }
+
     public function getGaleri(){
         $this->db->select('*');
         $this->db->from('gallery');
@@ -85,8 +91,15 @@ class Home_model extends CI_Model{
     }
 
     public function getFacilities(){
+        $this->db->limit('3');
         $data = $this->db->get('facilities');
         return $data;
+    }
+
+    function getServiceHome(){
+        $this->db->limit('5');
+        $query = $this->db->get('services');
+        return $query;
     }
 
     public function getLatestActivities(){
@@ -117,6 +130,11 @@ class Home_model extends CI_Model{
         $query = $this->db->get('poli_schedule');
         return $query;
     }
+    
+    function getPolyClinic(){
+        $query = $this->db->get('polyclinic');
+        return $query;
+    }
 
     function getCategoryCareer(){
         $this->db->order_by('id_career_category','asc');
@@ -140,6 +158,10 @@ class Home_model extends CI_Model{
         $this->db->limit('1');
         $query = $this->db->get();
         return $query;
+    }
+
+    function countView($id){
+
     }
 
     

@@ -38,8 +38,9 @@ class Dokter extends CI_Controller{
 	 	$this->load->library('upload', $config);
 	        if ( ! $this->upload->do_upload('gambar')){
 	            $data = array(
-					'specialist_id' => $this->input->post('specialist_id'),
+					'specialist_id' => $this->input->post('spesialis_id'),
 					'doctor_name' 	=> $this->input->post('nama'),
+					'bio'			=> $this->input->post('bio'),
 					'address' 		=> $this->input->post('alamat')
 				);
 				$this->db->insert('doctor',$data);
@@ -48,9 +49,10 @@ class Dokter extends CI_Controller{
 				$gambar 	= $file['file_name'];
 					
 	            $data = array(
-					'specialist_id' => $this->input->post('specialist_id'),
+					'specialist_id' => $this->input->post('spesialis_id'),
 					'doctor_name' 	=> $this->input->post('nama'),
 					'address' 		=> $this->input->post('alamat'),
+					'bio'			=> $this->input->post('bio'),
 					'images' 		=> $gambar
 				);
 				$this->db->insert('doctor',$data);
@@ -86,8 +88,9 @@ class Dokter extends CI_Controller{
 	 	$this->load->library('upload', $config);
 	        if ( ! $this->upload->do_upload('gambar')){
 	            $data = array(
-					'specialist_id' => $this->input->post('specialist_id'),
+					'specialist_id' => $this->input->post('spesialis_id'),
 					'doctor_name' 	=> $this->input->post('nama'),
+					'bio'			=> $this->input->post('bio'),
 					'address' 		=> $this->input->post('alamat')
 				);
 				$this->db->where('doctor_id', $this->input->post('id'))->update('doctor',$data);
@@ -95,8 +98,9 @@ class Dokter extends CI_Controller{
 	            $file 		= $this->upload->data();
 				$gambar 	= $file['file_name'];
 	            $data = array(
-					'specialist_id' => $this->input->post('specialist_id'),
+					'specialist_id' => $this->input->post('spesialis_id'),
 					'doctor_name' 	=> $this->input->post('nama'),
+					'bio'			=> $this->input->post('bio'),
 					'address' 		=> $this->input->post('alamat'),
 					'images' 		=> $gambar
 				);

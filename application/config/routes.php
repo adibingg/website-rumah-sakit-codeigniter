@@ -3,8 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //FRONT
 $route['default_controller'] = 'home';
+$route['profile/struktur-organisasi'] = 'profile/struktur_organisasi';
 $route['berita'] = 'berita';
 $route['baca-berita/(:any)'] = 'berita/read/$1';
+$route['profile/fasilitas-dan-pelayanan'] = 'profile/fasilitas';
+$route['post/(:any)'] = 'berita/filter/$1';
 $route['kontak-kami'] = 'kontak';
 $route['jadwal-dokter'] = 'dokter/jadwal';
 $route['jadwal-poli'] = 'dokter/jadwal_poli';
@@ -57,31 +60,26 @@ $route['admin/doctor/schedule/update'] = 'admin/dokter/jadwal_update';
 $route['admin/doctor/schedule/delete/(:any)'] = 'admin/dokter/jadwal_destroy/$1';
 
 //Polyclinic
-$route['admin/polyclinic/'] = 'admin/poli';
-$route['admin/polyclinic/add'] = 'admin/poli/create';
-$route['admin/polyclinic/store'] = 'admin/poli/store';
-$route['admin/polyclinic/edit/(:any)'] = 'admin/poli/edit/$1';
-$route['admin/polyclinic/update'] = 'admin/poli/update';
-$route['admin/polyclinic/delete/(:any)'] = 'admin/poli/destroy/$1';
+$route['admin/polyclinic'] = 'admin/poliklinik';
+$route['admin/polyclinic/add'] = 'admin/poliklinik/create';
+$route['admin/polyclinic/store'] = 'admin/poliklinik/store';
+$route['admin/polyclinic/edit/(:any)'] = 'admin/polilklinik/edit/$1';
+$route['admin/polyclinic/update'] = 'admin/poliklinik/update';
+$route['admin/polyclinic/delete/(:any)'] = 'admin/poliklinik/destroy/$1';
 
 //Polyclinic Schedule
-$route['admin/polyclinic-schedule/'] = '';
-$route['admin/polyclinic-schedule/add'] = '';
-$route['admin/polyclinic-schedule/store'] = '';
-$route['admin/polyclinic-schedule/edit'] = '';
-$route['admin/polyclinic-schedule/update'] = '';
-$route['admin/polyclinic-schedule/delete'] = '';
+$route['admin/polyclinic/schedule'] = 'admin/poli';
+$route['admin/polyclinic/schedule/add'] = 'admin/poli/create';
+$route['admin/polyclinic/schedule/store'] = 'admin/poli/store';
+$route['admin/polyclinic/schedule/edit'] = 'admin/poli/edit';
+$route['admin/polyclinic/schedule/update'] = 'admin/poli/update';
+$route['admin/polyclinic/schedule/delete/(:any)'] = 'admin/poli/destroy/$1';
 
 //Services
 $route['admin/services'] = 'admin/pelayanan';
-$route['admin/services/add'] = 'admin/pelayanan/form_tambah';
-
-//Facilities
-$route['admin/add-facilities'] = 'admin/fasilitas/add_facilities';
-$route['admin/facilities/add'] = '';
-$route['admin/facilites/store'] = '';
-$route['admin/facilities/edit'] = '';
-$route['admin/facilities/delete'] = '';
+$route['admin/services/show'] = 'admin/pelayanan/show';
+$route['admin/service/edit/(:any)'] = 'admin/pelayanan/edit/$1';
+$route['admin/service/delete/(:any)'] = 'admin/pelayanan/destroy/$1';
 
 //Static Pages
 $route['admin/navigation-static-pages'] = 'admin/halaman';
@@ -92,14 +90,26 @@ $route['admin/navigation-static-pages/pages-create'] = '';
 $route['admin/navigation-static-pages/pages-edit'] = '';
 $route['admin/navigation-static-pages/pages-update'] = '';
 
+//Navigasi
+$route['admin/navigation/add'] = 'admin/halaman/add_nav';
+
 //Profile
+$route['admin/profile'] = 'admin/profil';
 $route['admin/visi-misi'] = 'admin/profil/visi_misi';
 $route['admin/sejarah'] = 'admin/profil/sejarah';
 $route['admin/struktur-organisasi'] = 'admin/profil/struktural';
 
+//Facilities
+$route['admin/facilities'] = 'admin/fasilitas';
+$route['admin/facilities/add'] = 'admin/fasilitas/create';
+$route['admin/facilities/store'] = 'admin/fasilitas/store';
+$route['admin/facilities/edit/(:any)'] = 'admin/fasilitas/edit/$1';
+$route['admin/facilities/update'] = 'admin/fasilitas/update/';
+$route['admin/facilities/delete/(:any)'] = 'admin/fasilitas/destroy/$1';
+
 //Career
 $route['admin/career'] = 'admin/karir';
-$route['admin/career/add'] = 'admin/karir/tambah_informasi_karir';
+$route['admin/career/add'] = 'admin/karir/create';
 $route['admin/career/store'] = 'admin/karir/tambah_informasi_karir';
 $route['admin/career/edit'] = 'admin/karir/tambah_informasi_karir';
 $route['admin/career/update'] = 'admin/karir/tambah_informasi_karir';
@@ -109,6 +119,7 @@ $route['admin/career/delete'] = 'admin/karir/tambah_informasi_karir';
 $route['admin/login-tracker'] = 'admin/tracker';
 
 //Log activity
+$route['admin/log'] = 'admin/log';
 
 //Settings
 

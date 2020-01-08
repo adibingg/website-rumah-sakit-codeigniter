@@ -10,10 +10,13 @@ class Kontak extends CI_Controller{
 			$data = array(
 				'navigation' 	=> $this->Home_model->getNavbar(),
 				'title' 		=> "Kontak " .$conf->company_name,
+				'sub_1'			=> "Berita",
+				'sub_2'			=> "Semua Berita dan Artikel",
 				'meta_desc' 	=> $conf->company_name,
 				'address'		=> $conf->address,
 				'phone' 		=> $conf->phone,
 				'email' 		=> $conf->email,
+				'category' 		=> $this->Home_model->getCategory()
 			);
 			$this->load->view('home/kontak',$data);
 		}

@@ -27,19 +27,19 @@
                     <div class='col-sm-4'>
                         Nama Dokter
                         <div class="form-group">
-                            <input name="selasa_mulai" type='text' class="form-control" placeholder="Nama Dokter" />
+                            <input name="nama" type='text' class="form-control" placeholder="Nama Dokter" />
                         </div>
                     </div>
                     <div class='col-sm-4'>
                         Alamat
                         <div class="form-group">
-                            <input name="selasa_mulai" type='text' class="form-control" placeholder="Alamat" />
+                            <input name="alamat" type='text' class="form-control" placeholder="Alamat" />
                         </div>
                     </div>
                     <div class='col-sm-4'>
                         Spesialis
                         <div class="form-group">
-                        <select name="specialist_id" class="form-control">
+                        <select name="spesialis_id" class="form-control">
                                 <option>Pilih Spesialis</option>
                                 <?php foreach($specialist->result() as $row){ ?>
                                 <option value="<?= $row->specialist_id; ?>"><?= $row->specialist_name; ?></option>
@@ -50,7 +50,7 @@
                     <div class='col-sm-8'>
                         Biografi Singkat
                         <div class="form-group">
-                            <textarea name="" class="form-control" rows="9"></textarea>
+                            <textarea name="bio" class="form-control" rows="9"></textarea>
                         </div>
                     </div>
                     <div class='col-sm-4'>

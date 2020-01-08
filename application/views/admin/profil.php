@@ -21,14 +21,16 @@
                   </div>
 
                     <div class="x_content">
-                    <?php if($this->session->flashdata() == true){ ?>
-                      <div class="alert alert-primary bg-primary" role="alert">
-                        <b><?php echo $this->session->flashdata('info'); ?></b>
-                      </div>
-                      <?php }else{ } ?>
+                   
                     <?php foreach($profile->result() as $row){ ?>
                     <form id="demo-form2" action="<?= base_url('admin/profil/update_profile'); ?>" method="post" data-parsley-validate class="form-horizontal form-label-left">
+                      
                       <div class="form-group">
+                      <?php if($this->session->flashdata() == true){ ?>
+                      <div class="alert alert-success bg-success" role="alert">
+                        <b><i class="fa fa-info"></i> <?php echo $this->session->flashdata('info'); ?></b>
+                      </div>
+                      <?php }else{ } ?>
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Rumah Sakit<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -127,10 +129,9 @@
                           <input value="<?= $row->akreditasi_kars; ?>" name="akreditasi_kars" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
                         </div>
                       </div>
-                      <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Simpan Perubahan</button>
+                          <button class="btn btn-primary" type="submit">Simpan</button>
                         </div>
                       </div>
                       </form>

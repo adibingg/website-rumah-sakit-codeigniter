@@ -23,10 +23,10 @@
                         </div>
                         <div class="x_content">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-12">
                                     <div class="card shadow-lg p-3 mb-5 bg-white rounded">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
+                                        <h5 class="card-title">Berita & Artikel Paling Banyak Dibaca</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                         <a href="#" class="btn btn-primary">Go somewhere</a>
                                     </div>

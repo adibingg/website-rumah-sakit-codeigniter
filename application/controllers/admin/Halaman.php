@@ -8,6 +8,7 @@ class Halaman extends CI_Controller{
       $this->load->model('Sec_model');
       $this->load->model('Inbox_model');
       $this->load->model('Static_page_model');
+      $this->load->model('Admin_model');
     }
 
     function index(){
@@ -38,7 +39,7 @@ class Halaman extends CI_Controller{
         'title'   => $this->input->post('navigasi'),
         'active'  => $this->input->post('active'),
       );
-      $this->Inbox_model->saveNav($data);
+      $this->Static_page_model->saveNav($data);
       $this->session->set_flashdata('info', 'Berhasil menambahkan menu navigasi');
       redirect('admin/halaman-statis');
     }

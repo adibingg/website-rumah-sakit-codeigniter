@@ -8,6 +8,7 @@ class Profil extends CI_Controller{
 		parent::__construct();
 		$this->load->model('Admin_model');
 		$this->load->model('Sec_model');
+		$this->load->model('Inbox_model');
 	}
 
 	function index(){
@@ -15,8 +16,8 @@ class Profil extends CI_Controller{
 	    $config = array(
 		  'title' 					=> "Profil Rumah Sakit",
 		  'profile' 				=> $this->Admin_model->getProfile(),
-		  'messages_new' 			=> $this->Admin_model->showNewMessages(),
-		  'messages_new_counter'	=> $this->Admin_model->showNewMessages()->num_rows()
+		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+		  'messages_new_counter'	=> $this->Inbox_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/profil',  $config);
 	}
@@ -40,6 +41,7 @@ class Profil extends CI_Controller{
 			'jumlah_sdm' 		=> $this->input->post('jumlah_sdm'),
 			'akreditasi_kars' 	=> $this->input->post('akreditasi_kars')
 		);
+		
 		$this->Admin_model->UpdateProfile($id, $data);
 		$this->session->set_flashdata('info', 'Profil berhasil diperbaharui');
 		redirect('admin/profil');
@@ -50,8 +52,8 @@ class Profil extends CI_Controller{
 	    $config = array(
 		  'title' 					=> "Visi & Misi Rumah Sakit",
 		  'profile' 				=> $this->Admin_model->getProfile(),
-		  'messages_new' 			=> $this->Admin_model->showNewMessages(),
-		  'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows()
+		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/visi-misi',  $config);
 	}
@@ -74,8 +76,8 @@ class Profil extends CI_Controller{
 	    $config = array(
 		  'title' 					=> "Sejarah Rumah Sakit",
 		  'profile' 				=> $this->Admin_model->getProfile(),
-		  'messages_new' 			=> $this->Admin_model->showNewMessages(),
-		  'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows()
+		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/sejarah',  $config);
 	}
@@ -96,8 +98,8 @@ class Profil extends CI_Controller{
 	    $config = array(
 		  'title' 					=> "Struktur Organisasi",
 		  'profile' 				=> $this->Admin_model->getProfile(),
-		  'messages_new' 			=> $this->Admin_model->showNewMessages(),
-		  'messages_new_counter' 	=> $this->Admin_model->showNewMessages()->num_rows()
+		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
+		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 	  	);
 	    $this->load->view('admin/struktur-organisasi',  $config);
 	}
@@ -120,4 +122,37 @@ class Profil extends CI_Controller{
 		$this->session->set_flashdata('info','Berita berhasil di perbaharui');
 		redirect('admin/struktur-organisasi');
 	}
+
+	// function history(){
+	// 	$this->load->view('sejarah');
+	// }
+
+	// function add_history(){
+	// 	$this->load->view('sejarah-tambah');
+	// }
+
+	// function add_history(){
+	// 	// $this->Sec_model->getSec();
+	// 	// $config['upload_path'] = './uploads';
+	// 	// $config['allowed_types'] = 'jpg|png';
+	// 	// $this->load->library('upload', $config);
+	// 	// 	if(!$this->upload->do_upload('gambar')){
+	// 	// 		$this->session->set_flashdata('info','failed to upload files, try another file!');
+	// 	// 		redirect('admin/profile/add_history');
+	// 	// 	}else{
+	// 	// 		$file = $this->upload->data();
+	// 	// 		$images = $file['file_name'];
+	// 	// 		$data = array(
+	// 	// 			'images' => $images,
+	// 	// 			'history' => $this->input->post('history'));
+	// 	// 		$this->db->insert('history', $data);
+	// 	// 	}
+	// 	// $this->session->set_flashdata('info','Berhasil menambahkan sejarah');
+	// 	// redirect('admin/profile/history');
+
+	// }
+
+	// function update_history(){
+
+	// }
 }

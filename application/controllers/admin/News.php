@@ -12,7 +12,7 @@ class News extends CI_Controller{
   function index(){
     $this->Sec_model->getSec();
     $data = array(
-      'title'                 => "Pos Berita & Artikel",
+      'title'                 => "Postingan",
       'berita'                => $this->News_model->TampilBerita(),
       'messages_new'          => $this->Inbox_model->showNewMessages(),
 			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
@@ -23,7 +23,7 @@ class News extends CI_Controller{
   function create(){
     $this->Sec_model->getSec();
 		$data = array(
-			'title'                 => "Tambah Berita",
+			'title'                 => "Entri Baru",
       'kategori'              => $this->News_model->getKategori(),
       'messages_new'          => $this->Inbox_model->showNewMessages(),
 			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 

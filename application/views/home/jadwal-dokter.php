@@ -1,10 +1,11 @@
 <?php $this->load->view('home/nav'); ?>
 <?php $this->load->view('home/bread'); ?>
-		
-	  <section class="ftco-section">
-		  <div class="container">
-			  <div class="row">
-				  <table class="table table-bordered">
+
+<section class="ftco-section">
+    <div class="container">
+     <div class="row">
+        <div class="col-md-9">
+          <table class="table table-bordered table-sm">
             <thead>
               <tr style="padding: 0px;">
                 <td style="font-size: 10pt;">No</td>
@@ -17,10 +18,10 @@
                 <td style="font-size: 10pt;">Jumat</td>
                 <td style="font-size: 10pt;">Sabtu</td>
                 <td style="font-size: 10pt;">Minggu</td>
-              </tr>
-            </thead>
-                        
-            <tbody>
+            </tr>
+        </thead>
+
+        <tbody>
             <?php $no = 1; ?>
             <?php foreach($jadwal_dokter->result() as $row){ ?>
               <tr>
@@ -34,11 +35,12 @@
                 <td style="font-size: 10pt;"><?php echo $row->jumat; ?></td>
                 <td style="font-size: 10pt;"><?php echo $row->sabtu; ?></td>
                 <td style="font-size: 10pt;"><?php echo $row->minggu; ?></td>
-              </tr>
-            <?php } ?>
-            </tbody>
-          </table>
-			  </div>
-		  </div>
-	  </section>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
 <?php $this->load->view('home/footer'); ?>

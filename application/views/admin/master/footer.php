@@ -11,33 +11,43 @@
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/jquery/dist/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/nprogress/nprogress.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/js/custom.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/moment/min/moment.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
-<script src="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script>
+      $('#myData').DataTable();
       $(document).ready(function(){
-            function bacaGambar(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#tampil-gambar').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-              }
+
+
+
+        function bacaGambar(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#tampil-gambar').attr('src', e.target.result);
             }
-            
-            $("#source_gambar").change(function(){
-              bacaGambar(this);
-            });
-            
-            $('#nav-item').on('click',function(){
-                var nav = $(this).attr('data');
-                console.log(nav);
-                return true;
-            });
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+
+        $("#source_gambar").change(function(){
+          bacaGambar(this);
+        });
+
+        $('#nav-item').on('click',function(){
+          var nav = $(this).attr('data');
+          console.log(nav);
+          return true;
+        });
+
+        $('.btn-category').on('click', function(){
+          $('.bs-example-modal-sm2').modal('hide');
+          console.log('ok');
+        });
 
             //Category
             $('#save-cat').on('click', function(){
@@ -88,9 +98,9 @@
                   var i;
                   for(i=0; i<data.length; i++){
                     html += '<li class="list-group-item">' +data[i].category_name+
-                                '<a href="<?php echo base_url('admin/berita/category_delete/')?>'+data[i].category_id+'" class="btn btn-danger btn-xs pull-right">'+'<i class="fa fa-remove">'+'</i></a>' +
-                                '<a href="<?php echo base_url('admin/berita/category_delete/')?>'+data[i].category_id+'" class="btn btn-success btn-xs pull-right">'+'<i class="fa fa-pencil">'+'</i></a>' +
-                            '</li>' 
+                    '<a href="<?php echo base_url('admin/berita/category_delete/')?>'+data[i].category_id+'" class="btn btn-danger btn-xs pull-right">'+'<i class="fa fa-remove">'+'</i></a>' +
+                    '<a href="<?php echo base_url('admin/berita/category_delete/')?>'+data[i].category_id+'" class="btn btn-success btn-xs pull-right">'+'<i class="fa fa-pencil">'+'</i></a>' +
+                    '</li>' 
                   }
                   $('#show-cat').html(html);
                 },
@@ -100,64 +110,52 @@
               });
             }
 
-            //Tags
-            $('#save-tag').on('click', function(){
-              var tag = $('#tag').val();
-              $.ajax({
-                url: '<?php echo base_url('admin/news/create_tags'); ?>',
-                type:'POST',
-                dataType: 'JSON',
-                data:{tag:tag},
-                success:function(data){
-                  console.log('success', 200);
-                }
-              });
-            });
+
 
             $('#myDatepicker1').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker2').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker3').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker4').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker5').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker6').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker7').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker8').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker9').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker10').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker11').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker12').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker13').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
             $('#myDatepicker14').datetimepicker({
-                format: 'HH:mm A'
+              format: 'HH:mm A'
             });
           });
-    </script>
-  </body>
-  
-</html>
+        </script>
+      </body>
+
+      </html>

@@ -37,10 +37,10 @@
                     <table class="table table-striped projects">
                       <thead>
                         <tr>
-                          <th>Team Members</th>
-                          <th>Project Progress</th>
-                          <th>Status</th>
-                          <th style="width: 20%">#Edit</th>
+                          <th>#</th>
+                          <th>Judul Konten</th>
+                          <th>Komentar</th>
+                          <th style="width: 20%">pilihan</th>
                         </tr>
                       </thead>
                       <tbody>

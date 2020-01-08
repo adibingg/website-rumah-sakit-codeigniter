@@ -11,12 +11,15 @@ class Galeri extends CI_Controller{
 			$data = array(
 				'navigation' 	=> $this->Home_model->getNavbar(),
 				'title' 		=> "Galeri " .$conf->company_name,
+				'sub_1'			=> "Berita",
+				'sub_2'			=> "Semua Berita dan Artikel",
 				'meta_desc' 	=> $conf->company_name,
 				'address'		=> $conf->address,
 				'phone' 		=> $conf->phone,
 				'email' 		=> $conf->email,
 				'album' 		=> $this->Home_model->getAlbum(),
 				'galeri' 		=> $this->Home_model->getGaleri(),
+				'category' 		=> $this->Home_model->getCategory()
 			);
 			$this->load->view('home/galeri',$data);
 		}

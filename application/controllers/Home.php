@@ -15,15 +15,19 @@ class Home extends CI_Controller{
 			$data = array(
 				'navigation' 		=> $this->Home_model->getNavbar(),
 				'title' 			=> $conf->company_name,
+				'sub_1'			=> "Berita",
+				'sub_2'			=> "Semua Berita dan Artikel",
 				'meta_desc'			=> $conf->company_name,
 				'address'			=> $conf->address,
 				'phone' 			=> $conf->phone,
 				'email' 			=> $conf->email,
 				'visi'				=> $conf->visi,
-				'fasilitas' 		=> $this->Home_model->getFacilities(),
-				'room'				=> $this->Home_model->getRooms(),
 				'latest_activities' => $this->Home_model->getLatestActivities(),
-				'recent_news' 		=> $this->Home_model->getLatestNews(),
+				'news' 		=> $this->Home_model->getLatestNews(),
+				'facilities'		=> $this->Home_model->getFacilities(),
+				'poly'				=> $this->Home_model->getPolyclinic(),
+				'category' 		=> $this->Home_model->getCategory(),
+				'services'			=> $this->Home_model->getServiceHome()
 			);
 			$this->load->view('home/home',$data);
 		}

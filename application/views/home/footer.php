@@ -1,71 +1,61 @@
-		
-    <footer class="ftco-footer ftco-bg-blue ftco-section" style="padding: 10px; border-top: 10px solid #3ea0ab;">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2 logo">RSU KARTINI</span></h2>
-            
-            </div>
-            <div class="ftco-footer-widget mb-5">
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text"><?php echo $address; ?></span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+<?php echo $phone; ?></span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text"><?php echo $email; ?></span></a></li>
-	              </ul>
-	            </div>
-	            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-5 ml-md-4">
-              <h2 class="ftco-heading-2">Link Terkait</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2">Profile Video</h2>
-              <iframe width="300" height="200" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="col-md">
-          	<div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Opening Hours</h2>
-            	<h3 class="open-hours pl-4"><span class="ion-ios-time mr-3"></span>Pelayanan 24 Jam</h3>
-            </div>
-            <div class="ftco-footer-widget mb-5">
-            	<p>Berlangganan, Dapatkan berita dan info kesehatan dari kami gratis</p>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" placeholder="Masukan E-Mail">
-                  <input type="submit" value="Berlangganan Gratis" class="form-control submit px-3">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Rumah Sakit Umum Kartini Lampung Tengah</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+    <footer class="ftco-footer ftco-bg-blue ftco-section" style="padding-top: 50px; padding-bottom: 10px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <div class="ftco-footer-widget">
+              <h2 class="ftco-heading-2"><i class="fa fa-building"></i> RSU KARTINI</span></h2>
+            </div>
+            <ul class="list-unstyled">
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>CS : </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMERGENCY : </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
+              </ul>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget ml-md-4">
+              <h2 class="ftco-heading-2"><i class="fa fa-phone"></i> KONTAK KAMI</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>CS : </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMERGENCY : </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget" style="float:right;">
+              <h2 class="ftco-heading-2"><i class="fa fa-share-alt"></i> FIND AND FOLLOW</h2>
+              <div class="ftco-footer-widget text-center">
+	            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-youtube"></span></a></li>
+              </ul>
+            </div>
+            </div>
+          </div>
+         <div class="col-md">
+            <div class="ftco-footer-widget" style="float:right;">
+              <h2 class="ftco-heading-2"><i class="fa fa-link"></i> LINK TERKAIT</h2>
+              <div class="ftco-footer-widget">
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>KARS : </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>SIRS Online : </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
+              </ul>
+            </div>
+            </div>
           </div>
         </div>
       </div>
+
     </footer>
+    <div class="col-md-12 text-center text-white bg-info" style="margin-bottom: 0px; padding: 15px;">RSU Kartini <?php echo date('Y'); ?></div>
+
     
   
 

@@ -7,30 +7,31 @@ class Poli extends CI_Controller{
         parent::__construct();
         $this->load->model('Sec_model');
         $this->load->model('Admin_model');
+        $this->load->model('Inbox_model');
     }
     function index(){
         $this->Sec_model->getSec();
         $config = array (
             'title'                 => "Jadwal Poli",
             'poli_schedule'         => $this->Admin_model->getJadwalPoli(),
-            'messages_new'          => $this->Admin_model->showNewMessages(),
-			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
+            'messages_new'          => $this->Inbox_model->showNewMessages(),
+			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/jadwal-poli', $config);
     }
 
-    function add_poli(){
+    function create(){
         $config = array (
             'title'                 => "Jadwal Poli",
-            'messages_new'          => $this->Admin_model->showNewMessages(),
-			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
+            'messages_new'          => $this->Inbox_model->showNewMessages(),
+			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
         );
 
         $this->load->view('admin/jadwal-poli-tambah', $config);
     }
 
-    function save_jadwal_poli(){
+    function store(){
         $this->Sec_model->getSec();
         $data = array(
             'poli_name' => $this->input->post('nama_poli'),
@@ -45,6 +46,14 @@ class Poli extends CI_Controller{
         $this->Admin_model->savePoli($data);
         $this->session->set_flashdata('info', 'Jadwal Poli Berhasil di Tambahkan');
         redirect('admin/jadwal-poli');
+    }
+
+    function edit(){
+
+    }
+
+    function update(){
+        
     }
 
     function delete($id){

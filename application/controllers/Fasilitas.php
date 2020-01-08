@@ -12,9 +12,12 @@ class Fasilitas extends CI_Controller{
 			$data = array(
 				'navigation' 	=> $this->Home_model->getNavbar(),
 				'title' 		=> "Fasilitas " .$conf->company_name,
+				'sub_1'			=> "Berita",
+				'sub_2'			=> "Semua Berita dan Artikel",
 				'address'		=> $conf->address,
 				'telepon' 		=> $conf->phone,
 				'email' 		=> $conf->email,
+				'category' 		=> $this->Home_model->getCategory()
 			);
 			$this->load->view('home/header',$data);
 		}

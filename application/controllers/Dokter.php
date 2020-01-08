@@ -11,11 +11,14 @@ class Dokter extends CI_Controller{
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' 	=> $this->Home_model->getNavbar(),
-				'title' 		=> "Dokter " .$conf->company_name,
+				'title' 		=> "Profile Dokter",
+				'sub_1'			=> "Dokter & Jadwal",
+				'sub_2'			=> "Profile Dokter",
 				'meta_desc' 	=> $conf->company_name,
 				'address'		=> $conf->address,
 				'phone' 		=> $conf->phone,
 				'email' 		=> $conf->email,
+				'category' 		=> $this->Home_model->getCategory(),
 				'dokter' 		=> $this->Home_model->getDoctor()
 			);
 			$this->load->view('home/dokter',$data);
@@ -29,10 +32,13 @@ class Dokter extends CI_Controller{
 			$data = array(
 				'navigation' 		=> $this->Home_model->getNavbar(),
 				'title' 			=> "Jadwal Dokter " .$conf->company_name,
+				'sub_1'			=> "Berita",
+				'sub_2'			=> "Semua Berita dan Artikel",
 				'meta_desc' 		=> $conf->company_name,
 				'address'			=> $conf->address,
 				'phone' 			=> $conf->phone,
 				'email' 			=> $conf->email,
+				'category' 		=> $this->Home_model->getCategory(),
 				'jadwal_dokter' 	=> $this->Home_model->getJadwalDokter()
 			);
 			$this->load->view('home/jadwal-dokter',$data);
@@ -47,10 +53,13 @@ class Dokter extends CI_Controller{
 			$data = array(
 				'navigation' 		=> $this->Home_model->getNavbar(),
 				'title' 			=> "Jadwal Poli " .$conf->company_name,
+				'sub_1'			=> "Berita",
+				'sub_2'			=> "Semua Berita dan Artikel",
 				'meta_desc' 		=> $conf->company_name,
 				'address'			=> $conf->address,
 				'phone' 			=> $conf->phone,
 				'email' 			=> $conf->email,
+				'category' 		=> $this->Home_model->getCategory(),
 				'jadwal_poli' 		=> $this->Home_model->getJadwalPoli()
 			);
 			$this->load->view('home/jadwal-poli',$data);

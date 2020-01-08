@@ -64,5 +64,11 @@ class News_model extends CI_Model{
         $query = $this->db->delete('news');
         return $query;
     }
+
+    function getLatestNews(){
+        $this->db->limit('10');
+        $query = $this->db->get('news');
+        return $query;
+    }
 }
     

@@ -8,14 +8,15 @@ class Statistik extends CI_Controller{
         parent::__construct();
         $this->load->model('Admin_model');
         $this->load->model('Sec_model');
+        $this->load->model('Inbox_model');
     }
 
     function index(){
         $this->Sec_model->getSec();
         $data = array (
             'title' => "Statistik",
-            'messages_new' => $this->Admin_model->showNewMessages(),
-            'messages_new_counter' => $this->Admin_model->showNewMessages()->num_rows(),
+            'messages_new' => $this->Inbox_model->showNewMessages(),
+            'messages_new_counter' => $this->Inbox_model->showNewMessages()->num_rows(),
         );
         $this->load->view('admin/statistik', $data);
     }
