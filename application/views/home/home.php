@@ -18,44 +18,20 @@
 	<div class="container">
 		<div class="col-md-12" style="padding: 0px;">
 			<div class="row">
-				
+				<?php foreach($card_home->result() as $row){ ?>
 				<div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
 					<div class="card hvr-sweep-to-top" style="min-height: 400px; border:none; border-radius:10px;">
 						<div class="card-body text-center">
-							<i class="fa fa-ambulance text-info" style="font-size: 30pt; text-align:center;"></i>
-							<h1 class="text-info" style="font-size: 12pt; font-family: 'Noto Sans TC', sans-serif; text-transform: uppercase; font-weight: bold;"> Layanan Darurat 24 Jam</h1>
-							<p style="text-align: justify;  padding: 7px; border-radius: 5px;">Title Banners include: Heading (red, all caps) in a light grey text box beneath the banner image; Optional smaller subheading for the "parent" section on top of ...</p>
+							<i class="fa <?php echo $row->icon; ?> text-info" style="font-size: 30pt; text-align:center;"></i>
+							<h1 class="text-info" style="font-size: 12pt; font-family: 'Noto Sans TC', sans-serif; text-transform: uppercase; font-weight: bold;"> <?php echo $row->title_pages; ?></h1>
+							<p style="text-align: justify;  padding: 7px; border-radius: 5px;"><?php 
+												$statis = $row->content; 
+												echo strip_tags(substr($statis,0,60)); 
+												?></p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
-					<div class="card hvr-sweep-to-top" style="min-height: 400px; border:none; border-radius:10px;">
-						<div class="card-body text-center">
-							<i class="fa fa-user-md text-info" style="font-size: 30pt; text-align:center;"></i>
-							<h1 style="font-size: 12pt; font-family: 'Noto Sans TC', sans-serif; text-transform: uppercase;"> Dokter Umum dan Spesialis</h1>
-							<p style="text-align: justify;  padding: 7px; border-radius: 5px;">Title Banners include: Heading (red, all caps) in a light grey text box beneath the banner image; Optional smaller subheading for the "parent" section on top of ...</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
-					<div class="card hvr-sweep-to-top" style="min-height: 400px; border:none; border-radius:10px;">
-						<div class="card-body text-center">
-							<i class="fa fa-building text-info" style="font-size: 30pt; text-align:center;"></i>
-							<h1 style="font-size: 12pt; font-family: 'Noto Sans TC', sans-serif; text-transform: uppercase;"> Sarana dan Fasilitas Penunjang</h1>
-							<p style="text-align: justify;  padding: 7px; border-radius: 5px;">Title Banners include: Heading (red, all caps) in a light grey text box beneath the banner image; Optional smaller subheading for the "parent" section on top of ...</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
-					<div class="card hvr-sweep-to-top" style="min-height: 400px; border:none; border-radius:10px;">
-						<div class="card-body text-center text-info">
-							<i class="fa fa-map-marker" style="font-size: 30pt; text-align:center;"></i>
-							<h1 style="font-size: 12pt; font-family: 'Noto Sans TC', sans-serif; text-transform: uppercase;"> Lokasi Strategis</h1>
-							<p style="text-align: justify;  padding: 7px; border-radius: 5px;">Title Banners include: Heading (red, all caps) in a light grey text box beneath the banner image; Optional smaller subheading for the "parent" section on top of ...</p>
-						</div>
-					</div>
-				</div>
-				
+				<?php } ?>
 			</div>
 		</div>
 	</div>

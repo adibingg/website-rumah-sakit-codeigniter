@@ -26,7 +26,7 @@ class Karir extends CI_Controller{
 			);
 
 			$this->load->view('home/karir',$data);
-			
 		}
 	}
+
 }

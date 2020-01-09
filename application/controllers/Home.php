@@ -1,8 +1,5 @@
 <?php
 
-//Start Home Controller
-// Author : Adi Hidayat 
-
 defined('BASEPATH') OR exit("No dirrect script access alowed!");
 
 class Home extends CI_Controller{
@@ -15,19 +12,20 @@ class Home extends CI_Controller{
 			$data = array(
 				'navigation' 		=> $this->Home_model->getNavbar(),
 				'title' 			=> $conf->company_name,
-				'sub_1'			=> "Berita",
-				'sub_2'			=> "Semua Berita dan Artikel",
+				'sub_1'				=> "Berita",
+				'sub_2'				=> "Semua Berita dan Artikel",
 				'meta_desc'			=> $conf->company_name,
 				'address'			=> $conf->address,
 				'phone' 			=> $conf->phone,
 				'email' 			=> $conf->email,
 				'visi'				=> $conf->visi,
 				'latest_activities' => $this->Home_model->getLatestActivities(),
-				'news' 		=> $this->Home_model->getLatestNews(),
+				'news' 				=> $this->Home_model->getLatestNews(),
 				'facilities'		=> $this->Home_model->getFacilities(),
 				'poly'				=> $this->Home_model->getPolyclinic(),
-				'category' 		=> $this->Home_model->getCategory(),
-				'services'			=> $this->Home_model->getServiceHome()
+				'category' 			=> $this->Home_model->getCategory(),
+				'services'			=> $this->Home_model->getServiceHome(),
+				'card_home'			=> $this->Home_model->getCard()
 			);
 			$this->load->view('home/home',$data);
 		}

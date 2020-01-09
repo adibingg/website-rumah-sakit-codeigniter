@@ -1,19 +1,16 @@
 <?php
 
-//Start Career Controller
-// Author : Adi Hidayat 
-
 defined('BASEPATH') OR exit("No dirrect script access alowed!");
 
 class Berita extends CI_Controller{
 	
-	function __construct(){
+	public function __construct(){
 		parent::__construct();
 		$this->load->model('Home_model');
 		$this->load->helper('Date_negara_berkembang');
 	}
 
-	function filter($id){
+	public function filter($id){
 		$config = $this->Home_model->getConfig();
 		foreach($config->result() as $conf){
 			$title_news = str_replace('-',' ', $id);
@@ -58,7 +55,7 @@ class Berita extends CI_Controller{
 		}
 	}
 
-	function comment($id){
+	public function comment($id){
 
 	}
 }

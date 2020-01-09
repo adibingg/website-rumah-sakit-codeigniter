@@ -137,10 +137,10 @@
               </div>
             </div>
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings"><span class="fa fa-gear" aria-hidden="true"></span></a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen"><span class="fa fa-user" aria-hidden="true"></span></a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock"><span class="fa fa-key"></span></a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html"><span class="fa fa-sign-out" aria-hidden="true"></span></a>
+              <a href="<?php echo base_url('admin/pengaturan'); ?>" data-toggle="tooltip" data-placement="top" title="Pengaturan"><span class="fa fa-gear" aria-hidden="true"></span></a>
+              <a data-toggle="tooltip" data-placement="top" title="Lihat Website"><span class="fa fa-user" aria-hidden="true"></span></a>
+              <a data-toggle="tooltip" data-placement="top" title="Ganti Sandi"><span class="fa fa-key"></span></a>
+              <a data-toggle="tooltip" data-placement="top" title="Keluar" href="login.html"><span class="fa fa-sign-out" aria-hidden="true"></span></a>
             </div>
           </div>
         </div>

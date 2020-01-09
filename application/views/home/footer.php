@@ -81,6 +81,7 @@
   <script src="<?php echo base_url('public/'); ?>js/main.js"></script>
   <script>
     $(document).ready(function(){
+      
       $('#send').on('click', function(){
         event.preventDefault();
         var nama = $('#nama').val();

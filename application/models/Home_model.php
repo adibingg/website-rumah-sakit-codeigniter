@@ -164,5 +164,11 @@ class Home_model extends CI_Model{
 
     }
 
+    function getCard(){
+        $this->db->where('statis_type', 'card');
+        $query = $this->db->get('static_pages');
+        return $query;
+    }
+
     
 }

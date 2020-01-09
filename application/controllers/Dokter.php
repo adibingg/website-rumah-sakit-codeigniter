@@ -1,10 +1,9 @@
 <?php
 
-//Start Home Controller
-// Author : Adi Hidayat 
-
 defined('BASEPATH') OR exit("No dirrect script access alowed!");
+
 class Dokter extends CI_Controller{
+
 	function index(){
 		$this->load->model('Home_model');
 		$config = $this->Home_model->getConfig();

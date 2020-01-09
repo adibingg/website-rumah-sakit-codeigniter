@@ -52,13 +52,23 @@
             <div class="card-body text-center text-info">
               <i class="fa fa-user" style="font-size: 30pt; text-align:center;"></i>
               <hr>
-             <a href="" class="btn btn-default">Pengguna</a>
+             <a href="" class="btn btn-default">Penggunaan</a>
               
             </div>
           </div>
         </div>
         <div class="col-md-12" style="padding: 0px;">
             <h2>POSTING TERBARU</h2>
+            <?php foreach($latest_news->result() as $row){ ?>
+            <div class="latest-article">
+              <div class="title">
+                <p><?php echo $row->title; ?></p>
+              </div>
+              <div class="content">
+                <p><?php echo $row->content; ?></p>
+              </div>
+            </div>
+            <?php } ?>
         </div>   
       </div>
     </div>

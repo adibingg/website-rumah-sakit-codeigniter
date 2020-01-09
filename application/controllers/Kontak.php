@@ -3,6 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kontak extends CI_Controller{
+
 	function index(){
 		$this->load->model('Home_model');
 		$config = $this->Home_model->getConfig();
@@ -32,5 +33,6 @@ class Kontak extends CI_Controller{
 		);
 		$data = $this->Home_model->reciveMessage($input);
 		echo json_encode($data);
-    }
+	}
+	
 }

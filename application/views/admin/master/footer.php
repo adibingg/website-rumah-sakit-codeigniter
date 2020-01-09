@@ -21,7 +21,10 @@
     <script>
       $('#myData').DataTable();
       $(document).ready(function(){
-
+        $('#icon').on('click', function(){
+        $('#modelId').modal('show');
+        console.log('hello');
+      });
 
 
         function bacaGambar(input) {
