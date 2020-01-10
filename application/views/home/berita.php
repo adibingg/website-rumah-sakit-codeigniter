@@ -62,13 +62,8 @@
         <div class="col text-center">
           <div class="block-27">
             <ul>
-              <li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>
-              <li class="active"><span>1</span></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
+              <li><a href="#"><?php echo $this->pagination->create_links(); ?></a></li>
+              
             </ul>
           </div>
         </div>
@@ -78,7 +73,7 @@
       <h5 class="title-sidebar" style="font-family: 'Bitter', serif; font-size: 12pt;">Cari</h5>
       <hr>
       <div class="card" style="box-shadow: none;">
-        <form>
+        <form action="<?php echo base_url('post/search'); ?>" method="post">
           <div class="input-group" >
             <input id="email" style="height: 10px;" type="text" class="form-control" name="keyword" placeholder="Masukan Kata Kunci...">
                         <button type="submit" class="input-group-addon btn btn-info"><i class="fa fa-search"></i></button>

@@ -26,31 +26,30 @@
           </div>
         </div>
 
-        <div class="col-lg-4 sidebar ftco-animate">
-          <div class="sidebar-box bg-white">
-            <form action="#" class="search-form bg-white">
-              <div class="form-group">
-                <span class="icon icon-search"></span>
-                <input type="text" class="form-control" placeholder="Cari Berita, Artikel dan Tips Sehat">
-              </div>
-            </form>
-          </div>
-          <div class="sidebar-box ftco-animate" style="margin-top: -60px;">
-            <div style="padding: 0px; border: 0px;">
-              <div class="list-group" style="border: 0px;">
-                <?php foreach($category->result() as $ktgr){ ?>
-                  <a href="#" class="list-group-item list-group-item-action" style="border:0px;">Active item</a>
-                <?php } ?>
-              </div>
-            </div>
+        <div class="col-md-3" style="margin-top: -90px; padding: 0px;">
+      <h5 class="title-sidebar" style="font-family: 'Bitter', serif; font-size: 12pt;">Cari</h5>
+      <hr>
+      <div class="card" style="box-shadow: none;">
+        <form action="<?php echo base_url('post/search'); ?>" method="post">
+          <div class="input-group" >
+            <input id="email" style="height: 10px;" type="text" class="form-control" name="keyword" placeholder="Masukan Kata Kunci...">
+                        <button type="submit" class="input-group-addon btn btn-info"><i class="fa fa-search"></i></button>
+
           </div>
 
-          <div class="sidebar-box ftco-animate">
-            <div class="sidebar-title">
-              <h3>Informasi Yang Sama</h3>
-              <div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
-            </div>
-            
+        </form>
+      </div>
+      <h5 class="title-sidebar" style="font-family: 'Bitter', serif; font-size: 12pt;">Kategori</h5>
+      <hr>
+      <div class="card" style="box-shadow: none;">
+      <div class="list-group" style="border: 0px;">
+        <?php foreach($category->result() as $ktgr){ ?>
+          <a href="#" class="list-group-item list-group-item-action" style="border:0px;"><i class="fa fa-angle-right"></i> <?php echo $ktgr->category_name; ?></a>
+        <?php } ?>
+      </div>
+    </div>
+
+          
               <?php
               $where = $row->category_id; 
               $this->db->select('*');
@@ -75,7 +74,6 @@
           <?php } ?>
         </div>
       </div>
-    </div>
-  </div>
+    
 </section>
 <?php $this->load->view('home/footer'); ?>

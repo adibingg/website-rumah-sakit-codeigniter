@@ -19,6 +19,7 @@ class Home_model extends CI_Model{
         $query = $this->db->get();
         return $query;
     }
+    
 
     public function getberita($id){
         $this->db->select('*');
@@ -27,6 +28,16 @@ class Home_model extends CI_Model{
         $this->db->order_by('news.date_post','desc');
         $this->db->where('category.category_link', $id);
         $data = $this->db->get();
+        return $data->num_rows();
+    }
+
+    function getNewsFilter($id){
+        // $this->db->select('*');
+        // $this->db->from('news');
+        // $this->db->join('category','category.category_id=news.category_id');
+        // $this->db->order_by('news.date_post','desc');
+        // $this->db->where('category.category_link', $id);
+        $data = $this->db->get('news');
         return $data;
     }
 
@@ -41,13 +52,6 @@ class Home_model extends CI_Model{
 		return $data;
     }
 
-    function getRooms(){
-        $this->db->limit('7');
-        $this->db->order_by('room_name', 'ASC');
-        $this->db->order_by('class', 'ASC');
-        $query = $this->db->get('room');
-        return $query;
-    }
 
     function getCategory(){
         $query = $this->db->get('category');

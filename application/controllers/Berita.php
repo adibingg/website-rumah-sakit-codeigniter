@@ -11,8 +11,19 @@ class Berita extends CI_Controller{
 	}
 
 	public function filter($id){
-		$config = $this->Home_model->getConfig();
-		foreach($config->result() as $conf){
+		$myconf = $this->Home_model->getConfig();
+		
+		$this->load->library('pagination');
+		$config['uri_segment'] = 2;
+		$config['base_url'] = site_url('post/').$id;
+		$config['total_rows'] = 11;
+		$config['per_page'] = 2;
+		$config['num_links'] = 5;
+		$config['first_link'] = 'First';
+		$config['last_link'] = 'Last';
+		$this->pagination->initialize($config);
+
+		foreach($myconf->result() as $conf){
 			$title_news = str_replace('-',' ', $id);
 			$title_result = ucfirst($title_news);
 			$data = array(
@@ -25,7 +36,7 @@ class Berita extends CI_Controller{
 				'phone' 		=> $conf->phone,
 				'email' 		=> $conf->email,
 				'category' 		=> $this->Home_model->getCategory(),
-				'news' 			=> $this->Home_model->getberita($id),
+				'news' 			=> $this->Home_model->getNewsFilter($id,$config["per_page"]),
 				'sidebar'		=> $this->Home_model->getSidebar()
 			);
 			$this->load->view('home/berita',$data);
