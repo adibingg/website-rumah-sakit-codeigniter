@@ -35,85 +35,81 @@ class Pelayanan extends CI_Controller{
 
 
     public function data() {
-
-      $data = array ('success' => false, 'messages' => array());
-
-      $this->load->library('form_validation');
-      $this->form_validation->set_rules('nim', 'Nim', 'trim|required|numeric|min_length[10]|max_length[11]|callback_nimdata_check'); 
-      $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|callback_namadata_check');    
-      $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[tbmhs.email]');  
-      $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+        $data = array ('success' => false, 'messages' => array());
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nim', 'Nim', 'trim|required|numeric|min_length[10]|max_length[11]|callback_nimdata_check'); 
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|callback_namadata_check');    
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[tbmhs.email]');  
+        $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
 
 
-      if($this->form_validation->run()) {   
+        if($this->form_validation->run()) {   
+            $data = array (
+                'nim' => $this->input->post('nim'),
+                'nama' => $this->input->post('username'),
+                'email' => $this->input->post('email')        
+            );
+            $this->mdata->insert_all('tbmhs',$data);
 
+            $data['success'] = true;
 
-        $data = array (
-         'nim' => $this->input->post('nim'),
-         'nama' => $this->input->post('username'),
-         'email' => $this->input->post('email')        
-     );
-        $this->mdata->insert_all('tbmhs',$data);
+        } else {
+            foreach ($_POST as $key => $value) {
+                $data['messages'][$key] = form_error($key);
+            }   
 
-        $data['success'] = true;
+        }
+        echo json_encode($data);
 
-    } else {
-     foreach ($_POST as $key => $value) {
-       $data['messages'][$key] = form_error($key);
-   }   
-
-}
-echo json_encode($data);
-
-}
-
-function store(){
-    $this->Sec_model->getSec();
-    $a = $this->form_validation->set_rules('pelayanan','Nama Pelayanan', 'trim|required');
-    $b = $this->form_validation->set_rules('deskripsi','Nama Pelayanan', 'trim|required');
-    if($this->form_validation->run()==FALSE){
-        $data = array(
-            'service_name' => $a,
-            'service_description' => $b 
-        );
-    }else{
-        $post = array(
-            'service_name' => $this->input->post('pelayanan'),
-            'service_description' => $this->input->post('deskripsi')
-        );
-        $data = $this->Service_model->saveService($post);
-        
-        $data['success'] = true;    
     }
-    echo json_encode($data);
-}
 
-function edit($id){
-    $this->Sec_model->getSec();
-    $data = $this->Service_model->getById($id);
-    echo json_encode($data);
-}
+    function store(){
+        $this->Sec_model->getSec();
+        $a = $this->form_validation->set_rules('pelayanan','Nama Pelayanan', 'trim|required');
+        $b = $this->form_validation->set_rules('deskripsi','Nama Pelayanan', 'trim|required');
+        if($this->form_validation->run()==FALSE){
+            $data = array(
+                'service_name' => $a,
+                'service_description' => $b 
+            );
+        }else{
+            $post = array(
+                'service_name' => $this->input->post('pelayanan'),
+                'service_description' => $this->input->post('deskripsi')
+            );
+            $data = $this->Service_model->saveService($post);
+            
+            $data['success'] = true;    
+        }
+        echo json_encode($data);
+    }
 
-function update(){
-    $this->Sec_model->getSec();
-   
-        $id = $this->input->post('id');
-        $post = array(
-            'service_name' => $this->input->post('pelayanan'),
-            'service_description' => $this->input->post('deskripsi')
-        );
-        $data = $this->Service_model->updateService($id,$post);
-        
-        $data['success'] = true;    
+    function edit($id){
+        $this->Sec_model->getSec();
+        $data = $this->Service_model->getById($id);
+        echo json_encode($data);
+    }
 
-    echo json_encode($data);
-}
+    function update(){
+        $this->Sec_model->getSec();
+    
+            $id = $this->input->post('id');
+            $post = array(
+                'service_name' => $this->input->post('pelayanan'),
+                'service_description' => $this->input->post('deskripsi')
+            );
+            $data = $this->Service_model->updateService($id,$post);
+            
+            $data['success'] = true;    
 
-function destroy($id){
-    $this->Sec_model->getSec();
-    $data = $this->Service_model->deleteSingle($id);
-    echo json_encode($data);
-}
+        echo json_encode($data);
+    }
+
+    function destroy($id){
+        $this->Sec_model->getSec();
+        $data = $this->Service_model->deleteSingle($id);
+        echo json_encode($data);
+    }
 
 
 }

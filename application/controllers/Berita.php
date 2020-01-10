@@ -25,7 +25,8 @@ class Berita extends CI_Controller{
 				'phone' 		=> $conf->phone,
 				'email' 		=> $conf->email,
 				'category' 		=> $this->Home_model->getCategory(),
-				'news' 	=> $this->Home_model->getberita($id)
+				'news' 			=> $this->Home_model->getberita($id),
+				'sidebar'		=> $this->Home_model->getSidebar()
 			);
 			$this->load->view('home/berita',$data);
 		}
@@ -49,7 +50,8 @@ class Berita extends CI_Controller{
 				'category' 		=> $this->Home_model->getCategory(),
 				'news_rows' 	=> $this->Home_model->detailBerita($id),
 				'sub_1'			=> "Berita",
-				'sub_2'			=> "Semua Berita dan Artikel",		
+				'sub_2'			=> "Semua Berita dan Artikel",
+				'sidebar'			=> $this->Home_model->getSidebar()		
 			);
 			$this->load->view('home/beritadetail', $data);
 		}

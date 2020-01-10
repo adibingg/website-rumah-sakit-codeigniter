@@ -2020,7 +2020,7 @@
       <div class="col-md-12">
         <div class="form-group">
             <input type="text" name="id_update" value="<?php echo $row->id_static_pages; ?>">
-          <input type="hidden" name="id" value="001">
+          <input type="hidden" name="id" value="123">
       </div>
       <div class="form-group">
           <label for="">Judul</label>

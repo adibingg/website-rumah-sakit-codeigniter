@@ -108,7 +108,7 @@ class Halaman extends CI_Controller{
 				'url'           => $slug,
 				'title_pages'   => $this->input->post('judul'),
 				'content'       => $this->input->post('isi'),
-				'thumbnail'    => $gambar,
+				'thumbnail'     => $gambar,
 			);
 			$this->db->insert('static_pages',$data);
 		}

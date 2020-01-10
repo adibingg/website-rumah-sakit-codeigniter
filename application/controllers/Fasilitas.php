@@ -17,7 +17,8 @@ class Fasilitas extends CI_Controller{
 				'address'		=> $conf->address,
 				'telepon' 		=> $conf->phone,
 				'email' 		=> $conf->email,
-				'category' 		=> $this->Home_model->getCategory()
+				'category' 		=> $this->Home_model->getCategory(),
+				'sidebar'			=> $this->Home_model->getSidebar()
 			);
 			$this->load->view('home/header',$data);
 		}

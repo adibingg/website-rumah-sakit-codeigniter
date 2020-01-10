@@ -40,8 +40,8 @@ class Fasilitas extends CI_Controller{
 	 	$this->load->library('upload', $config);
 	        if ( ! $this->upload->do_upload('gambar')){
 	            $data = array(
-					'facilities_name' => $this->input->post('name'),
-					'description' 	=> $this->input->post('description')
+					'facilities_name'   => $this->input->post('name'),
+					'description' 	    => $this->input->post('description')
 				);
 				$this->db->insert('facilities',$data);
 			}else{
@@ -49,9 +49,9 @@ class Fasilitas extends CI_Controller{
 				$gambar 	= $file['file_name'];
 					
 	            $data = array(
-                    'facilities_name' => $this->input->post('name'),
-					'description' 	=> $this->input->post('description'),
-					'images' 		=> $gambar
+                    'facilities_name'   => $this->input->post('name'),
+					'description' 	    => $this->input->post('description'),
+					'images' 		    => $gambar
 				);
 				$this->db->insert('facilities',$data);
 	        }
@@ -82,8 +82,8 @@ class Fasilitas extends CI_Controller{
         $this->load->library('upload', $config);
             if ( ! $this->upload->do_upload('gambar')){
                 $data = array(
-                    'facilities_name' => $this->input->post('name'),
-                    'description'   => $this->input->post('description')
+                    'facilities_name'   => $this->input->post('name'),
+                    'description'       => $this->input->post('description')
                 );
                 $this->db->where('facilities_id', $this->input->post('id'));
                 $this->db->update('facilities',$data);
@@ -92,9 +92,9 @@ class Fasilitas extends CI_Controller{
                 $gambar     = $file['file_name'];
                     
                 $data = array(
-                    'facilities_name' => $this->input->post('name'),
-                    'description'   => $this->input->post('description'),
-                    'images'        => $gambar
+                    'facilities_name'   => $this->input->post('name'),
+                    'description'       => $this->input->post('description'),
+                    'images'            => $gambar
                 );
                 $this->db->where('facilities_id', $this->input->post('id'));
                 $this->db->update('facilities',$data);

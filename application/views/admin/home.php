@@ -8,7 +8,7 @@
         <div class="x_title">
 
           <ul class="nav navbar-right panel_toolbox">
-            <p>Anda masuk menggunakan : <?php echo $this->session->userdata('admin_name'); ?></p>
+            <p>Anda masuk sebagai : <?php echo $this->session->userdata('admin_name'); ?></p>
           </ul>
           <h2>HALAMAN ADMINISTRATOR</h2>
           <div class="clearfix"></div>

@@ -2018,7 +2018,7 @@
       <?php echo form_open_multipart('admin/banner/store');?>
       <div class="col-md-12">
         <div class="form-group">
-          <input type="hidden" name="id" value="001">
+          <input type="hidden" name="id" value="123">
       </div>
       <div class="form-group">
           <label for="">Judul</label>

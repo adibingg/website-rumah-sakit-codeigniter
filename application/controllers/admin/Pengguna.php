@@ -17,7 +17,6 @@ class Pengguna extends CI_Controller{
             'messages_new'          => $this->Admin_model->showNewMessages(),
 			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
         );
-
         $this->load->view('admin/pengguna', $config);
     }
 
@@ -28,7 +27,6 @@ class Pengguna extends CI_Controller{
             'messages_new'          => $this->Admin_model->showNewMessages(),
 			'messages_new_counter'  => $this->Admin_model->showNewMessages()->num_rows()
         );
-
         $this->load->view('admin/pengguna-tambah', $config);
     }
 

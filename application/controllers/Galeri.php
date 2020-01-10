@@ -10,7 +10,7 @@ class Galeri extends CI_Controller{
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' 	=> $this->Home_model->getNavbar(),
-				'title' 		=> "Galeri " .$conf->company_name,
+				'title' 		=> "Galeri",
 				'sub_1'			=> "Berita",
 				'sub_2'			=> "Semua Berita dan Artikel",
 				'meta_desc' 	=> $conf->company_name,
@@ -19,7 +19,8 @@ class Galeri extends CI_Controller{
 				'email' 		=> $conf->email,
 				'album' 		=> $this->Home_model->getAlbum(),
 				'galeri' 		=> $this->Home_model->getGaleri(),
-				'category' 		=> $this->Home_model->getCategory()
+				'category' 		=> $this->Home_model->getCategory(),
+				'sidebar'			=> $this->Home_model->getSidebar()
 			);
 			$this->load->view('home/galeri',$data);
 		}

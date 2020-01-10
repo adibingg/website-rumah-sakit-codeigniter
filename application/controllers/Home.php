@@ -25,7 +25,8 @@ class Home extends CI_Controller{
 				'poly'				=> $this->Home_model->getPolyclinic(),
 				'category' 			=> $this->Home_model->getCategory(),
 				'services'			=> $this->Home_model->getServiceHome(),
-				'card_home'			=> $this->Home_model->getCard()
+				'card_home'			=> $this->Home_model->getCard(),
+				'sidebar'			=> $this->Home_model->getSidebar()
 			);
 			$this->load->view('home/home',$data);
 		}

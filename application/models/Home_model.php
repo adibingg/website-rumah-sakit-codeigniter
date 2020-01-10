@@ -34,7 +34,8 @@ class Home_model extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('news');
-		$this->db->where('seo', $id);
+        $this->db->where('seo', $id);
+        $this->db->limit('1');
 		$this->db->join('category', 'category.category_id = news.category_id');
 		$data = $this->db->get();
 		return $data;
@@ -166,6 +167,12 @@ class Home_model extends CI_Model{
 
     function getCard(){
         $this->db->where('statis_type', 'card');
+        $query = $this->db->get('static_pages');
+        return $query;
+    }
+
+    function getSidebar(){
+        $this->db->where('statis_type', 'sidebar');
         $query = $this->db->get('static_pages');
         return $query;
     }

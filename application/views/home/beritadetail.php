@@ -7,9 +7,8 @@
     <div class="col-lg-8 ftco-animate">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-12 card" style="padding-left: 5%; padding-bottom: 100px; padding-right: 5%; padding-top: 20px; box-shadow:none;">
+          <div class="col-md-12 card" style="padding-left: 5%; padding-bottom: 100px; padding-right: 5%; padding-top: 20px; box-shadow:none; border: none;">
             <?php foreach($news_rows->result() as $row){ ?>
-              <h2 class="mb-3" style="font-size: 19pt; font-family: 'Fjalla One', sans-serif; text-transform: capitalize;"><?php echo $row->title; ?></h2>
               <div class="meta" style="color: #ddd;">
                 <a style="color: #000; font-size: 11pt;" href="#"><span class="icon-calendar"></span> <span class="day"><?php $date = $row->date_post; echo strip_tags(substr($date,8,2)); ?></span>
                   <span class="mos"><?php $month = $row->date_post; $this_month = strip_tags(substr($month,6,7)); echo getBulan($this_month); ?></span>
@@ -51,7 +50,7 @@
               <h3>Informasi Yang Sama</h3>
               <div class="border-small" style="border-bottom : 6px solid #8ac4ff; width: 100px; margin-top: -11px; margin-bottom: 5px;"></div>
             </div>
-            <div class="card" style="background-color: #fafafa; box-shadow:none; padding: 20px;">
+            
               <?php
               $where = $row->category_id; 
               $this->db->select('*');
@@ -61,17 +60,18 @@
               $news_list = $this->db->get('news')
               ?>
               <?php foreach($news_list->result() as $nl){ ?>
+                <div class="card" style="box-shadow:none; padding: 20px;">
                 <div class="block-21 mb-4 d-flex">
                   <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('/uploads/').$nl->images; ?>);"></a>
                   <div class="text">
-                    <h3 class="heading"><a style="font-size: 9pt;" href="<?php echo base_url('baca-berita/').$nl->seo; ?>">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                    <h3 class="heading"><a style="font-size: 10pt;" href="<?php echo base_url('baca-berita/').$nl->seo; ?>"><?php echo $nl->title; ?></a></h3>
                     <div class="meta">
-                      <div><a style="font-size: 9pt;" href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
+                   
                     </div>
                   </div>
-                </div>
+                </div></div>
               <?php } ?>
-            </div>
+            
           <?php } ?>
         </div>
       </div>

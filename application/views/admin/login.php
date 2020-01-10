@@ -17,23 +17,23 @@
     <link href="<?php echo base_url(); ?>/assets-admin/css/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
     <link href="<?php echo base_url(); ?>/assets-admin/css/vendors/animate.css/animate.min.css" rel="stylesheet">
-
+    <link href="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="<?php echo base_url(); ?>/assets-admin/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="login">
-    <div class="col-md-6">
+    <div class="col-md-12" style="margin-top: 10%;">
+    
+    
       <div class="login_wrapper">
+      
         <div class="animate form login_form">
           <section class="login_content">
-            <?php echo validation_errors(); ?>
+            
             <form action="<?php echo base_url('admin/login/auth'); ?>" method="post">
-              <h1>Login Administrator</h1>
-              <?php if(!$this->session->flashdata('info')): ?>
-              <?php  else: ?>
-              <h1><?php echo $this->session->flashdata('info'); ?></h1>
-              <?php endif; ?>
+             
+              
               <div>
                 <input name="username" type="text" class="form-control has-error" placeholder="Username" required=""/>
               </div>
@@ -41,29 +41,30 @@
                 <input name="password" type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <button type="submit" class="btn btn-success">Login</button>
-                <a class="reset_pass" href="#">Lupa kata sandi?</a>
+                <button type="submit" class="btn btn-success" style="width:100%;">Login</button>
+                
               </div>
 
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">
-                  <a href="#signup" class="to_register"> - Developed by. IT RSU Kartini 2019 - </a>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-               
-              </div>
+            
             </form>
           </section>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-                hello
-    </div>
+   
   </body>
+  <script src="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.js"></script>
+  <script>
+  <?php if(!$this->session->flashdata('info')): ?>
+    
+  <?php  else: ?>
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Username atau password yang anda masukan salah!',
+      type : 'error'
+    })
+  <?php endif; ?>
+   
+  </script>
 </html>

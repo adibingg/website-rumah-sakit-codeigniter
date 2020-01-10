@@ -13,10 +13,10 @@
 	function index(){
 		$this->Sec_model->getSec();
 		$data = array(
-		'title'                 => "Postingan",
-		'berita'                => $this->News_model->TampilBerita(),
-		'messages_new'          => $this->Inbox_model->showNewMessages(),
-				'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
+			'title'                 => "Postingan",
+			'berita'                => $this->News_model->TampilBerita(),
+			'messages_new'          => $this->Inbox_model->showNewMessages(),
+			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
 		);
 		$this->load->view('admin/news',  $data);
 	}
@@ -25,10 +25,10 @@
 		$this->Sec_model->getSec();
 			$data = array(
 				'title'                 => "Entri Baru",
-		'kategori'              => $this->News_model->getKategori(),
-		'messages_new'          => $this->Inbox_model->showNewMessages(),
+				'kategori'              => $this->News_model->getKategori(),
+				'messages_new'          => $this->Inbox_model->showNewMessages(),
 				'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 
-		);
+			);
 			$this->load->view('admin/news-add',  $data);
 		}
 	
@@ -66,11 +66,11 @@
 	function edit($id){
 		$this->Sec_model->getSec();
 		$data = array(
-		'title'                 => "Perbaharui Berita",
-		'kategori'              => $this->News_model->getKategori(), 
-		'berita'                => $this->News_model->getNewsId($id),
-		'messages_new'          => $this->Inbox_model->showNewMessages(),
-				'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 
+			'title'                 => "Perbaharui Berita",
+			'kategori'              => $this->News_model->getKategori(), 
+			'berita'                => $this->News_model->getNewsId($id),
+			'messages_new'          => $this->Inbox_model->showNewMessages(),
+			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows() 
 		);
 		$this->load->view('admin/news-edit',  $data);
 	}
@@ -143,28 +143,11 @@
 
 	function save_category(){
 		$post = array(
-		'category_name' => $this->input->post('nama_kategori')
+			'category_name' => $this->input->post('nama_kategori')
 		);
 
 		$data = $this->News_model->saveCategory($post);
 		echo json_encode($data);
 	}
-
-	function create_tags(){
-		$string   = preg_replace('/[^a-zA-Z0-9 &%|{.}=,?!*()"-_+$@;<>]/', '',$this->input->post('tag')); 
-		$trim     = trim($string);
-		$pre_slug = strtolower(str_replace(" ", "-", $trim)); 
-		$slug     = $pre_slug;
-		$post = array(
-		'tag' => $this->input->post('tag'),
-		'tag_url' => $slug
-		);
-		$data = $this->News_model->saveTag($post);
-		echo json_decode($data);
-	}
-
-	function tag_show(){
-		$data = $this->News_model->getTag();
-		echo json_encode($data);
-	}
-	}
+	
+}

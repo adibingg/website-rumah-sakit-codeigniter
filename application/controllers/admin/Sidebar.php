@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit("No dirrect script access allowed");
 
-class Banner extends CI_Controller{
+class Sidebar extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
@@ -18,19 +18,19 @@ class Banner extends CI_Controller{
             'title'                 => "Banner Home",
             'messages_new'          => $this->Inbox_model->showNewMessages(),
             'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows(),
-            'banner_home'           => $this->Settings_model->getBanner()      
+            'sidebar'           => $this->Settings_model->getSidebar()      
         );
-        $this->load->view('admin/banner-home',$config);
+        $this->load->view('admin/sidebar',$config);
     }
 
     public function create(){
         $this->Sec_model->getSec();
         $config = array (
-            'title'                 => "Banner Promosi Home",
+            'title'                 => "Tambah Sidebar Informasi",
             'messages_new'          => $this->Inbox_model->showNewMessages(),
             'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows(),
         );
-       $this->load->view('admin/banner-home-tambah', $config);
+       $this->load->view('admin/sidebar-tambah', $config);
     }
 
     public function store(){
@@ -41,7 +41,7 @@ class Banner extends CI_Controller{
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('gambar')){
             $this->session->set_flashdata('info', 'Maaf, Foto anda gagal di unggah, kemungkinan file terlalu besar. Silahkan Coba Kembali');
-            redirect('admin/banner/create');
+            redirect('admin/sidebar/create');
         }else{
             $file = $this->upload->data();
             $gambar = $file['file_name'];
@@ -56,13 +56,13 @@ class Banner extends CI_Controller{
                 'title_pages'   => $this->input->post('judul'),
                 'content'       => $this->input->post('isi'),
                 'thumbnail'     => $gambar,
-                'statis_type'   => 'card',
+                'statis_type'   => 'sidebar',
                 'icon'          => $this->input->post('icon')
             );
             $this->db->insert('static_pages',$data);
         }
         $this->session->set_flashdata('info','Berhasil menambahkan halaman statis');
-        redirect('admin/banner','refresh');
+        redirect('admin/sidebar','refresh');
    }
 
     public function edit($id){
@@ -71,13 +71,12 @@ class Banner extends CI_Controller{
             'title' => "Perbaharui Banner Halaman Utama",
             'messages_new' => $this->Inbox_model->showNewMessages(),
             'messages_new_counter' => $this->Inbox_model->showNewMessages()->num_rows(),
-            'banner_home'   => $this->Settings_model->getBannerSingle($id)      
+            'sidebar'   => $this->Settings_model->getBannerSingle($id)      
         );
-        $this->load->view('admin/banner-home-edit',$config);
+        $this->load->view('admin/sidebar-edit',$config);
     }
 
     public function update(){
-        $this->Sec_model->getSec();
         $this->Sec_model->getSec();
         $config['upload_path']         = './uploads';  
         $config['allowed_types']        = 'gif|jpg|png';
@@ -95,8 +94,8 @@ class Banner extends CI_Controller{
                 'url'           => $slug,
                 'title_pages'   => $this->input->post('judul'),
                 'content'       => $this->input->post('isi'),
-                'statis_type'   => 'card',
-                'icon'          => $this->input->post('icon')
+                'statis_type'   => 'sidebar',
+                'icon'          => 'icon'
             );
             $this->db->where('id_static_pages', $this->input->post('id_update'))->update('static_pages',$data);
         }else{
@@ -112,20 +111,20 @@ class Banner extends CI_Controller{
                 'title_pages'   => $this->input->post('judul'),
                 'content'       => $this->input->post('isi'),
                 'thumbnail'     => $gambar,
-                'statis_type'   => 'card',
-                'icon'          => $this->input->post('icon')
+                'statis_type'   => 'sidebar',
+                'icon'          => 'icon'
             );
             $this->db->where('id_static_pages', $this->input->post('id_update'))->update('static_pages',$data);
         }
         $this->session->set_flashdata('info','Berhasil menambahkan halaman statis');
-        redirect('admin/banner','refresh');
+        redirect('admin/sidebar','refresh');
     }
 
     public function delete($id){
         $this->Sec_model->getSec();
-        $this->Settings_model->deletePages($id);
+        $this->Settings_model->deleteBanner($id);
         $this->session->set_flashdata('info', 'Halaman berhasil dihapus');
-        redirect('admin/banner');
+        redirect('admin/sidebar');
     }
 
 }

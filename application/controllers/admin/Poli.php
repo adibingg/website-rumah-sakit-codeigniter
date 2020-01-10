@@ -3,12 +3,14 @@
 defined('BASEPATH') OR exit("No script dirrect access allowed");
 
 class Poli extends CI_Controller{
+    
     function __construct(){
         parent::__construct();
         $this->load->model('Sec_model');
         $this->load->model('Admin_model');
         $this->load->model('Inbox_model');
     }
+    
     function index(){
         $this->Sec_model->getSec();
         $config = array (
@@ -17,7 +19,6 @@ class Poli extends CI_Controller{
             'messages_new'          => $this->Inbox_model->showNewMessages(),
 			'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows()
         );
-
         $this->load->view('admin/jadwal-poli', $config);
     }
 

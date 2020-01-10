@@ -22,7 +22,6 @@ class Pengaturan extends CI_Controller{
     }
 
     public function update_identitas_website(){
-        
         $this->Sec_model->getSec();
 
     }

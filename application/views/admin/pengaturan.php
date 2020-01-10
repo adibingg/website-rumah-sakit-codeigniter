@@ -25,7 +25,7 @@
             <div class="card-body text-center">
               <i class="fa fa-gears text-info" style="font-size: 30pt; text-align:center;"></i>
               <hr>
-             <a href="<?php echo base_url('pengaturan/stati_sidebar'); ?>" class="btn btn-default">Banner Sidebar</a>
+             <a href="<?php echo base_url('admin/sidebar'); ?>" class="btn btn-default">Banner Sidebar</a>
               
             </div>
           </div>

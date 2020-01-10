@@ -189,22 +189,16 @@
 								</div>
 							<?php } ?>
 						</div>
+						<?php foreach($sidebar->result() as $row){ ?>
 						<div class="card" style="box-shadow: none; padding: 0px; margin-top: 10px;">
 							<div class="card-body" style="padding:0px;">
-								<img style="width: 100%;" src="https://www.nutriclub.co.id/media/178014/09.-senam-hamil-97-2003_ratio-1_700x278pxl.jpg" alt="">
+								<img style="width: 100%;" src="<?php echo base_url('uploads/').$row->thumbnail; ?>" alt="">
 							</div>
 							<div class="card-footer" style="padding: 10px;">
 								<h4 style="font-family: 'Lato', sans-serif; font-size: 12pt;">Senam Ibu Hamil</h4>
 							</div>
 						</div>
-						<div class="card" style="box-shadow: none; padding: 0px; margin-top: 10px;">
-							<div class="card-body" style="padding:0px;">
-								<img style="width: 100%;" src="https://www.nutriclub.co.id/media/178014/09.-senam-hamil-97-2003_ratio-1_700x278pxl.jpg" alt="">
-							</div>
-							<div class="card-footer" style="padding: 10px;">
-								<h4 style="font-family: 'Lato', sans-serif; font-size: 12pt;">Senam Ibu Hamil</h4>
-							</div>
-						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

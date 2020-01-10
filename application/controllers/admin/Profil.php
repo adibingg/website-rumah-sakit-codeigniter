@@ -122,37 +122,4 @@ class Profil extends CI_Controller{
 		$this->session->set_flashdata('info','Berita berhasil di perbaharui');
 		redirect('admin/struktur-organisasi');
 	}
-
-	// function history(){
-	// 	$this->load->view('sejarah');
-	// }
-
-	// function add_history(){
-	// 	$this->load->view('sejarah-tambah');
-	// }
-
-	// function add_history(){
-	// 	// $this->Sec_model->getSec();
-	// 	// $config['upload_path'] = './uploads';
-	// 	// $config['allowed_types'] = 'jpg|png';
-	// 	// $this->load->library('upload', $config);
-	// 	// 	if(!$this->upload->do_upload('gambar')){
-	// 	// 		$this->session->set_flashdata('info','failed to upload files, try another file!');
-	// 	// 		redirect('admin/profile/add_history');
-	// 	// 	}else{
-	// 	// 		$file = $this->upload->data();
-	// 	// 		$images = $file['file_name'];
-	// 	// 		$data = array(
-	// 	// 			'images' => $images,
-	// 	// 			'history' => $this->input->post('history'));
-	// 	// 		$this->db->insert('history', $data);
-	// 	// 	}
-	// 	// $this->session->set_flashdata('info','Berhasil menambahkan sejarah');
-	// 	// redirect('admin/profile/history');
-
-	// }
-
-	// function update_history(){
-
-	// }
 }

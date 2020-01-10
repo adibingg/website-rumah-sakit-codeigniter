@@ -36,7 +36,7 @@ class Banner extends CI_Controller{
     public function store(){
         $this->Sec_model->getSec();
         $config['upload_path']         = './uploads';  
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types']       = 'gif|jpg|png';
         $config['quality'] = '50%'; 
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('gambar')){
@@ -68,10 +68,10 @@ class Banner extends CI_Controller{
     public function edit($id){
         $this->Sec_model->getSec();
         $config = array(
-            'title' => "Perbaharui Banner Halaman Utama",
-            'messages_new' => $this->Inbox_model->showNewMessages(),
-            'messages_new_counter' => $this->Inbox_model->showNewMessages()->num_rows(),
-            'banner_home'   => $this->Settings_model->getBannerSingle($id)      
+            'title'                 => "Perbaharui Banner Halaman Utama",
+            'messages_new'          => $this->Inbox_model->showNewMessages(),
+            'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows(),
+            'banner_home'           => $this->Settings_model->getBannerSingle($id)      
         );
         $this->load->view('admin/banner-home-edit',$config);
     }
@@ -79,8 +79,8 @@ class Banner extends CI_Controller{
     public function update(){
         $this->Sec_model->getSec();
         $this->Sec_model->getSec();
-        $config['upload_path']         = './uploads';  
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['upload_path']     = './uploads';  
+        $config['allowed_types']   = 'gif|jpg|png';
         $config['quality'] = '50%'; 
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('gambar')){
