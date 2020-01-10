@@ -5,7 +5,8 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2><i class="fa fa-photo"></i> BANNER HALAMAN UTAMA</h2>
+          <a href="<?php echo base_url('admin/banner/create'); ?>" class="btn btn-success btn-sm">Buat Entri Baru</a>
+
           <div class="clearfix"></div>
         </div>
 
@@ -17,8 +18,8 @@
                     <i class="fa <?php echo $row->icon; ?> text-info" style="font-size: 30pt; text-align:center;"></i>
                     <p><?php echo $row->title_pages; ?></p>
                     <hr>
-                    <a href="<?php echo base_url('pengaturan/stati_sidebar'); ?>" class="btn btn-primary btn-sm">Perbaharui</a>
-                    <a href="<?php echo base_url('pengaturan/delete_banner_home/').$row->id_static_pages; ?>" class="btn btn-danger btn-sm hapus">Hapus</a>
+                    <a href="<?php echo base_url('admin/banner/edit/').$row->id_static_pages; ?>" class="btn btn-primary btn-sm">Perbaharui</a>
+                    <a href="<?php echo base_url('admin/banner/delete/').$row->id_static_pages; ?>" class="btn btn-danger btn-sm hapus">Hapus</a>
                 </div>
             </div>
         </div>

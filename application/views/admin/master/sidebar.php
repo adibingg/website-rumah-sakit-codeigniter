@@ -128,6 +128,7 @@
                       <li><a href="<?= base_url('admin/visi-misi'); ?>">Visi & Misi</a></li>
                       <li><a href="<?= base_url('admin/sejarah'); ?>">Sejarah</a></li>
                       <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktural</a></li>
+                      <li><a href="<?= base_url('admin/about'); ?>">Tentang Kami</a></li>
                     </ul>
                   </li>
                   <li><a href="<?= base_url('admin/career'); ?>"><i class="fa fa-briefcase"></i> Info Karir</a></li>

@@ -2,15 +2,12 @@
 <section class="home-slider owl-carousel">
 	<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_2.jpg'); ?>');" data-stellar-background-ratio="0.9">
 		<div class="overlay"></div>
-		
 	</div>
 	<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_1.jpg'); ?>');" data-stellar-background-ratio="0.9">
 		<div class="overlay"></div>
-		
 	</div>
 	<div class="slider-item" style="background-image:url('<?php echo base_url('public/images/bg_4.jpg'); ?>');" data-stellar-background-ratio="0.9">
 		<div class="overlay"></div>
-		
 	</div>
 </section>
 
@@ -19,18 +16,18 @@
 		<div class="col-md-12" style="padding: 0px;">
 			<div class="row">
 				<?php foreach($card_home->result() as $row){ ?>
-				<div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
-					<div class="card hvr-sweep-to-top" style="min-height: 400px; border:none; border-radius:10px;">
-						<div class="card-body text-center">
-							<i class="fa <?php echo $row->icon; ?> text-info" style="font-size: 30pt; text-align:center;"></i>
-							<h1 class="text-info" style="font-size: 12pt; font-family: 'Noto Sans TC', sans-serif; text-transform: uppercase; font-weight: bold;"> <?php echo $row->title_pages; ?></h1>
-							<p style="text-align: justify;  padding: 7px; border-radius: 5px;"><?php 
-												$statis = $row->content; 
-												echo strip_tags(substr($statis,0,60)); 
-												?></p>
+					<div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
+						<div class="card hvr-sweep-to-top" style="min-height: 400px; border:none; border-radius:10px;">
+							<div class="card-body text-center">
+								<i class="fa <?php echo $row->icon; ?> text-info" style="font-size: 30pt; text-align:center;"></i>
+								<h1 class="text-info" style="font-size: 12pt; font-family: 'Noto Sans TC', sans-serif; text-transform: uppercase; font-weight: bold; min-height: 50px;"> <?php echo $row->title_pages; ?></h1>
+								<p style="text-align: justify;  padding: 7px; border-radius: 5px;"><?php 
+								$statis = $row->content; 
+								echo strip_tags(substr($statis,0,170)); 
+								?></p>
+							</div>
 						</div>
 					</div>
-				</div>
 				<?php } ?>
 			</div>
 		</div>
@@ -40,15 +37,15 @@
 <section class="ftco-section ftco-no-pt ftc-no-pb bg-info text-white" style="margin-top: -100px; padding-top: 100px; z-index: -10;">
 	<div class="container">
 		<div class="col-md-12" style="padding: 0px;">
-			<h2 style="font-family: 'Lato', sans-serif; padding: 0px; font-size: 15pt; color: white;">TENTANG KAMI</h2>
+			<h2 style="font-family: 'Lato', sans-serif; padding: 0px; font-size: 15pt; color: white; font-weight: bold;">TENTANG KAMI</h2>
 			<p>RS Urip Sumoharjo Merupakan Rumah Sakit Swasta yang bernuansa Islam yang mulai beroperasi sejak tanggal 10 September 2001 dan sesuai dengan Keputusan Menteri Kesehatan RI No.492/menkes/SK/V/2008.
 
-Rumah Sakit Urip Sumoharjo saat ini merupakan rumah sakit swasta utama setara tipe B Non Pendidikan dengan Status Akriditasi Tingkat Paripurna Nomor : KARS-SERT/ 670/ III/ 2017
+				Rumah Sakit Urip Sumoharjo saat ini merupakan rumah sakit swasta utama setara tipe B Non Pendidikan dengan Status Akriditasi Tingkat Paripurna Nomor : KARS-SERT/ 670/ III/ 2017
 
-RS Urip Sumoharjo telah mendapatkan :
+				RS Urip Sumoharjo telah mendapatkan :
 
-Penghargaan dari Jamsostek sebagai RS yang tertib Administrasi dan pelayanan terbaik se Sumbagsel
-Penghargaan dari BPJS Ketenagakerjaan sebagai RS yang tertib dalam Pembayaran iuran</p>	
+				Penghargaan dari Jamsostek sebagai RS yang tertib Administrasi dan pelayanan terbaik se Sumbagsel
+			Penghargaan dari BPJS Ketenagakerjaan sebagai RS yang tertib dalam Pembayaran iuran</p>	
 			<p style="padding-bottom: 120px;">Rumah Sakit Unggulan Dengan Pelayanan Prima Kebanggaan Masyarakat</p>
 		</div>
 	</div>
@@ -210,7 +207,6 @@ Penghargaan dari BPJS Ketenagakerjaan sebagai RS yang tertib dalam Pembayaran iu
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>

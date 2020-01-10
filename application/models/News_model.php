@@ -66,7 +66,8 @@ class News_model extends CI_Model{
     }
 
     function getLatestNews(){
-        $this->db->limit('10');
+        $this->db->limit('5');
+        $this->db->order_by('news_id','ASC');
         $query = $this->db->get('news');
         return $query;
     }

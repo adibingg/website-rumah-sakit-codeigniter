@@ -22,19 +22,13 @@ class Pengaturan extends CI_Controller{
     }
 
     public function update_identitas_website(){
+        
         $this->Sec_model->getSec();
+
     }
 
     public function banner_home(){
-        $this->Sec_model->getSec();
-        $config = array (
-            'title'                 => "Banner Promosi Home",
-            'messages_new'          => $this->Inbox_model->showNewMessages(),
-            'messages_new_counter'  => $this->Inbox_model->showNewMessages()->num_rows(),
-            'banner_home'           => $this->Settings_model->getBanner()
-        );
-        $this->load->view('admin/banner-home', $config);
+        
     }
 
-    
 }

@@ -26,7 +26,7 @@
   <style type="text/css">
 
     .hvr-sweep-to-top:hover{
-      background-color: yellow;
+      background-color: white;
       cursor: pointer;
     }
     .hvr-sweep-to-top:after{

@@ -9,4 +9,16 @@ class Settings_model extends CI_Model{
         $query = $this->db->get('static_pages');
         return $query;
     }
+
+    function getBannerSingle($id){
+    	$this->db->where('id_static_pages', $id);
+    	$query = $this->db->get('static_pages');
+    	return $query;
+    }
+
+    function deleteBanner($id){
+        $this->db->where('id_static_pages', $id);
+        $this->db->delete('static_pages');
+    }
+
 }
