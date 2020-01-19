@@ -43,62 +43,20 @@
               <i class="fa fa-briefcase text-info" style="font-size: 30pt; text-align:center;"></i>
               <hr>
              <a href="" class="btn btn-default">Info Karir</a>
-              
             </div>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
           <div class="card hvr-sweep-to-top">
             <div class="card-body text-center text-info">
-              <i class="fa fa-user" style="font-size: 30pt; text-align:center;"></i>
+              <i class="fa fa-envelope" style="font-size: 30pt; text-align:center;"></i>
               <hr>
-             <a href="" class="btn btn-default">Penggunaan</a>
+             <a href="" class="btn btn-default">Pesan Masuk</a>
               
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-            <h2>POSTING TERBARU</h2>
-            <?php $no=0; foreach($latest_news->result() as $row){ ?>
-            <div class="alert alert-success" style="margin-bottom: 1px; padding: 5px;">
-              <div class="row">
-              <div class="col-md-1"><h1><?php echo ++$no; ?></h1></div>
-              <div class="col-md-11"> <div class="content">
-                <div class="title">
-                <p style="font-size: 10pt; font-weight: bold;"><?php echo $row->title; ?></p>
-              </div>
-                <p><?php 
-                  $berita = $row->content; 
-                  echo strip_tags(substr($berita,0,70)); 
-                  ?></p>
-              </div></div>
-            </div>
-              
-             
-            </div>
-            <?php } ?>
-        </div>   
-        <div class="col-md-6">
-            <h2>KOMENTAR TERBARU</h2>
-            <?php $no=0; foreach($latest_news->result() as $row){ ?>
-            <div class="alert alert-success" style="margin-bottom: -10px;">
-              <div class="row">
-              <div class="col-md-1"><h1><?php echo ++$no; ?></h1></div>
-              <div class="col-md-11"> <div class="content">
-                <div class="title">
-                <p style="font-size: 12pt; font-weight: bold;"><?php echo $row->title; ?></p>
-              </div>
-                <p><?php 
-                  $berita = $row->content; 
-                  echo strip_tags(substr($berita,0,70)); 
-                  ?></p>
-              </div></div>
-            </div>
-              
-             
-            </div>
-            <?php } ?>
-        </div>   
+        
       </div>
     </div>
 

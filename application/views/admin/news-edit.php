@@ -43,13 +43,16 @@
                               <input type="file" name="gambar" id="source_gambar" class="form-control">
                               <img src="<?php echo base_url('uploads/').$row->images; ?>" id="tampil-gambar" class="img-responsive" alt="Preview Gambar" />
                             </div>
+                          
                             <div class="form-group">
-                              <label for="">Kategori Berita</label>
-                              <select name="category_id" id="show-category" class="form-control"></select>
-                            </div>
-                            <div class="form-group">
-                              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm1">Tambah Kategori</button>
-                              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm2"><i class="fa fa-gear"></i></button>
+                              <div class='input-group'>
+                                <select name="category_id" id="show-category" class="form-control">
+                                  <option value="<?php echo $row->category_id; ?>"></option>
+                                </select>
+                                <span class="input-group-addon"  data-toggle="modal" data-target=".bs-example-modal-sm2">
+                                  <span class="glyphicon glyphicon-tags"></span>
+                                </span>
+                              </div>
                             </div>
                             <div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
                               <div class="modal-dialog modal-sm">

@@ -46,7 +46,7 @@
 
               <div class="col-md-9">
 
-                <table class="table table-striped jambo_table bulk_action">
+                <table class="table table-striped jambo_table bulk_action" id="myData">
                   <thead>
                     <tr class="headings">
                       <th class="column-title">No</th>

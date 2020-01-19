@@ -1,5 +1,4 @@
 <?php $this->load->view('admin/master/sidebar'); ?>
-<!-- page content -->
 <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
@@ -31,9 +30,9 @@
                     </div>
                   <?php } else{} ?>
                     <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action" id="myData">
+                      <table class="table table-striped" id="myData">
                         <thead>
-                          <tr class="headings">
+                          <tr>
                             <th>#</th>
                             <th class="column-title">Judul </th>
                             <th class="column-title">Tanggal</th>
@@ -63,12 +62,9 @@
                             <?php } else { ?>
                               <label for="" class="label label-danger"> <?= $row->status; ?></td></label>
                             <?php } ?>
-                            
-                           
-                            <td class="last" width="120">
-                                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
-                                <a href="<?= base_url('admin/news/edit/').$row->news_id; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-                                <a href="<?= base_url('admin/news/delete/').$row->news_id; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
+                            <td class="last text-center" width="170">
+                                <a href="<?= base_url('admin/news/edit/').$row->news_id; ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Edit</a>
+                                <a href="<?= base_url('admin/news/delete/').$row->news_id; ?>" class="btn btn-danger btn-sm hapus"><i class="fa fa-trash"></i> Hapus</a>
                             </td>
                           </tr>
                         <?php } ?>
@@ -81,7 +77,6 @@
             </div>
           </div>
         </div>
-        <!-- /page content -->
 <?php $this->load->view('admin/master/footer'); ?>
 <?php $this->load->view('admin/swall'); ?>
 

@@ -12,16 +12,20 @@ class Berita extends CI_Controller{
 
 	public function filter($id){
 		$myconf = $this->Home_model->getConfig();
-		
 		$this->load->library('pagination');
-		$config['uri_segment'] = 2;
-		$config['base_url'] = site_url('post/').$id;
-		$config['total_rows'] = 11;
-		$config['per_page'] = 2;
-		$config['num_links'] = 5;
-		$config['first_link'] = 'First';
-		$config['last_link'] = 'Last';
-		$this->pagination->initialize($config);
+		$total = $this->Home_model->getNewsFilter($id);
+        $page=$this->uri->segment(2);
+        if(!$page):
+            $offset = 0;
+        else:
+            $offset = $page;
+        endif;
+        $limit=4;
+        $config['base_url'] = base_url() . 'post/'.$id;
+        $config['total_rows'] = $total->num_rows();
+        $config['per_page'] = $limit;
+        $config['uri_segment'] = $page;
+		$this->pagination->initialize($config);	
 
 		foreach($myconf->result() as $conf){
 			$title_news = str_replace('-',' ', $id);
@@ -31,12 +35,14 @@ class Berita extends CI_Controller{
 				'title' 		=> $title_result,
 				'sub_1'			=> "Post",
 				'sub_2'			=> $title_result,
-				'meta_desc' 	=> $conf->company_name,
-				'address'		=> $conf->address,
-				'phone' 		=> $conf->phone,
-				'email' 		=> $conf->email,
+				'meta_desc' 	=> $conf->website_name,
+				'logo'				=> $conf->logo,
+				'address'			=> $conf->address,
+				'phone' 			=> $conf->phone,
+				'email' 			=> $conf->email,
 				'category' 		=> $this->Home_model->getCategory(),
-				'news' 			=> $this->Home_model->getNewsFilter($id,$config["per_page"]),
+				'news' 			=> $this->Home_model->getNewsFilter($id, $config['per_page'],$page),
+				'pages'			=> $this->pagination->create_links(),
 				'sidebar'		=> $this->Home_model->getSidebar()
 			);
 			$this->load->view('home/berita',$data);
@@ -54,10 +60,15 @@ class Berita extends CI_Controller{
 			$data = array(
 				'navigation' 	=> $this->Home_model->getNavbar(),
 				'title' 		=> $title_result,
-				'meta_desc' 	=> $conf->company_name,
+				'meta_desc' 	=> $conf->website_name,
+				'logo'			=> $conf->logo,
 				'address'		=> $conf->address,
 				'phone' 		=> $conf->phone,
 				'email' 		=> $conf->email,
+				'instagram'		=> $conf->instagram,
+				'facebook'		=> $conf->facebook,
+				'youtube'		=> $conf->youtube,
+				'twitter'		=> $conf->twitter,
 				'category' 		=> $this->Home_model->getCategory(),
 				'news_rows' 	=> $this->Home_model->detailBerita($id),
 				'sub_1'			=> "Berita",

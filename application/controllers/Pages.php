@@ -16,10 +16,11 @@ class Pages extends CI_Controller{
 				'title' 		=> 'Halaman Statis',
 				'sub_1'			=> "Berita",
 				'sub_2'			=> "Semua Berita dan Artikel",
-				'meta_desc' 	=> $conf->company_name,
-				'address'		=> $conf->address,
-				'phone' 		=> $conf->phone,
-				'email' 		=> $conf->email,
+				'meta_desc' 	=> $conf->website_name,
+				'logo'				=> $conf->logo,
+				'address'			=> $conf->address,
+				'phone' 			=> $conf->phone,
+				'email' 			=> $conf->email,
 				'pages_row' 	=> $this->Home_model->getPagesRow($id),
 				'category' 		=> $this->Home_model->getCategory()
 			);

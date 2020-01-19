@@ -13,7 +13,7 @@
   <link href="<?php echo base_url(); ?>assets-admin/css/custom.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <link href="<?php echo base_url(); ?>assets-admin/css/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
   <style>
     .to_do li a{
@@ -32,10 +32,10 @@
     ::-webkit-scrollbar-thumb:hover {
       background: orange;
     }
-/*    .btn{
+   .btn{
       border: 0px;
       border-radius: 0px;
-    }*/
+    }
 
     .card{
       padding: 0px;
@@ -127,12 +127,12 @@
                       <li><a href="<?= base_url('admin/profil'); ?>">Profil</a></li>
                       <li><a href="<?= base_url('admin/visi-misi'); ?>">Visi & Misi</a></li>
                       <li><a href="<?= base_url('admin/sejarah'); ?>">Sejarah</a></li>
-                      <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktural</a></li>
+                      <li><a href="<?= base_url('admin/struktur-organisasi'); ?>">Struktur Organisasi</a></li>
                       <li><a href="<?= base_url('admin/about'); ?>">Tentang Kami</a></li>
                     </ul>
                   </li>
                   <li><a href="<?= base_url('admin/career'); ?>"><i class="fa fa-briefcase"></i> Info Karir</a></li>
-                  <li><a href="<?= base_url('admin/login-tracker'); ?>"><i class="fa fa-sign-in"></i> Informasi Masuk</a></li>
+                  <li><a href="<?= base_url('admin/inbox'); ?>"><i class="fa fa-envelope"></i> Pesan Masuk</a></li>
                   
                 </ul>
               </div>

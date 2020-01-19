@@ -118,8 +118,10 @@ $route['admin/career/delete'] = 'admin/karir/tambah_informasi_karir';
 //Login Tracker
 $route['admin/login-tracker'] = 'admin/tracker';
 
-//Log activity
-$route['admin/log'] = 'admin/log';
+//Users
+$route['admin/users'] = 'admin/pengguna';
+$route['admin/users/add'] = 'admin/pengguna/create';
+$route['admin/users/save'] = 'admin/pengguna/store';
 
 //Settings
 

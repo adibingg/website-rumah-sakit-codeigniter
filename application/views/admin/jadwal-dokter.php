@@ -10,7 +10,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2> <a href="<?= base_url('admin/doctor/schedule/add') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Jadwal Dokter</a></h2>
+          <h2> <a href="<?= base_url('admin/doctor/schedule/add') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Buat Entri Baru</a></h2>
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
             </li>
@@ -21,8 +21,8 @@
         </div>
         
         <div class="x_content">
-          <div class="table-responsive">
-            <table class="table table-striped jambo_table bulk_action">
+          <div>
+            <table class="table table-striped" id="myData">
               <thead>
                 <tr class="headings">
                   <th class="column-title">No. </th>

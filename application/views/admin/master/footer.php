@@ -11,7 +11,8 @@
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/jquery/dist/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/nprogress/nprogress.js"></script>
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets-admin/css/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets-admin/css/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/js/custom.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/sweetalert/sweetalert2.min.js"></script>
     <script src="<?php echo base_url(); ?>assets-admin/css/vendors/moment/min/moment.min.js"></script>

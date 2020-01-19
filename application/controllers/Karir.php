@@ -14,9 +14,10 @@ class Karir extends CI_Controller{
 			$data = array(
 				'navigation' 		=> $this->Home_model->getNavbar(),
 				'title' 			=> "Karir",
-				'meta_desc' 		=> $conf->company_name,
+				'meta_desc' 		=> $conf->website_name,
 				'sub_1'				=> "Karir",
 				'sub_2'				=> "Lowongan Kerja",
+				'logo'				=> $conf->logo,
 				'address'			=> $conf->address,
 				'phone' 			=> $conf->phone,
 				'email' 			=> $conf->email,

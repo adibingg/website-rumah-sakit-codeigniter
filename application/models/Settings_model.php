@@ -27,4 +27,10 @@ class Settings_model extends CI_Model{
         $this->db->delete('static_pages');
     }
 
+    function getConfig(){
+        $this->db->limit('1');
+        $query = $this->db->get('config');
+        return $query;
+    }
+
 }

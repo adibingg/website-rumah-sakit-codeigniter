@@ -13,10 +13,11 @@ class Dokter extends CI_Controller{
 				'title' 		=> "Profile Dokter",
 				'sub_1'			=> "Dokter & Jadwal",
 				'sub_2'			=> "Profile Dokter",
-				'meta_desc' 	=> $conf->company_name,
-				'address'		=> $conf->address,
-				'phone' 		=> $conf->phone,
-				'email' 		=> $conf->email,
+				'meta_desc' 	=> $conf->website_name,
+				'logo'				=> $conf->logo,
+				'address'			=> $conf->address,
+				'phone' 			=> $conf->phone,
+				'email' 			=> $conf->email,
 				'category' 		=> $this->Home_model->getCategory(),
 				'dokter' 		=> $this->Home_model->getDoctor(),
 				'sidebar'			=> $this->Home_model->getSidebar()
@@ -31,10 +32,11 @@ class Dokter extends CI_Controller{
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' 		=> $this->Home_model->getNavbar(),
-				'title' 			=> "Jadwal Dokter " .$conf->company_name,
+				'title' 			=> "Jadwal Dokter " .$conf->website_name,
 				'sub_1'			=> "Berita",
 				'sub_2'			=> "Semua Berita dan Artikel",
-				'meta_desc' 		=> $conf->company_name,
+				'meta_desc' 		=> $conf->website_name,
+				'logo'				=> $conf->logo,
 				'address'			=> $conf->address,
 				'phone' 			=> $conf->phone,
 				'email' 			=> $conf->email,
@@ -53,10 +55,11 @@ class Dokter extends CI_Controller{
 		foreach($config->result() as $conf){
 			$data = array(
 				'navigation' 		=> $this->Home_model->getNavbar(),
-				'title' 			=> "Jadwal Poli " .$conf->company_name,
+				'title' 			=> "Jadwal Poli " .$conf->website_name,
 				'sub_1'				=> "Berita",
 				'sub_2'				=> "Semua Berita dan Artikel",
-				'meta_desc' 		=> $conf->company_name,
+				'meta_desc' 		=> $conf->website_name,
+				'logo'				=> $conf->logo,
 				'address'			=> $conf->address,
 				'phone' 			=> $conf->phone,
 				'email' 			=> $conf->email,

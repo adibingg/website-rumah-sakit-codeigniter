@@ -1,5 +1,5 @@
 
-    <footer class="ftco-footer ftco-bg-blue ftco-section" style="padding-top: 50px; padding-bottom: 10px;">
+    <footer class="ftco-footer ftco-bg-blue ftco-section" style="padding: 100px;">
       <div class="container">
         <div class="row">
           <div class="col-md">
@@ -7,20 +7,18 @@
               <h2 class="ftco-heading-2"><i class="fa fa-building"></i> RSU KARTINI</span></h2>
             </div>
             <ul class="list-unstyled">
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>CS : </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMERGENCY : </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
+                <li><a href="#"></span><i class="fa fa-phone"></i> : </a></li>
+                <li><a href="#"></span>EMERGENCY : </a></li>
+                <li><a href="#"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
+                <li><a href="#"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
               </ul>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget ml-md-4">
               <h2 class="ftco-heading-2"><i class="fa fa-phone"></i> KONTAK KAMI</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>CS : </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMERGENCY : </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
+                <li><a href="#"></span><i class="fa fa-phone"></i> <?php echo $phone; ?></a></li>
+                <li><a href="#"></span><i class="fa fa-envelope"></i> <?php echo $email; ?> </a></li>
               </ul>
             </div>
           </div>
@@ -42,10 +40,10 @@
               <h2 class="ftco-heading-2"><i class="fa fa-link"></i> LINK TERKAIT</h2>
               <div class="ftco-footer-widget">
               <ul class="list-unstyled">
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>KARS : </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>SIRS Online : </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
+                <li><a href="#"></span>KARS : </a></li>
+                <li><a href="#"></span>SIRS Online : </a></li>
+                <li><a href="#"></span>EMAIL : rumahsakitkartini@gmail.com </a></li>
+                <li><a href="#"></span>EMAIL : rumahsakitkartini@yahoo.com</a></li>
               </ul>
             </div>
             </div>

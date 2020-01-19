@@ -62,7 +62,7 @@
         <div class="col text-center">
           <div class="block-27">
             <ul>
-              <li><a href="#"><?php echo $this->pagination->create_links(); ?></a></li>
+              <li><a href="#"><?php echo $pages; ?></a></li>
               
             </ul>
           </div>

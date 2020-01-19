@@ -16,7 +16,7 @@
             <div class="card-body text-center">
                 <i class="fa fa-gears text-info" style="font-size: 30pt; text-align:center;"></i>
               <hr>
-             <a href="<?php echo base_url('admin/banner'); ?>" class="btn btn-default">Banner Halaman Utama</a>
+             <a href="<?php echo base_url('admin/banner'); ?>" class="btn btn-default"><i class="fa fa-gear"></i> Banner Halaman Utama</a>
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@
             <div class="card-body text-center">
               <i class="fa fa-gears text-info" style="font-size: 30pt; text-align:center;"></i>
               <hr>
-             <a href="<?php echo base_url('admin/sidebar'); ?>" class="btn btn-default">Banner Sidebar</a>
+             <a href="<?php echo base_url('admin/sidebar'); ?>" class="btn btn-default"><i class="fa fa-gear"></i>  Banner Sidebar</a>
               
             </div>
           </div>
@@ -33,9 +33,9 @@
         <div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
           <div class="card hvr-sweep-to-top">
             <div class="card-body text-center">
-              <i class="fa fa-gears text-info" style="font-size: 30pt; text-align:center;"></i>
+              <i class="fa fa-users text-info" style="font-size: 30pt; text-align:center;"></i>
               <hr>
-             <a href="<?php echo base_url('pengaturan/pengguna'); ?>" class="btn btn-default">Pengguna</a>
+             <a href="<?php echo base_url('admin/users'); ?>" class="btn btn-default"><i class="fa fa-gear"></i>  Pengguna</a>
               
             </div>
           </div>
@@ -43,9 +43,9 @@
         <div class="col-md-3 col-sm-6 col-xs-6 hvr-float" style="padding: 5px;">
           <div class="card hvr-sweep-to-top">
             <div class="card-body text-center text-info">
-              <i class="fa fa-gears" style="font-size: 30pt; text-align:center;"></i>
+              <i class="fa fa-globe" style="font-size: 30pt; text-align:center;"></i>
               <hr>
-             <a href="<?php echo base_url('pengaturan/more'); ?>" class="btn btn-default">Pengaturan Lain</a>
+             <a href="<?php echo base_url('admin/pengaturan/site_setting'); ?>" class="btn btn-default"><i class="fa fa-gear"></i>  Identitas Website</a>
               
             </div>
           </div>

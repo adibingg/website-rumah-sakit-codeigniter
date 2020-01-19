@@ -19,25 +19,14 @@ class Home_model extends CI_Model{
         $query = $this->db->get();
         return $query;
     }
-    
 
-    public function getberita($id){
+    function getNewsFilter($id){
         $this->db->select('*');
         $this->db->from('news');
         $this->db->join('category','category.category_id=news.category_id');
         $this->db->order_by('news.date_post','desc');
         $this->db->where('category.category_link', $id);
         $data = $this->db->get();
-        return $data->num_rows();
-    }
-
-    function getNewsFilter($id){
-        // $this->db->select('*');
-        // $this->db->from('news');
-        // $this->db->join('category','category.category_id=news.category_id');
-        // $this->db->order_by('news.date_post','desc');
-        // $this->db->where('category.category_link', $id);
-        $data = $this->db->get('news');
         return $data;
     }
 
@@ -49,7 +38,12 @@ class Home_model extends CI_Model{
         $this->db->limit('1');
 		$this->db->join('category', 'category.category_id = news.category_id');
 		$data = $this->db->get();
-		return $data;
+        if($data->num_rows() == 1){
+            return $data;    
+        }else{
+            redirect('home');
+        }
+        
     }
 
 

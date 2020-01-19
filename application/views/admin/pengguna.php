@@ -10,7 +10,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2> <a href="<?= base_url('admin/pengguna/tambah_pengguna') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Pengguna</a></h2>
+                    <h2> <a href="<?= base_url('admin/users/add') ?>" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Tambah Pengguna</a></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -21,21 +21,17 @@
                   </div>
 
                   <div class="x_content">
-                    <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action">
+                    <div>
+                      <table id="myData" class="table table-striped table-bordered">
                         <thead>
-                          <tr class="headings">
-                            <th>
+                          <tr>
+                            <th></th>
+                            <th>Nama User</th>
+                            <th>E-Mail</th>
+                            <th>Status</th>
+                            <th><span class="nobr">Action</span>
                             </th>
-                            <th class="column-title">Nama</th>
-                            <th class="column-title">E-Mail</th>
-                            <th class="column-title">Username</th>
-                            <th class="column-title">Password</th>
-                            <th class="column-title no-link last"><span class="nobr">Action</span>
-                            </th>
-                            <th class="bulk-actions" colspan="7">
-                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                            </th>
+                           
                           </tr>
                         </thead>
 
@@ -46,11 +42,10 @@
                               <td><?php echo $no++; ?></td>
                               <td><?php echo $row->admin_name; ?></td>
                               <td><?php echo $row->email; ?></td>
-                              <td><?php echo $row->username; ?></td>
-                              <td>Tidak dapat ditampilkan</td>
+                              <td><a class="btn btn-success btn-xs">Aktif</a></td>
                               <td>
-                                <a href="" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
-                                <a href="" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"></i></a>
+                                <a href="<?php echo base_url('admin/users/edit/').$row->id_admin; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"> Perbaharui</i></a>
+                                <a href="<?php echo base_url('admin/users/delete/').$row->id_admin; ?>" class="btn btn-danger btn-xs hapus"><i class="fa fa-trash"> Hapus</i></a>
                               </td>
                             </tr>
                           <?php } ?>
@@ -65,5 +60,6 @@
         </div>
         <!-- /page content -->
 <?php $this->load->view('admin/master/footer'); ?>
+<?php $this->load->view('admin/swall'); ?>
 
 

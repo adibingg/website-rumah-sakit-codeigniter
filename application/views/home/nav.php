@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title><?= $title; ?></title>
-  <link rel="shortcut icon" href="<?php echo base_url('public/images/logo.png'); ?>">
+  <link rel="shortcut icon" href="<?php echo base_url('uploads/').$logo; ?>">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="<?php echo base_url('public/'); ?>css/open-iconic-bootstrap.min.css">
@@ -98,22 +98,22 @@
        <div class="container">
         <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
          <div class="col-lg-2 pr-4 align-items-center">
-          <img src="<?php echo base_url('public/images/logo.png'); ?>" alt="" style="margin-left: 7%; height: 70px; width:70px; align: center;">
+          <img src="<?php echo base_url('uploads/').$logo; ?>" alt="" style="margin-left: 7%; height: 70px; width:70px; align: center;">
           <a class="navbar-brand" style="font-size: 12pt;" href="<?php echo base_url('/'); ?>">RSU<span>KARTINI</span></a>
         </div>
         <div class="col-lg-10 d-none d-md-block">
           <div class="row d-flex">
            <div class="col-md-4 pr-4 d-flex topper align-items-center">
             <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="fa fa-home"></span></div>
-            <span class="text" style="font-family: 'Bitter', serif;">Jl. Kartini No. 104 Kalirejo, Lampung Tengah - Lampung</span>
+            <span class="text" style="font-family: 'Bitter', serif;"><?php echo $address; ?></span>
           </div>
           <div class="col-md pr-4 d-flex topper align-items-center">
             <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="fa fa-envelope"></span></div>
-            <span class="text" style="font-family: 'Bitter', serif;">rumahsakitkartini@yahoo.com</span>
+            <span class="text" style="font-family: 'Bitter', serif;"><?php echo $email; ?></span>
           </div>
           <div class="col-md pr-4 d-flex topper align-items-center">
             <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="fa fa-phone"></span></div>
-            <span class="text" style="font-family: 'Bitter', serif;">Phone: + 1235 2355 98</span>
+            <span class="text" style="font-family: 'Bitter', serif;"><?php echo $phone; ?></span>
           </div>
         </div>
       </div>
