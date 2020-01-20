@@ -34,11 +34,11 @@
                         </div>
                         <div class="form-group">
                             <label for="">Pilih Foto</label>
-                            <input type="file" name="gambar" id="" class="form-control" required>
+                            <input type="file" name="gambar" id="" class="form-control" value="<?php echo $row->images; ?>">
                         </div>
                         <div class="form-group">
                             <label for="">Keterangan</label>
-                            <textarea name="caption" id="" cols="30" class="form-control" rows="10" placeholder="Tambahkan Keterangan" required></textarea>
+                            <textarea name="caption" id="" cols="30" class="form-control" rows="10" placeholder="Tambahkan Keterangan" required><?php echo $row->caption; ?></textarea>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success"><i class="fa fa-save"></i> Unggah Foto</button>

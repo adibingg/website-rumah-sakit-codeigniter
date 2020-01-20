@@ -59,7 +59,7 @@ class Galeri extends CI_Controller{
 	    $data = array(
 		  'title' 					=> "Tambah Album",
 		  'album'					=> $this->Gallery_model->getAlbum(),
-		  'photo'					=> $this->Gallery_model->getGalleryId($id),
+		  'gallery'					=> $this->Gallery_model->getGalleryId($id),
 		  'messages_new' 			=> $this->Inbox_model->showNewMessages(),
 		  'messages_new_counter' 	=> $this->Inbox_model->showNewMessages()->num_rows()
 	    );

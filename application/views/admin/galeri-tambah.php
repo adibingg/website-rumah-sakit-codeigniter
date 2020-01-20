@@ -40,7 +40,7 @@
                             <textarea name="caption" id="" cols="30" class="form-control" rows="10" placeholder="Tambahkan Keterangan" required></textarea>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-success"><i class="fa fa-save"></i> Unggah Foto</button>
+                            <button class="btn btn-success btn-sm"><i class="fa fa-check"></i> Unggah Foto</button>
                         </div>  
                     </div>
                     <?php echo form_close(); ?>

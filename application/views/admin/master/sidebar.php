@@ -33,7 +33,6 @@
       background: orange;
     }
    .btn{
-      border: 0px;
       border-radius: 0px;
     }
 
@@ -82,19 +81,12 @@
 <body class="nav-md">
   <div class="container body">
     <div class="main_container">
-      <div class="col-md-3 left_col">
+      <div class="col-md-3 left_col bg-info">
         <div class="left_col scroll-view">
-          <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-globe"></i> <span>RSU KARTINI</span></a>
+          <div class="navbar nav_title bg-info" style="border: 0;">
+            <a href="index.html" class="site_title"><span>PANEL ADMIN</span></a>
           </div>
 
-          <div class="clearfix"></div>
-          <div class="profile clearfix text-center">
-            <div class="profile_pic text-center">
-              <img style="margin-left: 80px;" src="<?php echo base_url(); ?>public/images/logo.png" alt="..." class="img-circle profile_img">
-            </div>
-            
-          </div>
           <br />
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
@@ -102,11 +94,11 @@
               <ul class="nav side-menu">
                 <li><a href="<?= base_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> Dashboard </a></li>
                 <li><a href="<?= base_url('admin/statistik'); ?>"><i class="fa fa-bar-chart"></i> Statistik </a></li>
-                <li><a><i class="fa fa-edit"></i> Posting <span class="fa fa-plus"></span></a>
+                <li><a><i class="fa fa-newspaper-o"></i> Posting <span class="fa fa-plus"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="<?= base_url('admin/news'); ?>"> Posting</a></li>
-                    <li><a href="<?= base_url('admin/galeri'); ?>"> Galeri</a></li>
-                    <li><a href="<?= base_url('admin/komentar'); ?>"> Komentar</a></li>
+                    <li><a href="<?= base_url('admin/news'); ?>"><i class="fa fa-thumb-tack"></i> Posting</a></li>
+                    <li><a href="<?= base_url('admin/galeri'); ?>"><i class="fa fa-camera"></i> Galeri</a></li>
+                    <li><a href="<?= base_url('admin/komentar'); ?>"><i class="fa fa-comments"></i> Komentar</a></li>
                   </ul>
                 </li>
                 <li><a href="<?php echo base_url('admin/navigation-static-pages'); ?>"><i class="fa fa-clone"></i> Navigasi & Halaman </a>

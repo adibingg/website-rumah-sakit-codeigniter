@@ -10,14 +10,59 @@
             </div>
 
             <div class="clearfix"></div>
+             <!--Modal Add Pengguna-->
+         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                        <h4 class="modal-title" id="myModalLabel">Unggah Foto</h4>
+                    </div>
+                    <form class="form-horizontal" action="<?php echo base_url('admin/gallery/store'); ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
 
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Caption</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="caption" class="form-control" id="inputUserName" placeholder="Caption" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Foto</label>
+                                        <div class="col-sm-7">
+                                            <input type="file" name="gambar" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="inputUserName" class="col-sm-4 control-label">Pilih Album</label>
+                                    <div class="col-sm-7">
+                                    <select name="id_album" class="form-control">
+                                <option value="">Pilih Album</option>
+                                <?php foreach($album->result() as $alghazali){ ?>
+                                <option value="<?php echo $alghazali->album_id; ?>"><?php echo $alghazali->album_name; ?></option>
+                                <?php } ?>
+                            </select>
+                                        </div>
+                            
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Simpan</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <a href="<?= base_url('admin/album/add'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Album</a>
-                    <a href="<?= base_url('admin/gallery/add'); ?>" class="btn btn-primary"><i class="fa fa-camera-retro"></i> Tambah Foto</a>
-                    <ul class="nav navbar-right panel_toolbox">
+                    <a href="<?= base_url('admin/album/add'); ?>" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i> Buat Album</a>
+                    <a href="/#" class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#myModal"><span class="fa fa-upload"></span> Unggah Foto</a>                    <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
@@ -51,7 +96,6 @@
                             <div class="mask">
                               <p><?= $gr->album_name; ?></p>
                               <div class="tools tools-bottom">
-                                <a class="btn btn-primary btn-xs" href="<?= base_url('admin/gallery/edit/').$gr->gallery_id; ?>"><i class="fa fa-pencil"></i></a>
                                 <a class="btn btn-danger btn-xs hapus" href="<?= base_url('admin/gallery/delete/').$gr->gallery_id; ?>"><i class="fa fa-trash"></i></a>
                               </div>
                             </div>

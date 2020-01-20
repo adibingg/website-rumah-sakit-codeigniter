@@ -34,37 +34,36 @@
                         <thead>
                           <tr>
                             <th>#</th>
-                            <th class="column-title">Judul </th>
+                            <th class="column-title" width="200">Judul </th>
                             <th class="column-title">Tanggal</th>
                             <th class="column-title">Kategori</th>
-                            <th class="column-title">Di Tulis</th>
+                            <th class="column-title">Author</th>
                             <th class="column-title">Status </th>
-                            <th class="column-title no-link last"><span class="nobr">Action</span>
+                            <th class="column-title no-link last"><span class="nobr"></span>
                             </th>
-                            <th class="bulk-actions" colspan="7">
-                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                            </th>
+                           
                           </tr>
                         </thead>
 
                         <tbody>
                         <?php $no=1; ?>
                         <?php foreach($berita->result() as $row){ ?>
-                          <tr class="even pointer">
+                          <tr>
                             <td><?= $no++ ?></td>
-                            <td class=" "><?= $row->title; ?></td>
-                            <td class=" "><?= $row->date_post; ?> </td>
-                            <td class=" "><?= $row->category_name; ?> </td>
-                            <td class=" "><i class="fa fa-user"></i> <?= $row->admin_name; ?></td>
-                            <td class=" ">
+                            <td><?= $row->title; ?></td>
+                            <td><?= $row->date_post; ?> </td>
+                            <td><?= $row->category_name; ?> </td>
+                            <td><i class="fa fa-user"></i> <?= $row->admin_name; ?></td>
+                            <td>
                             <?php if($row->status == 'published'){ ?>
                               <label for="" class="label label-success"> <?= $row->status; ?></td></label>
                             <?php } else { ?>
                               <label for="" class="label label-danger"> <?= $row->status; ?></td></label>
                             <?php } ?>
-                            <td class="last text-center" width="170">
-                                <a href="<?= base_url('admin/news/edit/').$row->news_id; ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Edit</a>
-                                <a href="<?= base_url('admin/news/delete/').$row->news_id; ?>" class="btn btn-danger btn-sm hapus"><i class="fa fa-trash"></i> Hapus</a>
+                            <td class="last text-center" width="150">
+                                <a href="<?= base_url('baca-berita/').$row->seo; ?>" class="btn btn-link btn-sm"><i class="fa fa-eye"></i> <?php echo $row->view_count; ?></a>
+                                <a href="<?= base_url('admin/news/edit/').$row->news_id; ?>" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
+                                <a href="<?= base_url('admin/news/delete/').$row->news_id; ?>" class="btn btn-link btn-sm hapus"><i class="fa fa-trash"></i></a>
                             </td>
                           </tr>
                         <?php } ?>

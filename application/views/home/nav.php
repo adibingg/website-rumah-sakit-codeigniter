@@ -89,6 +89,10 @@
           margin-bottom: -10px;
         }
 
+        .has_error{
+          border: 2px solid red;
+        }
+
         
       </style>
     </head>

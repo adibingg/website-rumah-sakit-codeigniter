@@ -27,7 +27,11 @@ class Home_model extends CI_Model{
         $this->db->order_by('news.date_post','desc');
         $this->db->where('category.category_link', $id);
         $data = $this->db->get();
-        return $data;
+        if($data->num_rows() >= 1){
+            return $data;    
+        }else{
+            redirect('home');
+        }
     }
 
     function detailBerita($id)
@@ -37,13 +41,18 @@ class Home_model extends CI_Model{
         $this->db->where('seo', $id);
         $this->db->limit('1');
 		$this->db->join('category', 'category.category_id = news.category_id');
-		$data = $this->db->get();
+        $data = $this->db->get();
         if($data->num_rows() == 1){
-            return $data;    
+            return $data;
+           
         }else{
             redirect('home');
         }
-        
+    }
+
+    function setCount($id){
+        $this->db->set('view_count', 'view_count+1', FALSE);
+        $this->db->where('seo', $id)->update('news');
     }
 
 

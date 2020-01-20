@@ -34,22 +34,27 @@
                   <div class="x_content">
 
                     <div class="row">
-                    <table class="table table-striped projects">
+                    <table class="table table-striped projects" id="myData">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Judul Konten</th>
+                          <th>Judul Posting</th>
                           <th>Komentar</th>
                           <th style="width: 20%">pilihan</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <?php foreach($comments->result() as $row){ ?>
                         <tr>
                           <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td><?php echo $row->title; ?></td>
+                          <td><?php echo $row->comment; ?></td>
+                          <td>
+                            <a href="/" class="btn btn-success btn-sm"><i class="fa fa-check"></i> Setujui</a>
+                            <a href="/" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
+                          </td>
                         </tr>
+                      <?php } ?>
                       </tbody>
                       </table>
                       </div>

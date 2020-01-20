@@ -14,17 +14,17 @@ class Berita extends CI_Controller{
 		$myconf = $this->Home_model->getConfig();
 		$this->load->library('pagination');
 		$total = $this->Home_model->getNewsFilter($id);
-        $page=$this->uri->segment(2);
-        if(!$page):
-            $offset = 0;
-        else:
-            $offset = $page;
-        endif;
-        $limit=4;
-        $config['base_url'] = base_url() . 'post/'.$id;
-        $config['total_rows'] = $total->num_rows();
-        $config['per_page'] = $limit;
-        $config['uri_segment'] = $page;
+		$page=$this->uri->segment(2);
+		if(!$page):
+			$offset = 0;
+		else:
+			$offset = $page;
+		endif;
+		$limit=4;
+		$config['base_url'] = base_url() . 'post/'.$id;
+		$config['total_rows'] = $total->num_rows();
+		$config['per_page'] = $limit;
+		$config['uri_segment'] = $page;
 		$this->pagination->initialize($config);	
 
 		foreach($myconf->result() as $conf){
@@ -75,11 +75,35 @@ class Berita extends CI_Controller{
 				'sub_2'			=> "Semua Berita dan Artikel",
 				'sidebar'			=> $this->Home_model->getSidebar()		
 			);
+			$this->Home_model->setCount($id);
 			$this->load->view('home/beritadetail', $data);
 		}
 	}
 
-	public function comment($id){
-
+	public function comment(){
+		$this->load->library('user_agent');
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nama', 'Nama','trim|required');
+		$this->form_validation->set_rules('email', 'E-Mail','trim|required');
+		$this->form_validation->set_rules('komentar', 'Komentar','trim|required');
+		if($this->form_validation->run()){
+			$browser = $this->agent->browser();
+			$ipaddress = $this->input->ip_address;
+			$post = array(
+				'name' => $this->input->post('nama'),
+				'email' => $this->input->post('email'),
+				'comment' => $this->input->post('komentar'),
+				'user_agent' => $browser,
+				'ip_address' => $ipaddress,
+				'news_id' => $this->input->post('id')
+			);
+			$query = $this->db->insert('comments', $post);
+			echo json_encode($query);
+		}else{
+			$response = array(
+				'error' => "error"
+			);
+			echo json_encode($response);
+		}
 	}
 }
